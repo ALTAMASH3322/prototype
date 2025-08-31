@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Recorded Sessions - LifeGenBio</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="Self-Paced Courses, Recorded Courses, Online Learning, On-Demand Courses" name="keywords" />
+    <meta content="Learn at your own pace with LifeGenBio's on-demand library of recorded courses. Get lifetime access to high-quality content." name="description" />
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+
+    <!-- Custom Styles for Popup -->
+    <style>
+        /* Access Popup */
+        #access-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1050;
+            display: none; /* Hidden by default */
+            align-items: center;
+            justify-content: center;
+        }
+        #access-popup.show {
+            display: flex; /* Shown with JS */
+        }
+        #popup-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(24, 29, 56, 0.7);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+        #popup-modal {
+            position: relative;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+            width: 90%;
+            max-width: 500px;
+            z-index: 1051;
+        }
+        #close-popup {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #888;
+            cursor: pointer;
+        }
+        #close-popup:hover {
+            color: #333;
+        }
+    </style>
+  </head>
+
+  <body>
+    <!-- Spinner Start -->
+    <div
+      id="spinner"
+      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+    >
+      <div
+        class="spinner-border text-primary"
+        style="width: 3rem; height: 3rem"
+        role="status"
+      >
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    <nav
+      class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0"
+    >
+      <a
+        href="index.html"
+        class="navbar-brand d-flex align-items-center px-4 px-lg-5"
+      >
+        <h2 class="m-0 text-primary">
+          <i class="fa fa-book me-3"></i>LifeGenBio
+        </h2>
+      </a>
+      <button
+        type="button"
+        class="navbar-toggler me-4"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarCollapse"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto p-4 p-lg-0">
+          <a href="index.html" class="nav-item nav-link">Home</a>
+          <a href="about.html" class="nav-item nav-link">About Us</a>
+          <div class="nav-item dropdown">
+            <a
+              href="#"
+              class="nav-link dropdown-toggle active"
+              data-bs-toggle="dropdown"
+              >Services</a
+            >
+            <div class="dropdown-menu fade-down m-0">
+                <a href="workshops.html" class="dropdown-item">Workshops</a>
+                <a href="short-term-courses.html" class="dropdown-item">Short-Term Courses</a>
+                <a href="long-term-courses.html" class="dropdown-item">Long-Term Courses</a>
+                <a href="recorded-sessions.html" class="dropdown-item active">Recorded Sessions</a>
+                <a href="corporate-training.html" class="dropdown-item">Corporate Training</a>
+            </div>
+          </div>
+          <a href="contact.html" class="nav-item nav-link">LifeGenBio Care</a>
+          <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+        </div>
+        <a href="#" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block join-now-btn"
+          >Join Now<i class="fa fa-arrow-right ms-3"></i
+        ></a>
+      </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-primary py-5 mb-5 page-header">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1 class="display-3 text-white animated slideInDown">Learn at Your Own Pace, Anytime, Anywhere</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">Recorded Sessions</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- Why Choose Section Start -->
+    <div class="container-xxl py-5">
+      <div class="container">
+          <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center text-primary px-3">
+              Benefits
+            </h6>
+            <h1 class="mb-5">Why Choose Self-Paced Learning?</h1>
+          </div>
+        <div class="row g-4">
+          <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="service-item text-center pt-3">
+              <div class="p-4">
+                <i class="fa fa-3x fa-infinity text-primary mb-4"></i>
+                <h5 class="mb-3">Lifetime Access</h5>
+                <p>
+                  Enroll once and get lifetime access to all course videos and materials. Revisit complex topics anytime.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="service-item text-center pt-3">
+              <div class="p-4">
+                <i class="fa fa-3x fa-calendar-alt text-primary mb-4"></i>
+                <h5 class="mb-3">Ultimate Flexibility</h5>
+                <p>
+                  No schedules, no deadlines. Learn whenever and wherever you want, fitting education around your life.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="service-item text-center pt-3">
+              <div class="p-4">
+                <i class="fa fa-3x fa-tags text-primary mb-4"></i>
+                <h5 class="mb-3">Affordable Pricing</h5>
+                <p>
+                  Get access to the same high-quality curriculum as our live courses at a more accessible price point.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+            <div class="service-item text-center pt-3">
+              <div class="p-4">
+                <i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i>
+                <h5 class="mb-3">Comprehensive Content</h5>
+                <p>
+                  Each course is a complete package with video lectures, code notebooks, and hands-on projects.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Why Choose Section End -->
+
+    <!-- Courses Start -->
+    <div class="container-xxl py-5">
+      <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+          <h6 class="section-title bg-white text-center text-primary px-3">
+            Course Library
+          </h6>
+          <h1 class="mb-5">Our On-Demand Library</h1>
+        </div>
+        <div class="row g-4 justify-content-center">
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="course-item bg-light h-100 d-flex flex-column">
+              <div class="text-center p-4 pb-0 flex-grow-1">
+                <i class="fa fa-3x fa-database text-primary mb-4"></i>
+                <h3 class="mb-0">$99.00</h3>
+                <h5 class="my-4">SQL Mastery: From Beginner to Pro</h5>
+                <p class="text-muted">Learn to write complex queries and manage databases effectively with this comprehensive SQL course.</p>
+              </div>
+              <ul class="list-group list-group-flush text-center">
+                <li class="list-group-item"><strong>12+</strong> Hours of Video</li>
+                <li class="list-group-item"><strong>50+</strong> Downloadable Resources</li>
+                <li class="list-group-item"><strong>3</strong> Included Projects</li>
+              </ul>
+              <div class="p-3 text-center">
+                <a href="#" class="btn btn-primary access-btn" data-title="SQL Mastery: From Beginner to Pro" data-price="$99.00">Get Instant Access <i class="fa fa-angle-right ms-2"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="course-item bg-light h-100 d-flex flex-column">
+              <div class="text-center p-4 pb-0 flex-grow-1">
+                <i class="fab fa-3x fa-python text-primary mb-4"></i>
+                <h3 class="mb-0">$129.00</h3>
+                <h5 class="my-4">Complete Python for Data Science</h5>
+                <p class="text-muted">A deep dive into Python's data science libraries including Pandas, NumPy, and Scikit-learn.</p>
+              </div>
+              <ul class="list-group list-group-flush text-center">
+                <li class="list-group-item"><strong>20+</strong> Hours of Video</li>
+                <li class="list-group-item"><strong>80+</strong> Downloadable Resources</li>
+                <li class="list-group-item"><strong>5</strong> Included Projects</li>
+              </ul>
+              <div class="p-3 text-center">
+                <a href="#" class="btn btn-primary access-btn" data-title="Complete Python for Data Science" data-price="$129.00">Get Instant Access <i class="fa fa-angle-right ms-2"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="course-item bg-light h-100 d-flex flex-column">
+              <div class="text-center p-4 pb-0 flex-grow-1">
+                <i class="fab fa-3x fa-react text-primary mb-4"></i>
+                <h3 class="mb-0">$149.00</h3>
+                <h5 class="my-4">Modern React: The Complete Guide</h5>
+                <p class="text-muted">Build powerful, interactive web applications from scratch with the world's most popular UI library.</p>
+              </div>
+              <ul class="list-group list-group-flush text-center">
+                <li class="list-group-item"><strong>25+</strong> Hours of Video</li>
+                <li class="list-group-item"><strong>100+</strong> Downloadable Resources</li>
+                <li class="list-group-item"><strong>4</strong> Included Projects</li>
+              </ul>
+              <div class="p-3 text-center">
+                <a href="#" class="btn btn-primary access-btn" data-title="Modern React: The Complete Guide" data-price="$149.00">Get Instant Access <i class="fa fa-angle-right ms-2"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Courses End -->
+
+    <!-- Learning Process Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">How It Works</h6>
+                <h1 class="mb-5">Your Learning Process</h1>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="text-center">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-primary text-white rounded-circle mb-4" style="width: 80px; height: 80px;">
+                            <i class="fa fa-mouse-pointer fa-2x"></i>
+                        </div>
+                        <h5 class="mb-3">1. Enroll & Access</h5>
+                        <p class="text-muted">Choose your course, enroll, and get immediate, lifetime access to all video lectures and resources.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="text-center">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-primary text-white rounded-circle mb-4" style="width: 80px; height: 80px;">
+                            <i class="fa fa-play-circle fa-2x"></i>
+                        </div>
+                        <h5 class="mb-3">2. Learn & Build</h5>
+                        <p class="text-muted">Watch the on-demand videos, practice with downloadable code, and complete the hands-on projects.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="text-center">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-primary text-white rounded-circle mb-4" style="width: 80px; height: 80px;">
+                            <i class="fa fa-certificate fa-2x"></i>
+                        </div>
+                        <h5 class="mb-3">3. Certify & Grow</h5>
+                        <p class="text-muted">Upon completion, receive your professional certificate to share on your resume and LinkedIn.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Learning Process End -->
+    
+    <!-- Testimonial Start -->
+    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+      <div class="container">
+        <div class="text-center">
+          <h6 class="section-title bg-white text-center text-primary px-3">
+            Testimonials
+          </h6>
+          <h1 class="mb-5">What Our Learners Say!</h1>
+        </div>
+        <div class="owl-carousel testimonial-carousel position-relative">
+          <div class="testimonial-item text-center">
+            <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-1.jpg" style="width: 80px; height: 80px"/>
+            <h5 class="mb-0">Priya Sharma</h5>
+            <p>Full-Time Professional</p>
+            <div class="testimonial-text bg-light text-center p-4">
+              <p class="mb-0">"As a working mom, live classes were impossible for me. The recorded SQL course was a perfect fit. I could study late at night and the lifetime access meant I never felt rushed. I learned so much!"</p>
+            </div>
+          </div>
+          <div class="testimonial-item text-center">
+            <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-2.jpg" style="width: 80px; height: 80px"/>
+            <h5 class="mb-0">David Chen</h5>
+            <p>University Student</p>
+            <div class="testimonial-text bg-light text-center p-4">
+              <p class="mb-0">"The Python for Data Science course was an incredible supplement to my university studies. I could re-watch complex topics over and over until I understood them. Way better than a live lecture!"</p>
+            </div>
+          </div>
+          <div class="testimonial-item text-center">
+            <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-4.jpg" style="width: 80px; height: 80px"/>
+            <h5 class="mb-0">Michael Johnson</h5>
+            <p>Aspiring Developer</p>
+            <div class="testimonial-text bg-light text-center p-4">
+              <p class="mb-0">"The quality of the content in the React course is top-notch. I was skeptical about recorded sessions, but the curriculum is so well-structured and the projects are so practical that it felt like a premium experience."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Testimonial End -->
+
+    <!-- Footer Start -->
+    <div
+      class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn"
+      data-wow-delay="0.1s"
+    >
+      <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-4 col-md-6">
+                <h4 class="text-white mb-4">LifeGenBio</h4>
+                <p>Empowering the next generation of innovators at the intersection of technology and life sciences.</p>
+                <div class="d-flex pt-2">
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6">
+                <h4 class="text-white mb-3">About</h4>
+                <a class="btn btn-link" href="">Who are we?</a>
+                <a class="btn btn-link" href="">What we do?</a>
+                <a class="btn btn-link" href="">Why LifeGenBio?</a>
+                <a class="btn btn-link" href="">Workshops</a>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h4 class="text-white mb-3">Get in Touch</h4>
+                <p class="mb-2">
+                <i class="fab fa-whatsapp me-3"></i>+91-9852880174
+                </p>
+                <p class="mb-2">
+                <i class="fa fa-phone-alt me-3"></i>+91-7588656772
+                </p>
+                <p class="mb-2">
+                <i class="fa fa-envelope me-3"></i>info@lifegenbio.com
+                </p>
+            </div>
+             <div class="col-lg-3 col-md-6">
+                <h4 class="text-white mb-3">Latest Insights</h4>
+                <a class="btn btn-link" href="">Resources</a>
+                <a class="btn btn-link" href="">Blog</a>
+            </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="copyright">
+          <div class="row">
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+              &copy; <a class="border-bottom" href="#">LifeGenBio</a>, All
+              Right Reserved.
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+              <div class="footer-menu">
+                <a href="">Privacy Policy</a>
+                <a href="">TnCs</a>
+                <a href="">Refund and Cancellation Policy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Access Popup Start -->
+    <div id="access-popup">
+        <div id="popup-overlay"></div>
+        <div id="popup-modal">
+            <span id="close-popup">&times;</span>
+            <h4 class="mb-1 text-primary">Get Instant Access</h4>
+            <h5 class="mb-3" id="popup-course-title">Course Title</h5>
+            <p>Enter your details to enroll. The one-time fee for lifetime access is <strong id="popup-course-price">$0.00</strong>.</p>
+            <form>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="popupName" placeholder="Your Name" required>
+                    <label for="popupName">Full Name</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="popupEmail" placeholder="Your Email" required>
+                    <label for="popupEmail">Email Address</label>
+                </div>
+                <button class="btn btn-primary w-100 py-3" type="submit">Proceed to Payment</button>
+            </form>
+        </div>
+    </div>
+    <!-- Access Popup End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"
+      ><i class="bi bi-arrow-up"></i
+    ></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <!-- Custom Popup Javascript -->
+    <script>
+        $(document).ready(function(){
+            const popup = $('#access-popup');
+
+            // Open popup logic
+            $('.access-btn').on('click', function(e) {
+                e.preventDefault();
+                
+                // Get data from the clicked button
+                const title = $(this).data('title');
+                const price = $(this).data('price');
+
+                // Update popup content
+                popup.find('#popup-course-title').text(title);
+                popup.find('#popup-course-price').text(price);
+
+                // Show the popup
+                popup.addClass('show');
+            });
+
+            // Close popup logic
+            $('#close-popup, #popup-overlay').on('click', function() {
+                popup.removeClass('show');
+            });
+        });
+    </script>
+
+  </body>
+</html>

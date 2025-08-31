@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Workshops - LifeGenBio</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="Hands-on Workshops, AI Workshop, Bioinformatics Workshop, 1-Day Training" name="keywords" />
+    <meta content="Join LifeGenBio's intensive, hands-on workshops to fast-track your skills in AI, Data Science, and Biotechnology in just one or two days." name="description" />
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+    
+    <!-- Custom Styles for Popup -->
+    <style>
+        /* Registration Popup */
+        #registration-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1050;
+            display: none; /* Hidden by default */
+            align-items: center;
+            justify-content: center;
+        }
+        #registration-popup.show {
+            display: flex; /* Shown with JS */
+        }
+        #popup-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(24, 29, 56, 0.7);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+        #popup-modal {
+            position: relative;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+            width: 90%;
+            max-width: 500px;
+            z-index: 1051;
+        }
+        #close-popup {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #888;
+            cursor: pointer;
+        }
+        #close-popup:hover {
+            color: #333;
+        }
+    </style>
+  </head>
+
+  <body>
+    <!-- Spinner Start -->
+    <div
+      id="spinner"
+      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+    >
+      <div
+        class="spinner-border text-primary"
+        style="width: 3rem; height: 3rem"
+        role="status"
+      >
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    <nav
+      class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0"
+    >
+      <a
+        href="index.html"
+        class="navbar-brand d-flex align-items-center px-4 px-lg-5"
+      >
+        <h2 class="m-0 text-primary">
+          <i class="fa fa-book me-3"></i>LifeGenBio
+        </h2>
+      </a>
+      <button
+        type="button"
+        class="navbar-toggler me-4"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarCollapse"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto p-4 p-lg-0">
+          <a href="index.html" class="nav-item nav-link">Home</a>
+          <a href="about.html" class="nav-item nav-link">About Us</a>
+          <div class="nav-item dropdown">
+            <a
+              href="#"
+              class="nav-link dropdown-toggle active"
+              data-bs-toggle="dropdown"
+              >Services</a
+            >
+            <div class="dropdown-menu fade-down m-0">
+                <a href="workshops.html" class="dropdown-item active">Workshops</a>
+                <a href="corporate-training.html" class="dropdown-item">Corporate Training</a>
+                <a href="team.html" class="dropdown-item">Our Team</a>
+                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+            </div>
+          </div>
+          <a href="contact.html" class="nav-item nav-link">LifeGenBio Care</a>
+          <div class="nav-item dropdown">
+            <a
+              href="#"
+              class="nav-link dropdown-toggle"
+              data-bs-toggle="dropdown"
+              >Learn</a
+            >
+            <div class="dropdown-menu fade-down m-0">
+              <a href="team.html" class="dropdown-item">Our Team</a>
+              <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+              <a href="404.html" class="dropdown-item">404 Page</a>
+            </div>
+          </div>
+          <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+        </div>
+        <a href="#" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block join-now-btn"
+          >Join Now<i class="fa fa-arrow-right ms-3"></i
+        ></a>
+      </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-primary py-5 mb-5 page-header">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1 class="display-3 text-white animated slideInDown">Intensive & Hands-On Workshops</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">Workshops</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- Benefits Start -->
+    <div class="container-xxl py-5">
+      <div class="container">
+          <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center text-primary px-3">
+              Why Attend
+            </h6>
+            <h1 class="mb-5">Fast-Track Your Skills with LifeGenBio</h1>
+          </div>
+        <div class="row g-4">
+          <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="service-item text-center pt-3">
+              <div class="p-4">
+                <i class="fa fa-3x fa-bullseye text-primary mb-4"></i>
+                <h5 class="mb-3">Focused Learning</h5>
+                <p>
+                  Deep dive into a specific topic in a single, intensive session without a long-term commitment.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="service-item text-center pt-3">
+              <div class="p-4">
+                <i class="fa fa-3x fa-laptop-code text-primary mb-4"></i>
+                <h5 class="mb-3">Practical, Hands-On Skills</h5>
+                <p>
+                  Move beyond theory. Our workshops are project-based to ensure you leave with tangible skills.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="service-item text-center pt-3">
+              <div class="p-4">
+                <i class="fa fa-3x fa-user-tie text-primary mb-4"></i>
+                <h5 class="mb-3">Expert Instructors</h5>
+                <p>
+                  Learn directly from industry practitioners who are experts in their field and passionate teachers.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+            <div class="service-item text-center pt-3">
+              <div class="p-4">
+                <i class="fa fa-3x fa-users text-primary mb-4"></i>
+                <h5 class="mb-3">Networking Opportunity</h5>
+                <p>
+                  Connect with fellow learners and professionals who share your passion and career interests.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Benefits End -->
+
+    <!-- Workshops Start -->
+    <div class="container-xxl py-5">
+      <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+          <h6 class="section-title bg-white text-center text-primary px-3">
+            Schedule
+          </h6>
+          <h1 class="mb-5">Upcoming Workshops</h1>
+        </div>
+        <div class="row g-4 justify-content-center">
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="course-item bg-light h-100 d-flex flex-column">
+              <div class="text-center p-4 pb-0 flex-grow-1">
+                <i class="fa fa-3x fa-brain text-primary mb-4"></i>
+                <h4 class="mb-0">$199.00</h4>
+                <h5 class="my-3">Introduction to Generative AI with Python</h5>
+                <p class="text-muted">Go from theory to practice and build your first AI image generation model in this hands-on session.</p>
+              </div>
+              <div class="d-flex border-top">
+                <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>Oct 26, 2024</small>
+                <small class="flex-fill text-center border-end py-2"><i class="fa fa-clock text-primary me-2"></i>8 Hours</small>
+              </div>
+              <div class="p-3 text-center">
+                <a href="#" class="btn btn-primary register-btn" data-title="Introduction to Generative AI with Python" data-price="$199.00">Register Now <i class="fa fa-angle-right ms-2"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="course-item bg-light h-100 d-flex flex-column">
+              <div class="text-center p-4 pb-0 flex-grow-1">
+                <i class="fa fa-3x fa-dna text-primary mb-4"></i>
+                <h4 class="mb-0">$249.00</h4>
+                <h5 class="my-3">CRISPR Gene Editing: A Practical Primer</h5>
+                <p class="text-muted">Understand the fundamentals of CRISPR-Cas9 technology through interactive modules and hands-on simulations.</p>
+              </div>
+              <div class="d-flex border-top">
+                <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>Nov 9, 2024</small>
+                <small class="flex-fill text-center border-end py-2"><i class="fa fa-clock text-primary me-2"></i>8 Hours</small>
+              </div>
+              <div class="p-3 text-center">
+                <a href="#" class="btn btn-primary register-btn" data-title="CRISPR Gene Editing: A Practical Primer" data-price="$249.00">Register Now <i class="fa fa-angle-right ms-2"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="course-item bg-light h-100 d-flex flex-column">
+              <div class="text-center p-4 pb-0 flex-grow-1">
+                <i class="fa fa-3x fa-chart-pie text-primary mb-4"></i>
+                <h4 class="mb-0">$199.00</h4>
+                <h5 class="my-3">Data Visualization with Tableau</h5>
+                <p class="text-muted">Learn to turn raw data into compelling visual stories and build interactive dashboards from scratch.</p>
+              </div>
+              <div class="d-flex border-top">
+                <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>Nov 23, 2024</small>
+                <small class="flex-fill text-center border-end py-2"><i class="fa fa-clock text-primary me-2"></i>8 Hours</small>
+              </div>
+              <div class="p-3 text-center">
+                <a href="#" class="btn btn-primary register-btn" data-title="Data Visualization with Tableau" data-price="$199.00">Register Now <i class="fa fa-angle-right ms-2"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Workshops End -->
+
+    <!-- Who Should Attend & Takeaways Start -->
+    <div class="container-xxl py-5" style="background-color: #f8f9fa;">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <h6 class="section-title bg-white text-start text-primary pe-3">Audience</h6>
+                    <h1 class="mb-4">Who Should Attend?</h1>
+                    <p class="mb-4">Our workshops are designed for a diverse range of individuals eager to gain practical, high-demand skills quickly.</p>
+                    <p><i class="fa fa-check text-primary me-3"></i><b>Students & Recent Graduates</b> looking to add a competitive edge to their resume.</p>
+                    <p><i class="fa fa-check text-primary me-3"></i><b>Working Professionals</b> aiming to upskill, reskill, or transition into a new role.</p>
+                    <p><i class="fa fa-check text-primary me-3"></i><b>Researchers & Academics</b> who want to apply new computational tools to their work.</p>
+                    <p><i class="fa fa-check text-primary me-3"></i><b>Entrepreneurs & Managers</b> seeking to understand technology to drive business decisions.</p>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <h6 class="section-title bg-white text-start text-primary pe-3">Outcomes</h6>
+                    <h1 class="mb-4">What You'll Take Away</h1>
+                    <p class="mb-4">You won't just leave with knowledge; you'll leave with tangible assets and confidence.</p>
+                    <p><i class="fa fa-check text-primary me-3"></i><b>Certificate of Completion</b> from LifeGenBio to validate your new skills.</p>
+                    <p><i class="fa fa-check text-primary me-3"></i><b>A Completed Project</b> to showcase in your professional portfolio or on GitHub.</p>
+                    <p><i class="fa fa-check text-primary me-3"></i><b>Ready-to-Use Code</b>, templates, and resources for your future projects.</p>
+                    <p><i class="fa fa-check text-primary me-3"></i><b>A Network of Peers</b> and a direct line to our expert instructors for questions.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Who Should Attend & Takeaways End -->
+    
+    <!-- Testimonial Start -->
+    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+      <div class="container">
+        <div class="text-center">
+          <h6 class="section-title bg-white text-center text-primary px-3">
+            Testimonials
+          </h6>
+          <h1 class="mb-5">What Our Attendees Say!</h1>
+        </div>
+        <div class="owl-carousel testimonial-carousel position-relative">
+          <div class="testimonial-item text-center">
+            <img
+              class="border rounded-circle p-2 mx-auto mb-3"
+              src="img/testimonial-1.jpg"
+              style="width: 80px; height: 80px"
+            />
+            <h5 class="mb-0">Priya Sharma</h5>
+            <p>Marketing Analyst</p>
+            <div class="testimonial-text bg-light text-center p-4">
+              <p class="mb-0">
+                "The 1-day Tableau workshop was exactly what I needed to upskill for my role. I went from being intimidated by data to creating insightful dashboards for my team the very next week. Incredibly valuable!"
+              </p>
+            </div>
+          </div>
+          <div class="testimonial-item text-center">
+            <img
+              class="border rounded-circle p-2 mx-auto mb-3"
+              src="img/testimonial-2.jpg"
+              style="width: 80px; height: 80px"
+            />
+            <h5 class="mb-0">David Chen</h5>
+            <p>PhD Candidate, Molecular Biology</p>
+            <div class="testimonial-text bg-light text-center p-4">
+              <p class="mb-0">
+                "The CRISPR workshop clarified so many complex concepts. The instructor was an expert and made the material accessible and engaging. The hands-on simulation was the highlight. A must for any life science student."
+              </p>
+            </div>
+          </div>
+          <div class="testimonial-item text-center">
+            <img
+              class="border rounded-circle p-2 mx-auto mb-3"
+              src="img/testimonial-4.jpg"
+              style="width: 80px; height: 80px"
+            />
+            <h5 class="mb-0">Michael Johnson</h5>
+            <p>Software Developer</p>
+            <div class="testimonial-text bg-light text-center p-4">
+              <p class="mb-0">
+                "In just 8 hours, I learned more practical AI skills than in weeks of online tutorials. The project-based approach at LifeGenBio is fantastic for solidifying your understanding. I highly recommend these workshops."
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Testimonial End -->
+    
+    <!-- FAQ Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">FAQ</h6>
+                <h1 class="mb-5">Frequently Asked Questions</h1>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="wow fadeInUp" data-wow-delay="0.3s">
+                        <h5>Are these workshops beginner-friendly?</h5>
+                        <p class="mb-4">Most of our workshops are designed for beginners with no prior experience required, unless specified otherwise in the description. We start with the fundamentals and build up to the hands-on project.</p>
+
+                        <h5>What do I need to bring or prepare?</h5>
+                        <p class="mb-4">All you need is your own laptop and an eagerness to learn! We will send a detailed setup guide with any required software installations a week before the workshop date.</p>
+
+                        <h5>Will I receive a certificate after the workshop?</h5>
+                        <p class="mb-4">Yes, all attendees who successfully complete the workshop will receive a verifiable Certificate of Completion from LifeGenBio, which you can add to your LinkedIn profile and resume.</p>
+                        
+                        <h5>What is your cancellation policy?</h5>
+                        <p class="mb-4">You can receive a full refund if you cancel up to 7 days before the workshop date. A 50% refund is available for cancellations made up to 3 days prior. Unfortunately, we cannot offer refunds for cancellations made less than 72 hours before the event.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FAQ End -->
+
+    <!-- Footer Start -->
+    <div
+      class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn"
+      data-wow-delay="0.1s"
+    >
+      <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-4 col-md-6">
+                <h4 class="text-white mb-4">LifeGenBio</h4>
+                <p>Empowering the next generation of innovators at the intersection of technology and life sciences.</p>
+                <div class="d-flex pt-2">
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6">
+                <h4 class="text-white mb-3">About</h4>
+                <a class="btn btn-link" href="">Who are we?</a>
+                <a class="btn btn-link" href="">What we do?</a>
+                <a class="btn btn-link" href="">Why LifeGenBio?</a>
+                <a class="btn btn-link" href="">Workshops</a>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h4 class="text-white mb-3">Get in Touch</h4>
+                <p class="mb-2">
+                <i class="fab fa-whatsapp me-3"></i>+91-9852880174
+                </p>
+                <p class="mb-2">
+                <i class="fa fa-phone-alt me-3"></i>+91-7588656772
+                </p>
+                <p class="mb-2">
+                <i class="fa fa-envelope me-3"></i>info@lifegenbio.com
+                </p>
+            </div>
+             <div class="col-lg-3 col-md-6">
+                <h4 class="text-white mb-3">Latest Insights</h4>
+                <a class="btn btn-link" href="">Resources</a>
+                <a class="btn btn-link" href="">Blog</a>
+            </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="copyright">
+          <div class="row">
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+              &copy; <a class="border-bottom" href="#">LifeGenBio</a>, All
+              Right Reserved.
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+              <div class="footer-menu">
+                <a href="">Privacy Policy</a>
+                <a href="">TnCs</a>
+                <a href="">Refund and Cancellation Policy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Registration Popup Start -->
+    <div id="registration-popup">
+        <div id="popup-overlay"></div>
+        <div id="popup-modal">
+            <span id="close-popup">&times;</span>
+            <h4 class="mb-1 text-primary">Workshop Registration</h4>
+            <h5 class="mb-3" id="popup-workshop-title">Workshop Name</h5>
+            <p>Enter your details to reserve your spot. The registration fee is <strong id="popup-workshop-price">$0.00</strong>.</p>
+            <form>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="popupName" placeholder="Your Name" required>
+                    <label for="popupName">Full Name</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="popupEmail" placeholder="Your Email" required>
+                    <label for="popupEmail">Email Address</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="tel" class="form-control" id="popupPhone" placeholder="Your Phone" required>
+                    <label for="popupPhone">Phone Number</label>
+                </div>
+                <button class="btn btn-primary w-100 py-3" type="submit">Submit Request</button>
+            </form>
+        </div>
+    </div>
+    <!-- Registration Popup End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"
+      ><i class="bi bi-arrow-up"></i
+    ></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <!-- Custom Popup Javascript -->
+    <script>
+        $(document).ready(function(){
+            const popup = $('#registration-popup');
+
+            // Open popup logic
+            $('.register-btn').on('click', function(e) {
+                e.preventDefault();
+                
+                // Get data from the clicked button
+                const title = $(this).data('title');
+                const price = $(this).data('price');
+
+                // Update popup content
+                popup.find('#popup-workshop-title').text(title);
+                popup.find('#popup-workshop-price').text(price);
+
+                // Show the popup
+                popup.addClass('show');
+            });
+
+            // Close popup logic
+            $('#close-popup, #popup-overlay').on('click', function() {
+                popup.removeClass('show');
+            });
+        });
+    </script>
+  </body>
+</html>
