@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Our Team - LifeGenBio</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="Our Team, Leadership, AI Experts, LifeGenBio, Altaf Hussain, Rahul Kumar, Lubna Akhtar, Sarah Joseph" name="keywords" />
+    <meta content="Meet the visionary leadership team at LifeGenBio. Our experts in AI, technology, and business are dedicated to revolutionizing education and innovation." name="description" />
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+    
+    <!-- Custom Styles for Slider Form and Uniform Cards -->
+    <style>
+        /* Join Now Slider Form */
+        #form-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 1040;
+            display: none;
+        }
+        #join-now-slider {
+            position: fixed;
+            top: 0;
+            left: -35%; /* Start off-screen */
+            width: 30%; /* Cover 30% of the page */
+            height: 100vh;
+            background-color: white;
+            z-index: 1050;
+            padding: 40px 30px;
+            box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+            transition: left 0.4s ease-in-out;
+            overflow-y: auto;
+        }
+        #join-now-slider.show {
+            left: 0; /* Slide in */
+        }
+        #close-slider {
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #333;
+            cursor: pointer;
+        }
+        @media (max-width: 992px) {
+            #join-now-slider {
+                width: 60%;
+                left: -65%;
+            }
+        }
+        @media (max-width: 768px) {
+            #join-now-slider {
+                width: 85%;
+                left: -90%;
+            }
+        }
+
+        /* Team Section Hover Effect */
+        .team-item .overflow-hidden {
+            position: relative;
+        }
+        .team-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(24, 29, 56, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            padding: 20px;
+        }
+        .team-item:hover .team-overlay {
+            opacity: 1;
+        }
+        .team-overlay p.quote {
+            color: white;
+            font-style: italic;
+            text-align: center;
+            margin: 0;
+        }
+        .team-overlay .social-icons {
+            margin-top: 15px;
+        }
+        .team-overlay .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        .team-overlay .social-icons a:hover {
+            color: #06BBCC; /* Primary color */
+        }
+        
+        /* --- UNIFORMITY FIXES --- */
+        .team-grid .team-item .overflow-hidden {
+            height: 400px;
+        }
+        .team-grid .team-item img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: top; /* Focus on the top part of images */
+        }
+        .team-item .team-text {
+            min-height: 180px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    </style>
+  </head>
+
+  <body>
+    <!-- Spinner Start -->
+    <div
+      id="spinner"
+      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+    >
+      <div
+        class="spinner-border text-primary"
+        style="width: 3rem; height: 3rem"
+        role="status"
+      >
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    <nav
+      class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0"
+    >
+      <a
+        href="index.html"
+        class="navbar-brand d-flex align-items-center px-4 px-lg-5"
+      >
+        <h2 class="m-0 text-primary">
+          <i class="fa fa-book me-3"></i>LifeGenBio
+        </h2>
+      </a>
+      <button
+        type="button"
+        class="navbar-toggler me-4"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarCollapse"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto p-4 p-lg-0">
+          <a href="index.html" class="nav-item nav-link active">Home</a>
+          <a href="about.html" class="nav-item nav-link">About Us</a>
+          <div class="nav-item dropdown">
+            <a
+              href="#"
+              class="nav-link dropdown-toggle"
+              data-bs-toggle="dropdown"
+              >Services</a
+            >
+            <div class="dropdown-menu fade-down m-0">
+              <a href="softwaredevelopment.html" class="dropdown-item">Software Development with AI</a>
+              <a href="artificialintelligence.html" class="dropdown-item">Artificial Intelligence</a>
+              <a href="aiautomation.html" class="dropdown-item">AI Automation</a>
+              <a href="aiagents.html" class="dropdown-item">AI Agents</a>
+              <a href="researchconsultancyservices.html" class="dropdown-item">Research Consultancy Services</a>
+              <a href="mdsimulationanddrugdesign.html" class="dropdown-item">MD Simulation and Drug Design</a>
+              <a href="genomics.html" class="dropdown-item">Genomics, transcriptomics, and proteomics Services</a>
+              <a href="metagenomics.html" class="dropdown-item">Metagenomics</a>
+              <a href="epigenetics.html" class="dropdown-item">Epigenetics</a>
+              <a href="trainingandworkshop.html" class="dropdown-item">Training and Workshop</a>
+            </div>
+          </div>
+          <a href="lifegenbiocare.html" class="nav-item nav-link">LifeGenBio Care</a>
+          <div class="nav-item dropdown">
+            <a
+              href="#"
+              class="nav-link dropdown-toggle"
+              data-bs-toggle="dropdown"
+              >Learn</a
+            >
+            <div class="dropdown-menu fade-down m-0">
+              <a href="ourteam.html" class="dropdown-item">Our Team</a>
+              <a href="ourtrainers.html" class="dropdown-item">Our Trainers</a>
+              
+            </div>
+          </div>
+          <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+        </div>
+        <a href="#" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block join-now-btn"
+          >Join Now<i class="fa fa-arrow-right ms-3"></i
+        ></a>
+      </div>
+    </nav>
+    <!-- Navbar End -->
+    
+    <!-- Join Now Slider Form Start -->
+    <div id="form-overlay"></div>
+    <div id="join-now-slider">
+        <span id="close-slider">&times;</span>
+        <h3 class="mb-4 text-primary">Connect With Our Team</h3>
+        <p>Interested in partnerships, corporate training, or joining our mission? Let us know.</p>
+        <form>
+            <div class="mb-3">
+                <label for="sliderName" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="sliderName" placeholder="Enter your name" required>
+            </div>
+            <div class="mb-3">
+                <label for="sliderEmail" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="sliderEmail" placeholder="name@example.com" required>
+            </div>
+             <div class="mb-3">
+                <label for="sliderCompany" class="form-label">Company (Optional)</label>
+                <input type="text" class="form-control" id="sliderCompany" placeholder="Your Company Name">
+            </div>
+            <div class="mb-4">
+                <label for="sliderCourse" class="form-label">Inquiry Type</label>
+                <select class="form-select" id="sliderCourse">
+                    <option selected>Select an option</option>
+                    <option value="1">Partnership Opportunities</option>
+                    <option value="2">Corporate Training</option>
+                    <option value="3">Career Opportunities</option>
+                    <option value="4">General Inquiry</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary w-100 py-3">Submit</button>
+        </form>
+    </div>
+    <!-- Join Now Slider Form End -->
+
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-primary py-5 mb-5 page-header" style="background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url(https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop); background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1 class="display-3 text-white animated slideInDown">The Architects of Innovation</h1>
+                    <p class="fs-5 text-white mb-4 pb-2 animated slideInDown">Meet the visionary minds driving LifeGenBio's mission to bridge technology and life sciences.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+
+    <!-- Team Start -->
+    <div class="container-xxl py-5">
+      <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+          <h6 class="section-title bg-white text-center text-primary px-3">
+            Our Leadership
+          </h6>
+          <h1 class="mb-5">Meet Our Expert Team</h1>
+        </div>
+        <div class="row g-4 team-grid">
+          <!-- Altaf Hussain -->
+          <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="team-item bg-light">
+              <div class="overflow-hidden">
+                <img class="img-fluid" src="img/altaf.jpg" alt="Altaf Hussain" />
+                <div class="team-overlay">
+                    <p class="quote">"If you are working on something that you really care about, you don’t have to be pushed. The vision pulls you."</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+              </div>
+              <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                  <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                      <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                      <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                      <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                  </div>
+              </div>
+              <div class="text-center p-4">
+                <h5 class="mb-0">Altaf Hussain</h5>
+                <small>Founder & External Business Consultant</small>
+                <hr>
+                <p class="mt-3 text-muted small">A visionary leader providing strategic oversight, Altaf is passionate about creating accessible learning solutions and empowering individuals to achieve their full potential.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Rahul Kumar -->
+          <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="team-item bg-light">
+              <div class="overflow-hidden">
+                <img class="img-fluid" src="img/Rahul.jpeg" alt="Rahul Kumar" />
+                <div class="team-overlay">
+                    <p class="quote">"Innovation thrives where expertise meets vision—and great teams turn challenges into new possibilities."</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+              </div>
+               <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                  <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                      <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                      <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                      <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                  </div>
+              </div>
+              <div class="text-center p-4">
+                <h5 class="mb-0">Rahul Kumar</h5>
+                <small>Chief Executive Officer</small>
+                 <hr>
+                <p class="mt-3 text-muted small">A former Oracle engineer, Rahul combines deep technical insight with strategic leadership to drive growth and foster a culture of continuous innovation and collaboration.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Lubna Akhtar -->
+          <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="team-item bg-light">
+              <div class="overflow-hidden">
+                <img class="img-fluid" src="img/lubna.jpeg" alt="Lubna Akhtar" />
+                <div class="team-overlay">
+                    <p class="quote">"Technology is the bridge between imagination and reality. We build that bridge with elegant, scalable code."</p>
+                     <div class="social-icons">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+              </div>
+              <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                  <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                      <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                      <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                      <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                  </div>
+              </div>
+              <div class="text-center p-4">
+                <h5 class="mb-0">Lubna Akhtar</h5>
+                <small>Chief Technology Officer</small>
+                 <hr>
+                 <p class="mt-3 text-muted small">Lubna spearheads our technology vision, leading software development with expertise in designing scalable solutions and leveraging emerging tech for transformative impact.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Sarah Joseph -->
+          <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+            <div class="team-item bg-light">
+              <div class="overflow-hidden">
+                <img class="img-fluid" src="img/sarah.jpg" alt="Sarah Joseph" />
+                <div class="team-overlay">
+                    <p class="quote">"Operational excellence isn't just about process; it's about empowering people with the right tools to achieve seamless results."</p>
+                     <div class="social-icons">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+              </div>
+               <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                  <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                      <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                      <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                      <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                  </div>
+              </div>
+              <div class="text-center p-4">
+                <h5 class="mb-0">Sarah Joseph</h5>
+                <small>Head of Operations</small>
+                 <hr>
+                <p class="mt-3 text-muted small">A dynamic and results-oriented leader, Sarah excels at streamlining business processes, managing complex operations, and enhancing organizational efficiency.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Team End -->
+    
+    <!-- CTA Start -->
+    <div class="container-fluid bg-dark text-light my-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center py-5">
+            <h1 class="display-4 text-white mb-4 animated slideInDown">Join Our Mission</h1>
+            <p class="text-white fs-5 mb-4 pb-2 animated slideInDown">We are always looking for passionate individuals and innovative partners.<br>Let's connect and build the future of education and technology together.</p>
+            <a href="contact.html" class="btn btn-primary py-md-3 px-md-5 animated slideInRight">Contact Us</a>
+        </div>
+    </div>
+    <!-- CTA End -->
+
+
+    <!-- Footer Start -->
+    <div
+      class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn"
+      data-wow-delay="0.1s"
+    >
+      <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-4 col-md-6">
+                <h4 class="text-white mb-4">LifeGenBio</h4>
+                <p>Empowering the next generation of innovators at the intersection of technology and life sciences.</p>
+                <div class="d-flex pt-2">
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6">
+                <h4 class="text-white mb-3">About</h4>
+                <a class="btn btn-link" href="">Who are we?</a>
+                <a class="btn btn-link" href="">What we do?</a>
+                <a class="btn btn-link" href="">Why LifeGenBio?</a>
+                <a class="btn btn-link" href="">Workshops</a>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h4 class="text-white mb-3">Get in Touch</h4>
+                <p class="mb-2">
+                <i class="fab fa-whatsapp me-3"></i>+91-9852880174
+                </p>
+                <p class="mb-2">
+                <i class="fa fa-phone-alt me-3"></i>+91-7588656772
+                </p>
+                <p class="mb-2">
+                <i class="fa fa-envelope me-3"></i>info@lifegenbio.com
+                </p>
+            </div>
+             <div class="col-lg-3 col-md-6">
+                <h4 class="text-white mb-3">Latest Insights</h4>
+                <a class="btn btn-link" href="">Resources</a>
+                <a class="btn btn-link" href="">Blog</a>
+            </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="copyright">
+          <div class="row">
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+              &copy; <a class="border-bottom" href="#">LifeGenBio</a>, All
+              Right Reserved.
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+              <div class="footer-menu">
+                <a href="">Privacy Policy</a>
+                <a href="">TnCs</a>
+                <a href="">Refund and Cancellation Policy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"
+      ><i class="bi bi-arrow-up"></i
+    ></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    
+    <!-- Custom Javascript -->
+    <script>
+        $(document).ready(function(){
+            // Join Now Slider Form Logic
+            const slider = $('#join-now-slider');
+            const overlay = $('#form-overlay');
+            
+            $('.join-now-btn').on('click', function(e) {
+                e.preventDefault();
+                overlay.fadeIn();
+                slider.addClass('show');
+            });
+
+            $('#close-slider, #form-overlay').on('click', function() {
+                slider.removeClass('show');
+                overlay.fadeOut();
+            });
+        });
+    </script>
+  </body>
+</html>
