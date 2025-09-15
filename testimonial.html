@@ -42,6 +42,7 @@
 
 
     <!-- Navbar Start -->
+    <!-- Navbar Start -->
     <nav
       class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0"
     >
@@ -65,26 +66,43 @@
         <div class="navbar-nav ms-auto p-4 p-lg-0">
           <a href="index.html" class="nav-item nav-link active">Home</a>
           <a href="about.html" class="nav-item nav-link">About Us</a>
+          <style>
+  /* This CSS is required to show the submenu on hover */
+  .submenu-container:hover > .dropdown-menu {
+    display: block !important;
+  }
+</style>
           <div class="nav-item dropdown">
-            <a
-              href="#"
-              class="nav-link dropdown-toggle"
-              data-bs-toggle="dropdown"
-              >Services</a
-            >
-            <div class="dropdown-menu fade-down m-0">
-              <a href="softwaredevelopment.html" class="dropdown-item">Software Development with AI</a>
-              <a href="artificialintelligence.html" class="dropdown-item">Artificial Intelligence</a>
-              <a href="aiautomation.html" class="dropdown-item">AI Automation</a>
-              <a href="aiagents.html" class="dropdown-item">AI Agents</a>
-              <a href="researchconsultancyservices.html" class="dropdown-item">Research Consultancy Services</a>
-              <a href="mdsimulationanddrugdesign.html" class="dropdown-item">MD Simulation and Drug Design</a>
-              <a href="genomics.html" class="dropdown-item">Genomics, transcriptomics, and proteomics Services</a>
-              <a href="metagenomics.html" class="dropdown-item">Metagenomics</a>
-              <a href="epigenetics.html" class="dropdown-item">Epigenetics</a>
-              <a href="trainingandworkshop.html" class="dropdown-item">Training and Workshop</a>
-            </div>
-          </div>
+  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+  <div class="dropdown-menu fade-down m-0">
+
+    <!-- AI Services Submenu -->
+    <div class="submenu-container" style="position: relative;">
+      <a href="#" class="dropdown-item dropdown-toggle">AI Services</a>
+      <div class="dropdown-menu" style="position: absolute; top: 0; left: 100%; display: none;">
+        <a href="softwaredevelopment.html" class="dropdown-item">Software Development with AI</a>
+        <a href="artificialintelligence.html" class="dropdown-item">Artificial Intelligence</a>
+        <a href="aiautomation.html" class="dropdown-item">AI Automation</a>
+        <a href="aiagents.html" class="dropdown-item">AI Agents</a>
+      </div>
+    </div>
+
+    <!-- Life Science Services Submenu -->
+    <div class="submenu-container" style="position: relative;">
+      <a href="#" class="dropdown-item dropdown-toggle">Life Science Services</a>
+      <div class="dropdown-menu" style="position: absolute; top: 0; left: 100%; display: none;">
+        <a href="mdsimulationanddrugdesign.html" class="dropdown-item">MD Simulation and Drug Design</a>
+        <a href="genomics.html" class="dropdown-item">Genomics, transcriptomics, and proteomics Services</a>
+        <a href="metagenomics.html" class="dropdown-item">Metagenomics</a>
+        <a href="epigenetics.html" class="dropdown-item">Epigenetics</a>
+      </div>
+    </div>
+
+    <!-- Regular Dropdown Items -->
+    <a href="researchconsultancyservices.html" class="dropdown-item">Research Consultancy Services</a>
+    <a href="trainingandworkshop.html" class="dropdown-item">Training and Workshop</a>
+  </div>
+</div>
           <a href="lifegenbiocare.html" class="nav-item nav-link">LifeGenBio Care</a>
           <div class="nav-item dropdown">
             <a
@@ -106,6 +124,7 @@
         ></a>
       </div>
     </nav>
+    <!-- Navbar End -->
     <!-- Navbar End -->
 
 

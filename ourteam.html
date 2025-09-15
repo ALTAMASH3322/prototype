@@ -166,6 +166,7 @@
     <!-- Spinner End -->
 
     <!-- Navbar Start -->
+    <!-- Navbar Start -->
     <nav
       class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0"
     >
@@ -189,26 +190,43 @@
         <div class="navbar-nav ms-auto p-4 p-lg-0">
           <a href="index.html" class="nav-item nav-link active">Home</a>
           <a href="about.html" class="nav-item nav-link">About Us</a>
+          <style>
+  /* This CSS is required to show the submenu on hover */
+  .submenu-container:hover > .dropdown-menu {
+    display: block !important;
+  }
+</style>
           <div class="nav-item dropdown">
-            <a
-              href="#"
-              class="nav-link dropdown-toggle"
-              data-bs-toggle="dropdown"
-              >Services</a
-            >
-            <div class="dropdown-menu fade-down m-0">
-              <a href="softwaredevelopment.html" class="dropdown-item">Software Development with AI</a>
-              <a href="artificialintelligence.html" class="dropdown-item">Artificial Intelligence</a>
-              <a href="aiautomation.html" class="dropdown-item">AI Automation</a>
-              <a href="aiagents.html" class="dropdown-item">AI Agents</a>
-              <a href="researchconsultancyservices.html" class="dropdown-item">Research Consultancy Services</a>
-              <a href="mdsimulationanddrugdesign.html" class="dropdown-item">MD Simulation and Drug Design</a>
-              <a href="genomics.html" class="dropdown-item">Genomics, transcriptomics, and proteomics Services</a>
-              <a href="metagenomics.html" class="dropdown-item">Metagenomics</a>
-              <a href="epigenetics.html" class="dropdown-item">Epigenetics</a>
-              <a href="trainingandworkshop.html" class="dropdown-item">Training and Workshop</a>
-            </div>
-          </div>
+  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+  <div class="dropdown-menu fade-down m-0">
+
+    <!-- AI Services Submenu -->
+    <div class="submenu-container" style="position: relative;">
+      <a href="#" class="dropdown-item dropdown-toggle">AI Services</a>
+      <div class="dropdown-menu" style="position: absolute; top: 0; left: 100%; display: none;">
+        <a href="softwaredevelopment.html" class="dropdown-item">Software Development with AI</a>
+        <a href="artificialintelligence.html" class="dropdown-item">Artificial Intelligence</a>
+        <a href="aiautomation.html" class="dropdown-item">AI Automation</a>
+        <a href="aiagents.html" class="dropdown-item">AI Agents</a>
+      </div>
+    </div>
+
+    <!-- Life Science Services Submenu -->
+    <div class="submenu-container" style="position: relative;">
+      <a href="#" class="dropdown-item dropdown-toggle">Life Science Services</a>
+      <div class="dropdown-menu" style="position: absolute; top: 0; left: 100%; display: none;">
+        <a href="mdsimulationanddrugdesign.html" class="dropdown-item">MD Simulation and Drug Design</a>
+        <a href="genomics.html" class="dropdown-item">Genomics, transcriptomics, and proteomics Services</a>
+        <a href="metagenomics.html" class="dropdown-item">Metagenomics</a>
+        <a href="epigenetics.html" class="dropdown-item">Epigenetics</a>
+      </div>
+    </div>
+
+    <!-- Regular Dropdown Items -->
+    <a href="researchconsultancyservices.html" class="dropdown-item">Research Consultancy Services</a>
+    <a href="trainingandworkshop.html" class="dropdown-item">Training and Workshop</a>
+  </div>
+</div>
           <a href="lifegenbiocare.html" class="nav-item nav-link">LifeGenBio Care</a>
           <div class="nav-item dropdown">
             <a
@@ -230,6 +248,7 @@
         ></a>
       </div>
     </nav>
+    <!-- Navbar End -->
     <!-- Navbar End -->
     
     <!-- Join Now Slider Form Start -->
@@ -290,7 +309,7 @@
           </h6>
           <h1 class="mb-5">Meet Our Expert Team</h1>
         </div>
-        <div class="row g-4 team-grid">
+        <div class="row g-4 team-grid justify-content-center">
           <!-- Altaf Hussain -->
           <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
             <div class="team-item bg-light">
@@ -396,13 +415,44 @@
                   </div>
               </div>
               <div class="text-center p-4">
-                <h5 class="mb-0">Sarah Joseph</h5>
+                <h5 class="mb-0">Sameet Naushad</h5>
                 <small>Head of Operations</small>
                  <hr>
                 <p class="mt-3 text-muted small">A dynamic and results-oriented leader, Sarah excels at streamlining business processes, managing complex operations, and enhancing organizational efficiency.</p>
               </div>
+              
             </div>
           </div>
+          <!-- Ujjwala Apoorva - Chief Career Officer -->
+           <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+            <div class="team-item bg-light">
+              <div class="overflow-hidden">
+                <img class="img-fluid" src="img/ujjwala.jpg" alt="ujjwala" />
+                <div class="team-overlay">
+                    <p class="quote">“Career excellence isn’t just about opportunities; it’s about empowering people with the right guidance and tools to achieve their fullest potential.”</p>
+                     <div class="social-icons">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+              </div>
+               <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                  <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                      <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                      <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                      <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                  </div>
+              </div>
+              
+              <div class="text-center p-4">
+                <h5 class="mb-0">Ujjwala Apoorva</h5>
+                <small>Chief Career Officer</small>
+                 <hr>
+                <p class="mt-3 text-muted small">A visionary and people-focused leader, Ujjwala Apoorva excels at empowering careers, fostering growth opportunities, and driving strategic initiatives that shape future-ready professionals.</p>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>

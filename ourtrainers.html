@@ -40,6 +40,15 @@
     
     <!-- Custom Styles -->
     <style>
+        /* --- NEW: Body Background for Glass Effect --- */
+        body {
+            background-color: #181D38; /* Fallback color */
+            background-image: linear-gradient(rgba(24, 29, 56, 0.9), rgba(24, 29, 56, 0.9)), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
+
         /* Join Now Slider Form */
         #form-overlay {
             position: fixed;
@@ -89,31 +98,26 @@
             }
         }
 
-        /* Trainer Card Styles */
+        /* --- NEW: Glassmorphism Trainer Card Styles --- */
         .trainer-card {
-            background: #f8f9fa;
-            border: 1px solid #dee2e6;
-            border-radius: 0.5rem;
-            overflow: hidden;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px); /* For Safari */
+            border-radius: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             height: 100%;
+            padding: 2rem;
+            color: #f0f0f0;
         }
         .trainer-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
-        }
-        .trainer-image {
-            height: 300px;
-            width: 100%;
-            object-fit: cover;
-            object-position: top;
-        }
-        .trainer-content {
-            padding: 1.5rem;
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 0 25px rgba(6, 187, 204, 0.5); /* Glow effect with primary color */
         }
         .trainer-title {
             font-weight: 700;
-            color: #181D38; /* Dark blue from template */
+            color: #ffffff;
         }
         .trainer-role {
             color: #06BBCC; /* Primary color */
@@ -121,15 +125,26 @@
             font-size: 0.9rem;
             text-transform: uppercase;
         }
+        .trainer-card .text-muted {
+            color: #d1d1d1 !important; /* Lighter text for better contrast */
+        }
         .trainer-section-title {
             font-weight: 600;
-            margin-top: 1rem;
-            margin-bottom: 0.5rem;
-            color: #181D38;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #ffffff;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 0.5rem;
         }
         .trainer-skills span.badge {
             font-size: 0.8rem;
             font-weight: 500;
+        }
+        .bg-primary-soft {
+            background-color: rgba(6, 187, 204, 0.15) !important;
+        }
+        .text-primary {
+            color: #06BBCC !important;
         }
     </style>
   </head>
@@ -144,68 +159,56 @@
     <!-- Spinner End -->
 
     <!-- Navbar Start -->
-    <nav
-      class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0"
-    >
-      <a
-        href="index.html"
-        class="navbar-brand d-flex align-items-center px-4 px-lg-5"
-      >
-        <h2 class="m-0 text-primary">
-          <i class="fa fa-book me-3"></i>LifeGenBio
-        </h2>
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+      <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+        <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>LifeGenBio</h2>
       </a>
-      <button
-        type="button"
-        class="navbar-toggler me-4"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarCollapse"
-      >
+      <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto p-4 p-lg-0">
           <a href="index.html" class="nav-item nav-link active">Home</a>
           <a href="about.html" class="nav-item nav-link">About Us</a>
+          <style>
+            .submenu-container:hover > .dropdown-menu { display: block !important; }
+          </style>
           <div class="nav-item dropdown">
-            <a
-              href="#"
-              class="nav-link dropdown-toggle"
-              data-bs-toggle="dropdown"
-              >Services</a
-            >
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
             <div class="dropdown-menu fade-down m-0">
-              <a href="softwaredevelopment.html" class="dropdown-item">Software Development with AI</a>
-              <a href="artificialintelligence.html" class="dropdown-item">Artificial Intelligence</a>
-              <a href="aiautomation.html" class="dropdown-item">AI Automation</a>
-              <a href="aiagents.html" class="dropdown-item">AI Agents</a>
+              <div class="submenu-container" style="position: relative;">
+                <a href="#" class="dropdown-item dropdown-toggle">AI Services</a>
+                <div class="dropdown-menu" style="position: absolute; top: 0; left: 100%; display: none;">
+                  <a href="softwaredevelopment.html" class="dropdown-item">Software Development with AI</a>
+                  <a href="artificialintelligence.html" class="dropdown-item">Artificial Intelligence</a>
+                  <a href="aiautomation.html" class="dropdown-item">AI Automation</a>
+                  <a href="aiagents.html" class="dropdown-item">AI Agents</a>
+                </div>
+              </div>
+              <div class="submenu-container" style="position: relative;">
+                <a href="#" class="dropdown-item dropdown-toggle">Life Science Services</a>
+                <div class="dropdown-menu" style="position: absolute; top: 0; left: 100%; display: none;">
+                  <a href="mdsimulationanddrugdesign.html" class="dropdown-item">MD Simulation and Drug Design</a>
+                  <a href="genomics.html" class="dropdown-item">Genomics, transcriptomics, and proteomics Services</a>
+                  <a href="metagenomics.html" class="dropdown-item">Metagenomics</a>
+                  <a href="epigenetics.html" class="dropdown-item">Epigenetics</a>
+                </div>
+              </div>
               <a href="researchconsultancyservices.html" class="dropdown-item">Research Consultancy Services</a>
-              <a href="mdsimulationanddrugdesign.html" class="dropdown-item">MD Simulation and Drug Design</a>
-              <a href="genomics.html" class="dropdown-item">Genomics, transcriptomics, and proteomics Services</a>
-              <a href="metagenomics.html" class="dropdown-item">Metagenomics</a>
-              <a href="epigenetics.html" class="dropdown-item">Epigenetics</a>
               <a href="trainingandworkshop.html" class="dropdown-item">Training and Workshop</a>
             </div>
           </div>
           <a href="lifegenbiocare.html" class="nav-item nav-link">LifeGenBio Care</a>
           <div class="nav-item dropdown">
-            <a
-              href="#"
-              class="nav-link dropdown-toggle"
-              data-bs-toggle="dropdown"
-              >Learn</a
-            >
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Learn</a>
             <div class="dropdown-menu fade-down m-0">
               <a href="ourteam.html" class="dropdown-item">Our Team</a>
               <a href="ourtrainers.html" class="dropdown-item">Our Trainers</a>
-              
             </div>
           </div>
           <a href="contact.html" class="nav-item nav-link">Contact Us</a>
         </div>
-        <a href="#" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block join-now-btn"
-          >Join Now<i class="fa fa-arrow-right ms-3"></i
-        ></a>
+        <a href="#" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block join-now-btn">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
       </div>
     </nav>
     <!-- Navbar End -->
@@ -244,7 +247,6 @@
     </div>
     <!-- Join Now Slider Form End -->
 
-
     <!-- Header Start -->
     <div class="container-fluid bg-primary py-5 mb-5 page-header" style="background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url(https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2070&auto=format&fit=crop); background-position: center; background-repeat: no-repeat; background-size: cover;">
         <div class="container py-5">
@@ -258,110 +260,116 @@
     </div>
     <!-- Header End -->
 
-
     <!-- Trainers Start -->
     <div class="container-xxl py-5">
       <div class="container">
         <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-          <h6 class="section-title bg-white text-center text-primary px-3">
-            Expert Instructors
-          </h6>
-          <h1 class="mb-5">Our World-Class Training Faculty</h1>
+          <h6 class="section-title bg-white text-center text-primary px-3">Expert Instructors</h6>
+          <h1 class="mb-5 text-white">Our World-Class Training Faculty</h1>
         </div>
         <div class="row g-4">
           
           <!-- Dr. Avinash Mishra -->
-          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="trainer-card d-flex flex-column">
-                <img src="img/trainer-avinash.jpg" class="trainer-image" alt="Dr. Avinash Mishra">
-                <div class="trainer-content">
-                    <h4 class="trainer-title">Dr. Avinash Mishra</h4>
-                    <p class="trainer-role">Lead Scientist – Growdea | Research Associate – IIT Delhi</p>
-                    <p class="text-muted">Dr. Mishra bridges academia and industry, specializing in computational drug design, protein structure analysis, and applying AI to solve complex bioinformatics challenges.</p>
-                    <h6 class="trainer-section-title">Core Expertise:</h6>
-                    <div class="trainer-skills">
-                        <span class="badge bg-primary-soft text-primary m-1">AI in Drug Design</span>
-                        <span class="badge bg-primary-soft text-primary m-1">Bioinformatics Pipelines</span>
-                        <span class="badge bg-primary-soft text-primary m-1">Protein Modeling</span>
-                        <span class="badge bg-primary-soft text-primary m-1">Machine Learning</span>
-                    </div>
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="trainer-card">
+                <h4 class="trainer-title">Dr. Avinash Mishra</h4>
+                <p class="trainer-role">Lead Scientist – Growdea | Research Associate – IIT Delhi</p>
+                <p class="text-muted">Dr. Mishra bridges academia and industry, specializing in computational drug design, protein structure analysis, and applying AI to solve complex bioinformatics challenges.</p>
+                <h6 class="trainer-section-title">Core Expertise:</h6>
+                <div class="trainer-skills">
+                    <span class="badge bg-primary-soft text-primary m-1">AI in Drug Design</span>
+                    <span class="badge bg-primary-soft text-primary m-1">Bioinformatics</span>
+                    <span class="badge bg-primary-soft text-primary m-1">Protein Modeling</span>
                 </div>
             </div>
           </div>
           
           <!-- Md Altamash -->
-          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-            <div class="trainer-card d-flex flex-column">
-                <img src="img/trainer-altamash.jpg" class="trainer-image" alt="Md Altamash">
-                <div class="trainer-content">
-                    <h4 class="trainer-title">Md Altamash</h4>
-                    <p class="trainer-role">Former Microsoft Employee | Software Developer</p>
-                    <p class="text-muted">A skilled software engineer with enterprise-level experience from Microsoft, Altamash excels in full-stack development, cloud solutions, and building AI-driven applications.</p>
-                    <h6 class="trainer-section-title">Core Expertise:</h6>
-                    <div class="trainer-skills">
-                        <span class="badge bg-primary-soft text-primary m-1">Full-Stack Development</span>
-                        <span class="badge bg-primary-soft text-primary m-1">AI Implementation</span>
-                        <span class="badge bg-primary-soft text-primary m-1">Cloud Computing</span>
-                        <span class="badge bg-primary-soft text-primary m-1">Python & Node.js</span>
-                    </div>
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="trainer-card">
+                <h4 class="trainer-title">Md Altamash</h4>
+                <p class="trainer-role">Former Microsoft Employee | Software Developer</p>
+                <p class="text-muted">A skilled software engineer with enterprise-level experience from Microsoft, Altamash excels in full-stack development, cloud solutions, and building AI-driven applications.</p>
+                <h6 class="trainer-section-title">Core Expertise:</h6>
+                <div class="trainer-skills">
+                    <span class="badge bg-primary-soft text-primary m-1">Full-Stack Dev</span>
+                    <span class="badge bg-primary-soft text-primary m-1">AI Implementation</span>
+                    <span class="badge bg-primary-soft text-primary m-1">Cloud Computing</span>
                 </div>
             </div>
           </div>
           
            <!-- Rahul Kumar -->
-          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="trainer-card d-flex flex-column">
-                <img src="img/trainer-rahul.jpg" class="trainer-image" alt="Rahul Kumar">
-                <div class="trainer-content">
-                    <h4 class="trainer-title">Rahul Kumar</h4>
-                    <p class="trainer-role">Former Oracle Employee | Software Developer</p>
-                    <p class="text-muted">An experienced software developer from Oracle, Rahul has a robust background in backend engineering, database management, and building scalable, reliable enterprise solutions.</p>
-                    <h6 class="trainer-section-title">Core Expertise:</h6>
-                    <div class="trainer-skills">
-                        <span class="badge bg-primary-soft text-primary m-1">Backend Engineering</span>
-                        <span class="badge bg-primary-soft text-primary m-1">Java & SQL</span>
-                        <span class="badge bg-primary-soft text-primary m-1">Database Management</span>
-                        <span class="badge bg-primary-soft text-primary m-1">Cloud Platforms</span>
-                    </div>
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="trainer-card">
+                <h4 class="trainer-title">Rahul Kumar</h4>
+                <p class="trainer-role">Former Oracle Employee | Software Developer</p>
+                <p class="text-muted">An experienced software developer from Oracle, Rahul has a robust background in backend engineering, database management, and building scalable, reliable enterprise solutions.</p>
+                <h6 class="trainer-section-title">Core Expertise:</h6>
+                <div class="trainer-skills">
+                    <span class="badge bg-primary-soft text-primary m-1">Backend Engineering</span>
+                    <span class="badge bg-primary-soft text-primary m-1">Java & SQL</span>
+                    <span class="badge bg-primary-soft text-primary m-1">Cloud Platforms</span>
                 </div>
             </div>
           </div>
           
            <!-- Nakul Bharadwaj -->
-          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-            <div class="trainer-card d-flex flex-column">
-                <img src="img/trainer-nakul.jpg" class="trainer-image" alt="Nakul Bharadwaj">
-                <div class="trainer-content">
-                    <h4 class="trainer-title">Nakul Bharadwaj</h4>
-                    <p class="trainer-role">Software Developer – Intel (GenAI & Cloud Specialist)</p>
-                    <p class="text-muted">A Cloud Software Engineer at Intel, Nakul specializes in deploying Generative AI models and developing AI-integrated cloud systems, with contributions to major open-source projects.</p>
-                    <h6 class="trainer-section-title">Core Expertise:</h6>
-                    <div class="trainer-skills">
-                        <span class="badge bg-primary-soft text-primary m-1">Generative AI</span>
-                        <span class="badge bg-primary-soft text-primary m-1">Cloud-Native Apps</span>
-                        <span class="badge bg-primary-soft text-primary m-1">Kubernetes & DevOps</span>
-                        <span class="badge bg-primary-soft text-primary m-1">Microservices</span>
-                    </div>
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+            <div class="trainer-card">
+                <h4 class="trainer-title">Nakul Bharadwaj</h4>
+                <p class="trainer-role">Software Developer – Intel (GenAI & Cloud Specialist)</p>
+                <p class="text-muted">A Cloud Software Engineer at Intel, Nakul specializes in deploying Generative AI models and developing AI-integrated cloud systems, with contributions to open-source projects.</p>
+                <h6 class="trainer-section-title">Core Expertise:</h6>
+                <div class="trainer-skills">
+                    <span class="badge bg-primary-soft text-primary m-1">Generative AI</span>
+                    <span class="badge bg-primary-soft text-primary m-1">Cloud-Native Apps</span>
+                    <span class="badge bg-primary-soft text-primary m-1">Kubernetes</span>
                 </div>
             </div>
           </div>
 
           <!-- Pranali S -->
-          <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.5s">
-            <div class="trainer-card d-flex flex-column flex-lg-row">
-                <img src="img/trainer-pranali.jpg" class="w-100 w-lg-auto" style="object-fit: cover; max-width: 35%;" alt="Pranali S">
-                <div class="trainer-content">
-                    <h4 class="trainer-title">Pranali S</h4>
-                    <p class="trainer-role">Bioinformatics Analyst | Data Scientist | NGS Algorithm Developer</p>
-                    <p class="text-muted">With over 5 years as an Analytical Research Fellow, Pranali is a detail-oriented professional who transforms complex biological data into actionable insights through advanced algorithm development and Next-Generation Sequencing (NGS) data analysis.</p>
-                    <h6 class="trainer-section-title">Core Expertise:</h6>
-                    <div class="trainer-skills">
-                        <span class="badge bg-primary-soft text-primary m-1">NGS Data Analysis</span>
-                        <span class="badge bg-primary-soft text-primary m-1">Algorithm Development</span>
-                        <span class="badge bg-primary-soft text-primary m-1">Genomics & Transcriptomics</span>
-                        <span class="badge bg-primary-soft text-primary m-1">Clinical Data Interpretation</span>
-                        <span class="badge bg-primary-soft text-primary m-1">Statistical Modeling</span>
-                    </div>
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="trainer-card">
+                <h4 class="trainer-title">Pranali S</h4>
+                <p class="trainer-role">Bioinformatics Analyst | NGS Algorithm Developer</p>
+                <p class="text-muted">Pranali transforms complex biological data into actionable insights through advanced algorithm development and Next-Generation Sequencing (NGS) data analysis.</p>
+                <h6 class="trainer-section-title">Core Expertise:</h6>
+                <div class="trainer-skills">
+                    <span class="badge bg-primary-soft text-primary m-1">NGS Data Analysis</span>
+                    <span class="badge bg-primary-soft text-primary m-1">Algorithm Dev</span>
+                    <span class="badge bg-primary-soft text-primary m-1">Genomics</span>
+                </div>
+            </div>
+          </div>
+
+          <!-- NEW TRAINER: Aru Ranjan Singh -->
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+            <div class="trainer-card">
+                <h4 class="trainer-title">Aru Ranjan Singh</h4>
+                <p class="trainer-role">Research Fellow, University of Warwick | ML Engineer</p>
+                <p class="text-muted">A Machine Learning and Computer Vision Engineer with 5+ years of experience, Aru excels at taking models from R&D to production across manufacturing and clinical imaging.</p>
+                <h6 class="trainer-section-title">Core Expertise:</h6>
+                <div class="trainer-skills">
+                    <span class="badge bg-primary-soft text-primary m-1">Computer Vision</span>
+                    <span class="badge bg-primary-soft text-primary m-1">Machine Learning</span>
+                    <span class="badge bg-primary-soft text-primary m-1">GANs & Diffusion</span>
+                </div>
+            </div>
+          </div>
+          
+          <!-- NEW TRAINER: Venkat Vivek Pamarthi -->
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+            <div class="trainer-card">
+                <h4 class="trainer-title">Venkat Vivek Pamarthi</h4>
+                <p class="trainer-role">Project Engineer, WMG, University of Warwick</p>
+                <p class="text-muted">A Project Engineer and PhD researcher, Venkat specializes in advanced laser manufacturing processes, focusing on dynamic beam shaping and laser welding for high-value applications.</p>
+                <h6 class="trainer-section-title">Core Expertise:</h6>
+                <div class="trainer-skills">
+                    <span class="badge bg-primary-soft text-primary m-1">Laser Manufacturing</span>
+                    <span class="badge bg-primary-soft text-primary m-1">Dynamic Beam Shaping</span>
+                    <span class="badge bg-primary-soft text-primary m-1">CFD</span>
                 </div>
             </div>
           </div>
@@ -390,7 +398,6 @@
     </div>
     <!-- CTA End -->
 
-
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
       <div class="container py-5">
@@ -414,15 +421,9 @@
             </div>
             <div class="col-lg-3 col-md-6">
                 <h4 class="text-white mb-3">Get in Touch</h4>
-                <p class="mb-2">
-                <i class="fab fa-whatsapp me-3"></i>+91-9852880174
-                </p>
-                <p class="mb-2">
-                <i class="fa fa-phone-alt me-3"></i>+91-7588656772
-                </p>
-                <p class="mb-2">
-                <i class="fa fa-envelope me-3"></i>info@lifegenbio.com
-                </p>
+                <p class="mb-2"><i class="fab fa-whatsapp me-3"></i>+91-9852880174</p>
+                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91-7588656772</p>
+                <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@lifegenbio.com</p>
             </div>
              <div class="col-lg-3 col-md-6">
                 <h4 class="text-white mb-3">Latest Insights</h4>
@@ -434,10 +435,7 @@
       <div class="container">
         <div class="copyright">
           <div class="row">
-            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-              &copy; <a class="border-bottom" href="#">LifeGenBio</a>, All
-              Right Reserved.
-            </div>
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">&copy; <a class="border-bottom" href="#">LifeGenBio</a>, All Right Reserved.</div>
             <div class="col-md-6 text-center text-md-end">
               <div class="footer-menu">
                 <a href="">Privacy Policy</a>
@@ -450,7 +448,6 @@
       </div>
     </div>
     <!-- Footer End -->
-
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
