@@ -38,8 +38,51 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
     
-    <!-- Custom Styles for Popup -->
+    <!-- Custom Styles for Popups -->
     <style>
+        /* Join Now Slider Form */
+        #form-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 1040;
+            display: none;
+        }
+        #join-now-slider {
+            position: fixed;
+            top: 0;
+            left: -35%; /* Start off-screen */
+            width: 30%; /* Cover 30% of the page */
+            height: 100vh;
+            background-color: white;
+            z-index: 1050;
+            padding: 40px 30px;
+            box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+            transition: left 0.4s ease-in-out;
+            overflow-y: auto;
+        }
+        #join-now-slider.show {
+            left: 0; /* Slide in */
+        }
+        #close-slider {
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #333;
+            cursor: pointer;
+        }
+        @media (max-width: 992px) {
+            #join-now-slider { width: 60%; left: -65%; }
+        }
+        @media (max-width: 768px) {
+            #join-now-slider { width: 85%; left: -90%; }
+        }
+
         /* Registration Popup */
         #registration-popup {
             position: fixed;
@@ -107,7 +150,6 @@
     <!-- Spinner End -->
 
     <!-- Navbar Start -->
-    <!-- Navbar Start -->
     <nav
       class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0"
     >
@@ -129,68 +171,82 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto p-4 p-lg-0">
-          <a href="index.html" class="nav-item nav-link active">Home</a>
+          <a href="index.html" class="nav-item nav-link">Home</a>
           <a href="about.html" class="nav-item nav-link">About Us</a>
           <style>
-  /* This CSS is required to show the submenu on hover */
-  .submenu-container:hover > .dropdown-menu {
-    display: block !important;
-  }
-</style>
+            .submenu-container:hover > .dropdown-menu { display: block !important; }
+          </style>
           <div class="nav-item dropdown">
-  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
-  <div class="dropdown-menu fade-down m-0">
-
-    <!-- AI Services Submenu -->
-    <div class="submenu-container" style="position: relative;">
-      <a href="#" class="dropdown-item dropdown-toggle">AI Services</a>
-      <div class="dropdown-menu" style="position: absolute; top: 0; left: 100%; display: none;">
-        <a href="softwaredevelopment.html" class="dropdown-item">Software Development with AI</a>
-        <a href="artificialintelligence.html" class="dropdown-item">Artificial Intelligence</a>
-        <a href="aiautomation.html" class="dropdown-item">AI Automation</a>
-        <a href="aiagents.html" class="dropdown-item">AI Agents</a>
-      </div>
-    </div>
-
-    <!-- Life Science Services Submenu -->
-    <div class="submenu-container" style="position: relative;">
-      <a href="#" class="dropdown-item dropdown-toggle">Life Science Services</a>
-      <div class="dropdown-menu" style="position: absolute; top: 0; left: 100%; display: none;">
-        <a href="mdsimulationanddrugdesign.html" class="dropdown-item">MD Simulation and Drug Design</a>
-        <a href="genomics.html" class="dropdown-item">Genomics, transcriptomics, and proteomics Services</a>
-        <a href="metagenomics.html" class="dropdown-item">Metagenomics</a>
-        <a href="epigenetics.html" class="dropdown-item">Epigenetics</a>
-      </div>
-    </div>
-
-    <!-- Regular Dropdown Items -->
-    <a href="researchconsultancyservices.html" class="dropdown-item">Research Consultancy Services</a>
-    <a href="trainingandworkshop.html" class="dropdown-item">Training and Workshop</a>
-  </div>
-</div>
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+            <div class="dropdown-menu fade-down m-0">
+              <div class="submenu-container" style="position: relative;">
+                <a href="#" class="dropdown-item dropdown-toggle">AI Services</a>
+                <div class="dropdown-menu" style="position: absolute; top: 0; left: 100%; display: none;">
+                  <a href="softwaredevelopment.html" class="dropdown-item">Software Development with AI</a>
+                  <a href="artificialintelligence.html" class="dropdown-item">Artificial Intelligence</a>
+                  <a href="aiautomation.html" class="dropdown-item">AI Automation</a>
+                  <a href="aiagents.html" class="dropdown-item">AI Agents</a>
+                </div>
+              </div>
+              <div class="submenu-container" style="position: relative;">
+                <a href="#" class="dropdown-item dropdown-toggle">Life Science Services</a>
+                <div class="dropdown-menu" style="position: absolute; top: 0; left: 100%; display: none;">
+                  <a href="mdsimulationanddrugdesign.html" class="dropdown-item">MD Simulation and Drug Design</a>
+                  <a href="genomics.html" class="dropdown-item">Genomics, transcriptomics, and proteomics Services</a>
+                  <a href="metagenomics.html" class="dropdown-item">Metagenomics</a>
+                  <a href="epigenetics.html" class="dropdown-item">Epigenetics</a>
+                </div>
+              </div>
+              <a href="researchconsultancyservices.html" class="dropdown-item">Research Consultancy Services</a>
+              <a href="trainingandworkshop.html" class="dropdown-item">Training and Workshop</a>
+            </div>
+          </div>
           <a href="lifegenbiocare.html" class="nav-item nav-link">LifeGenBio Care</a>
           <div class="nav-item dropdown">
-            <a
-              href="#"
-              class="nav-link dropdown-toggle"
-              data-bs-toggle="dropdown"
-              >Learn</a
-            >
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Learn</a>
             <div class="dropdown-menu fade-down m-0">
               <a href="ourteam.html" class="dropdown-item">Our Team</a>
               <a href="ourtrainers.html" class="dropdown-item">Our Trainers</a>
-              
             </div>
           </div>
           <a href="contact.html" class="nav-item nav-link">Contact Us</a>
         </div>
-        <a href="#" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block join-now-btn"
-          >Join Now<i class="fa fa-arrow-right ms-3"></i
-        ></a>
+        <a href="#" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block join-now-btn">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
       </div>
     </nav>
     <!-- Navbar End -->
-    <!-- Navbar End -->
+
+    <!-- Join Now Slider Form Start -->
+    <div id="form-overlay"></div>
+    <div id="join-now-slider">
+        <span id="close-slider">&times;</span>
+        <h3 class="mb-4 text-primary">Join LifeGenBio Today!</h3>
+        <p>Fill in your details and one of our academic counselors will get in touch with you shortly.</p>
+        <form id="slider-form" action="https://altamash3328.app.n8n.cloud/webhook/b25dce30-5781-4919-a9ab-7c28b21de8eb" method="POST">
+            <div class="mb-3">
+                <label for="sliderName" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="sliderName" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="mb-3">
+                <label for="sliderEmail" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="sliderEmail" name="email" placeholder="name@example.com" required>
+            </div>
+            <div class="mb-3">
+                <label for="sliderPhone" class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" id="sliderPhone" name="phone" placeholder="+91-1234567890" required>
+            </div>
+            <div class="mb-4">
+                <label for="sliderCourse" class="form-label">Service of Interest</label>
+                <select class="form-select" id="sliderCourse" name="course">
+                    <option selected>General Inquiry</option>
+                    <option value="Workshops">Workshops</option>
+                    <option value="Short-Term Courses">Short-Term Courses</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary w-100 py-3">Submit Inquiry</button>
+        </form>
+    </div>
+    <!-- Join Now Slider Form End -->
 
     <!-- Header Start -->
     <div class="container-fluid bg-primary py-5 mb-5 page-header">
@@ -518,17 +574,18 @@
             <h4 class="mb-1 text-primary">Workshop Registration</h4>
             <h5 class="mb-3" id="popup-workshop-title">Workshop Name</h5>
             <p>Enter your details to reserve your spot. The registration fee is <strong id="popup-workshop-price">$0.00</strong>.</p>
-            <form>
+            <form id="registration-form" action="https://altamash3328.app.n8n.cloud/webhook/b25dce30-5781-4919-a9ab-7c28b21de8eb" method="POST">
+                <input type="hidden" id="popupWorkshopName" name="workshop_name" value="">
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="popupName" placeholder="Your Name" required>
+                    <input type="text" class="form-control" id="popupName" name="name" placeholder="Your Name" required>
                     <label for="popupName">Full Name</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="popupEmail" placeholder="Your Email" required>
+                    <input type="email" class="form-control" id="popupEmail" name="email" placeholder="Your Email" required>
                     <label for="popupEmail">Email Address</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="tel" class="form-control" id="popupPhone" placeholder="Your Phone" required>
+                    <input type="tel" class="form-control" id="popupPhone" name="phone" placeholder="Your Phone" required>
                     <label for="popupPhone">Phone Number</label>
                 </div>
                 <button class="btn btn-primary w-100 py-3" type="submit">Submit Request</button>
@@ -542,6 +599,43 @@
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"
       ><i class="bi bi-arrow-up"></i
     ></a>
+    
+    <!-- SUCCESS MODALS START -->
+    <div class="modal fade" id="genericSuccessModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-primary"><i class="fa fa-check-circle me-2"></i> Inquiry Submitted!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Thank you for reaching out! One of our counselors will be in touch with you shortly.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="registrationSuccessModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-primary"><i class="fa fa-check-circle me-2"></i> Registration Request Sent!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Thank you! Your registration request has been received. You will receive an email shortly with the next steps, including the payment link to confirm your spot.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- SUCCESS MODALS END -->
+
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -554,30 +648,94 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
 
-    <!-- Custom Popup Javascript -->
+    <!-- ALL CUSTOM JAVASCRIPT -->
     <script>
         $(document).ready(function(){
-            const popup = $('#registration-popup');
-
-            // Open popup logic
-            $('.register-btn').on('click', function(e) {
+            // --- Logic for the "Join Now" sliding form ---
+            const slider = $('#join-now-slider');
+            const sliderOverlay = $('#form-overlay');
+            
+            $('.join-now-btn').on('click', function(e) {
                 e.preventDefault();
-                
-                // Get data from the clicked button
-                const title = $(this).data('title');
-                const price = $(this).data('price');
-
-                // Update popup content
-                popup.find('#popup-workshop-title').text(title);
-                popup.find('#popup-workshop-price').text(price);
-
-                // Show the popup
-                popup.addClass('show');
+                sliderOverlay.fadeIn();
+                slider.addClass('show');
             });
 
-            // Close popup logic
+            $('#close-slider, #form-overlay').on('click', function() {
+                slider.removeClass('show');
+                sliderOverlay.fadeOut();
+            });
+
+            // --- Logic for the Registration Popup ---
+            const registrationPopup = $('#registration-popup');
+
+            $('.register-btn').on('click', function(e) {
+                e.preventDefault();
+                const title = $(this).data('title');
+                const price = $(this).data('price');
+                
+                registrationPopup.find('#popup-workshop-title').text(title);
+                registrationPopup.find('#popupWorkshopName').val(title); // Set hidden input value
+                registrationPopup.find('#popup-workshop-price').text(price);
+
+                registrationPopup.addClass('show');
+            });
+
             $('#close-popup, #popup-overlay').on('click', function() {
-                popup.removeClass('show');
+                registrationPopup.removeClass('show');
+            });
+
+            // --- Form Submission Logic ---
+
+            // Handler for the SLIDER form
+            $('#slider-form').on('submit', function(e) {
+                e.preventDefault();
+                var form = $(this);
+                $.ajax({
+                    url: form.attr('action'),
+                    method: form.attr('method'),
+                    data: form.serialize(),
+                    success: function(response) {
+                        slider.removeClass('show');
+                        sliderOverlay.fadeOut();
+                        $('#genericSuccessModal').modal('show');
+                        form[0].reset(); 
+                    },
+                    error: function() { alert('Something went wrong. Please try again.'); }
+                });
+            });
+
+            // Handler for the REGISTRATION POPUP form
+            $('#registration-form').on('submit', function(e) {
+                e.preventDefault();
+                var form = $(this);
+                $.ajax({
+                    url: form.attr('action'),
+                    method: form.attr('method'),
+                    data: form.serialize(),
+                    success: function(response) {
+                        registrationPopup.removeClass('show');
+                        $('#registrationSuccessModal').modal('show');
+                        form[0].reset(); 
+                    },
+                    error: function() { alert('Something went wrong. Please try again.'); }
+                });
+            });
+
+            // Testimonial Carousel initialization (from main.js)
+            $(".testimonial-carousel").owlCarousel({
+                autoplay: true,
+                smartSpeed: 1000,
+                center: true,
+                margin: 24,
+                dots: true,
+                loop: true,
+                nav : false,
+                responsive: {
+                    0:{ items:1 },
+                    768:{ items:2 },
+                    992:{ items:3 }
+                }
             });
         });
     </script>

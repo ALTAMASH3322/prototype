@@ -89,61 +89,9 @@
             }
         }
 
-        /* Leadership Section Hover Effect */
-        .team-item .overflow-hidden {
-            position: relative;
-        }
-        .team-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(24, 29, 56, 0.8);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            padding: 20px;
-        }
-        .team-item:hover .team-overlay {
-            opacity: 1;
-        }
-        .team-overlay p.quote {
-            color: white;
-            font-style: italic;
-            text-align: center;
-            margin: 0;
-        }
-
         /* --- UNIFORMITY FIXES --- */
-        /* For Leadership Cards */
-        .leadership-carousel .team-item .overflow-hidden {
-            height: 320px; 
-        }
-        .leadership-carousel .team-item img {
-            height: 100%;
-            width: 100%;
-            object-fit: cover; 
-        }
-        /* For Popular Course Cards */
-        .course-item .overflow-hidden {
-            height: 250px; 
-        }
-        .course-item img {
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-        }
-        /* For Program Category Cards */
-        .category .col-lg-7 .position-relative {
-            height: 220px;
-        }
-        .category .position-relative img {
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
+        .position-relative.h-100 {
+            min-height: 400px;
         }
     </style>
   </head>
@@ -164,7 +112,6 @@
     </div>
     <!-- Spinner End -->
 
-    <!-- Navbar Start -->
     <!-- Navbar Start -->
     <nav
       class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0"
@@ -187,45 +134,38 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto p-4 p-lg-0">
-          <a href="index.html" class="nav-item nav-link active">Home</a>
+          <a href="index.html" class="nav-item nav-link">Home</a>
           <a href="about.html" class="nav-item nav-link">About Us</a>
           <style>
-  /* This CSS is required to show the submenu on hover */
-  .submenu-container:hover > .dropdown-menu {
-    display: block !important;
-  }
-</style>
+            .submenu-container:hover > .dropdown-menu {
+              display: block !important;
+            }
+          </style>
           <div class="nav-item dropdown">
-  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
-  <div class="dropdown-menu fade-down m-0">
-
-    <!-- AI Services Submenu -->
-    <div class="submenu-container" style="position: relative;">
-      <a href="#" class="dropdown-item dropdown-toggle">AI Services</a>
-      <div class="dropdown-menu" style="position: absolute; top: 0; left: 100%; display: none;">
-        <a href="softwaredevelopment.html" class="dropdown-item">Software Development with AI</a>
-        <a href="artificialintelligence.html" class="dropdown-item">Artificial Intelligence</a>
-        <a href="aiautomation.html" class="dropdown-item">AI Automation</a>
-        <a href="aiagents.html" class="dropdown-item">AI Agents</a>
-      </div>
-    </div>
-
-    <!-- Life Science Services Submenu -->
-    <div class="submenu-container" style="position: relative;">
-      <a href="#" class="dropdown-item dropdown-toggle">Life Science Services</a>
-      <div class="dropdown-menu" style="position: absolute; top: 0; left: 100%; display: none;">
-        <a href="mdsimulationanddrugdesign.html" class="dropdown-item">MD Simulation and Drug Design</a>
-        <a href="genomics.html" class="dropdown-item">Genomics, transcriptomics, and proteomics Services</a>
-        <a href="metagenomics.html" class="dropdown-item">Metagenomics</a>
-        <a href="epigenetics.html" class="dropdown-item">Epigenetics</a>
-      </div>
-    </div>
-
-    <!-- Regular Dropdown Items -->
-    <a href="researchconsultancyservices.html" class="dropdown-item">Research Consultancy Services</a>
-    <a href="trainingandworkshop.html" class="dropdown-item">Training and Workshop</a>
-  </div>
-</div>
+            <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Services</a>
+            <div class="dropdown-menu fade-down m-0">
+              <div class="submenu-container" style="position: relative;">
+                <a href="#" class="dropdown-item dropdown-toggle">AI Services</a>
+                <div class="dropdown-menu" style="position: absolute; top: 0; left: 100%; display: none;">
+                  <a href="softwaredevelopment.html" class="dropdown-item">Software Development with AI</a>
+                  <a href="artificialintelligence.html" class="dropdown-item">Artificial Intelligence</a>
+                  <a href="aiautomation.html" class="dropdown-item">AI Automation</a>
+                  <a href="aiagents.html" class="dropdown-item">AI Agents</a>
+                </div>
+              </div>
+              <div class="submenu-container" style="position: relative;">
+                <a href="#" class="dropdown-item dropdown-toggle">Life Science Services</a>
+                <div class="dropdown-menu" style="position: absolute; top: 0; left: 100%; display: none;">
+                  <a href="mdsimulationanddrugdesign.html" class="dropdown-item">MD Simulation and Drug Design</a>
+                  <a href="genomics.html" class="dropdown-item">Genomics, transcriptomics, and proteomics Services</a>
+                  <a href="metagenomics.html" class="dropdown-item">Metagenomics</a>
+                  <a href="epigenetics.html" class="dropdown-item">Epigenetics</a>
+                </div>
+              </div>
+              <a href="researchconsultancyservices.html" class="dropdown-item">Research Consultancy Services</a>
+              <a href="trainingandworkshop.html" class="dropdown-item">Training and Workshop</a>
+            </div>
+          </div>
           <a href="lifegenbiocare.html" class="nav-item nav-link">LifeGenBio Care</a>
           <div class="nav-item dropdown">
             <a
@@ -237,7 +177,6 @@
             <div class="dropdown-menu fade-down m-0">
               <a href="ourteam.html" class="dropdown-item">Our Team</a>
               <a href="ourtrainers.html" class="dropdown-item">Our Trainers</a>
-              
             </div>
           </div>
           <a href="contact.html" class="nav-item nav-link">Contact Us</a>
@@ -248,7 +187,6 @@
       </div>
     </nav>
     <!-- Navbar End -->
-    <!-- Navbar End -->
     
     <!-- Join Now Slider Form Start -->
     <div id="form-overlay"></div>
@@ -256,28 +194,30 @@
         <span id="close-slider">&times;</span>
         <h3 class="mb-4 text-primary">Join LifeGenBio Today!</h3>
         <p>Fill in your details and one of our academic counselors will get in touch with you shortly.</p>
-        <form>
+        
+        <!-- FORM HAS BEEN CORRECTED -->
+        <form action="https://altamash3328.app.n8n.cloud/webhook/b25dce30-5781-4919-a9ab-7c28b21de8eb" method="POST">
             <div class="mb-3">
                 <label for="sliderName" class="form-label">Full Name</label>
-                <input type="text" class="form-control" id="sliderName" placeholder="Enter your name" required>
+                <input type="text" class="form-control" id="sliderName" name="name" placeholder="Enter your name" required>
             </div>
             <div class="mb-3">
                 <label for="sliderEmail" class="form-label">Email Address</label>
-                <input type="email" class="form-control" id="sliderEmail" placeholder="name@example.com" required>
+                <input type="email" class="form-control" id="sliderEmail" name="email" placeholder="name@example.com" required>
             </div>
             <div class="mb-3">
                 <label for="sliderPhone" class="form-label">Phone Number</label>
-                <input type="tel" class="form-control" id="sliderPhone" placeholder="+91-1234567890" required>
+                <input type="tel" class="form-control" id="sliderPhone" name="phone" placeholder="+91-1234567890" required>
             </div>
             <div class="mb-4">
                 <label for="sliderCourse" class="form-label">Course of Interest</label>
-                <select class="form-select" id="sliderCourse">
+                <select class="form-select" id="sliderCourse" name="course">
                     <option selected>Select a course</option>
-                    <option value="1">Generative AI</option>
-                    <option value="2">AI-Powered Automation</option>
-                    <option value="3">Bioinformatics & Data Science</option>
-                    <option value="5">AI Agents</option>
-                    <option value="4">Other</option>
+                    <option value="Generative AI">Generative AI</option>
+                    <option value="AI-Powered Automation">AI-Powered Automation</option>
+                    <option value="Bioinformatics & Data Science">Bioinformatics & Data Science</option>
+                    <option value="AI Agents">AI Agents</option>
+                    <option value="Other">Other</option>
                 </select>
             </div>
             <button type="submit" class="btn btn-primary w-100 py-3">Submit Inquiry</button>
@@ -319,7 +259,7 @@
             <div class="row g-5 my-5 align-items-center">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="position-relative h-100">
-                        <img class="img-fluid position-absolute w-100 h-100" src="https://images.unsplash.com/photo-1551884831-bbf3b4334434?q=80&w=2070&auto=format&fit=crop" alt="AI Agent Seminar" style="object-fit: cover;">
+                        <img class="img-fluid w-100 h-100" src="https://images.unsplash.com/photo-1551884831-bbf3b4334434?q=80&w=2070&auto=format&fit=crop" alt="AI Agent Seminar" style="object-fit: cover;">
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
@@ -368,7 +308,7 @@
                 </div>
                  <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="position-relative h-100">
-                        <img class="img-fluid position-absolute w-100 h-100" src="https://images.unsplash.com/photo-1684369176302-7c485ac921b6?q=80&w=2070&auto=format&fit=crop" alt="AI Agent Development Course" style="object-fit: cover;">
+                        <img class="img-fluid w-100 h-100" src="https://images.unsplash.com/photo-1684369176302-7c485ac921b6?q=80&w=2070&auto=format&fit=crop" alt="AI Agent Development Course" style="object-fit: cover;">
                     </div>
                 </div>
             </div>
@@ -377,7 +317,7 @@
             <div class="row g-5 my-5 align-items-center">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="position-relative h-100">
-                        <img class="img-fluid position-absolute w-100 h-100" src="https://images.unsplash.com/photo-1696253912571-395183b95a86?q=80&w=1932&auto=format&fit=crop" alt="Multi-Agent Systems Program" style="object-fit: cover;">
+                        <img class="img-fluid w-100 h-100" src="https://images.unsplash.com/photo-1696253912571-395183b95a86?q=80&w=1932&auto=format&fit=crop" alt="Multi-Agent Systems Program" style="object-fit: cover;">
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
@@ -426,7 +366,7 @@
                 </div>
                  <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="position-relative h-100">
-                        <img class="img-fluid position-absolute w-100 h-100" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop" alt="Corporate AI Agent Training" style="object-fit: cover;">
+                        <img class="img-fluid w-100 h-100" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop" alt="Corporate AI Agent Training" style="object-fit: cover;">
                     </div>
                 </div>
             </div>
@@ -505,6 +445,26 @@
       ><i class="bi bi-arrow-up"></i
     ></a>
 
+    <!-- NEW FEATURE: Success Modal Start -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-primary" id="successModalLabel"><i class="fa fa-check-circle me-2"></i> Inquiry Submitted!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Thank you for reaching out! Your form has been submitted successfully. One of our academic counselors will get in touch with you shortly.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Success Modal End -->
+
+
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -516,22 +476,45 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
     
-    <!-- Custom Javascript -->
+    <!-- UPDATED SCRIPT: Custom Javascript with Popup Logic -->
     <script>
         $(document).ready(function(){
-            // Join Now Slider Form Logic
+            // --- Logic for the "Join Now" sliding form ---
             const slider = $('#join-now-slider');
             const overlay = $('#form-overlay');
             
+            // Open the slider
             $('.join-now-btn').on('click', function(e) {
                 e.preventDefault();
                 overlay.fadeIn();
                 slider.addClass('show');
             });
 
+            // Close the slider
             $('#close-slider, #form-overlay').on('click', function() {
                 slider.removeClass('show');
                 overlay.fadeOut();
+            });
+
+            // --- NEW: Logic to handle form submission with AJAX and show a popup ---
+            $('#join-now-slider form').on('submit', function(e) {
+                e.preventDefault();
+                var form = $(this);
+
+                $.ajax({
+                    url: form.attr('action'),
+                    method: form.attr('method'),
+                    data: form.serialize(),
+                    success: function(response) {
+                        slider.removeClass('show');
+                        overlay.fadeOut();
+                        $('#successModal').modal('show');
+                        form[0].reset(); 
+                    },
+                    error: function() {
+                        alert('Something went wrong. Please try again.');
+                    }
+                });
             });
         });
     </script>

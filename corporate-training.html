@@ -37,6 +37,58 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
+
+    <!-- Custom Styles for Slider Form -->
+    <style>
+        /* Join Now Slider Form */
+        #form-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 1040;
+            display: none;
+        }
+        #join-now-slider {
+            position: fixed;
+            top: 0;
+            left: -35%; /* Start off-screen */
+            width: 30%; /* Cover 30% of the page */
+            height: 100vh;
+            background-color: white;
+            z-index: 1050;
+            padding: 40px 30px;
+            box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+            transition: left 0.4s ease-in-out;
+            overflow-y: auto;
+        }
+        #join-now-slider.show {
+            left: 0; /* Slide in */
+        }
+        #close-slider {
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #333;
+            cursor: pointer;
+        }
+        @media (max-width: 992px) {
+            #join-now-slider {
+                width: 60%;
+                left: -65%;
+            }
+        }
+        @media (max-width: 768px) {
+            #join-now-slider {
+                width: 85%;
+                left: -90%;
+            }
+        }
+    </style>
   </head>
 
   <body>
@@ -55,7 +107,6 @@
     </div>
     <!-- Spinner End -->
 
-    <!-- Navbar Start -->
     <!-- Navbar Start -->
     <nav
       class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0"
@@ -78,45 +129,38 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto p-4 p-lg-0">
-          <a href="index.html" class="nav-item nav-link active">Home</a>
+          <a href="index.html" class="nav-item nav-link">Home</a>
           <a href="about.html" class="nav-item nav-link">About Us</a>
           <style>
-  /* This CSS is required to show the submenu on hover */
-  .submenu-container:hover > .dropdown-menu {
-    display: block !important;
-  }
-</style>
+            .submenu-container:hover > .dropdown-menu {
+              display: block !important;
+            }
+          </style>
           <div class="nav-item dropdown">
-  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
-  <div class="dropdown-menu fade-down m-0">
-
-    <!-- AI Services Submenu -->
-    <div class="submenu-container" style="position: relative;">
-      <a href="#" class="dropdown-item dropdown-toggle">AI Services</a>
-      <div class="dropdown-menu" style="position: absolute; top: 0; left: 100%; display: none;">
-        <a href="softwaredevelopment.html" class="dropdown-item">Software Development with AI</a>
-        <a href="artificialintelligence.html" class="dropdown-item">Artificial Intelligence</a>
-        <a href="aiautomation.html" class="dropdown-item">AI Automation</a>
-        <a href="aiagents.html" class="dropdown-item">AI Agents</a>
-      </div>
-    </div>
-
-    <!-- Life Science Services Submenu -->
-    <div class="submenu-container" style="position: relative;">
-      <a href="#" class="dropdown-item dropdown-toggle">Life Science Services</a>
-      <div class="dropdown-menu" style="position: absolute; top: 0; left: 100%; display: none;">
-        <a href="mdsimulationanddrugdesign.html" class="dropdown-item">MD Simulation and Drug Design</a>
-        <a href="genomics.html" class="dropdown-item">Genomics, transcriptomics, and proteomics Services</a>
-        <a href="metagenomics.html" class="dropdown-item">Metagenomics</a>
-        <a href="epigenetics.html" class="dropdown-item">Epigenetics</a>
-      </div>
-    </div>
-
-    <!-- Regular Dropdown Items -->
-    <a href="researchconsultancyservices.html" class="dropdown-item">Research Consultancy Services</a>
-    <a href="trainingandworkshop.html" class="dropdown-item">Training and Workshop</a>
-  </div>
-</div>
+            <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Services</a>
+            <div class="dropdown-menu fade-down m-0">
+              <div class="submenu-container" style="position: relative;">
+                <a href="#" class="dropdown-item dropdown-toggle">AI Services</a>
+                <div class="dropdown-menu" style="position: absolute; top: 0; left: 100%; display: none;">
+                  <a href="softwaredevelopment.html" class="dropdown-item">Software Development with AI</a>
+                  <a href="artificialintelligence.html" class="dropdown-item">Artificial Intelligence</a>
+                  <a href="aiautomation.html" class="dropdown-item">AI Automation</a>
+                  <a href="aiagents.html" class="dropdown-item">AI Agents</a>
+                </div>
+              </div>
+              <div class="submenu-container" style="position: relative;">
+                <a href="#" class="dropdown-item dropdown-toggle">Life Science Services</a>
+                <div class="dropdown-menu" style="position: absolute; top: 0; left: 100%; display: none;">
+                  <a href="mdsimulationanddrugdesign.html" class="dropdown-item">MD Simulation and Drug Design</a>
+                  <a href="genomics.html" class="dropdown-item">Genomics, transcriptomics, and proteomics Services</a>
+                  <a href="metagenomics.html" class="dropdown-item">Metagenomics</a>
+                  <a href="epigenetics.html" class="dropdown-item">Epigenetics</a>
+                </div>
+              </div>
+              <a href="researchconsultancyservices.html" class="dropdown-item">Research Consultancy Services</a>
+              <a href="trainingandworkshop.html" class="dropdown-item">Training and Workshop</a>
+            </div>
+          </div>
           <a href="lifegenbiocare.html" class="nav-item nav-link">LifeGenBio Care</a>
           <div class="nav-item dropdown">
             <a
@@ -128,7 +172,6 @@
             <div class="dropdown-menu fade-down m-0">
               <a href="ourteam.html" class="dropdown-item">Our Team</a>
               <a href="ourtrainers.html" class="dropdown-item">Our Trainers</a>
-              
             </div>
           </div>
           <a href="contact.html" class="nav-item nav-link">Contact Us</a>
@@ -139,7 +182,40 @@
       </div>
     </nav>
     <!-- Navbar End -->
-    <!-- Navbar End -->
+    
+    <!-- Join Now Slider Form Start -->
+    <div id="form-overlay"></div>
+    <div id="join-now-slider">
+        <span id="close-slider">&times;</span>
+        <h3 class="mb-4 text-primary">Join LifeGenBio Today!</h3>
+        <p>Fill in your details and one of our academic counselors will get in touch with you shortly.</p>
+        <form action="https://altamash3328.app.n8n.cloud/webhook/b25dce30-5781-4919-a9ab-7c28b21de8eb" method="POST">
+            <div class="mb-3">
+                <label for="sliderName" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="sliderName" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="mb-3">
+                <label for="sliderEmail" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="sliderEmail" name="email" placeholder="name@example.com" required>
+            </div>
+            <div class="mb-3">
+                <label for="sliderPhone" class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" id="sliderPhone" name="phone" placeholder="+91-1234567890" required>
+            </div>
+            <div class="mb-4">
+                <label for="sliderCourse" class="form-label">Course of Interest</label>
+                <select class="form-select" id="sliderCourse" name="course">
+                    <option value="Corporate Training" selected>Corporate Training</option>
+                    <option value="Generative AI">Generative AI</option>
+                    <option value="AI-Powered Automation">AI-Powered Automation</option>
+                    <option value="Bioinformatics & Data Science">Bioinformatics & Data Science</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary w-100 py-3">Submit Inquiry</button>
+        </form>
+    </div>
+    <!-- Join Now Slider Form End -->
 
     <!-- Header Start -->
     <div class="container-fluid bg-primary py-5 mb-5 page-header">
@@ -226,7 +302,6 @@
                 <h1 class="mb-5">A Simple Path to Team Excellence</h1>
             </div>
             <div class="row g-4 justify-content-center">
-                <!-- Step 1 -->
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="text-center">
                         <div class="d-inline-flex align-items-center justify-content-center bg-primary text-white rounded-circle mb-4" style="width: 80px; height: 80px;">
@@ -236,7 +311,6 @@
                         <p class="text-muted">We begin with a deep-dive needs analysis to understand your goals, challenges, and desired outcomes.</p>
                     </div>
                 </div>
-                <!-- Step 2 -->
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="text-center">
                         <div class="d-inline-flex align-items-center justify-content-center bg-primary text-white rounded-circle mb-4" style="width: 80px; height: 80px;">
@@ -246,7 +320,6 @@
                         <p class="text-muted">Our experts craft a bespoke curriculum with hands-on projects tailored to your industry and teams.</p>
                     </div>
                 </div>
-                <!-- Step 3 -->
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="text-center">
                         <div class="d-inline-flex align-items-center justify-content-center bg-primary text-white rounded-circle mb-4" style="width: 80px; height: 80px;">
@@ -256,7 +329,6 @@
                         <p class="text-muted">Engaging sessions are delivered by top practitioners using a blend of theory and practical application.</p>
                     </div>
                 </div>
-                <!-- Step 4 -->
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
                     <div class="text-center">
                         <div class="d-inline-flex align-items-center justify-content-center bg-primary text-white rounded-circle mb-4" style="width: 80px; height: 80px;">
@@ -324,11 +396,7 @@
         </div>
         <div class="owl-carousel testimonial-carousel position-relative">
           <div class="testimonial-item text-center">
-            <img
-              class="border rounded-circle p-2 mx-auto mb-3"
-              src="img/testimonial-1.jpg"
-              style="width: 80px; height: 80px"
-            />
+            <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-1.jpg" style="width: 80px; height: 80px" />
             <h5 class="mb-0">Sarah L., HR Manager</h5>
             <p>Innovatech Solutions</p>
             <div class="testimonial-text bg-light text-center p-4">
@@ -338,11 +406,7 @@
             </div>
           </div>
           <div class="testimonial-item text-center">
-            <img
-              class="border rounded-circle p-2 mx-auto mb-3"
-              src="img/testimonial-2.jpg"
-              style="width: 80px; height: 80px"
-            />
+            <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-2.jpg" style="width: 80px; height: 80px" />
             <h5 class="mb-0">Dr. Ben Carter, VP of R&D</h5>
             <p>PharmaCo</p>
             <div class="testimonial-text bg-light text-center p-4">
@@ -352,11 +416,7 @@
             </div>
           </div>
           <div class="testimonial-item text-center">
-            <img
-              class="border rounded-circle p-2 mx-auto mb-3"
-              src="img/testimonial-4.jpg"
-              style="width: 80px; height: 80px"
-            />
+            <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-4.jpg" style="width: 80px; height: 80px" />
             <h5 class="mb-0">Mark Johnson, L&D Lead</h5>
             <p>Global Analytics Inc.</p>
             <div class="testimonial-text bg-light text-center p-4">
@@ -383,35 +443,43 @@
                     <p><i class="fa fa-check text-primary me-3"></i>Flexible scheduling and delivery</p>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <form>
+                    
+                    <!-- PROPOSAL FORM HAS BEEN CORRECTED -->
+                    <form id="proposal-form" action="https://altamash3328.app.n8n.cloud/webhook/b25dce30-5781-4919-a9ab-7c28b21de8eb" method="POST">
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
                                     <label for="name">Your Name</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" placeholder="Work Email">
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Work Email" required>
                                     <label for="email">Work Email</label>
+                                </div>
+                            </div>
+                             <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone Number" required>
+                                    <label for="phone">Phone Number</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="company" placeholder="Company Name">
+                                    <input type="text" class="form-control" id="company" name="company" placeholder="Company Name" required>
                                     <label for="company">Company Name</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="employees" placeholder="Number of Employees to Train">
+                                    <input type="text" class="form-control" id="employees" name="employees" placeholder="Number of Employees to Train" required>
                                     <label for="employees">Number of Employees to Train</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Tell us about your training needs" id="message" style="height: 100px"></textarea>
+                                    <textarea class="form-control" placeholder="Tell us about your training needs" id="message" name="message" style="height: 100px" required></textarea>
                                     <label for="message">Your Training Needs</label>
                                 </div>
                             </div>
@@ -495,6 +563,26 @@
       ><i class="bi bi-arrow-up"></i
     ></a>
 
+    <!-- NEW FEATURE: Success Modal Start -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-primary" id="successModalLabel"><i class="fa fa-check-circle me-2"></i> Proposal Request Submitted!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Thank you for your interest! Your request has been sent successfully. One of our corporate specialists will get in touch with you shortly.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Success Modal End -->
+
+
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -506,5 +594,84 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
 
+    <!-- UPDATED SCRIPT: Custom Javascript with Popup Logic for BOTH forms -->
+    <script>
+        $(document).ready(function(){
+            // --- Logic for the "Join Now" sliding form ---
+            const slider = $('#join-now-slider');
+            const overlay = $('#form-overlay');
+            
+            // Open the slider
+            $('.join-now-btn').on('click', function(e) {
+                e.preventDefault();
+                overlay.fadeIn();
+                slider.addClass('show');
+            });
+
+            // Close the slider
+            $('#close-slider, #form-overlay').on('click', function() {
+                slider.removeClass('show');
+                overlay.fadeOut();
+            });
+
+            // --- Form Submission Logic ---
+
+            // Handler for the SLIDER form
+            $('#join-now-slider form').on('submit', function(e) {
+                e.preventDefault();
+                var form = $(this);
+                handleFormSubmission(form, true);
+            });
+
+            // Handler for the MAIN PROPOSAL form
+            $('#proposal-form').on('submit', function(e) {
+                e.preventDefault();
+                var form = $(this);
+                handleFormSubmission(form, false);
+            });
+            
+            // Reusable function to handle AJAX submission for both forms
+            function handleFormSubmission(form, isSlider) {
+                $.ajax({
+                    url: form.attr('action'),
+                    method: form.attr('method'),
+                    data: form.serialize(),
+                    success: function(response) {
+                        if (isSlider) {
+                            slider.removeClass('show');
+                            overlay.fadeOut();
+                        }
+                        $('#successModal').modal('show');
+                        form[0].reset(); 
+                    },
+                    error: function() {
+                        alert('Something went wrong. Please try again.');
+                    }
+                });
+            }
+
+            // Owl Carousel initialization
+             $(".testimonial-carousel").owlCarousel({
+                autoplay: true,
+                smartSpeed: 1000,
+                center: true,
+                margin: 24,
+                dots: true,
+                loop: true,
+                nav : false,
+                responsive: {
+                    0:{
+                        items:1
+                    },
+                    768:{
+                        items:2
+                    },
+                    992:{
+                        items:3
+                    }
+                }
+            });
+        });
+    </script>
   </body>
 </html>

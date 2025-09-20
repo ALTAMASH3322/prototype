@@ -38,7 +38,7 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
     
-    <!-- Custom Styles for Slider Form and Uniform Cards -->
+    <!-- Custom Styles for Slider Form -->
     <style>
         /* Join Now Slider Form */
         #form-overlay {
@@ -77,74 +77,15 @@
             cursor: pointer;
         }
         @media (max-width: 992px) {
-            #join-now-slider {
-                width: 60%;
-                left: -65%;
-            }
+            #join-now-slider { width: 60%; left: -65%; }
         }
         @media (max-width: 768px) {
-            #join-now-slider {
-                width: 85%;
-                left: -90%;
-            }
+            #join-now-slider { width: 85%; left: -90%; }
         }
 
-        /* Leadership Section Hover Effect */
-        .team-item .overflow-hidden {
-            position: relative;
-        }
-        .team-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(24, 29, 56, 0.8);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            padding: 20px;
-        }
-        .team-item:hover .team-overlay {
-            opacity: 1;
-        }
-        .team-overlay p.quote {
-            color: white;
-            font-style: italic;
-            text-align: center;
-            margin: 0;
-        }
-
-        /* --- UNIFORMITY FIXES --- */
-        /* For Leadership Cards */
-        .leadership-carousel .team-item .overflow-hidden {
-            height: 320px; 
-        }
-        .leadership-carousel .team-item img {
-            height: 100%;
-            width: 100%;
-            object-fit: cover; 
-        }
-        /* For Popular Course Cards */
-        .course-item .overflow-hidden {
-            height: 250px; 
-        }
-        .course-item img {
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-        }
-        /* For Program Category Cards */
-        .category .col-lg-7 .position-relative {
-            height: 220px;
-        }
-        .category .position-relative img {
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-        }
+        /* Uniform Course Cards */
+        .course-item .overflow-hidden { height: 250px; }
+        .course-item img { height: 100%; width: 100%; object-fit: cover; }
     </style>
   </head>
 
@@ -164,7 +105,6 @@
     </div>
     <!-- Spinner End -->
 
-    <!-- Navbar Start -->
     <!-- Navbar Start -->
     <nav
       class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0"
@@ -187,67 +127,49 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto p-4 p-lg-0">
-          <a href="index.html" class="nav-item nav-link active">Home</a>
+          <a href="index.html" class="nav-item nav-link">Home</a>
           <a href="about.html" class="nav-item nav-link">About Us</a>
           <style>
-  /* This CSS is required to show the submenu on hover */
-  .submenu-container:hover > .dropdown-menu {
-    display: block !important;
-  }
-</style>
+            .submenu-container:hover > .dropdown-menu { display: block !important; }
+          </style>
           <div class="nav-item dropdown">
-  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
-  <div class="dropdown-menu fade-down m-0">
-
-    <!-- AI Services Submenu -->
-    <div class="submenu-container" style="position: relative;">
-      <a href="#" class="dropdown-item dropdown-toggle">AI Services</a>
-      <div class="dropdown-menu" style="position: absolute; top: 0; left: 100%; display: none;">
-        <a href="softwaredevelopment.html" class="dropdown-item">Software Development with AI</a>
-        <a href="artificialintelligence.html" class="dropdown-item">Artificial Intelligence</a>
-        <a href="aiautomation.html" class="dropdown-item">AI Automation</a>
-        <a href="aiagents.html" class="dropdown-item">AI Agents</a>
-      </div>
-    </div>
-
-    <!-- Life Science Services Submenu -->
-    <div class="submenu-container" style="position: relative;">
-      <a href="#" class="dropdown-item dropdown-toggle">Life Science Services</a>
-      <div class="dropdown-menu" style="position: absolute; top: 0; left: 100%; display: none;">
-        <a href="mdsimulationanddrugdesign.html" class="dropdown-item">MD Simulation and Drug Design</a>
-        <a href="genomics.html" class="dropdown-item">Genomics, transcriptomics, and proteomics Services</a>
-        <a href="metagenomics.html" class="dropdown-item">Metagenomics</a>
-        <a href="epigenetics.html" class="dropdown-item">Epigenetics</a>
-      </div>
-    </div>
-
-    <!-- Regular Dropdown Items -->
-    <a href="researchconsultancyservices.html" class="dropdown-item">Research Consultancy Services</a>
-    <a href="trainingandworkshop.html" class="dropdown-item">Training and Workshop</a>
-  </div>
-</div>
+            <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Services</a>
+            <div class="dropdown-menu fade-down m-0">
+              <div class="submenu-container" style="position: relative;">
+                <a href="#" class="dropdown-item dropdown-toggle">AI Services</a>
+                <div class="dropdown-menu" style="position: absolute; top: 0; left: 100%; display: none;">
+                  <a href="softwaredevelopment.html" class="dropdown-item">Software Development with AI</a>
+                  <a href="artificialintelligence.html" class="dropdown-item">Artificial Intelligence</a>
+                  <a href="aiautomation.html" class="dropdown-item">AI Automation</a>
+                  <a href="aiagents.html" class="dropdown-item">AI Agents</a>
+                </div>
+              </div>
+              <div class="submenu-container" style="position: relative;">
+                <a href="#" class="dropdown-item dropdown-toggle">Life Science Services</a>
+                <div class="dropdown-menu" style="position: absolute; top: 0; left: 100%; display: none;">
+                  <a href="mdsimulationanddrugdesign.html" class="dropdown-item">MD Simulation and Drug Design</a>
+                  <a href="genomics.html" class="dropdown-item">Genomics, transcriptomics, and proteomics Services</a>
+                  <a href="metagenomics.html" class="dropdown-item">Metagenomics</a>
+                  <a href="epigenetics.html" class="dropdown-item">Epigenetics</a>
+                </div>
+              </div>
+              <a href="researchconsultancyservices.html" class="dropdown-item">Research Consultancy Services</a>
+              <a href="trainingandworkshop.html" class="dropdown-item">Training and Workshop</a>
+            </div>
+          </div>
           <a href="lifegenbiocare.html" class="nav-item nav-link">LifeGenBio Care</a>
           <div class="nav-item dropdown">
-            <a
-              href="#"
-              class="nav-link dropdown-toggle"
-              data-bs-toggle="dropdown"
-              >Learn</a
-            >
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Learn</a>
             <div class="dropdown-menu fade-down m-0">
               <a href="ourteam.html" class="dropdown-item">Our Team</a>
               <a href="ourtrainers.html" class="dropdown-item">Our Trainers</a>
-              
             </div>
           </div>
           <a href="contact.html" class="nav-item nav-link">Contact Us</a>
         </div>
-        <a href="#" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block join-now-btn"
-          >Join Now<i class="fa fa-arrow-right ms-3"></i
-        ></a>
+        <a href="#" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block join-now-btn">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
       </div>
     </nav>
-    <!-- Navbar End -->
     <!-- Navbar End -->
     
     <!-- Join Now Slider Form Start -->
@@ -256,34 +178,35 @@
         <span id="close-slider">&times;</span>
         <h3 class="mb-4 text-primary">Training Inquiry</h3>
         <p>Let us know your training needs, and our corporate relations team will contact you to design the perfect program.</p>
-        <form>
+        
+        <!-- FORM HAS BEEN CORRECTED -->
+        <form action="https://altamash3328.app.n8n.cloud/webhook/b25dce30-5781-4919-a9ab-7c28b21de8eb" method="POST">
             <div class="mb-3">
                 <label for="sliderName" class="form-label">Full Name</label>
-                <input type="text" class="form-control" id="sliderName" placeholder="Enter your name" required>
+                <input type="text" class="form-control" id="sliderName" name="name" placeholder="Enter your name" required>
             </div>
             <div class="mb-3">
                 <label for="sliderEmail" class="form-label">Work Email</label>
-                <input type="email" class="form-control" id="sliderEmail" placeholder="name@company.com" required>
+                <input type="email" class="form-control" id="sliderEmail" name="email" placeholder="name@company.com" required>
             </div>
             <div class="mb-3">
                 <label for="sliderPhone" class="form-label">Phone Number</label>
-                <input type="tel" class="form-control" id="sliderPhone" placeholder="+91-1234567890" required>
+                <input type="tel" class="form-control" id="sliderPhone" name="phone" placeholder="+91-1234567890" required>
             </div>
             <div class="mb-4">
-                <label for="sliderCourse" class="form-label">I am interested in...</label>
-                <select class="form-select" id="sliderCourse">
+                <label for="sliderService" class="form-label">I am interested in...</label>
+                <select class="form-select" id="sliderService" name="service">
                     <option selected>Select an option</option>
-                    <option value="1">Corporate Training</option>
-                    <option value="2">1-5 Day Workshop</option>
-                    <option value="3">Generative AI Training</option>
-                    <option value="4">Custom Program</option>
+                    <option value="Corporate Training">Corporate Training</option>
+                    <option value="1-5 Day Workshop">1-5 Day Workshop</option>
+                    <option value="Generative AI Training">Generative AI Training</option>
+                    <option value="Custom Program">Custom Program</option>
                 </select>
             </div>
             <button type="submit" class="btn btn-primary w-100 py-3">Submit Inquiry</button>
         </form>
     </div>
     <!-- Join Now Slider Form End -->
-
 
     <!-- Header Start -->
     <div class="container-fluid bg-primary py-5 mb-5 page-header" style="background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url(https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop); background-position: center; background-repeat: no-repeat; background-size: cover;">
@@ -294,7 +217,7 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center">
                             <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
-                            <li class="breadcrumb-item text-white active" aria-current="page">Services</li>
+                            <li class="breadcrumb-item text-white">Services</li>
                             <li class="breadcrumb-item text-white active" aria-current="page">Training & Workshops</li>
                         </ol>
                     </nav>
@@ -303,7 +226,6 @@
         </div>
     </div>
     <!-- Header End -->
-
 
     <!-- Main Content Start -->
     <div class="container-xxl py-5">
@@ -520,6 +442,26 @@
       ><i class="bi bi-arrow-up"></i
     ></a>
 
+    <!-- Success Modal Start -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-primary" id="successModalLabel"><i class="fa fa-check-circle me-2"></i> Training Inquiry Submitted!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Thank you for your interest! Your inquiry has been sent successfully. Our corporate relations team will be in touch with you shortly.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Success Modal End -->
+
+
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -534,7 +476,7 @@
     <!-- Custom Javascript -->
     <script>
         $(document).ready(function(){
-            // Join Now Slider Form Logic
+            // --- Logic for the "Join Now" sliding form ---
             const slider = $('#join-now-slider');
             const overlay = $('#form-overlay');
             
@@ -547,6 +489,27 @@
             $('#close-slider, #form-overlay').on('click', function() {
                 slider.removeClass('show');
                 overlay.fadeOut();
+            });
+
+            // --- Logic to handle form submission with AJAX and show a popup ---
+            $('#join-now-slider form').on('submit', function(e) {
+                e.preventDefault();
+                var form = $(this);
+
+                $.ajax({
+                    url: form.attr('action'),
+                    method: form.attr('method'),
+                    data: form.serialize(),
+                    success: function(response) {
+                        slider.removeClass('show');
+                        overlay.fadeOut();
+                        $('#successModal').modal('show');
+                        form[0].reset(); 
+                    },
+                    error: function() {
+                        alert('Something went wrong. Please try again.');
+                    }
+                });
             });
         });
     </script>

@@ -140,12 +140,6 @@
             object-fit: cover;
             object-position: top; /* Focus on the top part of images */
         }
-        .team-item .team-text {
-            min-height: 180px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
     </style>
   </head>
 
@@ -165,7 +159,6 @@
     </div>
     <!-- Spinner End -->
 
-    <!-- Navbar Start -->
     <!-- Navbar Start -->
     <nav
       class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0"
@@ -188,57 +181,42 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto p-4 p-lg-0">
-          <a href="index.html" class="nav-item nav-link active">Home</a>
+          <a href="index.html" class="nav-item nav-link">Home</a>
           <a href="about.html" class="nav-item nav-link">About Us</a>
           <style>
-  /* This CSS is required to show the submenu on hover */
-  .submenu-container:hover > .dropdown-menu {
-    display: block !important;
-  }
-</style>
+            .submenu-container:hover > .dropdown-menu { display: block !important; }
+          </style>
           <div class="nav-item dropdown">
-  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
-  <div class="dropdown-menu fade-down m-0">
-
-    <!-- AI Services Submenu -->
-    <div class="submenu-container" style="position: relative;">
-      <a href="#" class="dropdown-item dropdown-toggle">AI Services</a>
-      <div class="dropdown-menu" style="position: absolute; top: 0; left: 100%; display: none;">
-        <a href="softwaredevelopment.html" class="dropdown-item">Software Development with AI</a>
-        <a href="artificialintelligence.html" class="dropdown-item">Artificial Intelligence</a>
-        <a href="aiautomation.html" class="dropdown-item">AI Automation</a>
-        <a href="aiagents.html" class="dropdown-item">AI Agents</a>
-      </div>
-    </div>
-
-    <!-- Life Science Services Submenu -->
-    <div class="submenu-container" style="position: relative;">
-      <a href="#" class="dropdown-item dropdown-toggle">Life Science Services</a>
-      <div class="dropdown-menu" style="position: absolute; top: 0; left: 100%; display: none;">
-        <a href="mdsimulationanddrugdesign.html" class="dropdown-item">MD Simulation and Drug Design</a>
-        <a href="genomics.html" class="dropdown-item">Genomics, transcriptomics, and proteomics Services</a>
-        <a href="metagenomics.html" class="dropdown-item">Metagenomics</a>
-        <a href="epigenetics.html" class="dropdown-item">Epigenetics</a>
-      </div>
-    </div>
-
-    <!-- Regular Dropdown Items -->
-    <a href="researchconsultancyservices.html" class="dropdown-item">Research Consultancy Services</a>
-    <a href="trainingandworkshop.html" class="dropdown-item">Training and Workshop</a>
-  </div>
-</div>
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+            <div class="dropdown-menu fade-down m-0">
+              <div class="submenu-container" style="position: relative;">
+                <a href="#" class="dropdown-item dropdown-toggle">AI Services</a>
+                <div class="dropdown-menu" style="position: absolute; top: 0; left: 100%; display: none;">
+                  <a href="softwaredevelopment.html" class="dropdown-item">Software Development with AI</a>
+                  <a href="artificialintelligence.html" class="dropdown-item">Artificial Intelligence</a>
+                  <a href="aiautomation.html" class="dropdown-item">AI Automation</a>
+                  <a href="aiagents.html" class="dropdown-item">AI Agents</a>
+                </div>
+              </div>
+              <div class="submenu-container" style="position: relative;">
+                <a href="#" class="dropdown-item dropdown-toggle">Life Science Services</a>
+                <div class="dropdown-menu" style="position: absolute; top: 0; left: 100%; display: none;">
+                  <a href="mdsimulationanddrugdesign.html" class="dropdown-item">MD Simulation and Drug Design</a>
+                  <a href="genomics.html" class="dropdown-item">Genomics, transcriptomics, and proteomics Services</a>
+                  <a href="metagenomics.html" class="dropdown-item">Metagenomics</a>
+                  <a href="epigenetics.html" class="dropdown-item">Epigenetics</a>
+                </div>
+              </div>
+              <a href="researchconsultancyservices.html" class="dropdown-item">Research Consultancy Services</a>
+              <a href="trainingandworkshop.html" class="dropdown-item">Training and Workshop</a>
+            </div>
+          </div>
           <a href="lifegenbiocare.html" class="nav-item nav-link">LifeGenBio Care</a>
           <div class="nav-item dropdown">
-            <a
-              href="#"
-              class="nav-link dropdown-toggle"
-              data-bs-toggle="dropdown"
-              >Learn</a
-            >
+            <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Learn</a>
             <div class="dropdown-menu fade-down m-0">
               <a href="ourteam.html" class="dropdown-item">Our Team</a>
               <a href="ourtrainers.html" class="dropdown-item">Our Trainers</a>
-              
             </div>
           </div>
           <a href="contact.html" class="nav-item nav-link">Contact Us</a>
@@ -249,7 +227,6 @@
       </div>
     </nav>
     <!-- Navbar End -->
-    <!-- Navbar End -->
     
     <!-- Join Now Slider Form Start -->
     <div id="form-overlay"></div>
@@ -257,27 +234,33 @@
         <span id="close-slider">&times;</span>
         <h3 class="mb-4 text-primary">Connect With Our Team</h3>
         <p>Interested in partnerships, corporate training, or joining our mission? Let us know.</p>
-        <form>
+        
+        <!-- FORM HAS BEEN CORRECTED -->
+        <form action="https://altamash3328.app.n8n.cloud/webhook/b25dce30-5781-4919-a9ab-7c28b21de8eb" method="POST">
             <div class="mb-3">
                 <label for="sliderName" class="form-label">Full Name</label>
-                <input type="text" class="form-control" id="sliderName" placeholder="Enter your name" required>
+                <input type="text" class="form-control" id="sliderName" name="name" placeholder="Enter your name" required>
             </div>
             <div class="mb-3">
                 <label for="sliderEmail" class="form-label">Email Address</label>
-                <input type="email" class="form-control" id="sliderEmail" placeholder="name@example.com" required>
+                <input type="email" class="form-control" id="sliderEmail" name="email" placeholder="name@example.com" required>
+            </div>
+             <div class="mb-3">
+                <label for="sliderPhone" class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" id="sliderPhone" name="phone" placeholder="+91-1234567890" required>
             </div>
              <div class="mb-3">
                 <label for="sliderCompany" class="form-label">Company (Optional)</label>
-                <input type="text" class="form-control" id="sliderCompany" placeholder="Your Company Name">
+                <input type="text" class="form-control" id="sliderCompany" name="company" placeholder="Your Company Name">
             </div>
             <div class="mb-4">
-                <label for="sliderCourse" class="form-label">Inquiry Type</label>
-                <select class="form-select" id="sliderCourse">
+                <label for="sliderInquiry" class="form-label">Inquiry Type</label>
+                <select class="form-select" id="sliderInquiry" name="inquiry_type">
                     <option selected>Select an option</option>
-                    <option value="1">Partnership Opportunities</option>
-                    <option value="2">Corporate Training</option>
-                    <option value="3">Career Opportunities</option>
-                    <option value="4">General Inquiry</option>
+                    <option value="Partnership Opportunities">Partnership Opportunities</option>
+                    <option value="Corporate Training">Corporate Training</option>
+                    <option value="Career Opportunities">Career Opportunities</option>
+                    <option value="General Inquiry">General Inquiry</option>
                 </select>
             </div>
             <button type="submit" class="btn btn-primary w-100 py-3">Submit</button>
@@ -323,13 +306,6 @@
                     </div>
                 </div>
               </div>
-              <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
-                  <div class="bg-light d-flex justify-content-center pt-2 px-1">
-                      <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                      <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                      <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                  </div>
-              </div>
               <div class="text-center p-4">
                 <h5 class="mb-0">Altaf Hussain</h5>
                 <small>Founder & External Business Consultant</small>
@@ -350,13 +326,6 @@
                         <a href="#"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
-              </div>
-               <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
-                  <div class="bg-light d-flex justify-content-center pt-2 px-1">
-                      <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                      <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                      <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                  </div>
               </div>
               <div class="text-center p-4">
                 <h5 class="mb-0">Rahul Kumar</h5>
@@ -379,13 +348,6 @@
                     </div>
                 </div>
               </div>
-              <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
-                  <div class="bg-light d-flex justify-content-center pt-2 px-1">
-                      <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                      <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                      <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                  </div>
-              </div>
               <div class="text-center p-4">
                 <h5 class="mb-0">Lubna Akhtar</h5>
                 <small>Chief Technology Officer</small>
@@ -407,20 +369,12 @@
                     </div>
                 </div>
               </div>
-               <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
-                  <div class="bg-light d-flex justify-content-center pt-2 px-1">
-                      <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                      <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                      <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                  </div>
-              </div>
               <div class="text-center p-4">
                 <h5 class="mb-0">Sameet Naushad</h5>
                 <small>Head of Operations</small>
                  <hr>
                 <p class="mt-3 text-muted small">A dynamic and results-oriented leader, Sarah excels at streamlining business processes, managing complex operations, and enhancing organizational efficiency.</p>
               </div>
-              
             </div>
           </div>
           <!-- Ujjwala Apoorva - Chief Career Officer -->
@@ -436,14 +390,6 @@
                     </div>
                 </div>
               </div>
-               <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
-                  <div class="bg-light d-flex justify-content-center pt-2 px-1">
-                      <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                      <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                      <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                  </div>
-              </div>
-              
               <div class="text-center p-4">
                 <h5 class="mb-0">Ujjwala Apoorva</h5>
                 <small>Chief Career Officer</small>
@@ -452,7 +398,6 @@
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>
@@ -538,6 +483,26 @@
       ><i class="bi bi-arrow-up"></i
     ></a>
 
+    <!-- Success Modal Start -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-primary" id="successModalLabel"><i class="fa fa-check-circle me-2"></i> Inquiry Submitted!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Thank you for reaching out! Your inquiry has been sent successfully. Our team will get in touch with you shortly.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Success Modal End -->
+
+
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -552,7 +517,7 @@
     <!-- Custom Javascript -->
     <script>
         $(document).ready(function(){
-            // Join Now Slider Form Logic
+            // --- Logic for the "Join Now" sliding form ---
             const slider = $('#join-now-slider');
             const overlay = $('#form-overlay');
             
@@ -565,6 +530,27 @@
             $('#close-slider, #form-overlay').on('click', function() {
                 slider.removeClass('show');
                 overlay.fadeOut();
+            });
+
+            // --- Logic to handle form submission with AJAX and show a popup ---
+            $('#join-now-slider form').on('submit', function(e) {
+                e.preventDefault();
+                var form = $(this);
+
+                $.ajax({
+                    url: form.attr('action'),
+                    method: form.attr('method'),
+                    data: form.serialize(),
+                    success: function(response) {
+                        slider.removeClass('show');
+                        overlay.fadeOut();
+                        $('#successModal').modal('show');
+                        form[0].reset(); 
+                    },
+                    error: function() {
+                        alert('Something went wrong. Please try again.');
+                    }
+                });
             });
         });
     </script>

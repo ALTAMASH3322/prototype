@@ -189,54 +189,39 @@
           <a href="index.html" class="nav-item nav-link active">Home</a>
           <a href="about.html" class="nav-item nav-link">About Us</a>
           <style>
-  /* This CSS is required to show the submenu on hover */
-  .submenu-container:hover > .dropdown-menu {
-    display: block !important;
-  }
-</style>
+            .submenu-container:hover > .dropdown-menu { display: block !important; }
+          </style>
           <div class="nav-item dropdown">
-  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
-  <div class="dropdown-menu fade-down m-0">
-
-    <!-- AI Services Submenu -->
-    <div class="submenu-container" style="position: relative;">
-      <a href="#" class="dropdown-item dropdown-toggle">AI Services</a>
-      <div class="dropdown-menu" style="position: absolute; top: 0; left: 100%; display: none;">
-        <a href="softwaredevelopment.html" class="dropdown-item">Software Development with AI</a>
-        <a href="artificialintelligence.html" class="dropdown-item">Artificial Intelligence</a>
-        <a href="aiautomation.html" class="dropdown-item">AI Automation</a>
-        <a href="aiagents.html" class="dropdown-item">AI Agents</a>
-      </div>
-    </div>
-
-    <!-- Life Science Services Submenu -->
-    <div class="submenu-container" style="position: relative;">
-      <a href="#" class="dropdown-item dropdown-toggle">Life Science Services</a>
-      <div class="dropdown-menu" style="position: absolute; top: 0; left: 100%; display: none;">
-        <a href="mdsimulationanddrugdesign.html" class="dropdown-item">MD Simulation and Drug Design</a>
-        <a href="genomics.html" class="dropdown-item">Genomics, transcriptomics, and proteomics Services</a>
-        <a href="metagenomics.html" class="dropdown-item">Metagenomics</a>
-        <a href="epigenetics.html" class="dropdown-item">Epigenetics</a>
-      </div>
-    </div>
-
-    <!-- Regular Dropdown Items -->
-    <a href="researchconsultancyservices.html" class="dropdown-item">Research Consultancy Services</a>
-    <a href="trainingandworkshop.html" class="dropdown-item">Training and Workshop</a>
-  </div>
-</div>
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+            <div class="dropdown-menu fade-down m-0">
+              <div class="submenu-container" style="position: relative;">
+                <a href="#" class="dropdown-item dropdown-toggle">AI Services</a>
+                <div class="dropdown-menu" style="position: absolute; top: 0; left: 100%; display: none;">
+                  <a href="softwaredevelopment.html" class="dropdown-item">Software Development with AI</a>
+                  <a href="artificialintelligence.html" class="dropdown-item">Artificial Intelligence</a>
+                  <a href="aiautomation.html" class="dropdown-item">AI Automation</a>
+                  <a href="aiagents.html" class="dropdown-item">AI Agents</a>
+                </div>
+              </div>
+              <div class="submenu-container" style="position: relative;">
+                <a href="#" class="dropdown-item dropdown-toggle">Life Science Services</a>
+                <div class="dropdown-menu" style="position: absolute; top: 0; left: 100%; display: none;">
+                  <a href="mdsimulationanddrugdesign.html" class="dropdown-item">MD Simulation and Drug Design</a>
+                  <a href="genomics.html" class="dropdown-item">Genomics, transcriptomics, and proteomics Services</a>
+                  <a href="metagenomics.html" class="dropdown-item">Metagenomics</a>
+                  <a href="epigenetics.html" class="dropdown-item">Epigenetics</a>
+                </div>
+              </div>
+              <a href="researchconsultancyservices.html" class="dropdown-item">Research Consultancy Services</a>
+              <a href="trainingandworkshop.html" class="dropdown-item">Training and Workshop</a>
+            </div>
+          </div>
           <a href="lifegenbiocare.html" class="nav-item nav-link">LifeGenBio Care</a>
           <div class="nav-item dropdown">
-            <a
-              href="#"
-              class="nav-link dropdown-toggle"
-              data-bs-toggle="dropdown"
-              >Learn</a
-            >
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Learn</a>
             <div class="dropdown-menu fade-down m-0">
               <a href="ourteam.html" class="dropdown-item">Our Team</a>
               <a href="ourtrainers.html" class="dropdown-item">Our Trainers</a>
-              
             </div>
           </div>
           <a href="contact.html" class="nav-item nav-link">Contact Us</a>
@@ -254,27 +239,28 @@
         <span id="close-slider">&times;</span>
         <h3 class="mb-4 text-primary">Join LifeGenBio Today!</h3>
         <p>Fill in your details and one of our academic counselors will get in touch with you shortly.</p>
-        <form>
+        
+        <form action="https://altamash3328.app.n8n.cloud/webhook/b25dce30-5781-4919-a9ab-7c28b21de8eb" method="POST">
             <div class="mb-3">
                 <label for="sliderName" class="form-label">Full Name</label>
-                <input type="text" class="form-control" id="sliderName" placeholder="Enter your name" required>
+                <input type="text" class="form-control" id="sliderName" name="name" placeholder="Enter your name" required>
             </div>
             <div class="mb-3">
                 <label for="sliderEmail" class="form-label">Email Address</label>
-                <input type="email" class="form-control" id="sliderEmail" placeholder="name@example.com" required>
+                <input type="email" class="form-control" id="sliderEmail" name="email" placeholder="name@example.com" required>
             </div>
             <div class="mb-3">
                 <label for="sliderPhone" class="form-label">Phone Number</label>
-                <input type="tel" class="form-control" id="sliderPhone" placeholder="+91-1234567890" required>
+                <input type="tel" class="form-control" id="sliderPhone" name="phone" placeholder="+91-1234567890" required>
             </div>
             <div class="mb-4">
                 <label for="sliderCourse" class="form-label">Course of Interest</label>
-                <select class="form-select" id="sliderCourse">
+                <select class="form-select" id="sliderCourse" name="course">
                     <option selected>Select a course</option>
-                    <option value="1">Generative AI</option>
-                    <option value="2">AI-Powered Automation</option>
-                    <option value="3">Bioinformatics & Data Science</option>
-                    <option value="4">Other</option>
+                    <option value="Generative AI">Generative AI</option>
+                    <option value="AI-Powered Automation">AI-Powered Automation</option>
+                    <option value="Bioinformatics & Data Science">Bioinformatics & Data Science</option>
+                    <option value="Other">Other</option>
                 </select>
             </div>
             <button type="submit" class="btn btn-primary w-100 py-3">Submit Inquiry</button>
@@ -763,7 +749,7 @@
 
 
     <!-- Testimonial Start -->
-    <!-- <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
       <div class="container">
         <div class="text-center">
           <h6 class="section-title bg-white text-center text-primary px-3">
@@ -773,64 +759,40 @@
         </div>
         <div class="owl-carousel testimonial-carousel position-relative">
           <div class="testimonial-item text-center">
-            <img
-              class="border rounded-circle p-2 mx-auto mb-3"
-              src="img/testimonial-1.jpg"
-              style="width: 80px; height: 80px"
-            />
+            <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-1.jpg" style="width: 80px; height: 80px"/>
             <h5 class="mb-0">Priya Sharma</h5>
             <p>Software Engineer at Google</p>
             <div class="testimonial-text bg-light text-center p-4">
-              <p class="mb-0">
-                "The AI course at LifeGenBio was a game-changer for my career. The hands-on projects gave me the confidence to tackle real-world problems. I landed my dream job just two months after completion!"
-              </p>
+              <p class="mb-0">"The AI course at LifeGenBio was a game-changer for my career. The hands-on projects gave me the confidence to tackle real-world problems. I landed my dream job just two months after completion!"</p>
             </div>
           </div>
           <div class="testimonial-item text-center">
-            <img
-              class="border rounded-circle p-2 mx-auto mb-3"
-              src="img/testimonial-2.jpg"
-              style="width: 80px; height: 80px"
-            />
+            <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-2.jpg" style="width: 80px; height: 80px"/>
             <h5 class="mb-0">David Chen</h5>
             <p>Data Scientist at Microsoft</p>
             <div class="testimonial-text bg-light text-center p-4">
-              <p class="mb-0">
-                "I was amazed by the depth of the Bioinformatics curriculum. The instructors are true experts and were incredibly supportive. This platform is perfect for anyone serious about a career in biotech."
-              </p>
+              <p class="mb-0">"I was amazed by the depth of the Bioinformatics curriculum. The instructors are true experts and were incredibly supportive. This platform is perfect for anyone serious about a career in biotech."</p>
             </div>
           </div>
           <div class="testimonial-item text-center">
-            <img
-              class="border rounded-circle p-2 mx-auto mb-3"
-              src="img/testimonial-3.jpg"
-              style="width: 80px; height: 80px"
-            />
+            <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-3.jpg" style="width: 80px; height: 80px"/>
             <h5 class="mb-0">Ananya Gupta</h5>
             <p>Automation Specialist at Amazon</p>
             <div class="testimonial-text bg-light text-center p-4">
-              <p class="mb-0">
-                "I enrolled in the automation course to upskill, and it exceeded all my expectations. The content is practical, relevant, and immediately applicable. Highly recommended!"
-              </p>
+              <p class="mb-0">"I enrolled in the automation course to upskill, and it exceeded all my expectations. The content is practical, relevant, and immediately applicable. Highly recommended!"</p>
             </div>
           </div>
           <div class="testimonial-item text-center">
-            <img
-              class="border rounded-circle p-2 mx-auto mb-3"
-              src="img/testimonial-4.jpg"
-              style="width: 80px; height: 80px"
-            />
+            <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-4.jpg" style="width: 80px; height: 80px"/>
             <h5 class="mb-0">Michael Johnson</h5>
             <p>Research Associate at Pfizer</p>
             <div class="testimonial-text bg-light text-center p-4">
-              <p class="mb-0">
-                "The blend of life sciences and data analytics is unique and powerful. LifeGenBio provides the perfect platform to gain a competitive edge in the research and development field."
-              </p>
+              <p class="mb-0">"The blend of life sciences and data analytics is unique and powerful. LifeGenBio provides the perfect platform to gain a competitive edge in the research and development field."</p>
             </div>
           </div>
         </div>
       </div>
-    </div> -->
+    </div>
     <!-- Testimonial End -->
 
     <!-- Footer Start -->
@@ -902,6 +864,26 @@
       ><i class="bi bi-arrow-up"></i
     ></a>
 
+    <!-- Success Modal Start -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-primary" id="successModalLabel"><i class="fa fa-check-circle me-2"></i> Inquiry Submitted!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Thank you for your interest! Your inquiry has been sent successfully. One of our academic counselors will be in touch with you shortly.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Success Modal End -->
+
+
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -916,7 +898,7 @@
     <!-- Custom Javascript -->
     <script>
         $(document).ready(function(){
-            // Join Now Slider Form Logic
+            // --- Logic for the "Join Now" sliding form ---
             const slider = $('#join-now-slider');
             const overlay = $('#form-overlay');
             
@@ -931,33 +913,28 @@
                 overlay.fadeOut();
             });
 
-            // Leadership Carousel Initialization
-            $(".leadership-carousel").owlCarousel({
-                autoplay: true,
-                smartSpeed: 1000,
-                loop: true,
-                margin: 25,
-                dots: false,
-                nav: true,
-                navText : [
-                    '<i class="bi bi-chevron-left"></i>',
-                    '<i class="bi bi-chevron-right"></i>'
-                ],
-                responsive: {
-                    0:{
-                        items:1
+            // --- Logic to handle form submission with AJAX and show a popup ---
+            $('#join-now-slider form').on('submit', function(e) {
+                e.preventDefault();
+                var form = $(this);
+
+                $.ajax({
+                    url: form.attr('action'),
+                    method: form.attr('method'),
+                    data: form.serialize(),
+                    success: function(response) {
+                        slider.removeClass('show');
+                        overlay.fadeOut();
+                        $('#successModal').modal('show');
+                        form[0].reset(); 
                     },
-                    768:{
-                        items:2
-                    },
-                    992:{
-                        items:3
-                    },
-                    1200:{
-                        items:4
+                    error: function() {
+                        alert('Something went wrong. Please try again.');
                     }
-                }
+                });
             });
+
+            // The header-carousel, leadership-carousel, and testimonial-carousel are initialized in main.js
         });
     </script>
   </body>

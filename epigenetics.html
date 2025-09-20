@@ -88,63 +88,6 @@
                 left: -90%;
             }
         }
-
-        /* Leadership Section Hover Effect */
-        .team-item .overflow-hidden {
-            position: relative;
-        }
-        .team-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(24, 29, 56, 0.8);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            padding: 20px;
-        }
-        .team-item:hover .team-overlay {
-            opacity: 1;
-        }
-        .team-overlay p.quote {
-            color: white;
-            font-style: italic;
-            text-align: center;
-            margin: 0;
-        }
-
-        /* --- UNIFORMITY FIXES --- */
-        /* For Leadership Cards */
-        .leadership-carousel .team-item .overflow-hidden {
-            height: 320px; 
-        }
-        .leadership-carousel .team-item img {
-            height: 100%;
-            width: 100%;
-            object-fit: cover; 
-        }
-        /* For Popular Course Cards */
-        .course-item .overflow-hidden {
-            height: 250px; 
-        }
-        .course-item img {
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-        }
-        /* For Program Category Cards */
-        .category .col-lg-7 .position-relative {
-            height: 220px;
-        }
-        .category .position-relative img {
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-        }
     </style>
   </head>
 
@@ -164,7 +107,6 @@
     </div>
     <!-- Spinner End -->
 
-    <!-- Navbar Start -->
     <!-- Navbar Start -->
     <nav
       class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0"
@@ -187,45 +129,38 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto p-4 p-lg-0">
-          <a href="index.html" class="nav-item nav-link active">Home</a>
+          <a href="index.html" class="nav-item nav-link">Home</a>
           <a href="about.html" class="nav-item nav-link">About Us</a>
           <style>
-  /* This CSS is required to show the submenu on hover */
-  .submenu-container:hover > .dropdown-menu {
-    display: block !important;
-  }
-</style>
+            .submenu-container:hover > .dropdown-menu {
+              display: block !important;
+            }
+          </style>
           <div class="nav-item dropdown">
-  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
-  <div class="dropdown-menu fade-down m-0">
-
-    <!-- AI Services Submenu -->
-    <div class="submenu-container" style="position: relative;">
-      <a href="#" class="dropdown-item dropdown-toggle">AI Services</a>
-      <div class="dropdown-menu" style="position: absolute; top: 0; left: 100%; display: none;">
-        <a href="softwaredevelopment.html" class="dropdown-item">Software Development with AI</a>
-        <a href="artificialintelligence.html" class="dropdown-item">Artificial Intelligence</a>
-        <a href="aiautomation.html" class="dropdown-item">AI Automation</a>
-        <a href="aiagents.html" class="dropdown-item">AI Agents</a>
-      </div>
-    </div>
-
-    <!-- Life Science Services Submenu -->
-    <div class="submenu-container" style="position: relative;">
-      <a href="#" class="dropdown-item dropdown-toggle">Life Science Services</a>
-      <div class="dropdown-menu" style="position: absolute; top: 0; left: 100%; display: none;">
-        <a href="mdsimulationanddrugdesign.html" class="dropdown-item">MD Simulation and Drug Design</a>
-        <a href="genomics.html" class="dropdown-item">Genomics, transcriptomics, and proteomics Services</a>
-        <a href="metagenomics.html" class="dropdown-item">Metagenomics</a>
-        <a href="epigenetics.html" class="dropdown-item">Epigenetics</a>
-      </div>
-    </div>
-
-    <!-- Regular Dropdown Items -->
-    <a href="researchconsultancyservices.html" class="dropdown-item">Research Consultancy Services</a>
-    <a href="trainingandworkshop.html" class="dropdown-item">Training and Workshop</a>
-  </div>
-</div>
+            <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Services</a>
+            <div class="dropdown-menu fade-down m-0">
+              <div class="submenu-container" style="position: relative;">
+                <a href="#" class="dropdown-item dropdown-toggle">AI Services</a>
+                <div class="dropdown-menu" style="position: absolute; top: 0; left: 100%; display: none;">
+                  <a href="softwaredevelopment.html" class="dropdown-item">Software Development with AI</a>
+                  <a href="artificialintelligence.html" class="dropdown-item">Artificial Intelligence</a>
+                  <a href="aiautomation.html" class="dropdown-item">AI Automation</a>
+                  <a href="aiagents.html" class="dropdown-item">AI Agents</a>
+                </div>
+              </div>
+              <div class="submenu-container" style="position: relative;">
+                <a href="#" class="dropdown-item dropdown-toggle">Life Science Services</a>
+                <div class="dropdown-menu" style="position: absolute; top: 0; left: 100%; display: none;">
+                  <a href="mdsimulationanddrugdesign.html" class="dropdown-item">MD Simulation and Drug Design</a>
+                  <a href="genomics.html" class="dropdown-item">Genomics, transcriptomics, and proteomics Services</a>
+                  <a href="metagenomics.html" class="dropdown-item">Metagenomics</a>
+                  <a href="epigenetics.html" class="dropdown-item">Epigenetics</a>
+                </div>
+              </div>
+              <a href="researchconsultancyservices.html" class="dropdown-item">Research Consultancy Services</a>
+              <a href="trainingandworkshop.html" class="dropdown-item">Training and Workshop</a>
+            </div>
+          </div>
           <a href="lifegenbiocare.html" class="nav-item nav-link">LifeGenBio Care</a>
           <div class="nav-item dropdown">
             <a
@@ -237,7 +172,6 @@
             <div class="dropdown-menu fade-down m-0">
               <a href="ourteam.html" class="dropdown-item">Our Team</a>
               <a href="ourtrainers.html" class="dropdown-item">Our Trainers</a>
-              
             </div>
           </div>
           <a href="contact.html" class="nav-item nav-link">Contact Us</a>
@@ -248,35 +182,34 @@
       </div>
     </nav>
     <!-- Navbar End -->
-    <!-- Navbar End -->
     
     <!-- Join Now Slider Form Start -->
     <div id="form-overlay"></div>
     <div id="join-now-slider">
         <span id="close-slider">&times;</span>
-        <h3 class="mb-4 text-primary">Join LifeGenBio Today!</h3>
-        <p>Fill in your details and one of our academic counselors will get in touch with you shortly.</p>
-        <form>
+        <h3 class="mb-4 text-primary">Service Inquiry</h3>
+        <p>Fill in your details and one of our specialists will get in touch with you shortly.</p>
+        <form id="slider-form" action="https://altamash3328.app.n8n.cloud/webhook/b25dce30-5781-4919-a9ab-7c28b21de8eb" method="POST">
             <div class="mb-3">
                 <label for="sliderName" class="form-label">Full Name</label>
-                <input type="text" class="form-control" id="sliderName" placeholder="Enter your name" required>
+                <input type="text" class="form-control" id="sliderName" name="name" placeholder="Enter your name" required>
             </div>
             <div class="mb-3">
                 <label for="sliderEmail" class="form-label">Email Address</label>
-                <input type="email" class="form-control" id="sliderEmail" placeholder="name@example.com" required>
+                <input type="email" class="form-control" id="sliderEmail" name="email" placeholder="name@example.com" required>
             </div>
             <div class="mb-3">
                 <label for="sliderPhone" class="form-label">Phone Number</label>
-                <input type="tel" class="form-control" id="sliderPhone" placeholder="+91-1234567890" required>
+                <input type="tel" class="form-control" id="sliderPhone" name="phone" placeholder="+91-1234567890" required>
             </div>
             <div class="mb-4">
-                <label for="sliderCourse" class="form-label">Service of Interest</label>
-                <select class="form-select" id="sliderCourse">
-                    <option>Select a Service</option>
-                    <option value="1" selected>Epigenetics Services</option>
-                    <option value="2">Metagenomics Services</option>
-                    <option value="3">AI Services</option>
-                    <option value="4">Other</option>
+                <label for="sliderService" class="form-label">Service of Interest</label>
+                <select class="form-select" id="sliderService" name="service">
+                    <option value="Epigenetics Services" selected>Epigenetics Services</option>
+                    <option value="Metagenomics Services">Metagenomics Services</option>
+                    <option value="Genomics Services">Genomics Services</option>
+                    <option value="AI Services">AI Services</option>
+                    <option value="Other">Other</option>
                 </select>
             </div>
             <button type="submit" class="btn btn-primary w-100 py-3">Submit Inquiry</button>
@@ -294,7 +227,7 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center">
                             <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
-                            <li class="breadcrumb-item text-white active" aria-current="page">Services</li>
+                            <li class="breadcrumb-item text-white">Services</li>
                             <li class="breadcrumb-item text-white active" aria-current="page">Epigenetics</li>
                         </ol>
                     </nav>
@@ -333,7 +266,8 @@
                             <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>High-Resolution Profiling</p>
                         </div>
                     </div>
-                    <a class="btn btn-primary py-3 px-5 mt-2" href="contact.html">Discuss Your Project</a>
+                    <!-- UPDATED BUTTON: This now opens the new project modal -->
+                    <a class="btn btn-primary py-3 px-5 mt-2" href="#" data-bs-toggle="modal" data-bs-target="#projectModal">Discuss Your Project</a>
                 </div>
             </div>
         </div>
@@ -478,6 +412,83 @@
       ><i class="bi bi-arrow-up"></i
     ></a>
 
+    <!-- NEW: Project Discussion Modal Start -->
+    <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-primary" id="projectModalLabel">Discuss Your Epigenetics Project</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Please provide your details below, and one of our project specialists will contact you to discuss your research needs.</p>
+                    <form id="project-form" action="https://altamash3328.app.n8n.cloud/webhook/b25dce30-5781-4919-a9ab-7c28b21de8eb" method="POST">
+                        <input type="hidden" name="inquiry_type" value="Project Discussion - Epigenetics">
+                        <div class="mb-3">
+                            <label for="projectName" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="projectName" name="name" placeholder="Your Full Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="projectEmail" class="form-label">Work Email</label>
+                            <input type="email" class="form-control" id="projectEmail" name="email" placeholder="name@company.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="projectPhone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="projectPhone" name="phone" placeholder="+91-1234567890" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="projectCompany" class="form-label">Company / Institution</label>
+                            <input type="text" class="form-control" id="projectCompany" name="company" placeholder="Your Organization's Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="projectDetails" class="form-label">Project Details</label>
+                            <textarea class="form-control" id="projectDetails" name="project_details" rows="3" placeholder="Briefly describe your project or what you'd like to analyze." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Submit Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Project Discussion Modal End -->
+
+    <!-- NEW: Generic Success Modal (for slider) -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-primary" id="successModalLabel"><i class="fa fa-check-circle me-2"></i> Inquiry Submitted!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Thank you for reaching out! Your inquiry has been sent successfully. One of our specialists will get in touch with you shortly.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NEW: Project-Specific Success Modal -->
+    <div class="modal fade" id="projectSuccessModal" tabindex="-1" aria-labelledby="projectSuccessModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-primary" id="projectSuccessModalLabel"><i class="fa fa-check-circle me-2"></i> Project Inquiry Submitted!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Thank you for your interest in collaborating with us! Our project specialists will review your details and be in contact soon to discuss your research goals.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -489,10 +500,10 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
     
-    <!-- Custom Javascript -->
+    <!-- UPDATED SCRIPT: Custom Javascript with Popup Logic for BOTH forms -->
     <script>
         $(document).ready(function(){
-            // Join Now Slider Form Logic
+            // --- Logic for the "Join Now" sliding form ---
             const slider = $('#join-now-slider');
             const overlay = $('#form-overlay');
             
@@ -507,32 +518,47 @@
                 overlay.fadeOut();
             });
 
-            // Leadership Carousel Initialization
-            $(".leadership-carousel").owlCarousel({
-                autoplay: true,
-                smartSpeed: 1000,
-                loop: true,
-                margin: 25,
-                dots: false,
-                nav: true,
-                navText : [
-                    '<i class="bi bi-chevron-left"></i>',
-                    '<i class="bi bi-chevron-right"></i>'
-                ],
-                responsive: {
-                    0:{
-                        items:1
+            // --- Form Submission Logic ---
+
+            // Handler for the SLIDER form
+            $('#slider-form').on('submit', function(e) {
+                e.preventDefault();
+                var form = $(this);
+
+                $.ajax({
+                    url: form.attr('action'),
+                    method: form.attr('method'),
+                    data: form.serialize(),
+                    success: function(response) {
+                        slider.removeClass('show');
+                        overlay.fadeOut();
+                        $('#successModal').modal('show'); // Show the generic success modal
+                        form[0].reset(); 
                     },
-                    768:{
-                        items:2
-                    },
-                    992:{
-                        items:3
-                    },
-                    1200:{
-                        items:4
+                    error: function() {
+                        alert('Something went wrong. Please try again.');
                     }
-                }
+                });
+            });
+            
+            // NEW: Handler for the PROJECT MODAL form
+            $('#project-form').on('submit', function(e) {
+                e.preventDefault();
+                var form = $(this);
+
+                $.ajax({
+                    url: form.attr('action'),
+                    method: form.attr('method'),
+                    data: form.serialize(),
+                    success: function(response) {
+                        $('#projectModal').modal('hide'); // Hide the project form modal
+                        $('#projectSuccessModal').modal('show'); // Show the project-specific success modal
+                        form[0].reset(); 
+                    },
+                    error: function() {
+                        alert('Something went wrong. Please try again.');
+                    }
+                });
             });
         });
     </script>
