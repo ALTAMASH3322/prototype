@@ -240,7 +240,7 @@
         <h3 class="mb-4 text-primary">Join LifeGenBio Today!</h3>
         <p>Fill in your details and one of our academic counselors will get in touch with you shortly.</p>
         
-        <form action="https://altamash3328.app.n8n.cloud/webhook/b25dce30-5781-4919-a9ab-7c28b21de8eb" method="POST">
+        <form action="https://altamash3328.app.n8n.cloud/webhook/b25dce30-5781-4119-a9ab-7c28b21de8eb" method="POST">
             <div class="mb-3">
                 <label for="sliderName" class="form-label">Full Name</label>
                 <input type="text" class="form-control" id="sliderName" name="name" placeholder="Enter your name" required>
@@ -759,15 +759,13 @@
         </div>
         <div class="owl-carousel testimonial-carousel position-relative">
           <div class="testimonial-item text-center">
-            <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-1.jpg" style="width: 80px; height: 80px"/>
-            <h5 class="mb-0">Priya Sharma</h5>
+           <h5 class="mb-0">Priya Sharma</h5>
             <p>Software Engineer at Google</p>
             <div class="testimonial-text bg-light text-center p-4">
               <p class="mb-0">"The AI course at LifeGenBio was a game-changer for my career. The hands-on projects gave me the confidence to tackle real-world problems. I landed my dream job just two months after completion!"</p>
             </div>
           </div>
           <div class="testimonial-item text-center">
-            <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-2.jpg" style="width: 80px; height: 80px"/>
             <h5 class="mb-0">David Chen</h5>
             <p>Data Scientist at Microsoft</p>
             <div class="testimonial-text bg-light text-center p-4">
@@ -775,7 +773,6 @@
             </div>
           </div>
           <div class="testimonial-item text-center">
-            <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-3.jpg" style="width: 80px; height: 80px"/>
             <h5 class="mb-0">Ananya Gupta</h5>
             <p>Automation Specialist at Amazon</p>
             <div class="testimonial-text bg-light text-center p-4">
@@ -783,7 +780,6 @@
             </div>
           </div>
           <div class="testimonial-item text-center">
-            <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-4.jpg" style="width: 80px; height: 80px"/>
             <h5 class="mb-0">Michael Johnson</h5>
             <p>Research Associate at Pfizer</p>
             <div class="testimonial-text bg-light text-center p-4">
@@ -806,7 +802,7 @@
                 <h4 class="text-white mb-4">LifeGenBio</h4>
                 <p>Empowering the next generation of innovators at the intersection of technology and life sciences.</p>
                 <div class="d-flex pt-2">
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="https://www.youtube.com/@lifegenbiollp3301"><i class="fab fa-youtube"></i></a>
                     <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
                     <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
                     <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
@@ -934,7 +930,66 @@
                 });
             });
 
-            // The header-carousel, leadership-carousel, and testimonial-carousel are initialized in main.js
+            // --- INITIALIZE THE CAROUSELS ---
+
+            // Header Carousel
+            $(".header-carousel").owlCarousel({
+                autoplay: true,
+                smartSpeed: 1500,
+                items: 1,
+                dots: false,
+                loop: true,
+                nav : true,
+                navText : [
+                    '<i class="bi bi-chevron-left"></i>',
+                    '<i class="bi bi-chevron-right"></i>'
+                ]
+            });
+
+            // Leadership Carousel
+            $(".leadership-carousel").owlCarousel({
+                autoplay: true,
+                smartSpeed: 1000,
+                center: true,
+                margin: 24,
+                dots: true,
+                loop: true,
+                nav : false,
+                responsive: {
+                    0:{
+                        items:1
+                    },
+                    768:{
+                        items:2
+                    },
+                    992:{
+                        items:3
+                    }
+                }
+            });
+
+            // Testimonial Carousel
+            $(".testimonial-carousel").owlCarousel({
+                autoplay: true,
+                smartSpeed: 1000,
+                center: true,
+                margin: 24,
+                dots: true,
+                loop: true,
+                nav : false,
+                responsive: {
+                    0:{
+                        items:1
+                    },
+                    768:{
+                        items:2
+                    },
+                    992:{
+                        items:3
+                    }
+                }
+            });
+            // --- END OF CAROUSEL INITIALIZATION ---
         });
     </script>
   </body>
