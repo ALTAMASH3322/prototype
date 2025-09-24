@@ -188,24 +188,73 @@
         <div class="navbar-nav ms-auto p-4 p-lg-0">
           <a href="index.html" class="nav-item nav-link active">Home</a>
           <a href="about.html" class="nav-item nav-link">About Us</a>
+          
+          <!-- ================= FINAL CSS FOR NAVBAR FIX ================= -->
           <style>
-            .submenu-container:hover > .dropdown-menu { display: block !important; }
+              /* SHARED STYLES (for all screen sizes) */
+              .submenu-container {
+                  position: relative;
+              }
+              .submenu-container > .dropdown-item {
+                  cursor: pointer;
+              }
+              .submenu-container > .dropdown-item .fa-caret-right {
+                  transition: transform 0.2s ease-in-out;
+              }
+
+              /* MOBILE-FIRST STYLES (This is the default "downways" layout) */
+              .navbar-nav .submenu-container .dropdown-menu {
+                  position: static; /* This is the key for "downways" */
+                  display: none;
+                  width: 100%;
+                  border: none;
+                  box-shadow: none;
+                  padding-left: 1.5rem; /* Indent for clarity */
+              }
+
+              /* MOBILE-SPECIFIC ROTATION (for the arrow icon) */
+              @media (max-width: 991.98px) {
+                  .submenu-container > .dropdown-item.submenu-open > .fa-caret-right {
+                      transform: rotate(90deg);
+                  }
+              }
+
+              /* DESKTOP OVERRIDE (applies ONLY to screens 992px and wider) */
+              @media (min-width: 992px) {
+                  .submenu-container .dropdown-menu {
+                      position: absolute; /* Switch to "sideways" for desktop */
+                      top: 0;
+                      left: 100%;
+                      width: auto; /* Let it size itself */
+                      padding-left: 0; /* Remove mobile indent */
+                  }
+                  .submenu-container:hover > .dropdown-menu {
+                      display: block !important; /* Re-enable hover for desktop */
+                  }
+              }
           </style>
+
           <div class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">Services</a>
             <div class="dropdown-menu fade-down m-0">
-              <div class="submenu-container" style="position: relative;">
-                <a href="#" class="dropdown-item dropdown-toggle">AI Services</a>
-                <div class="dropdown-menu" style="position: absolute; top: 0; left: 100%; display: none;">
+              <div class="submenu-container">
+                <div class="dropdown-item d-flex justify-content-between align-items-center">
+                    <span>AI Services</span>
+                    <i class="fa fa-caret-right"></i>
+                </div>
+                <div class="dropdown-menu">
                   <a href="softwaredevelopment.html" class="dropdown-item">Software Development with AI</a>
                   <a href="artificialintelligence.html" class="dropdown-item">Artificial Intelligence</a>
                   <a href="aiautomation.html" class="dropdown-item">AI Automation</a>
                   <a href="aiagents.html" class="dropdown-item">AI Agents</a>
                 </div>
               </div>
-              <div class="submenu-container" style="position: relative;">
-                <a href="#" class="dropdown-item dropdown-toggle">Life Science Services</a>
-                <div class="dropdown-menu" style="position: absolute; top: 0; left: 100%; display: none;">
+              <div class="submenu-container">
+                <div class="dropdown-item d-flex justify-content-between align-items-center">
+                    <span>Life Science Services</span>
+                    <i class="fa fa-caret-right"></i>
+                </div>
+                <div class="dropdown-menu">
                   <a href="mdsimulationanddrugdesign.html" class="dropdown-item">MD Simulation and Drug Design</a>
                   <a href="genomics.html" class="dropdown-item">Genomics, transcriptomics, and proteomics Services</a>
                   <a href="metagenomics.html" class="dropdown-item">Metagenomics</a>
@@ -759,7 +808,7 @@
         </div>
         <div class="owl-carousel testimonial-carousel position-relative">
           <div class="testimonial-item text-center">
-           <h5 class="mb-0">Priya Sharma</h5>
+            <h5 class="mb-0">Priya Sharma</h5>
             <p>Software Engineer at Google</p>
             <div class="testimonial-text bg-light text-center p-4">
               <p class="mb-0">"The AI course at LifeGenBio was a game-changer for my career. The hands-on projects gave me the confidence to tackle real-world problems. I landed my dream job just two months after completion!"</p>
@@ -780,7 +829,7 @@
             </div>
           </div>
           <div class="testimonial-item text-center">
-            <h5 class="mb-0">Michael Johnson</h5>
+             <h5 class="mb-0">Michael Johnson</h5>
             <p>Research Associate at Pfizer</p>
             <div class="testimonial-text bg-light text-center p-4">
               <p class="mb-0">"The blend of life sciences and data analytics is unique and powerful. LifeGenBio provides the perfect platform to gain a competitive edge in the research and development field."</p>
@@ -894,6 +943,24 @@
     <!-- Custom Javascript -->
     <script>
         $(document).ready(function(){
+            // --- JAVASCRIPT FOR MOBILE NAVBAR FIX ---
+            $('.navbar-nav .submenu-container > .dropdown-item').on('click', function(e) {
+                if ($(window).width() < 992) {
+                    // This is the most important line. It stops the event from closing the parent dropdown.
+                    e.stopPropagation();
+
+                    var $submenu = $(this).next('.dropdown-menu');
+                    
+                    // Close other open submenus for a clean accordion effect
+                    $('.submenu-container .dropdown-menu').not($submenu).slideUp();
+                    $('.submenu-container .dropdown-item').not(this).removeClass('submenu-open');
+
+                    // Toggle the clicked submenu
+                    $submenu.slideToggle();
+                    $(this).toggleClass('submenu-open');
+                }
+            });
+
             // --- Logic for the "Join Now" sliding form ---
             const slider = $('#join-now-slider');
             const overlay = $('#form-overlay');
@@ -931,7 +998,6 @@
             });
 
             // --- INITIALIZE THE CAROUSELS ---
-
             // Header Carousel
             $(".header-carousel").owlCarousel({
                 autoplay: true,
