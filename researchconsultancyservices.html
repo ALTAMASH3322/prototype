@@ -38,8 +38,20 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
     
-    <!-- Custom Styles for Slider Form -->
+    <!-- Custom Styles -->
     <style>
+        /* --- BANNER IMAGE CORRECTION --- */
+        .header-carousel .owl-carousel-item {
+            height: 90vh; /* Sets a consistent height for the banner */
+            min-height: 500px;
+        }
+        .header-carousel .owl-carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* This is the key property */
+            object-position: center; /* Ensures the image is centered */
+        }
+        
         /* Join Now Slider Form */
         #form-overlay {
             position: fixed;
@@ -78,6 +90,7 @@
         }
         @media (max-width: 992px) {
             #join-now-slider { width: 60%; left: -65%; }
+            .header-carousel .owl-carousel-item { height: 80vh; }
         }
         @media (max-width: 768px) {
             #join-now-slider { width: 85%; left: -90%; }
@@ -107,7 +120,7 @@
             margin: 0;
         }
 
-        /* --- UNIFORMITY FIXES --- */
+        /* Uniformity Fixes */
         .leadership-carousel .team-item .overflow-hidden { height: 320px; }
         .leadership-carousel .team-item img,
         .main-content .position-relative.h-100 img {
@@ -116,10 +129,33 @@
             object-fit: cover; 
         }
         .main-content .position-relative.h-100 { min-height: 400px; }
+
+        /* Correction for Nested Dropdowns */
+        .dropdown-menu .dropdown-submenu {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: -7px;
+        }
+        .dropdown-menu > .dropdown-item.dropdown-toggle:hover + .dropdown-submenu,
+        .dropdown-menu .dropdown-submenu:hover {
+            display: block;
+        }
+        .dropdown-menu .dropdown-toggle::after {
+            display: inline-block;
+            margin-left: .255em;
+            vertical-align: .255em;
+            content: "";
+            border-top: .3em solid transparent;
+            border-right: 0;
+            border-bottom: .3em solid transparent;
+            border-left: .3em solid;
+        }
     </style>
   </head>
 
   <body>
+    <!-- (The rest of your body HTML is unchanged) -->
     <!-- Spinner Start -->
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
       <div class="spinner-border text-primary" style="width: 3rem; height: 3rem" role="status">
@@ -140,29 +176,26 @@
         <div class="navbar-nav ms-auto p-4 p-lg-0">
           <a href="index.html" class="nav-item nav-link">Home</a>
           <a href="about.html" class="nav-item nav-link">About Us</a>
-          <style>
-            .submenu-container:hover > .dropdown-menu { display: block !important; }
-          </style>
           <div class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Services</a>
             <div class="dropdown-menu fade-down m-0">
-              <div class="submenu-container" style="position: relative;">
-                <a href="#" class="dropdown-item dropdown-toggle">AI Services</a>
-                <div class="dropdown-menu" style="position: absolute; top: 0; left: 100%; display: none;">
-                  <a href="softwaredevelopment.html" class="dropdown-item">Software Development with AI</a>
-                  <a href="artificialintelligence.html" class="dropdown-item">Artificial Intelligence</a>
-                  <a href="aiautomation.html" class="dropdown-item">AI Automation</a>
-                  <a href="aiagents.html" class="dropdown-item">AI Agents</a>
-                </div>
+              <div class="dropend">
+                <a href="#" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">AI Services</a>
+                <ul class="dropdown-menu">
+                  <li><a href="softwaredevelopment.html" class="dropdown-item">Software Development with AI</a></li>
+                  <li><a href="artificialintelligence.html" class="dropdown-item">Artificial Intelligence</a></li>
+                  <li><a href="aiautomation.html" class="dropdown-item">AI Automation</a></li>
+                  <li><a href="aiagents.html" class="dropdown-item">AI Agents</a></li>
+                </ul>
               </div>
-              <div class="submenu-container" style="position: relative;">
-                <a href="#" class="dropdown-item dropdown-toggle">Life Science Services</a>
-                <div class="dropdown-menu" style="position: absolute; top: 0; left: 100%; display: none;">
-                  <a href="mdsimulationanddrugdesign.html" class="dropdown-item">MD Simulation and Drug Design</a>
-                  <a href="genomics.html" class="dropdown-item">Genomics, transcriptomics, and proteomics Services</a>
-                  <a href="metagenomics.html" class="dropdown-item">Metagenomics</a>
-                  <a href="epigenetics.html" class="dropdown-item">Epigenetics</a>
-                </div>
+              <div class="dropend">
+                <a href="#" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">Life Science Services</a>
+                <ul class="dropdown-menu">
+                  <li><a href="mdsimulationanddrugdesign.html" class="dropdown-item">MD Simulation and Drug Design</a></li>
+                  <li><a href="genomics.html" class="dropdown-item">Genomics, transcriptomics, and proteomics Services</a></li>
+                  <li><a href="metagenomics.html" class="dropdown-item">Metagenomics</a></li>
+                  <li><a href="epigenetics.html" class="dropdown-item">Epigenetics</a></li>
+                </ul>
               </div>
               <a href="researchconsultancyservices.html" class="dropdown-item">Research Consultancy Services</a>
               <a href="trainingandworkshop.html" class="dropdown-item">Training and Workshop</a>
@@ -190,8 +223,8 @@
         <h3 class="mb-4 text-primary">Request a Consultation</h3>
         <p>Fill in your details and one of our research consultants will get in touch with you shortly.</p>
         
-        <!-- FORM HAS BEEN CORRECTED -->
-        <form action="https://altamash3328.app.n8n.cloud/webhook/b25dce30-5781-4919-a9ab-7c28b21de8eb" method="POST">
+        <form id="consultation-form" action="https://altamash3328.app.n8n.cloud/webhook/b25dce30-5781-4919-a9ab-7c28b21de8eb" method="POST">
+            <div id="form-error-message" class="alert alert-danger" style="display: none;"></div>
             <div class="mb-3">
                 <label for="sliderName" class="form-label">Full Name</label>
                 <input type="text" class="form-control" id="sliderName" name="name" placeholder="Enter your name" required>
@@ -207,7 +240,7 @@
             <div class="mb-4">
                 <label for="sliderService" class="form-label">Service of Interest</label>
                 <select class="form-select" id="sliderService" name="service">
-                    <option selected>Select a service</option>
+                    <option selected disabled value="">Select a service</option>
                     <option value="Writing & Publication Support">Writing & Publication Support</option>
                     <option value="Research Guidance & Mentorship">Research Guidance & Mentorship</option>
                     <option value="AI-Powered Data Analysis">AI-Powered Data Analysis</option>
@@ -224,7 +257,7 @@
     <div class="container-fluid p-0 mb-5">
       <div class="owl-carousel header-carousel position-relative">
         <div class="owl-carousel-item position-relative">
-          <img class="img-fluid" src="https://images.unsplash.com/photo-1581092921462-21516f4d09a0?q=80&w=2070&auto=format&fit=crop" alt="AI in Research" />
+          <img class="img-fluid" src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=1887&auto=format&fit=crop" alt="AI in Research" />
           <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(24, 29, 56, 0.7)">
             <div class="container">
               <div class="row justify-content-start">
@@ -339,75 +372,6 @@
     </div>
     <!-- Main Content End -->
 
-
-    <!-- Team Start (This section appears to be a copy-paste, I'll keep it but recommend replacing with relevant consultants if available) -->
-    <div class="container-xxl py-5">
-      <div class="container">
-        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-          <h6 class="section-title bg-white text-center text-primary px-3">
-            Our Consultants
-          </h6>
-          <h1 class="mb-5">Meet Our Expert Mentors</h1>
-        </div>
-        <div class="owl-carousel leadership-carousel wow fadeInUp" data-wow-delay="0.1s">
-          <!-- Sample Consultant 1 -->
-          <div class="team-item bg-light">
-            <div class="overflow-hidden">
-              <img class="img-fluid" src="img/Rahul.jpeg" alt="Consultant 1" />
-              <div class="team-overlay">
-                  <p class="quote">"Guiding the next generation of researchers is not just a duty, but a passion."</p>
-              </div>
-            </div>
-            <div class="text-center p-4">
-              <h5 class="mb-0">Dr. Rahul Singh</h5>
-              <small>Lead Research Consultant</small>
-            </div>
-          </div>
-          <!-- Sample Consultant 2 -->
-          <div class="team-item bg-light">
-            <div class="overflow-hidden">
-              <img class="img-fluid" src="img/lubna.jpeg" alt="Consultant 2" />
-              <div class="team-overlay">
-                  <p class="quote">"Data tells a story. My job is to help you narrate it with clarity and impact."</p>
-              </div>
-            </div>
-            <div class="text-center p-4">
-              <h5 class="mb-0">Dr. Lubna Akhtar</h5>
-              <small>Data Science Mentor</small>
-            </div>
-          </div>
-          <!-- Sample Consultant 3 -->
-          <div class="team-item bg-light">
-            <div class="overflow-hidden">
-              <img class="img-fluid" src="img/t.jpg" alt="Consultant 3" />
-              <div class="team-overlay">
-                  <p class="quote">"A well-structured manuscript is the bridge between brilliant research and a high-impact publication."</p>
-              </div>
-            </div>
-            <div class="text-center p-4">
-              <h5 class="mb-0">Ujjwala Apoorva</h5>
-              <small>Publication Strategy Expert</small>
-            </div>
-          </div>
-          <!-- Sample Consultant 4 -->
-          <div class="team-item bg-light">
-            <div class="overflow-hidden">
-              <img class="img-fluid" src="img/team-4.jpg" alt="Consultant 4" />
-              <div class="team-overlay">
-                  <p class="quote">"Clarity in writing is a direct reflection of clarity in thought. We refine both."</p>
-              </div>
-            </div>
-            <div class="text-center p-4">
-              <h5 class="mb-0">Dr. Benjamin Lee</h5>
-              <small>Scientific Writing Coach</small>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Team End -->
-
-
     <!-- Testimonial Start -->
     <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
       <div class="container">
@@ -419,7 +383,6 @@
         </div>
         <div class="owl-carousel testimonial-carousel position-relative">
           <div class="testimonial-item text-center">
-            <img class="border rounded-circle p-2 mx-auto mb-3" src="https://images.unsplash.com/photo-1580852300654-03c803a15e35?q=80&w=1887&auto=format&fit=crop" style="width: 80px; height: 80px; object-fit: cover;"/>
             <h5 class="mb-0">Dr. Elena Petrova</h5>
             <p>Postdoctoral Fellow at MIT</p>
             <div class="testimonial-text bg-light text-center p-4">
@@ -427,7 +390,6 @@
             </div>
           </div>
           <div class="testimonial-item text-center">
-            <img class="border rounded-circle p-2 mx-auto mb-3" src="https://images.unsplash.com/photo-1622557243218-52165a29a35e?q=80&w=1887&auto=format&fit=crop" style="width: 80px; height: 80px; object-fit: cover;"/>
             <h5 class="mb-0">Samir Khan</h5>
             <p>PhD Candidate at Stanford</p>
             <div class="testimonial-text bg-light text-center p-4">
@@ -435,7 +397,6 @@
             </div>
           </div>
           <div class="testimonial-item text-center">
-            <img class="border rounded-circle p-2 mx-auto mb-3" src="https://images.unsplash.com/photo-1614283233556-f35b7c841529?q=80&w=1887&auto=format&fit=crop" style="width: 80px; height: 80px; object-fit: cover;"/>
             <h5 class="mb-0">Dr. Aisha Bello</h5>
             <p>Research Scientist at Novartis</p>
             <div class="testimonial-text bg-light text-center p-4">
@@ -443,7 +404,6 @@
             </div>
           </div>
           <div class="testimonial-item text-center">
-            <img class="border rounded-circle p-2 mx-auto mb-3" src="https://images.unsplash.com/photo-1618213192505-448c41d18776?q=80&w=1887&auto=format&fit=crop" style="width: 80px; height: 80px; object-fit: cover;"/>
             <h5 class="mb-0">Carlos Gomez</h5>
             <p>Data Analyst, Public Health</p>
             <div class="testimonial-text bg-light text-center p-4">
@@ -463,18 +423,18 @@
                 <h4 class="text-white mb-4">LifeGenBio</h4>
                 <p>Empowering the next generation of innovators at the intersection of technology and life sciences.</p>
                 <div class="d-flex pt-2">
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-youtube"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
             <div class="col-lg-2 col-md-6">
                 <h4 class="text-white mb-3">About</h4>
-                <a class="btn btn-link" href="">Who are we?</a>
-                <a class="btn btn-link" href="">What we do?</a>
-                <a class="btn btn-link" href="">Why LifeGenBio?</a>
-                <a class="btn btn-link" href="">Workshops</a>
+                <a class="btn btn-link" href="#">Who are we?</a>
+                <a class="btn btn-link" href="#">What we do?</a>
+                <a class="btn btn-link" href="#">Why LifeGenBio?</a>
+                <a class="btn btn-link" href="#">Workshops</a>
             </div>
             <div class="col-lg-3 col-md-6">
                 <h4 class="text-white mb-3">Get in Touch</h4>
@@ -484,8 +444,8 @@
             </div>
              <div class="col-lg-3 col-md-6">
                 <h4 class="text-white mb-3">Latest Insights</h4>
-                <a class="btn btn-link" href="">Resources</a>
-                <a class="btn btn-link" href="">Blog</a>
+                <a class="btn btn-link" href="#">Resources</a>
+                <a class="btn btn-link" href="#">Blog</a>
             </div>
         </div>
       </div>
@@ -495,9 +455,9 @@
             <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">&copy; <a class="border-bottom" href="#">LifeGenBio</a>, All Right Reserved.</div>
             <div class="col-md-6 text-center text-md-end">
               <div class="footer-menu">
-                <a href="">Privacy Policy</a>
-                <a href="">TnCs</a>
-                <a href="">Refund and Cancellation Policy</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">TnCs</a>
+                <a href="#">Refund and Cancellation Policy</a>
               </div>
             </div>
           </div>
@@ -547,9 +507,12 @@
             // --- Logic for the "Join Now" sliding form ---
             const slider = $('#join-now-slider');
             const overlay = $('#form-overlay');
+            const form = $('#consultation-form');
+            const errorMessage = $('#form-error-message');
             
             $('.join-now-btn').on('click', function(e) {
                 e.preventDefault();
+                errorMessage.hide(); // Hide any previous errors
                 overlay.fadeIn();
                 slider.addClass('show');
             });
@@ -560,9 +523,13 @@
             });
 
             // --- Logic to handle form submission with AJAX and show a popup ---
-            $('#join-now-slider form').on('submit', function(e) {
-                e.preventDefault();
-                var form = $(this);
+            form.on('submit', function(e) {
+                e.preventDefault(); // Stop default form submission
+                var submitButton = $(this).find('button[type="submit"]');
+                
+                // Clear previous errors and disable button
+                errorMessage.hide();
+                submitButton.prop('disabled', true).text('Submitting...');
 
                 $.ajax({
                     url: form.attr('action'),
@@ -574,13 +541,35 @@
                         $('#successModal').modal('show');
                         form[0].reset(); 
                     },
-                    error: function() {
-                        alert('Something went wrong. Please try again.');
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        // Display a more informative error message
+                        let msg = 'Something went wrong. Please try again. ';
+                        if (errorThrown) {
+                            msg += `(Error: ${errorThrown})`;
+                        }
+                        errorMessage.text(msg).show();
+                    },
+                    complete: function() {
+                        // Re-enable the button
+                        submitButton.prop('disabled', false).text('Submit Inquiry');
                     }
                 });
             });
 
-            // The header-carousel, leadership-carousel, and testimonial-carousel are initialized in main.js
+            // --- Corrected Nested Dropdown Logic for Bootstrap 5 ---
+            $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
+                if (!$(this).next().hasClass('show')) {
+                    $(this).parents('.dropdown-menu').first().find('.show').removeClass('show');
+                }
+                var $subMenu = $(this).next('.dropdown-menu');
+                $subMenu.toggleClass('show');
+
+                $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function(e) {
+                    $('.dropdown-submenu .show').removeClass('show');
+                });
+                
+                return false; // Prevent the link from navigating
+            });
         });
     </script>
   </body>
