@@ -512,6 +512,29 @@
     </div>
     <!-- About End -->
 
+    <!-- Workshop CTA Start -->
+    <div class="container-xxl py-5 bg-light">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="position-relative d-block overflow-hidden" style="min-height: 400px;">
+                        <img class="img-fluid position-absolute w-100 h-100" src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop" alt="Workshop" style="object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                    <h6 class="section-title bg-white text-start text-primary pe-3">Featured Workshop</h6>
+                    <h1 class="mb-4">Software Development with AI: Build a Private Smart Text Analyzer in 5 Days</h1>
+                    <p class="mb-4">Go from theory to a fully functional, private AI web application. In this hands-on 5-day workshop, you'll build and deploy a smart text analyzer using open-source models, all within a professional cloud environment. No complex setup required!</p>
+                    <p><i class="fa fa-calendar-alt text-primary me-2"></i><strong>Dates:</strong> Starting October 31st, 2025</p>
+                    <button class="btn btn-primary py-3 px-5 mt-3" data-bs-toggle="modal" data-bs-target="#workshopModal">
+                        Learn More & Register
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Workshop CTA End -->
+
     <!-- Categories Start -->
     <div class="container-xxl py-5 category">
       <div class="container">
@@ -927,6 +950,147 @@
         </div>
     </div>
     <!-- Success Modal End -->
+
+    <!-- Workshop Details Modal Start -->
+    <div class="modal fade" id="workshopModal" tabindex="-1" aria-labelledby="workshopModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-primary" id="workshopModalLabel">Workshop: Zero to AI</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h3 class="mb-3">Build a Private Smart Text Analyzer in 5 Days</h3>
+                    
+                    <!-- Overview -->
+                    <h5 class="text-primary mt-4">Overview</h5>
+                    <p>This workshop bridges the gap between AI theory and real-world application. You'll get practical, hands-on experience building an AI-powered web app using open-source models in a controlled, private cloud setup. By the end, you'll have a fully functional smart text analyzer that performs sentiment analysis and named entity recognition.</p>
+
+                    <!-- Learning Goals -->
+                    <h5 class="text-primary mt-4">Learning Goals</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fa fa-check text-success me-2"></i>Understand the modern AI ecosystem (APIs vs. Local Models).</li>
+                        <li><i class="fa fa-check text-success me-2"></i>Set up a professional-grade, reproducible cloud development environment.</li>
+                        <li><i class="fa fa-check text-success me-2"></i>Work hands-on with open-source AI models from Hugging Face.</li>
+                        <li><i class="fa fa-check text-success me-2"></i>Build a reusable AI Analyzer module in Python.</li>
+                        <li><i class="fa fa-check text-success me-2"></i>Create a full-stack web application integrating AI models.</li>
+                        <li><i class="fa fa-check text-success me-2"></i>Apply UI/UX improvements to display AI results meaningfully.</li>
+                    </ul>
+
+                    <!-- Day-wise Structure -->
+                    <h5 class="text-primary mt-4">Day-Wise Structure</h5>
+                    <div class="accordion" id="workshopAccordion">
+                        <!-- Day 1 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <strong>Day 1: The Modern AI Toolkit (3 Hours)</strong>
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#workshopAccordion">
+                                <div class="accordion-body">
+                                    <strong>Theme:</strong> Demystifying AI and setting up a professional, bulletproof development environment.<br>
+                                    <strong>Key Outcome:</strong> Every attendee will successfully load an AI model and run their first inference.
+                                    <ul>
+                                        <li>Introduction to the AI Landscape: APIs vs. Local Models.</li>
+                                        <li>The Unbreakable Development Environment: Cloud IDEs & Dev Containers.</li>
+                                        <li><strong>Lab:</strong> Launching Your Environment & First Inference with the `transformers` library.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Day 2 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    <strong>Day 2: Deep Dive into AI Pipelines (3 Hours)</strong>
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#workshopAccordion">
+                                <div class="accordion-body">
+                                    <strong>Theme:</strong> Moving beyond the magic and understanding the components.<br>
+                                    <strong>Key Outcome:</strong> Attendees will be able to customize the model's input and process its output programmatically.
+                                    <ul>
+                                        <li>Anatomy of a Transformer Pipeline (Tokenizer, Model, Post-processing).</li>
+                                        <li>Building a Reusable AI Service in a Python class.</li>
+                                        <li><strong>Lab:</strong> Refactoring the Day 1 script into a reusable Analyzer module.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Day 3 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    <strong>Day 3: Building the Application Interface (3 Hours)</strong>
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#workshopAccordion">
+                                <div class="accordion-body">
+                                    <strong>Theme:</strong> Bringing your AI model to life with a web interface.<br>
+                                    <strong>Key Outcome:</strong> Attendees will have a working web app to type text and see the AI's analysis.
+                                    <ul>
+                                        <li>Introduction to Web Frameworks (Flask/FastAPI).</li>
+                                        <li>Creating an API Endpoint (`/analyze`).</li>
+                                        <li><strong>Lab:</strong> Building the Full-Stack App with a simple HTML/JS frontend.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Day 4 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    <strong>Day 4: Expanding the AI's Capabilities (3 Hours)</strong>
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#workshopAccordion">
+                                <div class="accordion-body">
+                                    <strong>Theme:</strong> Making the application smarter by adding a new skill.<br>
+                                    <strong>Key Outcome:</strong> Attendees will add a second, different AI capability (NER) to their application.
+                                    <ul>
+                                        <li>Beyond Sentiment: Introduction to Named Entity Recognition (NER).</li>
+                                        <li>Integrating a Second Model into the application.</li>
+                                        <li><strong>Lab:</strong> Upgrading the Smart Analyzer with a new `/entities` endpoint and UI feature.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Day 5 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFive">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    <strong>Day 5: Final Touches & The Path Forward (4 Hours)</strong>
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#workshopAccordion">
+                                <div class="accordion-body">
+                                    <strong>Theme:</strong> Polishing the project and revealing the professional journey ahead.<br>
+                                    <strong>Key Outcome:</strong> A completed, polished project and a clear path forward.
+                                    <ul>
+                                        <li><strong>Capstone Challenge Lab (2 Hours):</strong> Implement UI/UX improvements (highlighting entities) and add new functionality.</li>
+                                        <li>The Professional Horizon: Discussing fine-tuning, deployment, and advanced LLMs.</li>
+                                        <li>The Pitch: Introduction to our 3-Month Intensive Program.</li>
+                                        <li>Open Q&A session.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Requirements -->
+                    <h5 class="text-primary mt-4">Requirements</h5>
+                    <p>Participants need only a laptop and a stable internet connection. All development tools and libraries will be provided via pre-configured cloud environments. Basic Python familiarity is helpful but not mandatory.</p>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="https://altamash3328.app.n8n.cloud/form/4b28741b-2ba7-4fd2-b6a5-6c5cf2c11ef4" class="btn btn-primary">Pay & Register Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Workshop Details Modal End -->
 
 
     <!-- JavaScript Libraries -->
