@@ -38,55 +38,69 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
     
-    <!-- Custom Styles for Slider Form and Uniform Cards -->
+    <!-- Custom Styles -->
     <style>
         /* Join Now Slider Form */
         #form-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            z-index: 1040;
-            display: none;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.6); z-index: 1040; display: none;
         }
         #join-now-slider {
-            position: fixed;
-            top: 0;
-            left: -35%; /* Start off-screen */
-            width: 30%; /* Cover 30% of the page */
-            height: 100vh;
-            background-color: white;
-            z-index: 1050;
-            padding: 40px 30px;
+            position: fixed; top: 0; left: -35%; width: 30%; height: 100vh;
+            background-color: white; z-index: 1050; padding: 40px 30px;
             box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
-            transition: left 0.4s ease-in-out;
-            overflow-y: auto;
+            transition: left 0.4s ease-in-out; overflow-y: auto;
         }
-        #join-now-slider.show {
-            left: 0; /* Slide in */
-        }
+        #join-now-slider.show { left: 0; }
         #close-slider {
-            position: absolute;
-            top: 15px;
-            right: 25px;
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #333;
-            cursor: pointer;
+            position: absolute; top: 15px; right: 25px; font-size: 2.5rem;
+            font-weight: bold; color: #333; cursor: pointer;
         }
         @media (max-width: 992px) {
-            #join-now-slider {
-                width: 60%;
-                left: -65%;
-            }
+            #join-now-slider { width: 60%; left: -65%; }
         }
         @media (max-width: 768px) {
-            #join-now-slider {
-                width: 85%;
-                left: -90%;
-            }
+            #join-now-slider { width: 85%; left: -90%; }
+        }
+
+        /* Service Tabs Style */
+        .nav-pills .nav-link {
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            margin: 0 5px;
+            transition: all .3s;
+        }
+        .nav-pills .nav-link.active, .nav-pills .nav-link:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+                /* --- FLOATING WHATSAPP WIDGET CSS START --- */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 115px; /* Positioned to be just above the 'Back to Top' button */
+            right: 45px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            color: white; /* Ensures the icon color stays white on hover */
+        }
+        /* --- FLOATING WHATSAPP WIDGET CSS END --- */
+        .tab-pane .icon {
+            font-size: 4rem;
+            color: var(--primary);
         }
     </style>
   </head>
@@ -112,13 +126,11 @@
       class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0"
     >
       <a
-        href="index.html"
-        class="navbar-brand d-flex align-items-center px-4 px-lg-5"
-      >
-        <h2 class="m-0 text-primary">
-          <i class="fa fa-book me-3"></i>LifeGenBio
-        </h2>
-      </a>
+  href="index.html"
+  class="navbar-brand d-flex align-items-center px-4 px-lg-5"
+>
+  <img src="img/logo.png" alt="LifeGenBio Logo" style="height: 55px; width: auto;">
+</a>
       <button
         type="button"
         class="navbar-toggler me-4"
@@ -131,26 +143,46 @@
         <div class="navbar-nav ms-auto p-4 p-lg-0">
           <a href="index.html" class="nav-item nav-link">Home</a>
           <a href="about.html" class="nav-item nav-link">About Us</a>
+          
+          <!-- FIXED NAVBAR DROPDOWN CSS -->
           <style>
-            .submenu-container:hover > .dropdown-menu {
-              display: block !important;
-            }
+              .submenu-container { position: relative; }
+              .submenu-container > .dropdown-item { cursor: pointer; }
+              .submenu-container > .dropdown-item .fa-caret-right { transition: transform 0.2s ease-in-out; }
+              .navbar-nav .submenu-container .dropdown-menu {
+                  position: static; display: none; width: 100%; border: none;
+                  box-shadow: none; padding-left: 1.5rem;
+              }
+              @media (max-width: 991.98px) {
+                  .submenu-container > .dropdown-item.submenu-open > .fa-caret-right { transform: rotate(90deg); }
+              }
+              @media (min-width: 992px) {
+                  .submenu-container .dropdown-menu {
+                      position: absolute; top: 0; left: 100%; width: auto; padding-left: 0;
+                  }
+                  .submenu-container:hover > .dropdown-menu { display: block !important; }
+              }
           </style>
+
           <div class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Services</a>
+            <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" data-bs-auto-close="outside">Services</a>
             <div class="dropdown-menu fade-down m-0">
-              <div class="submenu-container" style="position: relative;">
-                <a href="#" class="dropdown-item dropdown-toggle">AI Services</a>
-                <div class="dropdown-menu" style="position: absolute; top: 0; left: 100%; display: none;">
+              <div class="submenu-container">
+                <div class="dropdown-item d-flex justify-content-between align-items-center">
+                    <span>AI Services</span><i class="fa fa-caret-right"></i>
+                </div>
+                <div class="dropdown-menu">
                   <a href="softwaredevelopment.html" class="dropdown-item">Software Development with AI</a>
                   <a href="artificialintelligence.html" class="dropdown-item">Artificial Intelligence</a>
                   <a href="aiautomation.html" class="dropdown-item">AI Automation</a>
                   <a href="aiagents.html" class="dropdown-item">AI Agents</a>
                 </div>
               </div>
-              <div class="submenu-container" style="position: relative;">
-                <a href="#" class="dropdown-item dropdown-toggle">Life Science Services</a>
-                <div class="dropdown-menu" style="position: absolute; top: 0; left: 100%; display: none;">
+              <div class="submenu-container">
+                <div class="dropdown-item d-flex justify-content-between align-items-center">
+                    <span>Life Science Services</span><i class="fa fa-caret-right"></i>
+                </div>
+                <div class="dropdown-menu">
                   <a href="mdsimulationanddrugdesign.html" class="dropdown-item">MD Simulation and Drug Design</a>
                   <a href="genomics.html" class="dropdown-item">Genomics, transcriptomics, and proteomics Services</a>
                   <a href="metagenomics.html" class="dropdown-item">Metagenomics</a>
@@ -163,12 +195,7 @@
           </div>
           <a href="lifegenbiocare.html" class="nav-item nav-link">LifeGenBio Care</a>
           <div class="nav-item dropdown">
-            <a
-              href="#"
-              class="nav-link dropdown-toggle"
-              data-bs-toggle="dropdown"
-              >Learn</a
-            >
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Learn</a>
             <div class="dropdown-menu fade-down m-0">
               <a href="ourteam.html" class="dropdown-item">Our Team</a>
               <a href="ourtrainers.html" class="dropdown-item">Our Trainers</a>
@@ -190,8 +217,7 @@
         <h3 class="mb-4 text-primary">Inquire About Omics Services</h3>
         <p>Fill in your details, and our bioinformatics specialists will contact you to discuss your research needs.</p>
         
-        <!-- FORM HAS BEEN CORRECTED -->
-        <form action="https://altamash3328.app.n8n.cloud/webhook/b25dce30-5781-4919-a9ab-7c28b21de8eb" method="POST">
+        <form action="https://altamash3328.app.n8n.cloud/webhook/b25dce30-5781-4119-a9ab-7c28b21de8eb" method="POST">
             <div class="mb-3">
                 <label for="sliderName" class="form-label">Full Name</label>
                 <input type="text" class="form-control" id="sliderName" name="name" placeholder="Enter your name" required>
@@ -208,10 +234,9 @@
                 <label for="sliderService" class="form-label">Service of Interest</label>
                 <select class="form-select" id="sliderService" name="service">
                     <option selected>Select a service</option>
-                    <option value="Genomics Data Analysis">Genomics Data Analysis</option>
-                    <option value="Sequencing Services">Sequencing Services</option>
-                    <option value="Transcriptomics Analysis">Transcriptomics Analysis</option>
-                    <option value="Proteomics Analysis">Proteomics Analysis</option>
+                    <option value="Genomics">Genomics</option>
+                    <option value="Transcriptomics">Transcriptomics</option>
+                    <option value="Proteomics">Proteomics</option>
                     <option value="Multi-Omics Integration">Multi-Omics Integration</option>
                 </select>
             </div>
@@ -220,151 +245,187 @@
     </div>
     <!-- Join Now Slider Form End -->
 
-
-    <!-- Carousel Start -->
-    <div class="container-fluid p-0 mb-5">
-      <div class="owl-carousel header-carousel position-relative">
-        <div class="owl-carousel-item position-relative">
-          <img class="img-fluid" src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=2070&auto=format&fit=crop" alt="Genomics and AI" />
-          <div
-            class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
-            style="background: rgba(24, 29, 56, 0.7)"
-          >
-            <div class="container">
-              <div class="row justify-content-start">
-                <div class="col-sm-10 col-lg-8">
-                  <h5
-                    class="text-primary text-uppercase mb-3 animated slideInDown"
-                  >
-                    AI-Powered Multi-Omics Analysis
-                  </h5>
-                  <h1 class="display-3 text-white animated slideInDown">
-                    Decoding the Blueprint of Life with AI
-                  </h1>
-                  <p class="fs-5 text-white mb-4 pb-2">
-                    Our integrated omics services leverage AI to unlock complex biological insights from genomic, transcriptomic, and proteomic data, accelerating discovery from code to cure.
-                  </p>
-                  <a
-                    href="#"
-                    class="btn btn-light py-md-3 px-md-5 animated slideInRight join-now-btn"
-                    >Explore Services</a
-                  >
+    <!-- Header Start -->
+    <div class="container-fluid bg-primary py-5 mb-5 page-header" style="background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url(https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=2070&auto=format&fit=crop) center center no-repeat; background-size: cover;">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1 class="display-3 text-white animated slideInDown">Genomics, Transcriptomics & Proteomics</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+                            <li class="breadcrumb-item"><a class="text-white" href="#">Services</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">Multi-Omics</li>
+                        </ol>
+                    </nav>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
-        <div class="owl-carousel-item position-relative">
-          <img class="img-fluid" src="https://images.unsplash.com/photo-1618999335563-3802957fb4a3?q=80&w=2070&auto=format&fit=crop" alt="Proteomics Data Visualization" />
-          <div
-            class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
-            style="background: rgba(24, 29, 56, 0.7)"
-          >
-            <div class="container">
-              <div class="row justify-content-start">
-                <div class="col-sm-10 col-lg-8">
-                  <h5
-                    class="text-primary text-uppercase mb-3 animated slideInDown"
-                  >
-                    From Raw Data to Groundbreaking Discovery
-                  </h5>
-                  <h1 class="display-3 text-white animated slideInDown">
-                    Comprehensive Sequencing & Analysis
-                  </h1>
-                  <p class="fs-5 text-white mb-4 pb-2">
-                    Utilizing state-of-the-art sequencing and advanced bioinformatics, we transform your biological samples into actionable knowledge, powering innovation in health and agriculture.
-                  </p>
-                  <a
-                    href="#"
-                    class="btn btn-light py-md-3 px-md-5 animated slideInRight join-now-btn"
-                    >Explore Services</a
-                  >
+    </div>
+    <!-- Header End -->
+
+    <!-- About Service Section Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="img-fluid position-absolute w-100 h-100" src="img/ai-multi-omics-research.png" alt="Multi-Omics Research" style="object-fit: cover;">
+                    </div>
                 </div>
-              </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <h6 class="section-title bg-white text-start text-primary pe-3">Why LifeGenBio?</h6>
+                    <h1 class="mb-4">AI-Powered Multi-Omics Integration</h1>
+                    <p class="mb-4">We go beyond single-layer analysis. Our expertise lies in integrating genomic, transcriptomic, and proteomic datasets to build a holistic, systems-level understanding of complex biology. By applying advanced AI and machine learning, we uncover hidden patterns and causal relationships that drive discovery.</p>
+                    <p class="mb-4">From state-of-the-art sequencing to sophisticated bioinformatics, we provide an end-to-end solution that transforms your raw samples into actionable biological insights.</p>
+                    <div class="row gy-2 gx-4 mb-4">
+                        <div class="col-sm-6"><p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>End-to-End Service</p></div>
+                        <div class="col-sm-6"><p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>AI-Driven Insights</p></div>
+                        <div class="col-sm-6"><p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Publication-Ready Results</p></div>
+                        <div class="col-sm-6"><p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Expert Consultation</p></div>
+                    </div>
+                    <a class="btn btn-primary py-3 px-5 mt-2 join-now-btn" href="#">Discuss Your Project</a>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-    <!-- Carousel End -->
+    <!-- About Service Section End -->
 
-    <!-- About Section Start -->
+    <!-- Services Tabs Start -->
+    <div class="container-xxl py-5 bg-light">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Our Capabilities</h6>
+                <h1 class="mb-5">A Spectrum of Omics Services</h1>
+            </div>
+            <!-- Nav Pills -->
+            <ul class="nav nav-pills justify-content-center mb-5 wow fadeInUp" id="pills-tab" role="tablist" data-wow-delay="0.2s">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="pills-genomics-tab" data-bs-toggle="pill" data-bs-target="#pills-genomics" type="button" role="tab" aria-controls="pills-genomics" aria-selected="true">Genomics</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-transcriptomics-tab" data-bs-toggle="pill" data-bs-target="#pills-transcriptomics" type="button" role="tab" aria-controls="pills-transcriptomics" aria-selected="false">Transcriptomics</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-proteomics-tab" data-bs-toggle="pill" data-bs-target="#pills-proteomics" type="button" role="tab" aria-controls="pills-proteomics" aria-selected="false">Proteomics</button>
+                </li>
+            </ul>
+            <!-- Tab Content -->
+            <div class="tab-content" id="pills-tabContent">
+                <!-- Genomics Tab -->
+                <div class="tab-pane fade show active" id="pills-genomics" role="tabpanel" aria-labelledby="pills-genomics-tab">
+                    <div class="row g-5 align-items-center">
+                        <div class="col-lg-4 text-center wow fadeIn" data-wow-delay="0.3s">
+                            <i class="fa fa-dna icon mb-4"></i>
+                        </div>
+                        <div class="col-lg-8 wow fadeIn" data-wow-delay="0.5s">
+                            <h3 class="mb-3">Genomics Services</h3>
+                            <p>Unlock the genetic blueprint. We provide comprehensive DNA sequencing and analysis to identify variations, reconstruct genomes, and develop genetic markers for applications in medicine, agriculture, and beyond.</p>
+                            <h5>Key Services:</h5>
+                            <ul>
+                                <li>Whole Genome & Exome Sequencing (WGS/WES)</li>
+                                <li>Reference Guided Assembly & De Novo Assembly</li>
+                                <li>Comparative & Functional Genomics</li>
+                                <li>Variant Calling (SNPs, Indels, SVs)</li>
+                                <li>Marker Development (QTLseq, GBS)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Transcriptomics Tab -->
+                <div class="tab-pane fade" id="pills-transcriptomics" role="tabpanel" aria-labelledby="pills-transcriptomics-tab">
+                    <div class="row g-5 align-items-center">
+                        <div class="col-lg-4 text-center">
+                            <i class="fa fa-layer-group icon mb-4"></i>
+                        </div>
+                        <div class="col-lg-8">
+                            <h3 class="mb-3">Transcriptomics Services</h3>
+                            <p>Capture a dynamic snapshot of gene activity. Our RNA-Seq services quantify expression levels, identify novel transcripts, and uncover regulatory networks that control cellular function in health and disease.</p>
+                            <h5>Key Services:</h5>
+                            <ul>
+                                <li>mRNA & Total RNA Sequencing</li>
+                                <li>Differential Gene Expression (DGE) Analysis</li>
+                                <li>Small RNA (miRNA) Sequencing and Analysis</li>
+                                <li>Pathway and Gene Ontology (GO) Enrichment Analysis</li>
+                                <li>Co-expression Network Analysis</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Proteomics Tab -->
+                <div class="tab-pane fade" id="pills-proteomics" role="tabpanel" aria-labelledby="pills-proteomics-tab">
+                    <div class="row g-5 align-items-center">
+                        <div class="col-lg-4 text-center">
+                            <i class="fa fa-project-diagram icon mb-4"></i>
+                        </div>
+                        <div class="col-lg-8">
+                            <h3 class="mb-3">Proteomics Services</h3>
+                            <p>Analyze the functional machinery of the cell. Using mass spectrometry-based approaches, we identify and quantify proteins and their post-translational modifications to reveal cellular states and signaling pathways.</p>
+                            <h5>Key Services:</h5>
+                            <ul>
+                                <li>Protein Identification and Quantification (LC-MS/MS)</li>
+                                <li>Shotgun & Targeted Proteomics</li>
+                                <li>Post-Translational Modification (PTM) Analysis</li>
+                                <li>Protein-Protein Interaction (PPI) Network Analysis</li>
+                                <li>Quantitative Proteomics (SILAC, TMT, iTRAQ)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Services Tabs End -->
+    
+    <!-- Process Section Start -->
     <div class="container-xxl py-5">
-      <div class="container">
-        <div class="row g-5">
-          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px">
-            <div class="position-relative h-100">
-              <img class="img-fluid position-absolute w-100 h-100" src="img/ai-multi-omics-research.png" alt="Multi-Omics Research" style="object-fit: cover" />
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">How We Work</h6>
+                <h1 class="mb-5">Our Collaborative Process</h1>
             </div>
-          </div>
-          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-            <h6 class="section-title bg-white text-start text-primary pe-3">Our Services</h6>
-            <h1 class="mb-4">Genomics, Transcriptomics, and Proteomics</h1>
-            <p class="mb-4">Our services offer comprehensive analyses of genetic, transcriptomic, and proteomic data, providing valuable insights into the molecular mechanisms underlying biological processes. Utilizing state-of-the-art technologies and advanced AI-powered bioinformatics tools, we deliver accurate and detailed information on gene expression, protein abundance, and molecular interactions.</p>
-            <p class="mb-4">Whether unraveling disease pathways, studying developmental processes, or optimizing biotechnological applications, our services empower researchers with the tools needed to advance scientific understanding and drive innovation. Collaborate with us to unlock the full potential of multi-omics in your research endeavors.</p>
-            <a href="#" class="btn btn-primary py-3 px-5 mt-2 join-now-btn">Contact Our Experts</a>
-          </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item text-center pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-comments text-primary mb-4"></i>
+                            <h5 class="mb-3">1. Consultation</h5>
+                            <p>We start by understanding your research goals to design a tailored experimental and analytical strategy.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item text-center pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-vial text-primary mb-4"></i>
+                            <h5 class="mb-3">2. Sequencing</h5>
+                            <p>We utilize state-of-the-art platforms for high-quality data generation from your biological samples.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item text-center pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-brain text-primary mb-4"></i>
+                            <h5 class="mb-3">3. AI Analysis</h5>
+                            <p>Our bioinformaticians apply advanced algorithms to extract meaningful patterns from complex data.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="service-item text-center pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-chart-bar text-primary mb-4"></i>
+                            <h5 class="mb-3">4. Reporting</h5>
+                            <p>You receive a comprehensive, publication-ready report with actionable insights and clear visualizations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-    <!-- About Section End -->
-
-
-    <!-- Main Content Start -->
-    <div class="container-xxl py-5">
-      <div class="container">
-        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-            <h6 class="section-title bg-white text-center text-primary px-3">Our Capabilities</h6>
-            <h1 class="mb-5">A Spectrum of Omics Services</h1>
-        </div>
-
-        <!-- Data Analysis Services Section -->
-        <div class="row g-5 mb-5 align-items-center">
-          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="position-relative h-100">
-              <img class="img-fluid position-absolute w-100 h-100" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" alt="Data Analysis Dashboard" style="object-fit: cover; min-height: 400px;">
-            </div>
-          </div>
-          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-            <h6 class="section-title bg-white text-start text-primary pe-3">01</h6>
-            <h1 class="mb-4">Data Analysis Services</h1>
-            <p class="mb-4">The foundation of any project harnessing omics sciences lies in accurate data interpretation. We offer innovative AI-driven solutions for data integration and analysis to meet the demanding requirements of modern genomic research.</p>
-            <div class="row gy-2 gx-4 mb-4">
-              <div class="col-sm-12"><p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Comparative Genomics Analysis</p></div>
-              <div class="col-sm-12"><p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Functional Genomic Analysis</p></div>
-              <div class="col-sm-12"><p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Multi-Omics Data Integration</p></div>
-            </div>
-            <a href="#" class="btn btn-primary py-3 px-5 mt-2 join-now-btn">Discuss Your Data</a>
-          </div>
-        </div>
-
-        <!-- Sequencing Services Section -->
-        <div class="row g-5 align-items-center">
-          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="order: 2; order-lg: 1;">
-            <h6 class="section-title bg-white text-start text-primary pe-3">02</h6>
-            <h1 class="mb-4">Sequencing Services</h1>
-            <p class="mb-4">Our sequencing services offer comprehensive analysis of DNA, RNA, proteins, and other biomolecules. Leveraging cutting-edge technologies and expert analysis, we deliver accurate, reliable data tailored to your research needs, from exploring genetic variations to quantifying expression profiles.</p>
-             <div class="row gy-2 gx-4 mb-4">
-              <div class="col-sm-6"><p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Reference Guided Assembly</p></div>
-              <div class="col-sm-6"><p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Genome Reconstruction</p></div>
-              <div class="col-sm-6"><p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Marker Development</p></div>
-              <div class="col-sm-6"><p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Sequence Capture Analysis</p></div>
-              <div class="col-sm-6"><p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Exome & Gene Panel Analysis</p></div>
-              <div class="col-sm-6"><p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>QTLseq & GBS Analysis</p></div>
-            </div>
-            <a href="#" class="btn btn-primary py-3 px-5 mt-2 join-now-btn">Get a Sequencing Quote</a>
-          </div>
-          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s" style="order: 1; order-lg: 2;">
-            <div class="position-relative h-100">
-              <img class="img-fluid position-absolute w-100 h-100" src="img/ai-dna-sequencinglab.png" alt="DNA Sequencing Lab" style="object-fit: cover; min-height: 400px;">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Main Content End -->
-
-
+    <!-- Process Section End -->
+    
     <!-- Testimonial Start -->
     <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
       <div class="container">
@@ -376,7 +437,6 @@
         </div>
         <div class="owl-carousel testimonial-carousel position-relative">
           <div class="testimonial-item text-center">
-            
             <h5 class="mb-0">Dr. Sarah Jennings</h5>
             <p>Director, Genomics Core Facility</p>
             <div class="testimonial-text bg-light text-center p-4">
@@ -386,7 +446,6 @@
             </div>
           </div>
           <div class="testimonial-item text-center">
-            
             <h5 class="mb-0">Dr. Ben Carter</h5>
             <p>Head of R&D, AgriGenetics Corp.</p>
             <div class="testimonial-text bg-light text-center p-4">
@@ -396,7 +455,6 @@
             </div>
           </div>
           <div class="testimonial-item text-center">
-            
             <h5 class="mb-0">Dr. Lena Petrova</h5>
             <p>Clinical Research Scientist</p>
             <div class="testimonial-text bg-light text-center p-4">
@@ -406,7 +464,6 @@
             </div>
           </div>
           <div class="testimonial-item text-center">
-            
             <h5 class="mb-0">Mark Johnson</h5>
             <p>PhD Candidate, Immunology</p>
             <div class="testimonial-text bg-light text-center p-4">
@@ -420,7 +477,7 @@
     </div>
     <!-- Testimonial End -->
 
-    <!-- Footer Start -->
+<!-- Footer Start -->
     <div
       class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn"
       data-wow-delay="0.1s"
@@ -431,35 +488,36 @@
                 <h4 class="text-white mb-4">LifeGenBio</h4>
                 <p>Empowering the next generation of innovators at the intersection of technology and life sciences.</p>
                 <div class="d-flex pt-2">
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="https://www.youtube.com/@lifegenbiollp3301" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="" target="_blank"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
             <div class="col-lg-2 col-md-6">
-                <h4 class="text-white mb-3">About</h4>
-                <a class="btn btn-link" href="">Who are we?</a>
-                <a class="btn btn-link" href="">What we do?</a>
-                <a class="btn btn-link" href="">Why LifeGenBio?</a>
-                <a class="btn btn-link" href="">Workshops</a>
+                <h4 class="text-white mb-3">Quick Links</h4>
+                <a class="btn btn-link" href="about.html">About Us</a>
+                <a class="btn btn-link" href="contact.html">Contact Us</a>
+                <a class="btn btn-link" href="index.html">Workshops</a>
+                <a class="btn btn-link" href="">Our Blog</a>
             </div>
             <div class="col-lg-3 col-md-6">
                 <h4 class="text-white mb-3">Get in Touch</h4>
                 <p class="mb-2">
-                <i class="fab fa-whatsapp me-3"></i>+91-9852880174
+                <i class="fa fa-phone-alt me-3"></i>+91-9065671711
                 </p>
                 <p class="mb-2">
-                <i class="fa fa-phone-alt me-3"></i>+91-7588656772
+                <i class="fab fa-whatsapp me-3"></i>+44-7867243876
                 </p>
                 <p class="mb-2">
                 <i class="fa fa-envelope me-3"></i>info@lifegenbio.com
                 </p>
             </div>
              <div class="col-lg-3 col-md-6">
-                <h4 class="text-white mb-3">Latest Insights</h4>
-                <a class="btn btn-link" href="">Resources</a>
-                <a class="btn btn-link" href="">Blog</a>
+                <h4 class="text-white mb-3">Our Offices</h4>
+                <p><i class="fa fa-map-marker-alt me-3"></i>India</p>
+                <p><i class="fa fa-map-marker-alt me-3"></i>Saudi Arabia</p>
+                <p><i class="fa fa-map-marker-alt me-3"></i>USA</p>
             </div>
         </div>
       </div>
@@ -473,15 +531,14 @@
             <div class="col-md-6 text-center text-md-end">
               <div class="footer-menu">
                 <a href="">Privacy Policy</a>
-                <a href="">TnCs</a>
-                <a href="">Refund and Cancellation Policy</a>
+                <a href="">Terms & Conditions</a>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- Footer End -->
+<!-- Footer End -->
 
 
     <!-- Back to Top -->
@@ -523,6 +580,18 @@
     <!-- Custom Javascript -->
     <script>
         $(document).ready(function(){
+            // --- JAVASCRIPT FOR MOBILE NAVBAR FIX ---
+            $('.navbar-nav .submenu-container > .dropdown-item').on('click', function(e) {
+                if ($(window).width() < 992) {
+                    e.stopPropagation();
+                    var $submenu = $(this).next('.dropdown-menu');
+                    $('.submenu-container .dropdown-menu').not($submenu).slideUp();
+                    $('.submenu-container .dropdown-item').not(this).removeClass('submenu-open');
+                    $submenu.slideToggle();
+                    $(this).toggleClass('submenu-open');
+                }
+            });
+
             // --- Logic for the "Join Now" sliding form ---
             const slider = $('#join-now-slider');
             const overlay = $('#form-overlay');

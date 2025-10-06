@@ -130,6 +130,30 @@
         #close-popup:hover {
             color: #333;
         }
+                /* --- FLOATING WHATSAPP WIDGET CSS START --- */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 115px; /* Positioned to be just above the 'Back to Top' button */
+            right: 45px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            color: white; /* Ensures the icon color stays white on hover */
+        }
+        /* --- FLOATING WHATSAPP WIDGET CSS END --- */
     </style>
   </head>
 
@@ -154,13 +178,11 @@
       class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0"
     >
       <a
-        href="index.html"
-        class="navbar-brand d-flex align-items-center px-4 px-lg-5"
-      >
-        <h2 class="m-0 text-primary">
-          <i class="fa fa-book me-3"></i>LifeGenBio
-        </h2>
-      </a>
+  href="index.html"
+  class="navbar-brand d-flex align-items-center px-4 px-lg-5"
+>
+  <img src="img/logo.png" alt="LifeGenBio Logo" style="height: 55px; width: auto;">
+</a>
       <button
         type="button"
         class="navbar-toggler me-4"
@@ -473,7 +495,17 @@
     </div>
     <!-- Testimonial End -->
 
-    <!-- Footer Start -->
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/447867243876" class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"
+      ><i class="bi bi-arrow-up"></i
+    ></a>
+
+   <!-- Footer Start -->
     <div
       class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn"
       data-wow-delay="0.1s"
@@ -484,35 +516,36 @@
                 <h4 class="text-white mb-4">LifeGenBio</h4>
                 <p>Empowering the next generation of innovators at the intersection of technology and life sciences.</p>
                 <div class="d-flex pt-2">
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="https://www.youtube.com/@lifegenbiollp3301" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="" target="_blank"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
             <div class="col-lg-2 col-md-6">
-                <h4 class="text-white mb-3">About</h4>
-                <a class="btn btn-link" href="">Who are we?</a>
-                <a class="btn btn-link" href="">What we do?</a>
-                <a class="btn btn-link" href="">Why LifeGenBio?</a>
-                <a class="btn btn-link" href="">Workshops</a>
+                <h4 class="text-white mb-3">Quick Links</h4>
+                <a class="btn btn-link" href="about.html">About Us</a>
+                <a class="btn btn-link" href="contact.html">Contact Us</a>
+                <a class="btn btn-link" href="index.html">Workshops</a>
+                <a class="btn btn-link" href="">Our Blog</a>
             </div>
             <div class="col-lg-3 col-md-6">
                 <h4 class="text-white mb-3">Get in Touch</h4>
                 <p class="mb-2">
-                <i class="fab fa-whatsapp me-3"></i>+91-9852880174
+                <i class="fa fa-phone-alt me-3"></i>+91-9065671711
                 </p>
                 <p class="mb-2">
-                <i class="fa fa-phone-alt me-3"></i>+91-7588656772
+                <i class="fab fa-whatsapp me-3"></i>+44-7867243876
                 </p>
                 <p class="mb-2">
                 <i class="fa fa-envelope me-3"></i>info@lifegenbio.com
                 </p>
             </div>
              <div class="col-lg-3 col-md-6">
-                <h4 class="text-white mb-3">Latest Insights</h4>
-                <a class="btn btn-link" href="">Resources</a>
-                <a class="btn btn-link" href="">Blog</a>
+                <h4 class="text-white mb-3">Our Offices</h4>
+                <p><i class="fa fa-map-marker-alt me-3"></i>India</p>
+                <p><i class="fa fa-map-marker-alt me-3"></i>Saudi Arabia</p>
+                <p><i class="fa fa-map-marker-alt me-3"></i>USA</p>
             </div>
         </div>
       </div>
@@ -526,15 +559,14 @@
             <div class="col-md-6 text-center text-md-end">
               <div class="footer-menu">
                 <a href="">Privacy Policy</a>
-                <a href="">TnCs</a>
-                <a href="">Refund and Cancellation Policy</a>
+                <a href="">Terms & Conditions</a>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- Footer End -->
+<!-- Footer End -->
 
     <!-- Access Popup Start -->
     <div id="access-popup">

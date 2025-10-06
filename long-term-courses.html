@@ -139,6 +139,31 @@
             filter: grayscale(0%);
             opacity: 1;
         }
+
+                /* --- FLOATING WHATSAPP WIDGET CSS START --- */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 115px; /* Positioned to be just above the 'Back to Top' button */
+            right: 45px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            color: white; /* Ensures the icon color stays white on hover */
+        }
+        /* --- FLOATING WHATSAPP WIDGET CSS END --- */
     </style>
   </head>
 
@@ -163,13 +188,11 @@
       class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0"
     >
       <a
-        href="index.html"
-        class="navbar-brand d-flex align-items-center px-4 px-lg-5"
-      >
-        <h2 class="m-0 text-primary">
-          <i class="fa fa-book me-3"></i>LifeGenBio
-        </h2>
-      </a>
+  href="index.html"
+  class="navbar-brand d-flex align-items-center px-4 px-lg-5"
+>
+  <img src="img/logo.png" alt="LifeGenBio Logo" style="height: 55px; width: auto;">
+</a>
       <button
         type="button"
         class="navbar-toggler me-4"
@@ -496,6 +519,16 @@
       </div>
     </div>
     <!-- Testimonial End -->
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/447867243876" class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"
+      ><i class="bi bi-arrow-up"></i
+    ></a>
 
     <!-- Footer Start -->
     <div

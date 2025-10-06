@@ -38,7 +38,7 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
     
-    <!-- Custom Styles for Slider Form -->
+    <!-- Custom Styles -->
     <style>
         /* Join Now Slider Form */
         #form-overlay {
@@ -88,6 +88,65 @@
                 left: -90%;
             }
         }
+
+        /* Process Card Styles */
+        .process-item {
+            position: relative;
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 30px;
+            transition: all .3s ease-in-out;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .process-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+                /* --- FLOATING WHATSAPP WIDGET CSS START --- */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 115px; /* Positioned to be just above the 'Back to Top' button */
+            right: 45px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            color: white; /* Ensures the icon color stays white on hover */
+        }
+        /* --- FLOATING WHATSAPP WIDGET CSS END --- */
+        .process-item .step-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: var(--primary);
+            color: white;
+            font-weight: 700;
+            padding: 5px 12px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+        }
+        .process-item .icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        .process-item .btn {
+            margin-top: auto; /* Pushes button to the bottom */
+        }
     </style>
   </head>
 
@@ -112,13 +171,11 @@
       class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0"
     >
       <a
-        href="index.html"
-        class="navbar-brand d-flex align-items-center px-4 px-lg-5"
-      >
-        <h2 class="m-0 text-primary">
-          <i class="fa fa-book me-3"></i>LifeGenBio
-        </h2>
-      </a>
+  href="index.html"
+  class="navbar-brand d-flex align-items-center px-4 px-lg-5"
+>
+  <img src="img/logo.png" alt="LifeGenBio Logo" style="height: 55px; width: auto;">
+</a>
       <button
         type="button"
         class="navbar-toggler me-4"
@@ -131,24 +188,46 @@
         <div class="navbar-nav ms-auto p-4 p-lg-0">
           <a href="index.html" class="nav-item nav-link">Home</a>
           <a href="about.html" class="nav-item nav-link">About Us</a>
+          
+          <!-- FIXED NAVBAR DROPDOWN CSS -->
           <style>
-            .submenu-container:hover > .dropdown-menu { display: block !important; }
+              .submenu-container { position: relative; }
+              .submenu-container > .dropdown-item { cursor: pointer; }
+              .submenu-container > .dropdown-item .fa-caret-right { transition: transform 0.2s ease-in-out; }
+              .navbar-nav .submenu-container .dropdown-menu {
+                  position: static; display: none; width: 100%; border: none;
+                  box-shadow: none; padding-left: 1.5rem;
+              }
+              @media (max-width: 991.98px) {
+                  .submenu-container > .dropdown-item.submenu-open > .fa-caret-right { transform: rotate(90deg); }
+              }
+              @media (min-width: 992px) {
+                  .submenu-container .dropdown-menu {
+                      position: absolute; top: 0; left: 100%; width: auto; padding-left: 0;
+                  }
+                  .submenu-container:hover > .dropdown-menu { display: block !important; }
+              }
           </style>
+
           <div class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Services</a>
+            <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" data-bs-auto-close="outside">Services</a>
             <div class="dropdown-menu fade-down m-0">
-              <div class="submenu-container" style="position: relative;">
-                <a href="#" class="dropdown-item dropdown-toggle">AI Services</a>
-                <div class="dropdown-menu" style="position: absolute; top: 0; left: 100%; display: none;">
+              <div class="submenu-container">
+                <div class="dropdown-item d-flex justify-content-between align-items-center">
+                    <span>AI Services</span><i class="fa fa-caret-right"></i>
+                </div>
+                <div class="dropdown-menu">
                   <a href="softwaredevelopment.html" class="dropdown-item">Software Development with AI</a>
                   <a href="artificialintelligence.html" class="dropdown-item">Artificial Intelligence</a>
                   <a href="aiautomation.html" class="dropdown-item">AI Automation</a>
                   <a href="aiagents.html" class="dropdown-item">AI Agents</a>
                 </div>
               </div>
-              <div class="submenu-container" style="position: relative;">
-                <a href="#" class="dropdown-item dropdown-toggle">Life Science Services</a>
-                <div class="dropdown-menu" style="position: absolute; top: 0; left: 100%; display: none;">
+              <div class="submenu-container">
+                <div class="dropdown-item d-flex justify-content-between align-items-center">
+                    <span>Life Science Services</span><i class="fa fa-caret-right"></i>
+                </div>
+                <div class="dropdown-menu">
                   <a href="mdsimulationanddrugdesign.html" class="dropdown-item">MD Simulation and Drug Design</a>
                   <a href="genomics.html" class="dropdown-item">Genomics, transcriptomics, and proteomics Services</a>
                   <a href="metagenomics.html" class="dropdown-item">Metagenomics</a>
@@ -183,8 +262,7 @@
         <h3 class="mb-4 text-primary">Start a Drug Design Project</h3>
         <p>Provide your details, and our computational science team will contact you to discuss your project.</p>
         
-        <!-- FORM HAS BEEN CORRECTED -->
-        <form action="https://altamash3328.app.n8n.cloud/webhook/b25dce30-5781-4919-a9ab-7c28b21de8eb" method="POST">
+        <form action="https://altamash3328.app.n8n.cloud/webhook/b25dce30-5781-4119-a9ab-7c28b21de8eb" method="POST">
             <div class="mb-3">
                 <label for="sliderName" class="form-label">Full Name</label>
                 <input type="text" class="form-control" id="sliderName" name="name" placeholder="Enter your name" required>
@@ -212,186 +290,118 @@
     </div>
     <!-- Join Now Slider Form End -->
 
-
-    <!-- Carousel Start -->
-    <div class="container-fluid p-0 mb-5">
-      <div class="owl-carousel header-carousel position-relative">
-        <div class="owl-carousel-item position-relative">
-          <img class="img-fluid" src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=2070&auto=format&fit=crop" alt="AI Drug Discovery" />
-          <div
-            class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
-            style="background: rgba(24, 29, 56, 0.7)"
-          >
-            <div class="container">
-              <div class="row justify-content-start">
-                <div class="col-sm-10 col-lg-8">
-                  <h5
-                    class="text-primary text-uppercase mb-3 animated slideInDown"
-                  >
-                    Revolutionizing Drug Discovery
-                  </h5>
-                  <h1 class="display-3 text-white animated slideInDown">
-                    AI-Driven Simulation & Drug Design
-                  </h1>
-                  <p class="fs-5 text-white mb-4 pb-2">
-                    We combine artificial intelligence with advanced computational chemistry to design the next generation of therapeutics with unprecedented speed and accuracy.
-                  </p>
-                  <a
-                    href="#"
-                    class="btn btn-light py-md-3 px-md-5 animated slideInRight join-now-btn"
-                    >Start Your Project</a
-                  >
+    <!-- Header Start -->
+    <div class="container-fluid bg-primary py-5 mb-5 page-header" style="background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url(https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=2070&auto=format&fit=crop) center center no-repeat; background-size: cover;">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1 class="display-3 text-white animated slideInDown">MD Simulation & Drug Design</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+                            <li class="breadcrumb-item"><a class="text-white" href="#">Services</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">Drug Design</li>
+                        </ol>
+                    </nav>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
-        <div class="owl-carousel-item position-relative">
-          <img class="img-fluid" src="https://images.unsplash.com/photo-1628371314981-80c742115336?q=80&w=2070&auto=format&fit=crop" alt="Molecular Simulation" />
-          <div
-            class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
-            style="background: rgba(24, 29, 56, 0.7)"
-          >
-            <div class="container">
-              <div class="row justify-content-start">
-                <div class="col-sm-10 col-lg-8">
-                  <h5
-                    class="text-primary text-uppercase mb-3 animated slideInDown"
-                  >
-                    Precision at the Atomic Level
-                  </h5>
-                  <h1 class="display-3 text-white animated slideInDown">
-                    Unveiling Molecular Dynamics
-                  </h1>
-                  <p class="fs-5 text-white mb-4 pb-2">
-                    Our powerful MD simulations provide deep insights into molecular interactions, guiding rational drug design and optimizing candidates for enhanced efficacy and safety.
-                  </p>
-                  <a
-                    href="#"
-                    class="btn btn-light py-md-3 px-md-5 animated slideInRight join-now-btn"
-                    >Start Your Project</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-    <!-- Carousel End -->
-
-    <!-- Service Start -->
+    <!-- Header End -->
+    
+    <!-- About Service Section Start -->
     <div class="container-xxl py-5">
-      <div class="container">
-        <div class="row g-4">
-          <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="service-item text-center pt-3">
-              <div class="p-4">
-                <i class="fa fa-3x fa-brain text-primary mb-4"></i>
-                <h5 class="mb-3">AI Discovery Engine</h5>
-                <p>
-                  Identify novel drug candidates from vast chemical libraries in record time.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-            <div class="service-item text-center pt-3">
-              <div class="p-4">
-                <i class="fa fa-3x fa-sitemap text-primary mb-4"></i>
-                <h5 class="mb-3">High-Throughput Docking</h5>
-                <p>
-                  Screen millions of compounds to predict binding affinities with high accuracy.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-            <div class="service-item text-center pt-3">
-              <div class="p-4">
-                <i class="fa fa-3x fa-atom text-primary mb-4"></i>
-                <h5 class="mb-3">Predictive Simulations</h5>
-                <p>
-                  Model complex biological interactions to de-risk candidates early in the pipeline.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-            <div class="service-item text-center pt-3">
-              <div class="p-4">
-                <i class="fa fa-3x fa-chart-line text-primary mb-4"></i>
-                <h5 class="mb-3">Data-Driven Optimization</h5>
-                <p>
-                  Leverage machine learning to refine lead compounds for optimal performance.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Service End -->
-
-    <!-- Main Content Start -->
-    <div class="container-xxl py-5">
-      <div class="container">
-        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-            <h6 class="section-title bg-white text-center text-primary px-3">Our Process</h6>
-            <h1 class="mb-5">AI-Powered Drug Design Pipeline</h1>
-        </div>
-
-        <!-- AI Based Compound Detection Section -->
-        <div class="row g-5 mb-5 align-items-center">
-          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="position-relative h-100">
-              <img class="img-fluid position-absolute w-100 h-100" src="img/ai-compound-detection.png" alt="AI Compound Detection" style="object-fit: cover; min-height: 400px;">
-            </div>
-          </div>
-          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-            <h6 class="section-title bg-white text-start text-primary pe-3">01</h6>
-            <h1 class="mb-4">AI-Based Compound Detection</h1>
-            <p class="mb-4">Our process begins with AI-based compound detection, utilizing advanced machine learning algorithms to swiftly and accurately identify promising chemical compounds. We sift through massive virtual libraries, predicting bioactivity and filtering for optimal drug-like properties.</p>
-            <p class="mb-4">This initial step dramatically reduces the time and cost of hit identification, focusing resources only on the most viable candidates for further development.</p>
-            <a href="#" class="btn btn-primary py-3 px-5 mt-2 join-now-btn">Learn More</a>
-          </div>
-        </div>
-
-        <!-- Molecular Docking Section -->
-        <div class="row g-5 mb-5 align-items-center">
-          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="order: 2; order-lg: 1;">
-            <h6 class="section-title bg-white text-start text-primary pe-3">02</h6>
-            <h1 class="mb-4">Molecular Docking</h1>
-            <p class="mb-4">Molecular docking is a pivotal computational technique where we predict the preferred orientation of a compound when bound to a biological target. By simulating these interactions, we analyze binding affinities and structural complementarity to rank potential drug candidates.</p>
-            <p class="mb-4">This method is crucial for accelerating drug development, allowing us to virtually screen and prioritize promising lead compounds for experimental validation, saving valuable lab time and resources.</p>
-            <a href="#" class="btn btn-primary py-3 px-5 mt-2 join-now-btn">Learn More</a>
-          </div>
-          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s" style="order: 1; order-lg: 2;">
-            <div class="position-relative h-100">
-              <img class="img-fluid position-absolute w-100 h-100" src="img/ai-molecular-docking.png" alt="Molecular Docking" style="object-fit: cover; min-height: 400px;">
-            </div>
-          </div>
-        </div>
-        
-        <!-- Molecular Dynamic Simulation Section -->
-        <div class="row g-5 align-items-center">
-            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="position-relative h-100">
-                <img class="img-fluid position-absolute w-100 h-100" src="img/ai-molecular-dynamics-solution.png" alt="Molecular Dynamic Simulation" style="object-fit: cover; min-height: 400px;">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="img-fluid position-absolute w-100 h-100" src="img/comchem.jpeg" alt="Computational Chemistry" style="object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <h6 class="section-title bg-white text-start text-primary pe-3">Why Choose LifeGenBio?</h6>
+                    <h1 class="mb-4">Pioneering the Future of Drug Discovery</h1>
+                    <p class="mb-4">At LifeGenBio, we merge the power of artificial intelligence with the precision of computational chemistry. Our end-to-end drug design services are engineered to de-risk your pipeline, reduce discovery timelines, and increase the probability of clinical success.</p>
+                    <p class="mb-4">We act as your dedicated computational partner, providing deep molecular insights that guide strategic decisions from hit identification to lead optimization.</p>
+                    <div class="row gy-2 gx-4 mb-4">
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Accelerated Timelines</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Higher Accuracy Predictions</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Cost-Effective Screening</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Data-Driven Optimization</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Reduced Late-Stage Failure</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Expert Scientific Team</p>
+                        </div>
+                    </div>
+                    <a class="btn btn-primary py-3 px-5 mt-2 join-now-btn" href="#">Start Your Project</a>
                 </div>
             </div>
-            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-                <h6 class="section-title bg-white text-start text-primary pe-3">03</h6>
-                <h1 class="mb-4">Molecular Dynamics Simulation</h1>
-                <p class="mb-4">Molecular dynamics (MD) simulations allow us to observe the movement and behavior of molecules over time. By mimicking the interactions between drug compounds and their target proteins at an atomic level, we can predict binding stability and observe dynamic structural changes that docking alone cannot capture.</p>
-                <p class="mb-4">This powerful tool provides deep insights into molecular recognition, enhances energy minimization, and guides the rational design of drugs, optimizing candidates for improved efficacy and safety before they reach the lab.</p>
-                <a href="#" class="btn btn-primary py-3 px-5 mt-2 join-now-btn">Learn More</a>
+        </div>
+    </div>
+    <!-- About Service Section End -->
+
+    <!-- Process Section Start -->
+    <div class="container-xxl py-5 bg-light">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Our Process</h6>
+                <h1 class="mb-5">Our End-to-End Computational Pipeline</h1>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <!-- Card 1: AI Compound Detection -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="process-item text-center">
+                        <div class="step-badge">Step 01</div>
+                        <i class="fa fa-brain icon"></i>
+                        <h5 class="mb-3">AI-Based Compound Detection</h5>
+                        <p>We use advanced ML algorithms to scan vast virtual libraries, predicting bioactivity and identifying novel hits with optimal drug-like properties.</p>
+                        <button class="btn btn-outline-primary px-4" data-bs-toggle="modal" data-bs-target="#detectionModal">Read More</button>
+                    </div>
+                </div>
+                <!-- Card 2: Molecular Docking -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="process-item text-center">
+                        <div class="step-badge">Step 02</div>
+                        <i class="fa fa-sitemap icon"></i>
+                        <h5 class="mb-3">Molecular Docking</h5>
+                        <p>Our high-throughput docking protocols predict binding affinities and poses, allowing for rapid, accurate ranking of potential drug candidates.</p>
+                        <button class="btn btn-outline-primary px-4" data-bs-toggle="modal" data-bs-target="#dockingModal">Read More</button>
+                    </div>
+                </div>
+                <!-- Card 3: Molecular Dynamics -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="process-item text-center">
+                        <div class="step-badge">Step 03</div>
+                        <i class="fa fa-atom icon"></i>
+                        <h5 class="mb-3">Molecular Dynamics Simulation</h5>
+                        <p>We simulate the dynamic movement of molecules to validate binding stability, analyze conformational changes, and guide rational lead optimization.</p>
+                        <button class="btn btn-outline-primary px-4" data-bs-toggle="modal" data-bs-target="#simulationModal">Read More</button>
+                    </div>
+                </div>
             </div>
         </div>
-      </div>
     </div>
-    <!-- Main Content End -->
+    <!-- Process Section End -->
 
+    <!-- CTA Section Start -->
+    <div class="container-fluid bg-primary my-5 py-5">
+        <div class="container text-center text-white py-3">
+            <h1 class="mb-4">Ready to Accelerate Your Research?</h1>
+            <p class="fs-5 mb-4">Partner with us to leverage cutting-edge computational science. Let's discuss how our AI-driven approach can advance your drug discovery program.</p>
+            <a href="#" class="btn btn-light py-3 px-5 animated slideInRight join-now-btn">Request a Consultation</a>
+        </div>
+    </div>
+    <!-- CTA Section End -->
 
     <!-- Testimonial Start -->
     <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
@@ -404,7 +414,6 @@
         </div>
         <div class="owl-carousel testimonial-carousel position-relative">
           <div class="testimonial-item text-center">
-            
             <h5 class="mb-0">Dr. Kenji Tanaka</h5>
             <p>CSO, NeuroPharm Inc.</p>
             <div class="testimonial-text bg-light text-center p-4">
@@ -414,7 +423,6 @@
             </div>
           </div>
           <div class="testimonial-item text-center">
-            
             <h5 class="mb-0">Maria Rodriguez</h5>
             <p>Lead Scientist, OncoVentures</p>
             <div class="testimonial-text bg-light text-center p-4">
@@ -424,7 +432,6 @@
             </div>
           </div>
           <div class="testimonial-item text-center">
-            
             <h5 class="mb-0">Dr. Emily Carter</h5>
             <p>Professor, University of Cambridge</p>
             <div class="testimonial-text bg-light text-center p-4">
@@ -434,7 +441,6 @@
             </div>
           </div>
           <div class="testimonial-item text-center">
-            
             <h5 class="mb-0">David Lee</h5>
             <p>CEO, BioTech Start-up</p>
             <div class="testimonial-text bg-light text-center p-4">
@@ -448,6 +454,16 @@
     </div>
     <!-- Testimonial End -->
 
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/447867243876" class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"
+      ><i class="bi bi-arrow-up"></i
+    ></a>
+
     <!-- Footer Start -->
     <div
       class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn"
@@ -459,35 +475,36 @@
                 <h4 class="text-white mb-4">LifeGenBio</h4>
                 <p>Empowering the next generation of innovators at the intersection of technology and life sciences.</p>
                 <div class="d-flex pt-2">
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="https://www.youtube.com/@lifegenbiollp3301" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="" target="_blank"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
             <div class="col-lg-2 col-md-6">
-                <h4 class="text-white mb-3">About</h4>
-                <a class="btn btn-link" href="">Who are we?</a>
-                <a class="btn btn-link" href="">What we do?</a>
-                <a class="btn btn-link" href="">Why LifeGenBio?</a>
-                <a class="btn btn-link" href="">Workshops</a>
+                <h4 class="text-white mb-3">Quick Links</h4>
+                <a class="btn btn-link" href="about.html">About Us</a>
+                <a class="btn btn-link" href="contact.html">Contact Us</a>
+                <a class="btn btn-link" href="index.html">Workshops</a>
+                <a class="btn btn-link" href="">Our Blog</a>
             </div>
             <div class="col-lg-3 col-md-6">
                 <h4 class="text-white mb-3">Get in Touch</h4>
                 <p class="mb-2">
-                <i class="fab fa-whatsapp me-3"></i>+91-9852880174
+                <i class="fa fa-phone-alt me-3"></i>+91-9065671711
                 </p>
                 <p class="mb-2">
-                <i class="fa fa-phone-alt me-3"></i>+91-7588656772
+                <i class="fab fa-whatsapp me-3"></i>+44-7867243876
                 </p>
                 <p class="mb-2">
                 <i class="fa fa-envelope me-3"></i>info@lifegenbio.com
                 </p>
             </div>
              <div class="col-lg-3 col-md-6">
-                <h4 class="text-white mb-3">Latest Insights</h4>
-                <a class="btn btn-link" href="">Resources</a>
-                <a class="btn btn-link" href="">Blog</a>
+                <h4 class="text-white mb-3">Our Offices</h4>
+                <p><i class="fa fa-map-marker-alt me-3"></i>India</p>
+                <p><i class="fa fa-map-marker-alt me-3"></i>Saudi Arabia</p>
+                <p><i class="fa fa-map-marker-alt me-3"></i>USA</p>
             </div>
         </div>
       </div>
@@ -501,21 +518,81 @@
             <div class="col-md-6 text-center text-md-end">
               <div class="footer-menu">
                 <a href="">Privacy Policy</a>
-                <a href="">TnCs</a>
-                <a href="">Refund and Cancellation Policy</a>
+                <a href="">Terms & Conditions</a>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- Footer End -->
+<!-- Footer End -->
 
 
     <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"
-      ><i class="bi bi-arrow-up"></i
-    ></a>
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- Process Modals Start -->
+    <!-- Detection Modal -->
+    <div class="modal fade" id="detectionModal" tabindex="-1" aria-labelledby="detectionModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-primary" id="detectionModalLabel"><i class="fa fa-brain me-2"></i>AI-Based Compound Detection</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Our process begins with AI-based compound detection, utilizing advanced machine learning algorithms to swiftly and accurately identify promising chemical compounds. We sift through massive virtual libraries, predicting bioactivity and filtering for optimal drug-like properties.</p>
+                    <p>This initial step dramatically reduces the time and cost of hit identification, focusing resources only on the most viable candidates for further development. By leveraging predictive models trained on vast datasets, we can explore a larger chemical space more efficiently than traditional high-throughput screening, uncovering novel molecular scaffolds with high potential.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary join-now-btn">Start a Project</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Docking Modal -->
+    <div class="modal fade" id="dockingModal" tabindex="-1" aria-labelledby="dockingModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-primary" id="dockingModalLabel"><i class="fa fa-sitemap me-2"></i>Molecular Docking</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Molecular docking is a pivotal computational technique where we predict the preferred orientation of a compound when bound to a biological target. By simulating these interactions, we analyze binding affinities and structural complementarity to rank potential drug candidates.</p>
+                    <p>This method is crucial for accelerating drug development, allowing us to virtually screen and prioritize promising lead compounds for experimental validation, saving valuable lab time and resources. Our pipeline employs a consensus scoring approach, combining multiple algorithms to increase the reliability of our hit prioritization.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary join-now-btn">Start a Project</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Simulation Modal -->
+    <div class="modal fade" id="simulationModal" tabindex="-1" aria-labelledby="simulationModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-primary" id="simulationModalLabel"><i class="fa fa-atom me-2"></i>Molecular Dynamics Simulation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Molecular dynamics (MD) simulations allow us to observe the movement and behavior of molecules over time. By mimicking the interactions between drug compounds and their target proteins at an atomic level, we can predict binding stability and observe dynamic structural changes that docking alone cannot capture.</p>
+                    <p>This powerful tool provides deep insights into molecular recognition, enhances energy minimization, and guides the rational design of drugs, optimizing candidates for improved efficacy and safety before they reach the lab. We analyze trajectories to calculate binding free energies (MMPBSA/GBSA) and identify key residue interactions, providing a comprehensive understanding of the compound's mechanism of action.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary join-now-btn">Start a Project</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Process Modals End -->
+
 
     <!-- Success Modal Start -->
     <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
@@ -551,14 +628,33 @@
     <!-- Custom Javascript -->
     <script>
         $(document).ready(function(){
+            // --- JAVASCRIPT FOR MOBILE NAVBAR FIX ---
+            $('.navbar-nav .submenu-container > .dropdown-item').on('click', function(e) {
+                if ($(window).width() < 992) {
+                    e.stopPropagation();
+                    var $submenu = $(this).next('.dropdown-menu');
+                    $('.submenu-container .dropdown-menu').not($submenu).slideUp();
+                    $('.submenu-container .dropdown-item').not(this).removeClass('submenu-open');
+                    $submenu.slideToggle();
+                    $(this).toggleClass('submenu-open');
+                }
+            });
+
             // --- Logic for the "Join Now" sliding form ---
             const slider = $('#join-now-slider');
             const overlay = $('#form-overlay');
             
-            $('.join-now-btn').on('click', function(e) {
+            // Re-binding click event for all buttons with 'join-now-btn' class
+            $(document).on('click', '.join-now-btn', function(e) {
                 e.preventDefault();
-                overlay.fadeIn();
-                slider.addClass('show');
+                // If a modal is open, close it before showing the slider
+                $('.modal').modal('hide');
+                
+                // Add a small delay to allow modal to close gracefully
+                setTimeout(function() {
+                    overlay.fadeIn();
+                    slider.addClass('show');
+                }, 400);
             });
 
             $('#close-slider, #form-overlay').on('click', function() {

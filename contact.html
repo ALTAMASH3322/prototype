@@ -38,49 +38,53 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
 
-    <!-- Custom Styles for Slider Form -->
+    <!-- Custom Styles -->
     <style>
         /* Join Now Slider Form */
         #form-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            z-index: 1040;
-            display: none;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.6); z-index: 1040; display: none;
         }
         #join-now-slider {
-            position: fixed;
-            top: 0;
-            left: -35%; /* Start off-screen */
-            width: 30%; /* Cover 30% of the page */
-            height: 100vh;
-            background-color: white;
-            z-index: 1050;
-            padding: 40px 30px;
+            position: fixed; top: 0; left: -35%; width: 30%; height: 100vh;
+            background-color: white; z-index: 1050; padding: 40px 30px;
             box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
-            transition: left 0.4s ease-in-out;
-            overflow-y: auto;
+            transition: left 0.4s ease-in-out; overflow-y: auto;
         }
-        #join-now-slider.show {
-            left: 0; /* Slide in */
-        }
+        #join-now-slider.show { left: 0; }
         #close-slider {
-            position: absolute;
-            top: 15px;
-            right: 25px;
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #333;
-            cursor: pointer;
+            position: absolute; top: 15px; right: 25px; font-size: 2.5rem;
+            font-weight: bold; color: #333; cursor: pointer;
         }
         @media (max-width: 992px) {
             #join-now-slider { width: 60%; left: -65%; }
         }
         @media (max-width: 768px) {
             #join-now-slider { width: 85%; left: -90%; }
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 115px; /* Positioned above the back-to-top button */
+            right: 45px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            color: white;
         }
     </style>
   </head>
@@ -89,7 +93,7 @@
     <!-- Spinner Start -->
     <div
       id="spinner"
-      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items:center justify-content-center"
     >
       <div
         class="spinner-border text-primary"
@@ -106,13 +110,11 @@
       class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0"
     >
       <a
-        href="index.html"
-        class="navbar-brand d-flex align-items-center px-4 px-lg-5"
-      >
-        <h2 class="m-0 text-primary">
-          <i class="fa fa-book me-3"></i>LifeGenBio
-        </h2>
-      </a>
+  href="index.html"
+  class="navbar-brand d-flex align-items-center px-4 px-lg-5"
+>
+  <img src="img/logo.png" alt="LifeGenBio Logo" style="height: 55px; width: auto;">
+</a>
       <button
         type="button"
         class="navbar-toggler me-4"
@@ -125,24 +127,46 @@
         <div class="navbar-nav ms-auto p-4 p-lg-0">
           <a href="index.html" class="nav-item nav-link">Home</a>
           <a href="about.html" class="nav-item nav-link">About Us</a>
+          
+          <!-- FIXED NAVBAR DROPDOWN CSS -->
           <style>
-            .submenu-container:hover > .dropdown-menu { display: block !important; }
+              .submenu-container { position: relative; }
+              .submenu-container > .dropdown-item { cursor: pointer; }
+              .submenu-container > .dropdown-item .fa-caret-right { transition: transform 0.2s ease-in-out; }
+              .navbar-nav .submenu-container .dropdown-menu {
+                  position: static; display: none; width: 100%; border: none;
+                  box-shadow: none; padding-left: 1.5rem;
+              }
+              @media (max-width: 991.98px) {
+                  .submenu-container > .dropdown-item.submenu-open > .fa-caret-right { transform: rotate(90deg); }
+              }
+              @media (min-width: 992px) {
+                  .submenu-container .dropdown-menu {
+                      position: absolute; top: 0; left: 100%; width: auto; padding-left: 0;
+                  }
+                  .submenu-container:hover > .dropdown-menu { display: block !important; }
+              }
           </style>
+
           <div class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">Services</a>
             <div class="dropdown-menu fade-down m-0">
-              <div class="submenu-container" style="position: relative;">
-                <a href="#" class="dropdown-item dropdown-toggle">AI Services</a>
-                <div class="dropdown-menu" style="position: absolute; top: 0; left: 100%; display: none;">
+              <div class="submenu-container">
+                <div class="dropdown-item d-flex justify-content-between align-items-center">
+                    <span>AI Services</span><i class="fa fa-caret-right"></i>
+                </div>
+                <div class="dropdown-menu">
                   <a href="softwaredevelopment.html" class="dropdown-item">Software Development with AI</a>
                   <a href="artificialintelligence.html" class="dropdown-item">Artificial Intelligence</a>
                   <a href="aiautomation.html" class="dropdown-item">AI Automation</a>
                   <a href="aiagents.html" class="dropdown-item">AI Agents</a>
                 </div>
               </div>
-              <div class="submenu-container" style="position: relative;">
-                <a href="#" class="dropdown-item dropdown-toggle">Life Science Services</a>
-                <div class="dropdown-menu" style="position: absolute; top: 0; left: 100%; display: none;">
+              <div class="submenu-container">
+                <div class="dropdown-item d-flex justify-content-between align-items-center">
+                    <span>Life Science Services</span><i class="fa fa-caret-right"></i>
+                </div>
+                <div class="dropdown-menu">
                   <a href="mdsimulationanddrugdesign.html" class="dropdown-item">MD Simulation and Drug Design</a>
                   <a href="genomics.html" class="dropdown-item">Genomics, transcriptomics, and proteomics Services</a>
                   <a href="metagenomics.html" class="dropdown-item">Metagenomics</a>
@@ -174,7 +198,7 @@
         <span id="close-slider">&times;</span>
         <h3 class="mb-4 text-primary">Join LifeGenBio Today!</h3>
         <p>Fill in your details and one of our academic counselors will get in touch with you shortly.</p>
-        <form id="slider-form" action="https://altamash3328.app.n8n.cloud/webhook/b25dce30-5781-4919-a9ab-7c28b21de8eb" method="POST">
+        <form id="slider-form" action="https://altamash3328.app.n8n.cloud/webhook/b25dce30-5781-4119-a9ab-7c28b21de8eb" method="POST">
             <div class="mb-3">
                 <label for="sliderName" class="form-label">Full Name</label>
                 <input type="text" class="form-control" id="sliderName" name="name" placeholder="Enter your name" required>
@@ -226,37 +250,64 @@
                 <h6 class="section-title bg-white text-center text-primary px-3">Contact Us</h6>
                 <h1 class="mb-5">Get In Touch For Any Query</h1>
             </div>
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <h5>Get In Touch</h5>
-                    <p class="mb-4">We're here to help. Reach out to us through any of the channels below, or fill out the form and we'll get back to you as soon as possible.</p>
-                    <div class="d-flex align-items-center mb-3">
+            <div class="row g-5">
+                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                    <h5 class="mb-4">Our Offices</h5>
+                    <!-- Saudi Arabia Office -->
+                    <div class="d-flex align-items-start mb-4">
                         <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary" style="width: 50px; height: 50px;">
                             <i class="fa fa-map-marker-alt text-white"></i>
                         </div>
                         <div class="ms-3">
-                            <h5 class="text-primary">Office</h5>
-                            <p class="mb-0">Bannerghatta Main Rd, Bengaluru, Karnataka, India</p>
+                            <h5 class="text-primary">Saudi Arabia</h5>
+                            <p class="mb-0">Office Suite #101, Dara Centre, Al-Naim District, Prince Sultan Street, Jeddah 23526</p>
                         </div>
                     </div>
+                    <!-- India Office -->
+                    <div class="d-flex align-items-start mb-4">
+                        <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary" style="width: 50px; height: 50px;">
+                            <i class="fa fa-map-marker-alt text-white"></i>
+                        </div>
+                        <div class="ms-3">
+                            <h5 class="text-primary">India</h5>
+                            <p class="mb-0">FL-1105/PL-20A, Tricity Promenade, Sector 38, Seawoods, Navi Mumbai, Maharashtra-400706</p>
+                        </div>
+                    </div>
+                    <!-- USA Office -->
+                    <div class="d-flex align-items-start mb-4">
+                        <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary" style="width: 50px; height: 50px;">
+                            <i class="fa fa-map-marker-alt text-white"></i>
+                        </div>
+                        <div class="ms-3">
+                            <h5 class="text-primary">USA</h5>
+                            <p class="mb-0">30 N Gould ST STE 4000, Sheridan WY 82801</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <h5 class="mb-4">Contact Details</h5>
+                    <!-- Calling Number -->
                     <div class="d-flex align-items-center mb-3">
                         <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary" style="width: 50px; height: 50px;">
                             <i class="fa fa-phone-alt text-white"></i>
                         </div>
                         <div class="ms-3">
-                            <h5 class="text-primary">Mobile</h5>
-                            <p class="mb-0">+91-7588656772</p>
+                            <h5 class="text-primary">Call Us</h5>
+                            <p class="mb-0">+91-9065671711</p>
                         </div>
                     </div>
+                    <!-- WhatsApp Number -->
                      <div class="d-flex align-items-center mb-3">
                         <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary" style="width: 50px; height: 50px;">
                             <i class="fab fa-whatsapp text-white"></i>
                         </div>
                         <div class="ms-3">
                             <h5 class="text-primary">WhatsApp</h5>
-                            <p class="mb-0">+91-9852880174</p>
+                            <p class="mb-0">+44-7867243876</p>
                         </div>
                     </div>
+                    <!-- Email -->
                     <div class="d-flex align-items-center">
                         <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary" style="width: 50px; height: 50px;">
                             <i class="fa fa-envelope-open text-white"></i>
@@ -267,14 +318,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <iframe class="position-relative rounded w-100 h-100"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124458.2427521743!2d77.5240216515254!3d12.899323869152438!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae150d7349a31d%3A0x776203f15865618!2sBannerghatta%20Main%20Rd%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1673123456789"
-                        frameborder="0" style="min-height: 350px; border:0;" allowfullscreen="" aria-hidden="false"
-                        tabindex="0"></iframe>
-                </div>
+                
                 <div class="col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
-                    <!-- MAIN CONTACT FORM HAS BEEN CORRECTED -->
+                    <h5 class="mb-4">Send Us a Message</h5>
                     <form id="contact-form" action="https://altamash3328.app.n8n.cloud/webhook/bc17a957-bc70-4169-9978-e073174e90b7" method="POST">
                         <div class="row g-3">
                             <div class="col-md-6">
@@ -308,11 +354,20 @@
                     </form>
                 </div>
             </div>
+            <!-- Map row -->
+            <div class="row g-4 mt-5">
+                <div class="col-12 wow fadeInUp" data-wow-delay="0.1s">
+                    <h5 class="mb-4 text-center">Our India Office Location</h5>
+                    <iframe class="position-relative rounded w-100"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.696131461153!2d73.0142643759163!3d19.03305598216399!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c3de9632de97%3A0x20ce7e3687258320!2sTricity%20Promenade!5e0!3m2!1sen!2sin!4v1700755990215"
+                        height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
         </div>
     </div>
     <!-- Contact End -->
 
-    <!-- Footer Start -->
+<!-- Footer Start -->
     <div
       class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn"
       data-wow-delay="0.1s"
@@ -323,35 +378,36 @@
                 <h4 class="text-white mb-4">LifeGenBio</h4>
                 <p>Empowering the next generation of innovators at the intersection of technology and life sciences.</p>
                 <div class="d-flex pt-2">
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="https://www.youtube.com/@lifegenbiollp3301" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="" target="_blank"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
             <div class="col-lg-2 col-md-6">
-                <h4 class="text-white mb-3">About</h4>
-                <a class="btn btn-link" href="">Who are we?</a>
-                <a class="btn btn-link" href="">What we do?</a>
-                <a class="btn btn-link" href="">Why LifeGenBio?</a>
-                <a class="btn btn-link" href="">Workshops</a>
+                <h4 class="text-white mb-3">Quick Links</h4>
+                <a class="btn btn-link" href="about.html">About Us</a>
+                <a class="btn btn-link" href="contact.html">Contact Us</a>
+                <a class="btn btn-link" href="index.html">Workshops</a>
+                <a class="btn btn-link" href="">Our Blog</a>
             </div>
             <div class="col-lg-3 col-md-6">
                 <h4 class="text-white mb-3">Get in Touch</h4>
                 <p class="mb-2">
-                <i class="fab fa-whatsapp me-3"></i>+91-9852880174
+                <i class="fa fa-phone-alt me-3"></i>+91-9065671711
                 </p>
                 <p class="mb-2">
-                <i class="fa fa-phone-alt me-3"></i>+91-7588656772
+                <i class="fab fa-whatsapp me-3"></i>+44-7867243876
                 </p>
                 <p class="mb-2">
                 <i class="fa fa-envelope me-3"></i>info@lifegenbio.com
                 </p>
             </div>
              <div class="col-lg-3 col-md-6">
-                <h4 class="text-white mb-3">Latest Insights</h4>
-                <a class="btn btn-link" href="">Resources</a>
-                <a class="btn btn-link" href="">Blog</a>
+                <h4 class="text-white mb-3">Our Offices</h4>
+                <p><i class="fa fa-map-marker-alt me-3"></i>India</p>
+                <p><i class="fa fa-map-marker-alt me-3"></i>Saudi Arabia</p>
+                <p><i class="fa fa-map-marker-alt me-3"></i>USA</p>
             </div>
         </div>
       </div>
@@ -365,21 +421,23 @@
             <div class="col-md-6 text-center text-md-end">
               <div class="footer-menu">
                 <a href="">Privacy Policy</a>
-                <a href="">TnCs</a>
-                <a href="">Refund and Cancellation Policy</a>
+                <a href="">Terms & Conditions</a>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- Footer End -->
+<!-- Footer End -->
 
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/447867243876" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"
-      ><i class="bi bi-arrow-up"></i
-    ></a>
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
     <!-- SUCCESS MODALS START -->
     <div class="modal fade" id="sliderSuccessModal" tabindex="-1" aria-hidden="true">
@@ -432,6 +490,18 @@
     <!-- Custom Javascript for BOTH forms -->
     <script>
         $(document).ready(function(){
+            // --- JAVASCRIPT FOR MOBILE NAVBAR FIX ---
+            $('.navbar-nav .submenu-container > .dropdown-item').on('click', function(e) {
+                if ($(window).width() < 992) {
+                    e.stopPropagation();
+                    var $submenu = $(this).next('.dropdown-menu');
+                    $('.submenu-container .dropdown-menu').not($submenu).slideUp();
+                    $('.submenu-container .dropdown-item').not(this).removeClass('submenu-open');
+                    $submenu.slideToggle();
+                    $(this).toggleClass('submenu-open');
+                }
+            });
+            
             // --- Logic for the "Join Now" sliding form ---
             const slider = $('#join-now-slider');
             const overlay = $('#form-overlay');
@@ -465,7 +535,7 @@
                         form[0].reset(); 
                     },
                     error: function() {
-                        alert('Something went wrong. Please try again.');
+                        alert('Something went wrong with your inquiry. Please try again.');
                     }
                 });
             });
@@ -484,7 +554,7 @@
                         form[0].reset(); 
                     },
                     error: function() {
-                        alert('Something went wrong. Please try again.');
+                        alert('Something went wrong with your message. Please try again.');
                     }
                 });
             });
