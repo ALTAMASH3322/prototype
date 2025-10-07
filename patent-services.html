@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>LifeGenBio - Patent Services</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="LifeGenBio, Patent Services, Intellectual Property, IP, Patent Search, Patent Drafting" name="keywords" />
+    <meta content="LifeGenBio offers expert patent services, from searching and drafting to filing and strategic consultation, to protect your innovations." name="description" />
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+    
+    <!-- Custom Styles for this page -->
+    <style>
+        .page-header {
+            background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url(https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop) center center no-repeat;
+            background-size: cover;
+        }
+        .service-card {
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        .service-card .fee {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #06BBCC;
+        }
+        .service-card .fee-note {
+            font-size: 0.9rem;
+            color: #777;
+        }
+        .service-card h5 {
+            font-size: 1.25rem;
+            color: #0F172B;
+        }
+        .service-card .target-audience {
+            font-style: italic;
+            color: #555;
+            font-size: 0.95rem;
+            border-left: 3px solid #06BBCC;
+            padding-left: 15px;
+        }
+        .contact-section {
+            background-color: #F0F8FF;
+        }
+    </style>
+  </head>
+
+  <body>
+    <!-- Spinner Start -->
+    <div
+      id="spinner"
+      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+    >
+      <div
+        class="spinner-border text-primary"
+        style="width: 3rem; height: 3rem"
+        role="status"
+      >
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start (Use your existing navbar code here, ensuring the new link is added) -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <!-- Your standard navbar code from the template goes here -->
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <img src="img/logo.png" alt="LifeGenBio Logo" style="height: 55px; width: auto;">
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="about.html" class="nav-item nav-link">About Us</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Services</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <!-- Add your other services here -->
+                        <a href="softwaredevelopment.html" class="dropdown-item">Software Development with AI</a>
+                        <a href="trainingandworkshop.html" class="dropdown-item">Training and Workshop</a>
+                        <a href="patent-services.html" class="dropdown-item">Patent Services</a> <!-- THIS IS THE NEW LINK -->
+                    </div>
+                </div>
+                <a href="lifegenbiocare.html" class="nav-item nav-link">LifeGenBio Care</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Learn</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="ourteam.html" class="dropdown-item">Our Team</a>
+                        <a href="ourtrainers.html" class="dropdown-item">Our Trainers</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+            </div>
+            <a href="#" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block join-now-btn">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-primary py-5 mb-5 page-header">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1 class="display-3 text-white animated slideInDown">Patent Services</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+                            <li class="breadcrumb-item"><a class="text-white" href="#">Services</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">Patent Services</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- Introduction to Patents Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <h6 class="section-title bg-white text-start text-primary pe-3">Why Patents Matter</h6>
+                    <h1 class="mb-4">Protecting Your Innovations</h1>
+                    <p class="mb-4">A patent is a powerful legal right granted by the government to an inventor for a new invention. It gives you the exclusive right to make, use, or sell your invention for up to 20 years, preventing others from copying your hard work.</p>
+                    <p class="fw-bold">Businesses leverage patents to:</p>
+                    <p><i class="fa fa-check text-primary me-3"></i>Stop competitors from copying their unique products.</p>
+                    <p><i class="fa fa-check text-primary me-3"></i>Attract investors and significantly increase company valuation.</p>
+                    <p><i class="fa fa-check text-primary me-3"></i>Generate revenue through licensing or selling technology.</p>
+                    <p class="mt-4">Our expert patent services are designed to help you determine if your idea is new, protect it legally, and defend it from infringement. We help companies protect their innovative ideas so no one else can copy them.</p>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="position-relative h-100">
+                        <img class="img-fluid w-100 h-100" src="img/patent.png" alt="Innovation and Patents" style="object-fit: cover; border-radius: 8px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Introduction to Patents End -->
+
+    <!-- Services Sections Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <!-- 1. Patent Searching & Analysis -->
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Step 1</h6>
+                <h1 class="mb-5">Patent Searching & Analysis</h1>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <!-- Service Cards for Searching & Analysis -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-card text-center">
+                        <h5>Sanity / Knock-Out Search</h5>
+                        <p>A quick check to see if similar inventions already exist. Helps avoid spending money on a weak idea.</p>
+                        <p class="target-audience">Best for: Startups, inventors with early ideas</p>
+                        <h4 class="fee">$350</h4>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-card text-center">
+                        <h5>Comprehensive Prior Art Search</h5>
+                        <p>A deep global search to confirm the invention is truly novel before applying for a patent.</p>
+                        <p class="target-audience">Best for: Any company about to file a patent</p>
+                        <h4 class="fee">$1,050</h4>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-card text-center">
+                        <h5>Invalidity Search</h5>
+                        <p>Searches for old patents or documents that can cancel an existing patent. Used in disputes.</p>
+                        <p class="target-audience">Best for: Competitors in patent disputes</p>
+                        <h4 class="fee">$2,800</h4>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-card text-center">
+                        <h5>Infringement Analysis</h5>
+                        <p>Checks if launching a new product might violate someone else’s existing patent.</p>
+                        <p class="target-audience">Best for: Companies about to launch products</p>
+                        <h4 class="fee">$1,750</h4>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-card text-center">
+                        <h5>Claim Charting</h5>
+                        <p>Maps patent claims against a product to prove infringement or establish invalidity.</p>
+                        <p class="target-audience">Best for: Legal/patent disputes</p>
+                        <h4 class="fee">$250</h4>
+                        <p class="fee-note">per independent claim</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 2. Technology & Market Intelligence -->
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s" style="margin-top: 5rem;">
+                <h6 class="section-title bg-white text-center text-primary px-3">Step 2</h6>
+                <h1 class="mb-5">Technology & Market Intelligence</h1>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <!-- Service Cards for Market Intelligence -->
+                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-card text-center">
+                        <h5>Patent Landscape Study</h5>
+                        <p>A visual report showing who’s innovating what and where. Helps guide R&D and investment.</p>
+                        <p class="target-audience">Best for: Corporate R&D, investors</p>
+                        <h4 class="fee">$3,500</h4>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-card text-center">
+                        <h5>White Space Analysis</h5>
+                        <p>Identifies technology gaps where no patents exist yet — uncovering future opportunities for innovation.</p>
+                        <p class="target-audience">Best for: Tech companies planning next-gen products</p>
+                        <h4 class="fee">$4,500</h4>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-card text-center">
+                        <h5>Freedom-To-Operate (FTO) Search</h5>
+                        <p>Ensures a product can be sold in a country without infringing on other existing patents.</p>
+                        <p class="target-audience">Best for: Businesses launching in new markets</p>
+                        <h4 class="fee">$2,800</h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Patent Drafting Services -->
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s" style="margin-top: 5rem;">
+                <h6 class="section-title bg-white text-center text-primary px-3">Step 3</h6>
+                <h1 class="mb-5">Patent Drafting Services</h1>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <!-- Service Cards for Drafting -->
+                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-card text-center">
+                        <h5>Provisional Specification Drafting</h5>
+                        <p>Early patent filing to reserve a priority date while the product is still in development.</p>
+                        <p class="target-audience">Best for: Startups with early-stage concepts</p>
+                        <h4 class="fee">$1,350</h4>
+                    </div>
+                </div>
+                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-card text-center">
+                        <h5>Complete Specification Drafting</h5>
+                        <p>The full technical and legal document, with claims, drafted after a provisional filing.</p>
+                        <p class="target-audience">Best for: Companies ready to fully protect an invention</p>
+                        <h4 class="fee">$1,600</h4>
+                    </div>
+                </div>
+                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-card text-center">
+                        <h5>Direct Complete Specification</h5>
+                        <p>A complete patent specification drafted without a prior provisional filing for ready inventions.</p>
+                        <p class="target-audience">Best for: Mature companies/products</p>
+                        <h4 class="fee">$2,300</h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other Sections can be added similarly -->
+            <!-- For brevity, the rest are grouped. You can expand them like the sections above. -->
+            <div class="row g-5 mt-5">
+                <!-- Filing & Prosecution -->
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <h3 class="mb-4"><i class="fa fa-file-alt text-primary me-2"></i>Patent Filing & Prosecution (India)</h3>
+                    <p>We manage the entire legal process of submitting your application to the Indian Patent Office and communicating with them until your patent is granted.</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">Filing Application <span>$550</span></li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">Request for Early Publication <span>$150</span></li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">Responding to Objections <span>$800 - $1,300</span></li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">Attending Hearings <span>$1,000 - $1,500</span></li>
+                    </ul>
+                </div>
+
+                <!-- Post-Grant Services -->
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <h3 class="mb-4"><i class="fa fa-shield-alt text-primary me-2"></i>Opposition & Post-Grant Services</h3>
+                    <p>We help you defend your patents against challenges, oppose competitors' weak patents, and handle all necessary maintenance to keep your rights active.</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">Pre/Post-Grant Opposition <span>$1,200</span></li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">Renewal of Patents <span>$100/year</span></li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">Working Statement Filing <span>$120</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Hourly Consulting -->
+            <div class="row justify-content-center mt-5">
+                <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.2s">
+                     <div class="p-5 text-center" style="background-color: #F8F9FA; border-radius: 8px;">
+                         <h6 class="section-title bg-white text-center text-primary px-3">Custom Strategy</h6>
+                         <h1 class="mb-4">Hourly Consulting</h1>
+                         <p class="lead">For customized IP strategy, technology licensing, and litigation support, our senior patent experts are available for strategic advisory sessions.</p>
+                         <h2 class="display-5 text-primary fw-bold mt-4">$200 / hour</h2>
+                     </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Services Sections End -->
+
+    <!-- Contact CTA Start -->
+    <div class="container-fluid contact-section my-5 py-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h1 class="mb-4">Ready to Protect Your Idea?</h1>
+                    <p class="fs-5 mb-4">Our team of patent experts is ready to help you navigate the complexities of intellectual property. Schedule a consultation to discuss your specific needs.</p>
+                    <h4 class="mb-3">Contact Our Lead Partner</h4>
+                    <p class="fs-5 mb-1"><i class="fa fa-user-tie me-2"></i>Karan Sharma, Partner, Boudhik IP LLP</p>
+                    <p class="fs-5 mb-1"><i class="fa fa-phone-alt me-2"></i>+91-9013222929</p>
+                    <p class="fs-5 mb-4"><i class="fa fa-envelope me-2"></i>karan@boudhikip.com</p>
+                    <a href="contact.html" class="btn btn-primary py-3 px-5">Book a Consultation</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact CTA End -->
+
+
+    <!-- Footer Start -->
+    <div
+      class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn"
+      data-wow-delay="0.1s"
+    >
+      <!-- Your standard footer code from the template goes here -->
+      <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-4 col-md-6">
+                <h4 class="text-white mb-4">LifeGenBio</h4>
+                <p>Empowering the next generation of innovators at the intersection of technology and life sciences.</p>
+            </div>
+            <div class="col-lg-2 col-md-6">
+                <h4 class="text-white mb-3">Quick Links</h4>
+                <a class="btn btn-link" href="about.html">About Us</a>
+                <a class="btn btn-link" href="contact.html">Contact Us</a>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h4 class="text-white mb-3">Get in Touch</h4>
+                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91-9065671711</p>
+                <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@lifegenbio.com</p>
+            </div>
+             <div class="col-lg-3 col-md-6">
+                <h4 class="text-white mb-3">Our Offices</h4>
+                <p><i class="fa fa-map-marker-alt me-3"></i>India, Saudi Arabia, USA</p>
+            </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="copyright">
+          <div class="row">
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+              &copy; <a class="border-bottom" href="#">LifeGenBio</a>, All Right Reserved.
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+              <div class="footer-menu">
+                <a href="">Privacy Policy</a>
+                <a href="">Terms & Conditions</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"
+      ><i class="bi bi-arrow-up"></i
+    ></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+  </body>
+</html>
