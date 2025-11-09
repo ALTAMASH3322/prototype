@@ -1173,9 +1173,11 @@
                 overlay.fadeOut();
             });
 
-            // --- Logic to handle form submission with AJAX and show a popup ---
+            // --- [START] CORRECTED JAVASCRIPT FOR FORM SUBMISSION ---
+            // This code handles the form submission via AJAX and correctly redirects the user
+            // if n8n sends back a redirect URL.
             $('#join-now-slider form').on('submit', function(e) {
-                e.preventDefault();
+                e.preventDefault(); // Stop the browser's default form submission
                 var form = $(this);
 
                 $.ajax({
@@ -1183,16 +1185,26 @@
                     method: form.attr('method'),
                     data: form.serialize(),
                     success: function(response) {
-                        slider.removeClass('show');
-                        overlay.fadeOut();
-                        $('#successModal').modal('show');
-                        form[0].reset(); 
+                        // Check if the response from n8n contains a redirect URL
+                        if (response && response.redirectUrl) {
+                            // If it does, redirect the browser to that URL
+                            window.location.href = response.redirectUrl;
+                        } else {
+                            // If there's no redirect, show the success modal as a fallback.
+                            // This will handle cases where your n8n workflow doesn't redirect.
+                            slider.removeClass('show');
+                            overlay.fadeOut();
+                            $('#successModal').modal('show');
+                            form[0].reset(); 
+                        }
                     },
                     error: function() {
                         alert('Something went wrong. Please try again.');
                     }
                 });
             });
+            // --- [END] CORRECTED JAVASCRIPT FOR FORM SUBMISSION ---
+
 
             // --- INITIALIZE THE CAROUSELS ---
             // Header Carousel
