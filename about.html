@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <title>About Us - LifeGenBio</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta content="About LifeGenBio, EdTech Mission, Our Vision, Company Values" name="keywords" />
-    <meta content="Learn about LifeGenBio's mission to bridge the gap between technology and life sciences through expert-led education and a focus on career transformation." name="description" />
+    <meta content="About LifeGenBio, Business Transformation, Technology Solutions, Corporate Training, Company Mission" name="keywords" />
+    <meta content="Learn about LifeGenBio's mission to drive business growth through comprehensive technology solutions and empower talent with expert-led education." name="description" />
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon" />
@@ -38,70 +38,17 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
 
-    <!-- Custom Styles for Slider Form and Uniform Cards -->
+    <!-- Custom Styles -->
     <style>
-        /* Join Now Slider Form */
-
-
-
-        #form-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            z-index: 1040;
-            display: none;
+        .page-header {
+            background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url(img/about.jpg) center center no-repeat;
+            background-size: cover;
         }
-        #join-now-slider {
-            position: fixed;
-            top: 0;
-            left: -35%; /* Start off-screen */
-            width: 30%; /* Cover 30% of the page */
-            height: 100vh;
-            background-color: white;
-            z-index: 1050;
-            padding: 40px 30px;
-            box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
-            transition: left 0.4s ease-in-out;
-            overflow-y: auto;
-        }
-        #join-now-slider.show {
-            left: 0; /* Slide in */
-        }
-        #close-slider {
-            position: absolute;
-            top: 15px;
-            right: 25px;
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #333;
-            cursor: pointer;
-        }
-        @media (max-width: 992px) {
-            #join-now-slider {
-                width: 60%;
-                left: -65%;
-            }
-        }
-        @media (max-width: 768px) {
-            #join-now-slider {
-                width: 85%;
-                left: -90%;
-            }
-        }
-
-        /* For Uniform Leadership Cards */
-        .leadership-carousel .team-item .overflow-hidden {
-            height: 320px; 
-        }
-                /* --- FLOATING WHATSAPP WIDGET CSS START --- */
         .whatsapp-float {
             position: fixed;
             width: 60px;
             height: 60px;
-            bottom: 115px; /* Positioned to be just above the 'Back to Top' button */
+            bottom: 115px;
             right: 45px;
             background-color: #25d366;
             color: #FFF;
@@ -117,13 +64,7 @@
         }
         .whatsapp-float:hover {
             transform: scale(1.1);
-            color: white; /* Ensures the icon color stays white on hover */
-        }
-        /* --- FLOATING WHATSAPP WIDGET CSS END --- */
-        .leadership-carousel .team-item img {
-            height: 100%;
-            width: 100%;
-            object-fit: cover; 
+            color: white;
         }
     </style>
   </head>
@@ -144,160 +85,74 @@
     </div>
     <!-- Spinner End -->
 
-    <!-- Navbar Start -->
-    <nav
-      class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0"
-    >
-      <a
-  href="index.html"
-  class="navbar-brand d-flex align-items-center px-4 px-lg-5"
->
-  <img src="img/logo.png" alt="LifeGenBio Logo" style="height: 55px; width: auto;">
-</a>
-      <button
-        type="button"
-        class="navbar-toggler me-4"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarCollapse"
-      >
+    <!-- #################### START: SAME NAVBAR AS OTHER PAGES #################### -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+      <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+        <img src="img/logo.png" alt="LifeGenBio Logo" style="height: 55px; width: auto;">
+      </a>
+      <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto p-4 p-lg-0">
           <a href="index.html" class="nav-item nav-link">Home</a>
           <a href="about.html" class="nav-item nav-link active">About Us</a>
-          
-          <!-- ================= FINAL CSS FOR NAVBAR FIX ================= -->
-          <style>
-              /* SHARED STYLES (for all screen sizes) */
-              .submenu-container {
-                  position: relative;
-              }
-              .submenu-container > .dropdown-item {
-                  cursor: pointer;
-              }
-              .submenu-container > .dropdown-item .fa-caret-right {
-                  transition: transform 0.2s ease-in-out;
-              }
-
-              /* MOBILE-FIRST STYLES (This is the default "downways" layout) */
-              .navbar-nav .submenu-container .dropdown-menu {
-                  position: static; /* This is the key for "downways" */
-                  display: none;
-                  width: 100%;
-                  border: none;
-                  box-shadow: none;
-                  padding-left: 1.5rem; /* Indent for clarity */
-              }
-
-              /* MOBILE-SPECIFIC ROTATION (for the arrow icon) */
-              @media (max-width: 991.98px) {
-                  .submenu-container > .dropdown-item.submenu-open > .fa-caret-right {
-                      transform: rotate(90deg);
-                  }
-              }
-
-              /* DESKTOP OVERRIDE (applies ONLY to screens 992px and wider) */
-              @media (min-width: 992px) {
-                  .submenu-container .dropdown-menu {
-                      position: absolute; /* Switch to "sideways" for desktop */
-                      top: 0;
-                      left: 100%;
-                      width: auto; /* Let it size itself */
-                      padding-left: 0; /* Remove mobile indent */
-                  }
-                  .submenu-container:hover > .dropdown-menu {
-                      display: block !important; /* Re-enable hover for desktop */
-                  }
-              }
-          </style>
-
           <div class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">Services</a>
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
             <div class="dropdown-menu fade-down m-0">
-              <div class="submenu-container">
-                <div class="dropdown-item d-flex justify-content-between align-items-center">
-                    <span>AI Services</span>
-                    <i class="fa fa-caret-right"></i>
-                </div>
-                <div class="dropdown-menu">
-                  <a href="softwaredevelopment.html" class="dropdown-item">Software Development with AI</a>
-                  <a href="artificialintelligence.html" class="dropdown-item">Artificial Intelligence</a>
-                  <a href="aiautomation.html" class="dropdown-item">AI Automation</a>
-                  <a href="aiagents.html" class="dropdown-item">AI Agents</a>
-                </div>
-              </div>
-              <div class="submenu-container">
-                <div class="dropdown-item d-flex justify-content-between align-items-center">
-                    <span>Life Science Services</span>
-                    <i class="fa fa-caret-right"></i>
-                </div>
-                <div class="dropdown-menu">
-                  <a href="mdsimulationanddrugdesign.html" class="dropdown-item">MD Simulation and Drug Design</a>
-                  <a href="genomics.html" class="dropdown-item">Genomics, transcriptomics, and proteomics Services</a>
-                  <a href="metagenomics.html" class="dropdown-item">Metagenomics</a>
-                  <a href="epigenetics.html" class="dropdown-item">Epigenetics</a>
-                </div>
-              </div>
-              <a href="researchconsultancyservices.html" class="dropdown-item">Research Consultancy Services</a>
-              <a href="trainingandworkshop.html" class="dropdown-item">Training and Workshop</a>
+              <a href="ui-ux-design.html" class="dropdown-item">UI/UX Design</a>
+              <a href="web-designing.html" class="dropdown-item">Web Designing</a>
+              <a href="software-development.html" class="dropdown-item">Software Development</a>
+              <a href="ai-integration.html" class="dropdown-item">AI Integration & Chatbots</a>
+              <a href="digital-marketing.html" class="dropdown-item">Digital Marketing</a>
+              <a href="data-analysis.html" class="dropdown-item">Data Analysis</a>
+              <a href="digital-transformation.html" class="dropdown-item">Digital Transformation</a>
+              <a href="sap-solutions.html" class="dropdown-item">SAP Solutions</a>
+              <a href="application-support.html" class="dropdown-item">Application Support</a>
+              <a href="customer-service-bpo.html" class="dropdown-item">Customer Service (BPO)</a>
+              <a href="kpo-services.html" class="dropdown-item">Knowledge Process Outsourcing (KPO)</a>
             </div>
           </div>
           <a href="lifegenbiocare.html" class="nav-item nav-link">LifeGenBio Care</a>
           <div class="nav-item dropdown">
-            <a
-              href="#"
-              class="nav-link dropdown-toggle"
-              data-bs-toggle="dropdown"
-              >Learn</a
-            >
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">Learn</a>
             <div class="dropdown-menu fade-down m-0">
               <a href="ourteam.html" class="dropdown-item">Our Team</a>
               <a href="ourtrainers.html" class="dropdown-item">Our Trainers</a>
+              <hr class="dropdown-divider">
+              <div class="submenu-container">
+                <div class="dropdown-item d-flex justify-content-between align-items-center">
+                    <span>AI Courses</span><i class="fa fa-caret-right"></i>
+                </div>
+                <div class="dropdown-menu">
+                  <a href="course-software-dev-ai.html" class="dropdown-item">Software Development with AI</a>
+                  <a href="course-ai.html" class="dropdown-item">Artificial Intelligence</a>
+                  <a href="course-ai-automation.html" class="dropdown-item">AI Automation</a>
+                  <a href="course-ai-agents.html" class="dropdown-item">AI Agents</a>
+                </div>
+              </div>
+              <div class="submenu-container">
+                <div class="dropdown-item d-flex justify-content-between align-items-center">
+                    <span>Life Science Courses</span><i class="fa fa-caret-right"></i>
+                </div>
+                <div class="dropdown-menu">
+                  <a href="course-md-simulation.html" class="dropdown-item">MD Simulation and Drug Design</a>
+                  <a href="course-genomics.html" class="dropdown-item">Genomics, transcriptomics, & proteomics</a>
+                  <a href="course-metagenomics.html" class="dropdown-item">Metagenomics</a>
+                  <a href="course-epigenetics.html" class="dropdown-item">Epigenetics</a>
+                </div>
+              </div>
+              <a href="research-consultancy.html" class="dropdown-item">Research Consultancy</a>
+              <a href="corporate-training.html" class="dropdown-item">Corporate Training & Workshops</a>
+              <a href="patent-services.html" class="dropdown-item">Patent Services</a>
             </div>
           </div>
           <a href="contact.html" class="nav-item nav-link">Contact Us</a>
         </div>
-        <a href="#" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block join-now-btn"
-          >Join Now<i class="fa fa-arrow-right ms-3"></i
-        ></a>
+        <a href="contact.html" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Inquire Now<i class="fa fa-arrow-right ms-3"></i></a>
       </div>
     </nav>
-    <!-- Navbar End -->
-
-    <!-- Join Now Slider Form Start -->
-    <div id="form-overlay"></div>
-    <div id="join-now-slider">
-        <span id="close-slider">&times;</span>
-        <h3 class="mb-4 text-primary">Join LifeGenBio Today!</h3>
-        <p>Fill in your details and one of our academic counselors will get in touch with you shortly.</p>
-        <form action="https://n8n.srv1047155.hstgr.cloud/webhook/ab66048a-3b78-4a76-a718-49d95be6ffef" method="POST">
-            <div class="mb-3">
-                <label for="sliderName" class="form-label">Full Name</label>
-                <input type="text" class="form-control" id="sliderName" name="name" placeholder="Enter your name" required>
-            </div>
-            <div class="mb-3">
-                <label for="sliderEmail" class="form-label">Email Address</label>
-                <input type="email" class="form-control" id="sliderEmail" name="email" placeholder="name@example.com" required>
-            </div>
-            <div class="mb-3">
-                <label for="sliderPhone" class="form-label">Phone Number</label>
-                <input type="tel" class="form-control" id="sliderPhone" name="phone" placeholder="+91-1234567890" required>
-            </div>
-            <div class="mb-4">
-                <label for="sliderCourse" class="form-label">Course of Interest</label>
-                <select class="form-select" id="sliderCourse" name="course">
-                    <option selected>Select a course</option>
-                    <option value="Generative AI">Generative AI</option>
-                    <option value="AI-Powered Automation">AI-Powered Automation</option>
-                    <option value="Bioinformatics & Data Science">Bioinformatics & Data Science</option>
-                    <option value="Other">Other</option>
-                </select>
-            </div>
-            <button type="submit" class="btn btn-primary w-100 py-3">Submit Inquiry</button>
-        </form>
-    </div>
-    <!-- Join Now Slider Form End -->
+    <!-- #################### END: SAME NAVBAR AS OTHER PAGES #################### -->
 
     <!-- Header Start -->
     <div class="container-fluid bg-primary py-5 mb-5 page-header">
@@ -308,7 +163,7 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center">
                             <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
-                            <li class="breadcrumb-item text-white active" aria-current="page">About Us</li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">About</li>
                         </ol>
                     </nav>
                 </div>
@@ -317,54 +172,54 @@
     </div>
     <!-- Header End -->
 
-    <!-- Our Mission ("Who We Are") Start -->
+    <!-- NEW CONTENT: "Who We Are" Section -->
     <div class="container-xxl py-5">
       <div class="container">
         <div class="row g-5">
           <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
             <div class="position-relative h-100">
-              <img class="img-fluid position-absolute w-100 h-100" src="img/about.jpg" alt="Team collaborating in a modern office" style="object-fit: cover;">
+              <img class="img-fluid position-absolute w-100 h-100" src="img/about.jpg" alt="Diverse team collaborating on a project" style="object-fit: cover;">
             </div>
           </div>
           <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
             <h6 class="section-title bg-white text-start text-primary pe-3">Who We Are</h6>
-            <h1 class="mb-4">Our Mission: Bridging Two Worlds</h1>
-            <p class="mb-4">LifeGenBio was founded on a simple but powerful idea: the future belongs to those who can navigate the intersection of technology and life sciences. We are a team of educators, industry experts, and technologists passionate about creating a new generation of innovators.</p>
-            <p class="mb-4">Our mission is to democratize access to high-quality, practical education in cutting-edge fields like AI, bioinformatics, and data science, empowering individuals and organizations to thrive in a world of rapid technological change.</p>
+            <h1 class="mb-4">Your Partner in Digital & Human Potential</h1>
+            <p class="mb-4">LifeGenBio is a dynamic partner in digital transformation and specialized education. We operate on two core fronts: empowering businesses with comprehensive technology and operational solutions, and equipping individuals and workforces with the skills to lead in their industries.</p>
+            <p class="mb-4">Our unique position allows us to not only build and implement cutting-edge solutions but also to train the talent that will manage and innovate with them, creating a powerful synergy for sustainable growth.</p>
             <div class="row gy-2 gx-4 mb-4">
               <div class="col-sm-12">
-                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>We believe in learning by doing.</p>
+                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>We drive business transformation through technology.</p>
               </div>
               <div class="col-sm-12">
-                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>We are committed to career outcomes.</p>
+                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>We build custom software and integrate intelligent systems.</p>
               </div>
               <div class="col-sm-12">
-                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>We build a community of lifelong learners.</p>
+                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>We empower and upskill workforces for the future.</p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- Our Mission End -->
+    <!-- "Who We Are" Section End -->
 
-    <!-- Our Approach ("What We Do") Start -->
+    <!-- NEW CONTENT: "Our Integrated Approach" Section -->
     <div class="container-xxl py-5">
       <div class="container">
           <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
             <h6 class="section-title bg-white text-center text-primary px-3">
               What We Do
             </h6>
-            <h1 class="mb-5">Our Approach to Fulfilling Our Mission</h1>
+            <h1 class="mb-5">Our Integrated Approach</h1>
           </div>
         <div class="row g-4">
           <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
             <div class="service-item text-center pt-3">
               <div class="p-4">
-                <i class="fa fa-3x fa-user-graduate text-primary mb-4"></i>
-                <h5 class="mb-3">Educate Individuals</h5>
+                <i class="fa fa-3x fa-cogs text-primary mb-4"></i>
+                <h5 class="mb-3">Transforming Businesses</h5>
                 <p>
-                  We offer a spectrum of programs, from short workshops to comprehensive courses, designed to equip students with job-ready skills.
+                  We provide end-to-end services, from digital marketing and software development to BPO, KPO, and SAP solutions, to optimize and scale your operations.
                 </p>
               </div>
             </div>
@@ -372,10 +227,10 @@
           <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
             <div class="service-item text-center pt-3">
               <div class="p-4">
-                <i class="fa fa-3x fa-building text-primary mb-4"></i>
-                <h5 class="mb-3">Empower Businesses</h5>
+                <i class="fa fa-3x fa-user-graduate text-primary mb-4"></i>
+                <h5 class="mb-3">Empowering Talent</h5>
                 <p>
-                  We partner with corporations to deliver customized training solutions that upskill their workforce and drive innovation.
+                  We offer specialized courses in high-demand fields like AI and Bioinformatics, bridging the skills gap and preparing the next generation of innovators.
                 </p>
               </div>
             </div>
@@ -383,10 +238,10 @@
           <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
             <div class="service-item text-center pt-3">
               <div class="p-4">
-                <i class="fa fa-3x fa-users text-primary mb-4"></i>
-                <h5 class="mb-3">Build a Community</h5>
+                <i class="fa fa-3x fa-handshake text-primary mb-4"></i>
+                <h5 class="mb-3">Building Partnerships</h5>
                 <p>
-                  We foster a vibrant network of learners, alumni, and instructors to encourage collaboration and lifelong learning.
+                  We believe in long-term relationships, acting as strategic partners to both our corporate clients and our individual learners on their path to success.
                 </p>
               </div>
             </div>
@@ -394,34 +249,32 @@
         </div>
       </div>
     </div>
-    <!-- Our Approach End -->
+    <!-- "Our Integrated Approach" Section End -->
 
-    <!-- The Difference ("Why LifeGenBio?") Start -->
+    <!-- NEW CONTENT: "The LifeGenBio Advantage" Section -->
     <div class="container-xxl py-5" style="background-color: #f8f9fa;">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="section-title bg-white text-center text-primary px-3">Why LifeGenBio?</h6>
-                <h1 class="mb-5">The LifeGenBio Difference</h1>
+                <h1 class="mb-5">The LifeGenBio Advantage</h1>
             </div>
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <h4 class="mb-4">A Curriculum Built for Impact</h4>
-                    <p><i class="fa fa-check text-primary me-3"></i><b>Industry-Aligned:</b> Our courses are designed backward from job descriptions, ensuring you learn the skills employers are actively hiring for.</p>
-                    <p><i class="fa fa-check text-primary me-3"></i><b>Project-Based:</b> You won't just watch lectures. You will build a portfolio of real-world projects to showcase your abilities.</p>
-                    <p><i class="fa fa-check text-primary me-3"></i><b>Constantly Updated:</b> The tech world moves fast. Our curriculum is continuously updated to reflect the latest tools and trends.</p>
+                    <h4 class="mb-4">Strategic & Integrated Solutions</h4>
+                    <p><i class="fa fa-check text-primary me-3"></i><b>Holistic Approach:</b> We don't just solve one problem. We can build your software, market your product, support your customers, and train your team.</p>
+                    <p><i class="fa fa-check text-primary me-3"></i><b>Cross-functional Expertise:</b> Our teams collaborate, bringing insights from different domains to create more robust and effective solutions for you.</p>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <h4 class="mb-4">Support That Goes Beyond the Classroom</h4>
-                    <p><i class="fa fa-check text-primary me-3"></i><b>Expert Mentorship:</b> Learn from instructors who are not just teachers, but seasoned practitioners from top companies.</p>
-                    <p><i class="fa fa-check text-primary me-3"></i><b>Dedicated Career Services:</b> From resume building to mock interviews, we are your partners in the job search.</p>
-                    <p><i class="fa fa-check text-primary me-3"></i><b>Flexible Learning Models:</b> With live, recorded, and corporate options, we have a format that fits your life and goals.</p>
+                    <h4 class="mb-4">Expertise That Delivers Results</h4>
+                    <p><i class="fa fa-check text-primary me-3"></i><b>Practitioner-Driven:</b> Our consultants, developers, and educators are seasoned practitioners with real-world industry experience.</p>
+                    <p><i class="fa fa-check text-primary me-3"></i><b>Commitment to Outcomes:</b> For our clients, we focus on delivering measurable ROI. For our students, we focus on career-transforming results.</p>
                 </div>
             </div>
         </div>
     </div>
-    <!-- The Difference End -->
+    <!-- "The LifeGenBio Advantage" Section End -->
     
-    <!-- Core Values Start -->
+    <!-- REVISED CONTENT: Core Values Section -->
     <div class="container-xxl py-5">
       <div class="container">
           <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
@@ -434,22 +287,22 @@
           <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
             <div class="text-center">
                 <i class="fa fa-3x fa-fist-raised text-primary mb-4"></i>
-                <h5 class="mb-3">Student First</h5>
-                <p class="text-muted">Every decision we make, from curriculum design to support services, is centered around the success and well-being of our students.</p>
+                <h5 class="mb-3">Client & Student Success</h5>
+                <p class="text-muted">Our success is measured by the success of those we serve, whether it's a growing business achieving its goals or an ambitious individual launching a new career.</p>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
             <div class="text-center">
                 <i class="fa fa-3x fa-lightbulb text-primary mb-4"></i>
                 <h5 class="mb-3">Innovation & Relevance</h5>
-                <p class="text-muted">We are committed to staying at the forefront of technology and ensuring our content is always current, relevant, and impactful.</p>
+                <p class="text-muted">We are committed to staying at the forefront of technology and business trends, ensuring our solutions and curriculum are always current and impactful.</p>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
             <div class="text-center">
                 <i class="fa fa-3x fa-handshake text-primary mb-4"></i>
                 <h5 class="mb-3">Integrity & Transparency</h5>
-                <p class="text-muted">We operate with honesty, providing clear information about our programs, outcomes, and pricing, always.</p>
+                <p class="text-muted">We operate with honesty, providing clear communication, fair pricing, and a commitment to doing the right thing for our partners and learners.</p>
             </div>
           </div>
         </div>
@@ -457,53 +310,11 @@
     </div>
     <!-- Core Values End -->
     
-    <!-- Testimonial Start -->
-    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
-      <div class="container">
-        <div class="text-center">
-          <h6 class="section-title bg-white text-center text-primary px-3">
-            Testimonials
-          </h6>
-          <h1 class="mb-5">Trusted by Learners Worldwide</h1>
-        </div>
-        <div class="owl-carousel testimonial-carousel position-relative">
-          <div class="testimonial-item text-center">
-            <h5 class="mb-0">Priya Sharma</h5>
-            <p>Software Engineer at Google</p>
-            <div class="testimonial-text bg-light text-center p-4">
-              <p class="mb-0">"LifeGenBio isn't just an ed-tech platform; it's a career partner. Their focus on practical skills is exactly what the industry needs. I'm proud to be an alum."</p>
-            </div>
-          </div>
-          <div class="testimonial-item text-center">
-            <h5 class="mb-0">David Chen</h5>
-            <p>Data Scientist at Microsoft</p>
-            <div class="testimonial-text bg-light text-center p-4">
-              <p class="mb-0">"The mission to bridge biology and tech is what drew me in, and the quality of the education is what made me stay. This team genuinely cares about student success."</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Testimonial End -->
-     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/447867243876" class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"
-      ><i class="bi bi-arrow-up"></i
-    ></a>
-
     <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/447867243876" class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"
-      ><i class="bi bi-arrow-up"></i
-    ></a>
     <!-- Footer Start -->
     <div
       class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn"
@@ -513,7 +324,7 @@
         <div class="row g-5">
             <div class="col-lg-4 col-md-6">
                 <h4 class="text-white mb-4">LifeGenBio</h4>
-                <p>Empowering the next generation of innovators at the intersection of technology and life sciences.</p>
+                <p>Empowering innovators and businesses at the intersection of technology and life sciences.</p>
                 <div class="d-flex pt-2">
                     <a class="btn btn-outline-light btn-social" href="https://www.youtube.com/@lifegenbiollp3301" target="_blank"><i class="fab fa-youtube"></i></a>
                     <a class="btn btn-outline-light btn-social" href="" target="_blank"><i class="fab fa-linkedin-in"></i></a>
@@ -565,30 +376,10 @@
         </div>
       </div>
     </div>
-<!-- Footer End -->
+    <!-- Footer End -->
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-
-    <!-- NEW FEATURE: Success Modal Start -->
-    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title text-primary" id="successModalLabel"><i class="fa fa-check-circle me-2"></i> Inquiry Submitted!</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    Thank you for reaching out! Your form has been submitted successfully. One of our academic counselors will get in touch with you shortly.
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Success Modal End -->
-
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -597,86 +388,21 @@
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-    <!-- Template Javascript -->
     <script src="js/main.js"></script>
     
-    <!-- UPDATED SCRIPT: Custom Javascript with Popup Logic -->
+    <!-- Custom JS -->
     <script>
         $(document).ready(function(){
-            // --- JAVASCRIPT FOR MOBILE NAVBAR FIX ---
+            // JS for nested dropdowns
             $('.navbar-nav .submenu-container > .dropdown-item').on('click', function(e) {
                 if ($(window).width() < 992) {
-                    e.stopPropagation(); // This is the most important line. It stops the event from closing the parent dropdown.
-
+                    e.stopPropagation();
                     var $submenu = $(this).next('.dropdown-menu');
-                    
-                    // Close other open submenus for a clean accordion effect
                     $('.submenu-container .dropdown-menu').not($submenu).slideUp();
                     $('.submenu-container .dropdown-item').not(this).removeClass('submenu-open');
-
-                    // Toggle the clicked submenu
                     $submenu.slideToggle();
                     $(this).toggleClass('submenu-open');
                 }
-            });
-
-            // --- Logic for the "Join Now" sliding form ---
-            const slider = $('#join-now-slider');
-            const overlay = $('#form-overlay');
-            
-            // Open the slider
-            $('.join-now-btn').on('click', function(e) {
-                e.preventDefault();
-                overlay.fadeIn();
-                slider.addClass('show');
-            });
-
-            // Close the slider
-            $('#close-slider, #form-overlay').on('click', function() {
-                slider.removeClass('show');
-                overlay.fadeOut();
-            });
-
-            // Testimonial Carousel Initialization
-            $(".testimonial-carousel").owlCarousel({
-                autoplay: true,
-                smartSpeed: 1000,
-                center: true,
-                margin: 24,
-                dots: true,
-                loop: true,
-                nav : false,
-                responsive: {
-                    0:{ items:1 },
-                    768:{ items:1 },
-                    992:{ items:2 }
-                }
-            });
-
-
-
-            
-
-            // --- Logic to handle form submission with AJAX and show a popup ---
-            $('#join-now-slider form').on('submit', function(e) {
-                e.preventDefault();
-                var form = $(this);
-
-                $.ajax({
-                    url: form.attr('action'),
-                    method: form.attr('method'),
-                    data: form.serialize(),
-                    success: function(response) {
-                        slider.removeClass('show');
-                        overlay.fadeOut();
-                        $('#successModal').modal('show');
-                        form[0].reset(); 
-                    },
-                    error: function() {
-                        alert('Something went wrong. Please try again.');
-                    }
-                });
             });
         });
     </script>

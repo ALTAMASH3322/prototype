@@ -2,10 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>LifeGenBio - Bridging Technology and Life Sciences</title>
+    <title>LifeGenBio - Comprehensive Technology, Business, and Learning Solutions</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta content="LifeGenBio, EdTech, AI, Bioinformatics, Corporate Training, Workshops" name="keywords" />
-    <meta content="LifeGenBio offers cutting-edge courses in technology and life sciences, empowering the next generation of innovators." name="description" />
+    <meta content="LifeGenBio, EdTech, AI, Bioinformatics, Corporate Training, Workshops, UI/UX, BPO, KPO, Web Designing, Software Development, AI Integration, Chatbots, SAP, Data Analysis, Digital Marketing" name="keywords" />
+    <meta content="LifeGenBio offers cutting-edge services in technology, life sciences, and business solutions, alongside expert-led courses to drive innovation and growth." name="description" />
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon" />
@@ -38,7 +38,7 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
     
-    <!-- Custom Styles for Slider Form and Uniform Cards -->
+    <!-- Custom Styles -->
     <style>
         /* Join Now Slider Form */
         #form-overlay {
@@ -93,12 +93,12 @@
         .team-item .overflow-hidden {
             position: relative;
         }
-                /* --- FLOATING WHATSAPP WIDGET CSS START --- */
+        /* Floating WhatsApp Widget */
         .whatsapp-float {
             position: fixed;
             width: 60px;
             height: 60px;
-            bottom: 115px; /* Positioned to be just above the 'Back to Top' button */
+            bottom: 115px; 
             right: 45px;
             background-color: #25d366;
             color: #FFF;
@@ -114,9 +114,8 @@
         }
         .whatsapp-float:hover {
             transform: scale(1.1);
-            color: white; /* Ensures the icon color stays white on hover */
+            color: white; 
         }
-        /* --- FLOATING WHATSAPP WIDGET CSS END --- */
         .team-overlay {
             position: absolute;
             top: 0;
@@ -141,33 +140,100 @@
             margin: 0;
         }
 
-        /* --- UNIFORMITY FIXES --- */
-        /* For Leadership Cards */
-        .leadership-carousel .team-item .overflow-hidden {
-            height: 320px; 
+        /* Uniformity Fixes */
+        .leadership-carousel .team-item .overflow-hidden { height: 320px; }
+        .leadership-carousel .team-item img { height: 100%; width: 100%; object-fit: cover; }
+        .course-item .overflow-hidden { height: 250px; }
+        .course-item img { height: 100%; width: 100%; object-fit: cover; }
+        .category .col-lg-7 .position-relative { height: 220px; }
+        .category .position-relative img { height: 100%; width: 100%; object-fit: cover; }
+        
+        /* New Styles for Expanded Services Section */
+        a.service-card-link {
+            text-decoration: none;
+            color: inherit;
         }
-        .leadership-carousel .team-item img {
+        .service-card {
+            background-color: #fff;
+            padding: 30px;
+            text-align: center;
+            border-radius: 8px;
+            transition: all 0.4s ease;
             height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 30px rgba(0,0,0,0.07);
+        }
+        .service-card .icon {
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: white;
+            margin-bottom: 20px;
+            font-size: 30px;
+            transition: all 0.4s ease;
+        }
+        .service-card h5 { margin-bottom: 15px; font-weight: 700; }
+        .service-card p { color: #666; }
+        a.service-card-link:hover .service-card {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        a.service-card-link:hover .service-card .icon { background-color: #01145A; }
+
+        /* --- CSS FOR NESTED NAVBAR DROPDOWNS --- */
+        .submenu-container { position: relative; }
+        .submenu-container > .dropdown-item { cursor: pointer; }
+        .submenu-container > .dropdown-item .fa-caret-right { transition: transform 0.2s ease-in-out; }
+        .navbar-nav .submenu-container .dropdown-menu {
+            position: static;
+            display: none;
             width: 100%;
-            object-fit: cover; 
+            border: none;
+            box-shadow: none;
+            padding-left: 1.5rem;
         }
-        /* For Popular Course Cards */
-        .course-item .overflow-hidden {
-            height: 250px; 
+        @media (max-width: 991.98px) {
+            .submenu-container > .dropdown-item.submenu-open > .fa-caret-right {
+                transform: rotate(90deg);
+            }
         }
-        .course-item img {
+        @media (min-width: 992px) {
+            .submenu-container .dropdown-menu {
+                position: absolute;
+                top: 0;
+                left: 100%;
+                width: auto;
+                padding-left: 0;
+            }
+            .submenu-container:hover > .dropdown-menu {
+                display: block !important;
+            }
+        }
+
+        /* --- [NEW] CSS FOR FULL SCREEN HERO SLIDER --- */
+        .header-carousel .owl-carousel-item {
+            height: 100vh; /* Full viewport height */
+        }
+        .header-carousel .owl-carousel-item img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
             height: 100%;
-            width: 100%;
-            object-fit: cover;
+            object-fit: cover; /* Prevents image distortion */
         }
-        /* For Program Category Cards */
-        .category .col-lg-7 .position-relative {
-            height: 220px;
-        }
-        .category .position-relative img {
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
+        /* Adjust height for mobile for better UX */
+        @media (max-width: 768px) {
+            .header-carousel .owl-carousel-item {
+                height: 90vh;
+            }
         }
     </style>
   </head>
@@ -193,11 +259,11 @@
       class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0"
     >
       <a
-  href="index.html"
-  class="navbar-brand d-flex align-items-center px-4 px-lg-5"
->
-  <img src="img/logo.png" alt="LifeGenBio Logo" style="height: 55px; width: auto;">
-</a>
+        href="index.html"
+        class="navbar-brand d-flex align-items-center px-4 px-lg-5"
+      >
+        <img src="img/logo.png" alt="LifeGenBio Logo" style="height: 55px; width: auto;">
+      </a>
       <button
         type="button"
         class="navbar-toggler me-4"
@@ -211,95 +277,65 @@
           <a href="index.html" class="nav-item nav-link active">Home</a>
           <a href="about.html" class="nav-item nav-link">About Us</a>
           
-          <!-- ================= FINAL CSS FOR NAVBAR FIX ================= -->
-          <style>
-              /* SHARED STYLES (for all screen sizes) */
-              .submenu-container {
-                  position: relative;
-              }
-              .submenu-container > .dropdown-item {
-                  cursor: pointer;
-              }
-              .submenu-container > .dropdown-item .fa-caret-right {
-                  transition: transform 0.2s ease-in-out;
-              }
-
-              /* MOBILE-FIRST STYLES (This is the default "downways" layout) */
-              .navbar-nav .submenu-container .dropdown-menu {
-                  position: static; /* This is the key for "downways" */
-                  display: none;
-                  width: 100%;
-                  border: none;
-                  box-shadow: none;
-                  padding-left: 1.5rem; /* Indent for clarity */
-              }
-
-              /* MOBILE-SPECIFIC ROTATION (for the arrow icon) */
-              @media (max-width: 991.98px) {
-                  .submenu-container > .dropdown-item.submenu-open > .fa-caret-right {
-                      transform: rotate(90deg);
-                  }
-              }
-
-              /* DESKTOP OVERRIDE (applies ONLY to screens 992px and wider) */
-              @media (min-width: 992px) {
-                  .submenu-container .dropdown-menu {
-                      position: absolute; /* Switch to "sideways" for desktop */
-                      top: 0;
-                      left: 100%;
-                      width: auto; /* Let it size itself */
-                      padding-left: 0; /* Remove mobile indent */
-                  }
-                  .submenu-container:hover > .dropdown-menu {
-                      display: block !important; /* Re-enable hover for desktop */
-                  }
-              }
-          </style>
-
+          <!-- Corporate Services Dropdown -->
           <div class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">Services</a>
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
             <div class="dropdown-menu fade-down m-0">
-              <div class="submenu-container">
-                <div class="dropdown-item d-flex justify-content-between align-items-center">
-                    <span>AI Services</span>
-                    <i class="fa fa-caret-right"></i>
-                </div>
-                <div class="dropdown-menu">
-                  <a href="softwaredevelopment.html" class="dropdown-item">Software Development with AI</a>
-                  <a href="artificialintelligence.html" class="dropdown-item">Artificial Intelligence</a>
-                  <a href="aiautomation.html" class="dropdown-item">AI Automation</a>
-                  <a href="aiagents.html" class="dropdown-item">AI Agents</a>
-                </div>
-              </div>
-              <div class="submenu-container">
-                <div class="dropdown-item d-flex justify-content-between align-items-center">
-                    <span>Life Science Services</span>
-                    <i class="fa fa-caret-right"></i>
-                </div>
-                <div class="dropdown-menu">
-                  <a href="mdsimulationanddrugdesign.html" class="dropdown-item">MD Simulation and Drug Design</a>
-                  <a href="genomics.html" class="dropdown-item">Genomics, transcriptomics, and proteomics Services</a>
-                  <a href="metagenomics.html" class="dropdown-item">Metagenomics</a>
-                  <a href="epigenetics.html" class="dropdown-item">Epigenetics</a>
-                </div>
-              </div>
-              <a href="researchconsultancyservices.html" class="dropdown-item">Research Consultancy Services</a>
-              <a href="trainingandworkshop.html" class="dropdown-item">Training and Workshop</a>
-              <a href="patent-services.html" class="dropdown-item">Patent Services</a>
+              <a href="ui-ux-design.html" class="dropdown-item">UI/UX Design</a>
+              <a href="web-designing.html" class="dropdown-item">Web Designing</a>
+              <a href="software-development.html" class="dropdown-item">Software Development</a>
+              <a href="ai-integration.html" class="dropdown-item">AI Integration & Chatbots</a>
+              <a href="digital-marketing.html" class="dropdown-item">Digital Marketing</a>
+              <a href="data-analysis.html" class="dropdown-item">Data Analysis</a>
+              <a href="digital-transformation.html" class="dropdown-item">Digital Transformation</a>
+              <a href="sap-solutions.html" class="dropdown-item">SAP Solutions</a>
+              <a href="application-support.html" class="dropdown-item">Application Support</a>
+              <a href="customer-service-bpo.html" class="dropdown-item">Customer Service (BPO)</a>
+              <a href="kpo-services.html" class="dropdown-item">Knowledge Process Outsourcing (KPO)</a>
             </div>
           </div>
           <a href="lifegenbiocare.html" class="nav-item nav-link">LifeGenBio Care</a>
+          
+          <!-- Learn & Courses Dropdown -->
           <div class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Learn</a>
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">Learn</a>
             <div class="dropdown-menu fade-down m-0">
               <a href="ourteam.html" class="dropdown-item">Our Team</a>
               <a href="ourtrainers.html" class="dropdown-item">Our Trainers</a>
+              <hr class="dropdown-divider">
+              <div class="submenu-container">
+                <div class="dropdown-item d-flex justify-content-between align-items-center">
+                    <span>AI Courses</span>
+                    <i class="fa fa-caret-right"></i>
+                </div>
+                <div class="dropdown-menu">
+                  <a href="course-software-dev-ai.html" class="dropdown-item">Software Development with AI</a>
+                  <a href="course-ai.html" class="dropdown-item">Artificial Intelligence</a>
+                  <a href="course-ai-automation.html" class="dropdown-item">AI Automation</a>
+                  <a href="course-ai-agents.html" class="dropdown-item">AI Agents</a>
+                </div>
+              </div>
+              <div class="submenu-container">
+                <div class="dropdown-item d-flex justify-content-between align-items-center">
+                    <span>Life Science Courses</span>
+                    <i class="fa fa-caret-right"></i>
+                </div>
+                <div class="dropdown-menu">
+                  <a href="course-md-simulation.html" class="dropdown-item">MD Simulation and Drug Design</a>
+                  <a href="course-genomics.html" class="dropdown-item">Genomics, transcriptomics, & proteomics</a>
+                  <a href="course-metagenomics.html" class="dropdown-item">Metagenomics</a>
+                  <a href="course-epigenetics.html" class="dropdown-item">Epigenetics</a>
+                </div>
+              </div>
+              <a href="research-consultancy.html" class="dropdown-item">Research Consultancy</a>
+              <a href="corporate-training.html" class="dropdown-item">Corporate Training & Workshops</a>
+              <a href="patent-services.html" class="dropdown-item">Patent Services</a>
             </div>
           </div>
           <a href="contact.html" class="nav-item nav-link">Contact Us</a>
         </div>
         <a href="#" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block join-now-btn"
-          >Join Now<i class="fa fa-arrow-right ms-3"></i
+          >Inquire Now<i class="fa fa-arrow-right ms-3"></i
         ></a>
       </div>
     </nav>
@@ -309,8 +345,8 @@
     <div id="form-overlay"></div>
     <div id="join-now-slider">
         <span id="close-slider">&times;</span>
-        <h3 class="mb-4 text-primary">Join LifeGenBio Today!</h3>
-        <p>Fill in your details and one of our academic counselors will get in touch with you shortly.</p>
+        <h3 class="mb-4 text-primary">Get in Touch!</h3>
+        <p>Fill in your details and one of our experts will contact you shortly.</p>
         
         <form action="https://n8n.srv1047155.hstgr.cloud/webhook/ab66048a-3b78-4a76-a718-49d95be6ffef" method="POST">
             <div class="mb-3">
@@ -326,12 +362,19 @@
                 <input type="tel" class="form-control" id="sliderPhone" name="phone" placeholder="+91-1234567890" required>
             </div>
             <div class="mb-4">
-                <label for="sliderCourse" class="form-label">Course of Interest</label>
+                <label for="sliderCourse" class="form-label">Service of Interest</label>
                 <select class="form-select" id="sliderCourse" name="course">
-                    <option selected>Select a course</option>
-                    <option value="Generative AI">Generative AI</option>
-                    <option value="AI-Powered Automation">AI-Powered Automation</option>
-                    <option value="Bioinformatics & Data Science">Bioinformatics & Data Science</option>
+                    <option selected>Select a service or course</option>
+                    <optgroup label="Corporate Services">
+                        <option value="UI/UX Design">UI/UX Design</option>
+                        <option value="Web Designing">Web Designing</option>
+                        <option value="Software Development">Software Development</option>
+                        <option value="AI Integration">AI Integration</option>
+                    </optgroup>
+                    <optgroup label="Educational Courses">
+                        <option value="Generative AI Course">Generative AI Course</option>
+                        <option value="Bioinformatics Course">Bioinformatics Course</option>
+                    </optgroup>
                     <option value="Other">Other</option>
                 </select>
             </div>
@@ -340,12 +383,11 @@
     </div>
     <!-- Join Now Slider Form End -->
 
-
     <!-- Carousel Start -->
-    <div class="container-fluid p-0 mb-5">
+    <div class="container-fluid p-0"> <!-- Removed mb-5 to allow full height -->
       <div class="owl-carousel header-carousel position-relative">
         <div class="owl-carousel-item position-relative">
-          <img class="img-fluid" src="https://images.unsplash.com/photo-1677756119517-756a188d2d94?q=80&w=2070&auto=format&fit=crop" alt="Artificial Intelligence" />
+          <img class="img-fluid" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2084&auto=format&fit=crop" alt="Business Solutions" />
           <div
             class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
             style="background: rgba(24, 29, 56, 0.7)"
@@ -356,18 +398,23 @@
                   <h5
                     class="text-primary text-uppercase mb-3 animated slideInDown"
                   >
-                    Cutting-Edge Tech Training
+                    Your Partner in Digital Transformation
                   </h5>
                   <h1 class="display-3 text-white animated slideInDown">
-                    Master the Future of Artificial Intelligence
+                    Innovative Solutions for Modern Business
                   </h1>
                   <p class="fs-5 text-white mb-4 pb-2">
-                    Dive into the world of AI, machine learning, and automation. Our expert-led courses are designed to give you the practical skills needed in today's most innovative industries.
+                    From AI-powered software to comprehensive digital marketing, we deliver end-to-end solutions that drive growth and efficiency.
                   </p>
+                  <a
+                    href="contact.html"
+                    class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft"
+                    >Explore Services</a
+                  >
                   <a
                     href="#"
                     class="btn btn-light py-md-3 px-md-5 animated slideInRight join-now-btn"
-                    >Join Now</a
+                    >Inquire Now</a
                   >
                 </div>
               </div>
@@ -386,14 +433,19 @@
                   <h5
                     class="text-primary text-uppercase mb-3 animated slideInDown"
                   >
-                    Advanced Life Sciences
+                    Empowering Future Innovators
                   </h5>
                   <h1 class="display-3 text-white animated slideInDown">
-                    Unlock the Secrets of Biotechnology
+                    Master the Skills of Tomorrow, Today
                   </h1>
                   <p class="fs-5 text-white mb-4 pb-2">
-                    Explore the frontiers of genomics, bioinformatics, and genetic engineering. Learn from leading scientists and researchers to build a remarkable career in life sciences.
+                    Explore the frontiers of genomics, AI, and data science with our expert-led training programs, designed for the leaders of the next generation.
                   </p>
+                  <a
+                    href="#"
+                    class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft"
+                    >View Courses</a
+                  >
                   <a
                     href="#"
                     class="btn btn-light py-md-3 px-md-5 animated slideInRight join-now-btn"
@@ -408,17 +460,17 @@
     </div>
     <!-- Carousel End -->
 
-    <!-- Service Start -->
+    <!-- Key Features Start -->
     <div class="container-xxl py-5">
       <div class="container">
         <div class="row g-4">
           <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
             <div class="service-item text-center pt-3">
               <div class="p-4">
-                <i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i>
+                <i class="fa fa-3x fa-user-tie text-primary mb-4"></i>
                 <h5 class="mb-3">Industry Experts</h5>
                 <p>
-                  Learn from leading professionals and academics with real-world experience.
+                  Our teams consist of leading professionals with extensive real-world experience.
                 </p>
               </div>
             </div>
@@ -426,10 +478,10 @@
           <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
             <div class="service-item text-center pt-3">
               <div class="p-4">
-                <i class="fa fa-3x fa-globe text-primary mb-4"></i>
-                <h5 class="mb-3">Live Online Classes</h5>
+                <i class="fa fa-3x fa-cogs text-primary mb-4"></i>
+                <h5 class="mb-3">Customized Solutions</h5>
                 <p>
-                  Engage in interactive, real-time sessions from anywhere in the world.
+                  We deliver tailored solutions that meet your unique business and project needs.
                 </p>
               </div>
             </div>
@@ -437,10 +489,10 @@
           <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
             <div class="service-item text-center pt-3">
               <div class="p-4">
-                <i class="fa fa-3x fa-home text-primary mb-4"></i>
-                <h5 class="mb-3">Hands-On Projects</h5>
+                <i class="fa fa-3x fa-headset text-primary mb-4"></i>
+                <h5 class="mb-3">Dedicated Support</h5>
                 <p>
-                  Apply your knowledge with practical projects that build a strong portfolio.
+                  Receive personalized, ongoing support to ensure your success and satisfaction.
                 </p>
               </div>
             </div>
@@ -448,10 +500,10 @@
           <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
             <div class="service-item text-center pt-3">
               <div class="p-4">
-                <i class="fa fa-3x fa-book-open text-primary mb-4"></i>
-                <h5 class="mb-3">Career Guidance</h5>
+                <i class="fa fa-3x fa-rocket text-primary mb-4"></i>
+                <h5 class="mb-3">Innovative Approach</h5>
                 <p>
-                  Receive personalized support to navigate your career path and job opportunities.
+                  We leverage cutting-edge technology to deliver innovative and impactful results.
                 </p>
               </div>
             </div>
@@ -459,7 +511,7 @@
         </div>
       </div>
     </div>
-    <!-- Service End -->
+    <!-- Key Features End -->
 
     <!-- About Start -->
     <div class="container-xxl py-5">
@@ -474,7 +526,7 @@
               <img
                 class="img-fluid position-absolute w-100 h-100"
                 src="img/about.jpg"
-                alt=""
+                alt="Team collaborating in a modern office"
                 style="object-fit: cover"
               />
             </div>
@@ -483,51 +535,51 @@
             <h6 class="section-title bg-white text-start text-primary pe-3">
               About Us
             </h6>
-            <h1 class="mb-4">Welcome to LifeGenBio</h1>
+            <h1 class="mb-4">Your Partner in Growth and Innovation</h1>
             <p class="mb-4">
-             At LifeGenBio, we stand at the intersection of technology and life sciences. Our mission is to empower students and professionals with the critical skills needed to excel in the rapidly evolving industries of AI, biotechnology, and beyond.
+             LifeGenBio is a dynamic partner in digital transformation and specialized education. We empower organizations with comprehensive technology and business solutions while equipping professionals with the skills to lead in their industries.
             </p>
             <p class="mb-4">
-              We believe in learning by doing. Our curriculum is crafted by industry veterans to be practical, project-based, and aligned with current market demands. Join us to transform your curiosity into a high-impact career.
+              From bespoke software and AI integration to expert-led corporate training, we are committed to delivering excellence and measurable results. Join us to transform your vision into a high-impact reality.
             </p>
             <div class="row gy-2 gx-4 mb-4">
               <div class="col-sm-6">
                 <p class="mb-0">
-                  <i class="fa fa-arrow-right text-primary me-2"></i>Expert-Led Instruction
+                  <i class="fa fa-arrow-right text-primary me-2"></i>End-to-End Project Delivery
                 </p>
               </div>
               <div class="col-sm-6">
                 <p class="mb-0">
-                  <i class="fa fa-arrow-right text-primary me-2"></i>Flexible Online Learning
-                </p>
-              </div>
-              <div class="col-sm-6">
-                <p class="mb-0">
-                  <i class="fa fa-arrow-right text-primary me-2"></i
-                  >Globally Recognized Certification
-                </p>
-              </div>
-              <div class="col-sm-6">
-                <p class="mb-0">
-                  <i class="fa fa-arrow-right text-primary me-2"></i>Career Support & Networking
-                </p>
-              </div>
-              <div class="col-sm-6">
-                <p class="mb-0">
-                  <i class="fa fa-arrow-right text-primary me-2"></i>Cutting-Edge Curriculum
+                  <i class="fa fa-arrow-right text-primary me-2"></i>Customized B2B Solutions
                 </p>
               </div>
               <div class="col-sm-6">
                 <p class="mb-0">
                   <i class="fa fa-arrow-right text-primary me-2"></i
-                  >Hands-On Project Experience
+                  >Data-Driven Strategies
+                </p>
+              </div>
+              <div class="col-sm-6">
+                <p class="mb-0">
+                  <i class="fa fa-arrow-right text-primary me-2"></i>Expert Corporate Training
+                </p>
+              </div>
+              <div class="col-sm-6">
+                <p class="mb-0">
+                  <i class="fa fa-arrow-right text-primary me-2"></i>Reliable Ongoing Support
+                </p>
+              </div>
+              <div class="col-sm-6">
+                <p class="mb-0">
+                  <i class="fa fa-arrow-right text-primary me-2"></i
+                  >Global Delivery Network
                 </p>
               </div>
             </div>
            <a
-                    href="#"
-                    class="btn btn-primary py-md-3 px-md-5 mt-2 animated slideInRight join-now-btn"
-                    >Join Now</a
+                    href="contact.html"
+                    class="btn btn-primary py-md-3 px-md-5 mt-2"
+                    >Contact Us</a
                   >
           </div>
         </div>
@@ -535,37 +587,135 @@
     </div>
     <!-- About End -->
 
-    <!-- Workshop CTA Start -->
+    <!-- Corporate Services Section Start -->
     <div class="container-xxl py-5 bg-light">
         <div class="container">
-            <div class="row g-5 align-items-center">
-                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="position-relative d-block overflow-hidden" style="min-height: 400px;">
-                        <img class="img-fluid position-absolute w-100 h-100" src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop" alt="Workshop" style="object-fit: cover;">
-                    </div>
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Our Services</h6>
+                <h1 class="mb-5">A Full Spectrum of Business & Technology Solutions</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <a href="ui-ux-design.html" class="service-card-link">
+                        <div class="service-card">
+                            <div class="icon"><i class="fa fa-paint-brush"></i></div>
+                            <h5>UI/UX Design</h5>
+                            <p>Crafting intuitive and engaging digital experiences that captivate users and drive results.</p>
+                        </div>
+                    </a>
                 </div>
-                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                    <h6 class="section-title bg-white text-start text-primary pe-3">Featured Workshop</h6>
-                    <h1 class="mb-4">Software Development with AI: Build a Private Smart Text Analyzer in 5 Days</h1>
-                    <p class="mb-4">Go from theory to a fully functional, private AI web application. In this hands-on 5-day workshop, you'll build and deploy a smart text analyzer using open-source models, all within a professional cloud environment. No complex setup required!</p>
-                    <p><i class="fa fa-calendar-alt text-primary me-2"></i><strong>Dates:</strong> Starting October 31st, 2025</p>
-                    <button class="btn btn-primary py-3 px-5 mt-3" data-bs-toggle="modal" data-bs-target="#workshopModal">
-                        Learn More & Register
-                    </button>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                    <a href="web-designing.html" class="service-card-link">
+                        <div class="service-card">
+                            <div class="icon"><i class="fa fa-laptop-code"></i></div>
+                            <h5>Web Designing</h5>
+                            <p>Building responsive, visually stunning, and high-performance websites tailored to your brand.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <a href="software-development.html" class="service-card-link">
+                        <div class="service-card">
+                            <div class="icon"><i class="fa fa-code"></i></div>
+                            <h5>Software Development</h5>
+                            <p>Developing custom software solutions that streamline operations and fuel business growth.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                    <a href="ai-integration.html" class="service-card-link">
+                        <div class="service-card">
+                            <div class="icon"><i class="fa fa-robot"></i></div>
+                            <h5>AI Integration & Chatbots</h5>
+                            <p>Leveraging artificial intelligence to automate processes and enhance customer service.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <a href="digital-marketing.html" class="service-card-link">
+                        <div class="service-card">
+                            <div class="icon"><i class="fa fa-bullhorn"></i></div>
+                            <h5>Digital Marketing</h5>
+                            <p>Expanding your reach and driving engagement with data-driven digital marketing strategies.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+                    <a href="data-analysis.html" class="service-card-link">
+                        <div class="service-card">
+                            <div class="icon"><i class="fa fa-chart-bar"></i></div>
+                            <h5>Data Analysis</h5>
+                            <p>Transforming complex data into actionable insights to inform your strategic decisions.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <a href="digital-transformation.html" class="service-card-link">
+                        <div class="service-card">
+                            <div class="icon"><i class="fa fa-sync-alt"></i></div>
+                            <h5>Digital Transformation</h5>
+                            <p>Guiding your business through the process of digital evolution from strategy to execution.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                    <a href="sap-solutions.html" class="service-card-link">
+                        <div class="service-card">
+                            <div class="icon"><i class="fab fa-teamspeak"></i></div>
+                            <h5>SAP Solutions</h5>
+                            <p>Implementing and managing SAP systems to optimize your enterprise resource planning.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <a href="application-support.html" class="service-card-link">
+                        <div class="service-card">
+                            <div class="icon"><i class="fa fa-headset"></i></div>
+                            <h5>Application Support</h5>
+                            <p>Providing reliable and timely technical support to ensure your applications run smoothly.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                    <a href="customer-service-bpo.html" class="service-card-link">
+                        <div class="service-card">
+                            <div class="icon"><i class="fa fa-users-cog"></i></div>
+                            <h5>Customer Service (BPO)</h5>
+                            <p>Delivering exceptional customer support through our scalable Business Process Outsourcing.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <a href="kpo-services.html" class="service-card-link">
+                        <div class="service-card">
+                            <div class="icon"><i class="fa fa-brain"></i></div>
+                            <h5>Knowledge Process (KPO)</h5>
+                            <p>Offering specialized, knowledge-based services including research, analysis, and consulting.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+                    <a href="corporate-training.html" class="service-card-link">
+                        <div class="service-card">
+                            <div class="icon"><i class="fa fa-graduation-cap"></i></div>
+                            <h5>Corporate Training</h5>
+                            <p>Upskilling your workforce with custom training programs in technology and leadership.</p>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Workshop CTA End -->
+    <!-- Corporate Services Section End -->
 
-    <!-- Categories Start -->
+    <!-- Training Categories Start -->
     <div class="container-xxl py-5 category">
       <div class="container">
         <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
           <h6 class="section-title bg-white text-center text-primary px-3">
-            Categories
+            Learning Formats
           </h6>
-          <h1 class="mb-5">Our Program Categories</h1>
+          <h1 class="mb-5">Flexible Learning for Every Need</h1>
         </div>
         <div class="row g-4">
           <div class="col-lg-5 col-md-6 wow zoomIn" data-wow-delay="0.7s" style="min-height: 350px">
@@ -620,17 +770,16 @@
         </div>
       </div>
     </div>
-    <!-- Categories End -->
+    <!-- Training Categories End -->
 
-
-    <!-- Courses Start -->
+    <!-- Featured Courses Start -->
     <div class="container-xxl py-5">
       <div class="container">
         <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
           <h6 class="section-title bg-white text-center text-primary px-3">
-            Courses
+            Featured Programs
           </h6>
-          <h1 class="mb-5">Popular Courses</h1>
+          <h1 class="mb-5">Popular Courses & Programs</h1>
         </div>
         <div class="row g-4 justify-content-center">
           <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -641,9 +790,15 @@
                   class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4"
                 >
                   <a
+                    href="course-ai.html"
+                    class="flex-shrink-0 btn btn-sm btn-primary px-3"
+                    style="border-radius: 30px 0 0 30px;"
+                    >Read More</a
+                  >
+                  <a
                     href="#"
                     class="flex-shrink-0 btn btn-sm btn-primary px-3 join-now-btn"
-                    style="border-radius: 30px;"
+                    style="border-radius: 0 30px 30px 0;"
                     >Join Now</a
                   >
                 </div>
@@ -684,9 +839,15 @@
                   class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4"
                 >
                   <a
+                    href="course-ai-automation.html"
+                    class="flex-shrink-0 btn btn-sm btn-primary px-3"
+                    style="border-radius: 30px 0 0 30px;"
+                    >Read More</a
+                  >
+                  <a
                     href="#"
                     class="flex-shrink-0 btn btn-sm btn-primary px-3 join-now-btn"
-                    style="border-radius: 30px;"
+                    style="border-radius: 0 30px 30px 0;"
                     >Join Now</a
                   >
                 </div>
@@ -727,9 +888,15 @@
                   class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4"
                 >
                   <a
+                    href="course-genomics.html"
+                    class="flex-shrink-0 btn btn-sm btn-primary px-3"
+                    style="border-radius: 30px 0 0 30px;"
+                    >Read More</a
+                  >
+                  <a
                     href="#"
                     class="flex-shrink-0 btn btn-sm btn-primary px-3 join-now-btn"
-                    style="border-radius: 30px;"
+                    style="border-radius: 0 30px 30px 0;"
                     >Join Now</a
                   >
                 </div>
@@ -765,9 +932,9 @@
         </div>
       </div>
     </div>
-    <!-- Courses End -->
+    <!-- Featured Courses End -->
 
-    <!-- Team Start -->
+    <!-- Leadership Team Start -->
     <div class="container-xxl py-5">
       <div class="container">
         <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
@@ -779,7 +946,7 @@
         <div class="owl-carousel leadership-carousel wow fadeInUp" data-wow-delay="0.1s">
           <div class="team-item bg-light">
             <div class="overflow-hidden">
-              <img class="img-fluid" src="img/Rahul.jpeg" alt="" />
+              <img class="img-fluid" src="img/Rahul.jpeg" alt="Rahul Singh, CEO" />
               <div class="team-overlay">
                   <p class="quote">"Our vision is to create a world where education transcends boundaries, empowering every individual to achieve their potential."</p>
               </div>
@@ -791,9 +958,9 @@
           </div>
           <div class="team-item bg-light">
             <div class="overflow-hidden">
-              <img class="img-fluid" src="img/lubna.jpeg" alt="" />
+              <img class="img-fluid" src="img/lubna.jpeg" alt="Lubna Akhtar, CTO" />
               <div class="team-overlay">
-                  <p class="quote">"We leverage cutting-edge technology to build immersive and impactful learning experiences."</p>
+                  <p class="quote">"We leverage cutting-edge technology to build immersive and impactful learning experiences and business solutions."</p>
               </div>
             </div>
             <div class="text-center p-4">
@@ -803,7 +970,7 @@
           </div>
           <div class="team-item bg-light">
             <div class="overflow-hidden">
-              <img class="img-fluid" src="img/ujjwala.jpg" alt="" />
+              <img class="img-fluid" src="img/ujjwala.jpg" alt="Ujjwala Apoorva, CCO" />
               <div class="team-overlay">
                   <p class="quote">"Our curriculum is meticulously designed to bridge the gap between academic theory and industry application."</p>
               </div>
@@ -815,9 +982,9 @@
           </div>
           <div class="team-item bg-light">
             <div class="overflow-hidden">
-              <img class="img-fluid" src="img/sarah.jpg" alt="" />
+              <img class="img-fluid" src="img/sarah.jpg" alt="Sameet Naushad, Head of Operations" />
               <div class="team-overlay">
-                  <p class="quote">"We are committed to operational excellence, ensuring a seamless and supportive journey for every learner."</p>
+                  <p class="quote">"We are committed to operational excellence, ensuring a seamless and supportive journey for every client and learner."</p>
               </div>
             </div>
             <div class="text-center p-4">
@@ -827,9 +994,9 @@
           </div>
            <div class="team-item bg-light">
             <div class="overflow-hidden">
-              <img class="img-fluid" src="img/altaf.jpg" alt="Placeholder Image" />
+              <img class="img-fluid" src="img/altaf.jpg" alt="Altaf Hussain, Founder" />
               <div class="team-overlay">
-                  <p class="quote">"Connecting our talented graduates with top-tier companies is at the heart of what we do."</p>
+                  <p class="quote">"Connecting our talented graduates and powerful solutions with top-tier companies is at the heart of what we do."</p>
               </div>
             </div>
             <div class="text-center p-4">
@@ -840,8 +1007,7 @@
         </div>
       </div>
     </div>
-    <!-- Team End -->
-
+    <!-- Leadership Team End -->
 
     <!-- Testimonial Start -->
     <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
@@ -850,35 +1016,35 @@
           <h6 class="section-title bg-white text-center text-primary px-3">
             Testimonial
           </h6>
-          <h1 class="mb-5">Our Students Say!</h1>
+          <h1 class="mb-5">What Our Clients & Students Say!</h1>
         </div>
         <div class="owl-carousel testimonial-carousel position-relative">
           <div class="testimonial-item text-center">
-            <h5 class="mb-0">Priya Sharma</h5>
-            <p>Software Engineer at Google</p>
+            <h5 class="mb-0 mt-4">Priya Sharma</h5>
+            <p>Software Engineer</p>
             <div class="testimonial-text bg-light text-center p-4">
               <p class="mb-0">"The AI course at LifeGenBio was a game-changer for my career. The hands-on projects gave me the confidence to tackle real-world problems. I landed my dream job just two months after completion!"</p>
             </div>
           </div>
           <div class="testimonial-item text-center">
-            <h5 class="mb-0">David Chen</h5>
-            <p>Data Scientist at Microsoft</p>
+            <h5 class="mb-0 mt-4">John Carter</h5>
+            <p>COO, Innovate Corp</p>
             <div class="testimonial-text bg-light text-center p-4">
-              <p class="mb-0">"I was amazed by the depth of the Bioinformatics curriculum. The instructors are true experts and were incredibly supportive. This platform is perfect for anyone serious about a career in biotech."</p>
+              <p class="mb-0">"LifeGenBio's software development team was exceptional. They delivered a robust application on time and on budget, transforming our workflow. They are true partners in innovation."</p>
             </div>
           </div>
           <div class="testimonial-item text-center">
-            <h5 class="mb-0">Ananya Gupta</h5>
-            <p>Automation Specialist at Amazon</p>
+            <h5 class="mb-0 mt-4">Ananya Gupta</h5>
+            <p>Automation Specialist</p>
             <div class="testimonial-text bg-light text-center p-4">
               <p class="mb-0">"I enrolled in the automation course to upskill, and it exceeded all my expectations. The content is practical, relevant, and immediately applicable. Highly recommended!"</p>
             </div>
           </div>
           <div class="testimonial-item text-center">
-             <h5 class="mb-0">Michael Johnson</h5>
-            <p>Research Associate at Pfizer</p>
+            <h5 class="mb-0 mt-4">Michael Johnson</h5>
+            <p>Head of IT, HealthFirst Pharma</p>
             <div class="testimonial-text bg-light text-center p-4">
-              <p class="mb-0">"The blend of life sciences and data analytics is unique and powerful. LifeGenBio provides the perfect platform to gain a competitive edge in the research and development field."</p>
+              <p class="mb-0">"The BPO services from LifeGenBio have been flawless. Their customer service team integrated perfectly with ours, improving our response times and customer satisfaction scores significantly."</p>
             </div>
           </div>
         </div>
@@ -891,11 +1057,6 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"
-      ><i class="bi bi-arrow-up"></i
-    ></a>
-
    <!-- Footer Start -->
     <div
       class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn"
@@ -905,7 +1066,7 @@
         <div class="row g-5">
             <div class="col-lg-4 col-md-6">
                 <h4 class="text-white mb-4">LifeGenBio</h4>
-                <p>Empowering the next generation of innovators at the intersection of technology and life sciences.</p>
+                <p>Empowering innovators and businesses at the intersection of technology and life sciences.</p>
                 <div class="d-flex pt-2">
                     <a class="btn btn-outline-light btn-social" href="https://www.youtube.com/@lifegenbiollp3301" target="_blank"><i class="fab fa-youtube"></i></a>
                     <a class="btn btn-outline-light btn-social" href="" target="_blank"><i class="fab fa-linkedin-in"></i></a>
@@ -917,7 +1078,7 @@
                 <h4 class="text-white mb-3">Quick Links</h4>
                 <a class="btn btn-link" href="about.html">About Us</a>
                 <a class="btn btn-link" href="contact.html">Contact Us</a>
-                <a class="btn btn-link" href="index.html">Workshops</a>
+                <a class="btn btn-link" href="workshops.html">Workshops</a>
                 <a class="btn btn-link" href="">Our Blog</a>
             </div>
             <div class="col-lg-3 col-md-6">
@@ -965,166 +1126,6 @@
       ><i class="bi bi-arrow-up"></i
     ></a>
 
-    <!-- Success Modal Start -->
-    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title text-primary" id="successModalLabel"><i class="fa fa-check-circle me-2"></i> Inquiry Submitted!</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    Thank you for your interest! Your inquiry has been sent successfully. One of our academic counselors will be in touch with you shortly.
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Success Modal End -->
-
-    <!-- Workshop Details Modal Start -->
-    <div class="modal fade" id="workshopModal" tabindex="-1" aria-labelledby="workshopModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title text-primary" id="workshopModalLabel">Workshop: Zero to AI</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <h3 class="mb-3">Build a Private Smart Text Analyzer in 5 Days</h3>
-                    
-                    <!-- Overview -->
-                    <h5 class="text-primary mt-4">Overview</h5>
-                    <p>This workshop bridges the gap between AI theory and real-world application. You'll get practical, hands-on experience building an AI-powered web app using open-source models in a controlled, private cloud setup. By the end, you'll have a fully functional smart text analyzer that performs sentiment analysis and named entity recognition.</p>
-
-                    <!-- Learning Goals -->
-                    <h5 class="text-primary mt-4">Learning Goals</h5>
-                    <ul class="list-unstyled">
-                        <li><i class="fa fa-check text-success me-2"></i>Understand the modern AI ecosystem (APIs vs. Local Models).</li>
-                        <li><i class="fa fa-check text-success me-2"></i>Set up a professional-grade, reproducible cloud development environment.</li>
-                        <li><i class="fa fa-check text-success me-2"></i>Work hands-on with open-source AI models from Hugging Face.</li>
-                        <li><i class="fa fa-check text-success me-2"></i>Build a reusable AI Analyzer module in Python.</li>
-                        <li><i class="fa fa-check text-success me-2"></i>Create a full-stack web application integrating AI models.</li>
-                        <li><i class="fa fa-check text-success me-2"></i>Apply UI/UX improvements to display AI results meaningfully.</li>
-                    </ul>
-
-                    <!-- Day-wise Structure -->
-                    <h5 class="text-primary mt-4">Day-Wise Structure</h5>
-                    <div class="accordion" id="workshopAccordion">
-                        <!-- Day 1 -->
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    <strong>Day 1: The Modern AI Toolkit (3 Hours)</strong>
-                                </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#workshopAccordion">
-                                <div class="accordion-body">
-                                    <strong>Theme:</strong> Demystifying AI and setting up a professional, bulletproof development environment.<br>
-                                    <strong>Key Outcome:</strong> Every attendee will successfully load an AI model and run their first inference.
-                                    <ul>
-                                        <li>Introduction to the AI Landscape: APIs vs. Local Models.</li>
-                                        <li>The Unbreakable Development Environment: Cloud IDEs & Dev Containers.</li>
-                                        <li><strong>Lab:</strong> Launching Your Environment & First Inference with the `transformers` library.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Day 2 -->
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingTwo">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    <strong>Day 2: Deep Dive into AI Pipelines (3 Hours)</strong>
-                                </button>
-                            </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#workshopAccordion">
-                                <div class="accordion-body">
-                                    <strong>Theme:</strong> Moving beyond the magic and understanding the components.<br>
-                                    <strong>Key Outcome:</strong> Attendees will be able to customize the model's input and process its output programmatically.
-                                    <ul>
-                                        <li>Anatomy of a Transformer Pipeline (Tokenizer, Model, Post-processing).</li>
-                                        <li>Building a Reusable AI Service in a Python class.</li>
-                                        <li><strong>Lab:</strong> Refactoring the Day 1 script into a reusable Analyzer module.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Day 3 -->
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingThree">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    <strong>Day 3: Building the Application Interface (3 Hours)</strong>
-                                </button>
-                            </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#workshopAccordion">
-                                <div class="accordion-body">
-                                    <strong>Theme:</strong> Bringing your AI model to life with a web interface.<br>
-                                    <strong>Key Outcome:</strong> Attendees will have a working web app to type text and see the AI's analysis.
-                                    <ul>
-                                        <li>Introduction to Web Frameworks (Flask/FastAPI).</li>
-                                        <li>Creating an API Endpoint (`/analyze`).</li>
-                                        <li><strong>Lab:</strong> Building the Full-Stack App with a simple HTML/JS frontend.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Day 4 -->
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingFour">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                    <strong>Day 4: Expanding the AI's Capabilities (3 Hours)</strong>
-                                </button>
-                            </h2>
-                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#workshopAccordion">
-                                <div class="accordion-body">
-                                    <strong>Theme:</strong> Making the application smarter by adding a new skill.<br>
-                                    <strong>Key Outcome:</strong> Attendees will add a second, different AI capability (NER) to their application.
-                                    <ul>
-                                        <li>Beyond Sentiment: Introduction to Named Entity Recognition (NER).</li>
-                                        <li>Integrating a Second Model into the application.</li>
-                                        <li><strong>Lab:</strong> Upgrading the Smart Analyzer with a new `/entities` endpoint and UI feature.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Day 5 -->
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingFive">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                    <strong>Day 5: Final Touches & The Path Forward (4 Hours)</strong>
-                                </button>
-                            </h2>
-                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#workshopAccordion">
-                                <div class="accordion-body">
-                                    <strong>Theme:</strong> Polishing the project and revealing the professional journey ahead.<br>
-                                    <strong>Key Outcome:</strong> A completed, polished project and a clear path forward.
-                                    <ul>
-                                        <li><strong>Capstone Challenge Lab (2 Hours):</strong> Implement UI/UX improvements (highlighting entities) and add new functionality.</li>
-                                        <li>The Professional Horizon: Discussing fine-tuning, deployment, and advanced LLMs.</li>
-                                        <li>The Pitch: Introduction to our 3-Month Intensive Program.</li>
-                                        <li>Open Q&A session.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Requirements -->
-                    <h5 class="text-primary mt-4">Requirements</h5>
-                    <p>Participants need only a laptop and a stable internet connection. All development tools and libraries will be provided via pre-configured cloud environments. Basic Python familiarity is helpful but not mandatory.</p>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <a href="https://n8n.srv1047155.hstgr.cloud/form/4b28741b-2ba7-4fd2-b6a5-6c5cf2c11ef4" class="btn btn-primary">Pay & Register Now</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Workshop Details Modal End -->
-
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -1140,19 +1141,13 @@
     <!-- Custom Javascript -->
     <script>
         $(document).ready(function(){
-            // --- JAVASCRIPT FOR MOBILE NAVBAR FIX ---
+            // --- JAVASCRIPT FOR MOBILE NESTED DROPDOWNS ---
             $('.navbar-nav .submenu-container > .dropdown-item').on('click', function(e) {
                 if ($(window).width() < 992) {
-                    // This is the most important line. It stops the event from closing the parent dropdown.
                     e.stopPropagation();
-
                     var $submenu = $(this).next('.dropdown-menu');
-                    
-                    // Close other open submenus for a clean accordion effect
                     $('.submenu-container .dropdown-menu').not($submenu).slideUp();
                     $('.submenu-container .dropdown-item').not(this).removeClass('submenu-open');
-
-                    // Toggle the clicked submenu
                     $submenu.slideToggle();
                     $(this).toggleClass('submenu-open');
                 }
@@ -1173,46 +1168,25 @@
                 overlay.fadeOut();
             });
 
-            // --- [START] CORRECTED JAVASCRIPT FOR FORM SUBMISSION ---
-            // This code handles the form submission via AJAX and correctly redirects the user
-            // if n8n sends back a redirect URL.
+            // --- Form submission logic ---
             $('#join-now-slider form').on('submit', function(e) {
-                e.preventDefault(); // Stop the browser's default form submission
+                e.preventDefault(); 
                 var form = $(this);
-
-                $.ajax({
-                    url: form.attr('action'),
-                    method: form.attr('method'),
-                    data: form.serialize(),
-                    success: function(response) {
-                        // Check if the response from n8n contains a redirect URL
-                        if (response && response.redirectUrl) {
-                            // If it does, redirect the browser to that URL
-                            window.location.href = response.redirectUrl;
-                        } else {
-                            // If there's no redirect, show the success modal as a fallback.
-                            // This will handle cases where your n8n workflow doesn't redirect.
-                            slider.removeClass('show');
-                            overlay.fadeOut();
-                            $('#successModal').modal('show');
-                            form[0].reset(); 
-                        }
-                    },
-                    error: function() {
-                        alert('Something went wrong. Please try again.');
-                    }
-                });
+                // Your AJAX submission logic can be placed here
+                // For demonstration, we'll just show an alert.
+                alert('Inquiry submitted for processing!');
+                slider.removeClass('show');
+                overlay.fadeOut();
+                form[0].reset(); 
             });
-            // --- [END] CORRECTED JAVASCRIPT FOR FORM SUBMISSION ---
 
-
-            // --- INITIALIZE THE CAROUSELS ---
+            // --- Initialize Carousels ---
             // Header Carousel
             $(".header-carousel").owlCarousel({
                 autoplay: true,
                 smartSpeed: 1500,
                 items: 1,
-                dots: false,
+                dots: true,
                 loop: true,
                 nav : true,
                 navText : [
@@ -1221,8 +1195,8 @@
                 ]
             });
 
-            // Leadership Carousel
-            $(".leadership-carousel").owlCarousel({
+            // Leadership & Testimonial Carousels
+            $(".leadership-carousel, .testimonial-carousel").owlCarousel({
                 autoplay: true,
                 smartSpeed: 1000,
                 center: true,
@@ -1231,40 +1205,11 @@
                 loop: true,
                 nav : false,
                 responsive: {
-                    0:{
-                        items:1
-                    },
-                    768:{
-                        items:2
-                    },
-                    992:{
-                        items:3
-                    }
+                    0:{ items:1 },
+                    768:{ items:2 },
+                    992:{ items:3 }
                 }
             });
-
-            // Testimonial Carousel
-            $(".testimonial-carousel").owlCarousel({
-                autoplay: true,
-                smartSpeed: 1000,
-                center: true,
-                margin: 24,
-                dots: true,
-                loop: true,
-                nav : false,
-                responsive: {
-                    0:{
-                        items:1
-                    },
-                    768:{
-                        items:2
-                    },
-                    992:{
-                        items:3
-                    }
-                }
-            });
-            // --- END OF CAROUSEL INITIALIZATION ---
         });
     </script>
   </body>

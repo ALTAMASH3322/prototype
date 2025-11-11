@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Data Analysis Services - LifeGenBio</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="Data Analysis, Business Intelligence, Data Visualization, Predictive Analytics, Big Data, Reporting" name="keywords" />
+    <meta content="LifeGenBio's data analysis services help you turn complex data into clear, actionable insights that drive strategic decision-making and business growth." name="description" />
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+    <style>
+      .page-header {
+        background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url(https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop) center center no-repeat;
+        background-size: cover;
+      }
+      .service-feature {
+        background-color: #f8f9fa;
+        padding: 30px;
+        border-radius: 8px;
+        height: 100%;
+        transition: transform 0.3s ease;
+      }
+      .service-feature:hover {
+        transform: translateY(-5px);
+      }
+      .service-feature .icon {
+        font-size: 40px;
+        color: var(--primary);
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Spinner -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+
+    <!-- #################### START: SAME NAVBAR AS INDEX.HTML #################### -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+      <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+        <img src="img/logo.png" alt="LifeGenBio Logo" style="height: 55px; width: auto;">
+      </a>
+      <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto p-4 p-lg-0">
+          <a href="index.html" class="nav-item nav-link">Home</a>
+          <a href="about.html" class="nav-item nav-link">About Us</a>
+          <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Services</a>
+            <div class="dropdown-menu fade-down m-0">
+              <a href="ui-ux-design.html" class="dropdown-item">UI/UX Design</a>
+              <a href="web-designing.html" class="dropdown-item">Web Designing</a>
+              <a href="software-development.html" class="dropdown-item">Software Development</a>
+              <a href="ai-integration.html" class="dropdown-item">AI Integration & Chatbots</a>
+              <a href="digital-marketing.html" class="dropdown-item">Digital Marketing</a>
+              <a href="data-analysis.html" class="dropdown-item active">Data Analysis</a>
+              <a href="digital-transformation.html" class="dropdown-item">Digital Transformation</a>
+              <a href="sap-solutions.html" class="dropdown-item">SAP Solutions</a>
+              <a href="application-support.html" class="dropdown-item">Application Support</a>
+              <a href="customer-service-bpo.html" class="dropdown-item">Customer Service (BPO)</a>
+              <a href="kpo-services.html" class="dropdown-item">Knowledge Process Outsourcing (KPO)</a>
+            </div>
+          </div>
+          <a href="lifegenbiocare.html" class="nav-item nav-link">LifeGenBio Care</a>
+          <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">Learn</a>
+            <div class="dropdown-menu fade-down m-0">
+              <a href="ourteam.html" class="dropdown-item">Our Team</a>
+              <a href="ourtrainers.html" class="dropdown-item">Our Trainers</a>
+              <hr class="dropdown-divider">
+              <div class="submenu-container">
+                <div class="dropdown-item d-flex justify-content-between align-items-center">
+                    <span>AI Courses</span><i class="fa fa-caret-right"></i>
+                </div>
+                <div class="dropdown-menu">
+                  <a href="course-software-dev-ai.html" class="dropdown-item">Software Development with AI</a>
+                  <a href="course-ai.html" class="dropdown-item">Artificial Intelligence</a>
+                  <a href="course-ai-automation.html" class="dropdown-item">AI Automation</a>
+                  <a href="course-ai-agents.html" class="dropdown-item">AI Agents</a>
+                </div>
+              </div>
+              <div class="submenu-container">
+                <div class="dropdown-item d-flex justify-content-between align-items-center">
+                    <span>Life Science Courses</span><i class="fa fa-caret-right"></i>
+                </div>
+                <div class="dropdown-menu">
+                  <a href="course-md-simulation.html" class="dropdown-item">MD Simulation and Drug Design</a>
+                  <a href="course-genomics.html" class="dropdown-item">Genomics, transcriptomics, & proteomics</a>
+                  <a href="course-metagenomics.html" class="dropdown-item">Metagenomics</a>
+                  <a href="course-epigenetics.html" class="dropdown-item">Epigenetics</a>
+                </div>
+              </div>
+              <a href="research-consultancy.html" class="dropdown-item">Research Consultancy</a>
+              <a href="corporate-training.html" class="dropdown-item">Corporate Training & Workshops</a>
+              <a href="patent-services.html" class="dropdown-item">Patent Services</a>
+            </div>
+          </div>
+          <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+        </div>
+        <a href="contact.html" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Inquire Now<i class="fa fa-arrow-right ms-3"></i></a>
+      </div>
+    </nav>
+    <!-- #################### END: SAME NAVBAR AS INDEX.HTML #################### -->
+
+    <!-- Page Header Start -->
+    <div class="container-fluid bg-primary py-5 mb-5 page-header">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1 class="display-3 text-white animated slideInDown">Data Analysis Services</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+                            <li class="breadcrumb-item"><a class="text-white" href="#">Services</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">Data Analysis</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+    <!-- Service Details Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Our Service</h6>
+                <h1 class="mb-5">Turning Data into Your Greatest Asset</h1>
+                <p class="mb-5 mx-auto" style="max-width: 800px;">In a data-rich world, the businesses that succeed are the ones that can see the signal in the noise. LifeGenBio helps you harness the power of your data, transforming raw numbers and metrics into a clear, strategic advantage. From cleaning and preparing your data to building predictive models, our analysts provide the insights you need to make smarter, faster, and more confident decisions.</p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-feature text-center">
+                        <div class="icon"><i class="fas fa-chart-bar"></i></div>
+                        <h5>Business Intelligence (BI) & Dashboards</h5>
+                        <p class="text-muted">We create custom, interactive dashboards using tools like Tableau and Power BI, giving you a real-time view of your most important KPIs and business metrics at a glance.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="service-feature text-center">
+                        <div class="icon"><i class="fas fa-broom"></i></div>
+                        <h5>Data Cleansing & Preparation</h5>
+                        <p class="text-muted">Accurate analysis starts with clean data. We handle the critical process of data cleaning, validation, and structuring to ensure the integrity and reliability of your insights.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-feature text-center">
+                        <div class="icon"><i class="fas fa-magic"></i></div>
+                        <h5>Predictive Analytics</h5>
+                        <p class="text-muted">Look into the future. By applying advanced statistical models and machine learning to your historical data, we help you forecast trends, anticipate customer behavior, and proactively manage risks.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="service-feature text-center">
+                        <div class="icon"><i class="fas fa-chart-pie"></i></div>
+                        <h5>Data Visualization & Reporting</h5>
+                        <p class="text-muted">We transform complex datasets into clear, compelling visual stories. Our reports and visualizations make it easy for stakeholders at all levels to understand key findings and insights.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-feature text-center">
+                        <div class="icon"><i class="fas fa-database"></i></div>
+                        <h5>Big Data Analytics</h5>
+                        <p class="text-muted">We have the expertise to manage and analyze massive, complex datasets. We help you extract value from your big data to optimize operations and uncover new market opportunities.</p>
+                    </div>
+                </div>
+                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="service-feature text-center">
+                        <div class="icon"><i class="fas fa-road"></i></div>
+                        <h5>Data Strategy & Consulting</h5>
+                        <p class="text-muted">We help you build a data-driven culture. Our consultants work with you to define your data strategy, establish governance, and build a roadmap for long-term analytical success.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="row justify-content-center mt-5 pt-5 border-top">
+                <div class="col-lg-8 text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <h2 class="mb-4">Ready to Make Data-Driven Decisions?</h2>
+                    <p class="lead mb-4">Stop guessing and start knowing. Let our data analysis experts show you the incredible potential hidden within your data. Reach out for a consultation and let's unlock your insights.</p>
+                    <a href="contact.html" class="btn btn-primary btn-lg py-3 px-5">Get a Data Consultation</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service Details End -->
+
+    <!-- #################### START: SAME FOOTER AS INDEX.HTML #################### -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+      <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-4 col-md-6">
+                <h4 class="text-white mb-4">LifeGenBio</h4>
+                <p>Empowering innovators and businesses at the intersection of technology and life sciences.</p>
+                <div class="d-flex pt-2">
+                    <a class="btn btn-outline-light btn-social" href="https://www.youtube.com/@lifegenbiollp3301" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6">
+                <h4 class="text-white mb-3">Quick Links</h4>
+                <a class="btn btn-link" href="about.html">About Us</a>
+                <a class="btn btn-link" href="contact.html">Contact Us</a>
+                <a class="btn btn-link" href="workshops.html">Workshops</a>
+                <a class="btn btn-link" href="">Our Blog</a>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h4 class="text-white mb-3">Get in Touch</h4>
+                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91-9065671711</p>
+                <p class="mb-2"><i class="fab fa-whatsapp me-3"></i>+44-7867243876</p>
+                <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@lifegenbio.com</p>
+            </div>
+             <div class="col-lg-3 col-md-6">
+                <h4 class="text-white mb-3">Our Offices</h4>
+                <p><i class="fa fa-map-marker-alt me-3"></i>India</p>
+                <p><i class="fa fa-map-marker-alt me-3"></i>Saudi Arabia</p>
+                <p><i class="fa fa-map-marker-alt me-3"></i>USA</p>
+            </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="copyright">
+          <div class="row">
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+              &copy; <a class="border-bottom" href="#">LifeGenBio</a>, All Right Reserved.
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+              <div class="footer-menu">
+                <a href="">Privacy Policy</a>
+                <a href="">Terms & Conditions</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- #################### END: SAME FOOTER AS INDEX.HTML #################### -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+    
+    <!-- Custom JS for nested dropdowns -->
+    <script>
+        $(document).ready(function(){
+            $('.navbar-nav .submenu-container > .dropdown-item').on('click', function(e) {
+                if ($(window).width() < 992) {
+                    e.stopPropagation();
+                    var $submenu = $(this).next('.dropdown-menu');
+                    $('.submenu-container .dropdown-menu').not($submenu).slideUp();
+                    $('.submenu-container .dropdown-item').not(this).removeClass('submenu-open');
+                    $submenu.slideToggle();
+                    $(this).toggleClass('submenu-open');
+                }
+            });
+        });
+    </script>
+  </body>
+</html>
