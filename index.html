@@ -187,23 +187,28 @@
         }
         a.service-card-link:hover .service-card .icon { background-color: #01145A; }
 
-        /* --- CSS FOR NESTED NAVBAR DROPDOWNS --- */
+        /* --- [UPDATED] CSS FOR CLICK-BASED NESTED DROPDOWNS --- */
         .submenu-container { position: relative; }
         .submenu-container > .dropdown-item { cursor: pointer; }
         .submenu-container > .dropdown-item .fa-caret-right { transition: transform 0.2s ease-in-out; }
+        
         .navbar-nav .submenu-container .dropdown-menu {
             position: static;
-            display: none;
+            display: none; /* Hidden by default */
             width: 100%;
             border: none;
             box-shadow: none;
             padding-left: 1.5rem;
         }
+
+        /* Mobile caret rotation */
         @media (max-width: 991.98px) {
             .submenu-container > .dropdown-item.submenu-open > .fa-caret-right {
                 transform: rotate(90deg);
             }
         }
+
+        /* Desktop submenu positioning */
         @media (min-width: 992px) {
             .submenu-container .dropdown-menu {
                 position: absolute;
@@ -211,29 +216,34 @@
                 left: 100%;
                 width: auto;
                 padding-left: 0;
-            }
-            .submenu-container:hover > .dropdown-menu {
-                display: block !important;
+                margin-top: -1px;
+                border-radius: 0 0.25rem 0.25rem 0.25rem;
+                box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
             }
         }
 
-        /* --- [NEW] CSS FOR FULL SCREEN HERO SLIDER --- */
-        .header-carousel .owl-carousel-item {
-            height: 100vh; /* Full viewport height */
-        }
-        .header-carousel .owl-carousel-item img {
+        /* --- [NEW] CSS FOR UPCOMING WORKSHOPS --- */
+        .workshop-item .badge {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Prevents image distortion */
+            top: 15px;
+            left: 15px;
+            font-size: 0.8rem;
         }
-        /* Adjust height for mobile for better UX */
-        @media (max-width: 768px) {
-            .header-carousel .owl-carousel-item {
-                height: 90vh;
-            }
+        .workshop-item .price-strikethrough {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 1rem;
+            margin-left: 10px;
+        }
+        .workshop-item h3.discounted-price {
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+        .modal-body .price-section {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
         }
     </style>
   </head>
@@ -255,89 +265,100 @@
     <!-- Spinner End -->
 
     <!-- Navbar Start -->
-    <nav
-      class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0"
-    >
-      <a
-        href="index.html"
-        class="navbar-brand d-flex align-items-center px-4 px-lg-5"
-      >
-        <img src="img/logo.png" alt="LifeGenBio Logo" style="height: 55px; width: auto;">
-      </a>
-      <button
-        type="button"
-        class="navbar-toggler me-4"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarCollapse"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <div class="navbar-nav ms-auto p-4 p-lg-0">
-          <a href="index.html" class="nav-item nav-link active">Home</a>
-          <a href="about.html" class="nav-item nav-link">About Us</a>
-          
-          <!-- Corporate Services Dropdown -->
-          <div class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
-            <div class="dropdown-menu fade-down m-0">
-              <a href="ui-ux-design.html" class="dropdown-item">UI/UX Design</a>
-              <a href="web-designing.html" class="dropdown-item">Web Designing</a>
-              <a href="software-development.html" class="dropdown-item">Software Development</a>
-              <a href="ai-integration.html" class="dropdown-item">AI Integration & Chatbots</a>
-              <a href="digital-marketing.html" class="dropdown-item">Digital Marketing</a>
-              <a href="data-analysis.html" class="dropdown-item">Data Analysis</a>
-              <a href="digital-transformation.html" class="dropdown-item">Digital Transformation</a>
-              <a href="sap-solutions.html" class="dropdown-item">SAP Solutions</a>
-              <a href="application-support.html" class="dropdown-item">Application Support</a>
-              <a href="customer-service-bpo.html" class="dropdown-item">Customer Service (BPO)</a>
-              <a href="kpo-services.html" class="dropdown-item">Knowledge Process Outsourcing (KPO)</a>
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <img src="img/logo.png" alt="LifeGenBio Logo" style="height: 55px; width: auto;">
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="about.html" class="nav-item nav-link">About Us</a>
+                
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <div class="submenu-container">
+                            <div class="dropdown-item d-flex justify-content-between align-items-center">
+                                <span>Technology & Development</span>
+                                <i class="fa fa-caret-right"></i>
+                            </div>
+                            <div class="dropdown-menu">
+                                <a href="ui-ux-design.html" class="dropdown-item">UI/UX Design</a>
+                                <a href="web-designing.html" class="dropdown-item">Web Designing</a>
+                                <a href="software-development.html" class="dropdown-item">Software Development</a>
+                                <a href="ai-integration.html" class="dropdown-item">AI Integration & Chatbots</a>
+                                <a href="sap-solutions.html" class="dropdown-item">SAP Solutions</a>
+                                <a href="application-support.html" class="dropdown-item">Application Support</a>
+                            </div>
+                        </div>
+                        <div class="submenu-container">
+                            <div class="dropdown-item d-flex justify-content-between align-items-center">
+                                <span>Strategy & Growth</span>
+                                <i class="fa fa-caret-right"></i>
+                            </div>
+                            <div class="dropdown-menu">
+                                <a href="digital-marketing.html" class="dropdown-item">Digital Marketing</a>
+                                <a href="data-analysis.html" class="dropdown-item">Data Analysis</a>
+                                <a href="digital-transformation.html" class="dropdown-item">Digital Transformation</a>
+                            </div>
+                        </div>
+                        <div class="submenu-container">
+                            <div class="dropdown-item d-flex justify-content-between align-items-center">
+                                <span>Consulting & Outsourcing</span>
+                                <i class="fa fa-caret-right"></i>
+                            </div>
+                            <div class="dropdown-menu">
+                                <a href="customer-service-bpo.html" class="dropdown-item">Customer Service (BPO)</a>
+                                <a href="kpo-services.html" class="dropdown-item">Knowledge Process Outsourcing (KPO)</a>
+                                <a href="research-consultancy.html" class="dropdown-item">Research Consultancy</a>
+                                <a href="corporate-training.html" class="dropdown-item">Corporate Training & Workshops</a>
+                                <a href="patent-services.html" class="dropdown-item">Patent Services</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="lifegenbiocare.html" class="nav-item nav-link">LifeGenBio Care</a>
+                
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Learn</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="ourteam.html" class="dropdown-item">Our Team</a>
+                        <a href="ourtrainers.html" class="dropdown-item">Our Trainers</a>
+                        <hr class="dropdown-divider">
+                        <div class="submenu-container">
+                            <div class="dropdown-item d-flex justify-content-between align-items-center">
+                                <span>AI Courses</span>
+                                <i class="fa fa-caret-right"></i>
+                            </div>
+                            <div class="dropdown-menu">
+                                <a href="course-software-dev-ai.html" class="dropdown-item">Software Development with AI</a>
+                                <a href="course-ai.html" class="dropdown-item">Artificial Intelligence</a>
+                                <a href="course-ai-automation.html" class="dropdown-item">AI Automation</a>
+                                <a href="course-ai-agents.html" class="dropdown-item">AI Agents</a>
+                            </div>
+                        </div>
+                        <div class="submenu-container">
+                            <div class="dropdown-item d-flex justify-content-between align-items-center">
+                                <span>Life Science Courses</span>
+                                <i class="fa fa-caret-right"></i>
+                            </div>
+                            <div class="dropdown-menu">
+                                <a href="course-md-simulation.html" class="dropdown-item">MD Simulation and Drug Design</a>
+                                <a href="course-genomics.html" class="dropdown-item">Genomics, transcriptomics, & proteomics</a>
+                                <a href="course-metagenomics.html" class="dropdown-item">Metagenomics</a>
+                                <a href="course-epigenetics.html" class="dropdown-item">Epigenetics</a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-item nav-link">Contact Us</a>
             </div>
-          </div>
-          <a href="lifegenbiocare.html" class="nav-item nav-link">LifeGenBio Care</a>
-          
-          <!-- Learn & Courses Dropdown -->
-          <div class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">Learn</a>
-            <div class="dropdown-menu fade-down m-0">
-              <a href="ourteam.html" class="dropdown-item">Our Team</a>
-              <a href="ourtrainers.html" class="dropdown-item">Our Trainers</a>
-              <hr class="dropdown-divider">
-              <div class="submenu-container">
-                <div class="dropdown-item d-flex justify-content-between align-items-center">
-                    <span>AI Courses</span>
-                    <i class="fa fa-caret-right"></i>
-                </div>
-                <div class="dropdown-menu">
-                  <a href="course-software-dev-ai.html" class="dropdown-item">Software Development with AI</a>
-                  <a href="course-ai.html" class="dropdown-item">Artificial Intelligence</a>
-                  <a href="course-ai-automation.html" class="dropdown-item">AI Automation</a>
-                  <a href="course-ai-agents.html" class="dropdown-item">AI Agents</a>
-                </div>
-              </div>
-              <div class="submenu-container">
-                <div class="dropdown-item d-flex justify-content-between align-items-center">
-                    <span>Life Science Courses</span>
-                    <i class="fa fa-caret-right"></i>
-                </div>
-                <div class="dropdown-menu">
-                  <a href="course-md-simulation.html" class="dropdown-item">MD Simulation and Drug Design</a>
-                  <a href="course-genomics.html" class="dropdown-item">Genomics, transcriptomics, & proteomics</a>
-                  <a href="course-metagenomics.html" class="dropdown-item">Metagenomics</a>
-                  <a href="course-epigenetics.html" class="dropdown-item">Epigenetics</a>
-                </div>
-              </div>
-              <a href="research-consultancy.html" class="dropdown-item">Research Consultancy</a>
-              <a href="corporate-training.html" class="dropdown-item">Corporate Training & Workshops</a>
-              <a href="patent-services.html" class="dropdown-item">Patent Services</a>
-            </div>
-          </div>
-          <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+            <a href="#" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block join-now-btn">Inquire Now<i class="fa fa-arrow-right ms-3"></i></a>
         </div>
-        <a href="#" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block join-now-btn"
-          >Inquire Now<i class="fa fa-arrow-right ms-3"></i
-        ></a>
-      </div>
     </nav>
     <!-- Navbar End -->
     
@@ -384,7 +405,7 @@
     <!-- Join Now Slider Form End -->
 
     <!-- Carousel Start -->
-    <div class="container-fluid p-0"> <!-- Removed mb-5 to allow full height -->
+    <div class="container-fluid p-0">
       <div class="owl-carousel header-carousel position-relative">
         <div class="owl-carousel-item position-relative">
           <img class="img-fluid" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2084&auto=format&fit=crop" alt="Business Solutions" />
@@ -934,6 +955,72 @@
     </div>
     <!-- Featured Courses End -->
 
+    <!-- [NEW SECTION] Upcoming Workshops Start -->
+    <div class="container-xxl py-5 bg-light">
+      <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+          <h6 class="section-title bg-white text-center text-primary px-3">
+            Don't Miss Out
+          </h6>
+          <h1 class="mb-5">Upcoming Live Workshops</h1>
+        </div>
+        <div class="row g-4 justify-content-center">
+          
+          <!-- Workshop 1: Email Automation -->
+          <div class="col-lg-5 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="course-item workshop-item bg-white">
+              <div class="position-relative overflow-hidden">
+                <img class="img-fluid" src="img/email_automatio.png" alt="Email Automation Workshop" />
+                <span class="badge bg-primary text-white">LIVE WORKSHOP</span>
+                <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
+                  <button class="btn btn-lg btn-primary px-5" data-bs-toggle="modal" data-bs-target="#emailAutomationModal" style="border-radius: 30px;">
+                    Know More
+                  </button>
+                </div>
+              </div>
+              <div class="text-center p-4 pb-0">
+                <div class="mb-3">
+                  <h3 class="discounted-price text-primary">₹99 <span class="price-strikethrough">₹1499</span></h3>
+                </div>
+                <h5 class="mb-4">3-Hour Workshop on Email Automation</h5>
+              </div>
+              <div class="d-flex border-top">
+                <small class="flex-fill text-center border-end py-2"><i class="fa fa-clock text-primary me-2"></i>3-Hour Power Session</small>
+                <small class="flex-fill text-center py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>30th November</small>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Workshop 2: Software Development with AI -->
+          <div class="col-lg-5 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+            <div class="course-item workshop-item bg-white">
+              <div class="position-relative overflow-hidden">
+                <img class="img-fluid" src="img/softdevAI.png" alt="Software Development with AI Workshop" />
+                <span class="badge bg-primary text-white">LIVE WORKSHOP</span>
+                <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
+                   <button class="btn btn-lg btn-primary px-5" data-bs-toggle="modal" data-bs-target="#softwareDevAIModal" style="border-radius: 30px;">
+                    Know More
+                  </button>
+                </div>
+              </div>
+              <div class="text-center p-4 pb-0">
+                 <div class="mb-3">
+                  <h3 class="discounted-price text-primary">₹3000 <span class="price-strikethrough">₹9000</span></h3>
+                </div>
+                <h5 class="mb-4">5-Day Workshop on Software Dev with AI</h5>
+              </div>
+              <div class="d-flex border-top">
+                <small class="flex-fill text-center border-end py-2"><i class="fa fa-clock text-primary me-2"></i>5-Day Intensive</small>
+                <small class="flex-fill text-center py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>Next Batch Soon</small>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- Upcoming Workshops End -->
+
     <!-- Leadership Team Start -->
     <div class="container-xxl py-5">
       <div class="container">
@@ -1126,6 +1213,72 @@
       ><i class="bi bi-arrow-up"></i
     ></a>
 
+    <!-- [NEW MODALS] Modals for Workshops -->
+    <!-- Email Automation Modal -->
+    <div class="modal fade" id="emailAutomationModal" tabindex="-1" aria-labelledby="emailAutomationModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="emailAutomationModalLabel">3-Hour Workshop on Email Automation</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Unlock the power of automation! In this intensive 3-hour workshop, you will learn how to set up, manage, and optimize email marketing campaigns that run on autopilot, saving you time and boosting engagement.</p>
+            <h6>What You'll Learn:</h6>
+            <ul>
+              <li>Fundamentals of email automation workflows.</li>
+              <li>Setting up triggers and sequences for different customer journeys.</li>
+              <li>Personalization techniques to increase open and click-through rates.</li>
+              <li>A/B testing your automated emails for maximum impact.</li>
+              <li>Integrating automation tools with your existing platforms.</li>
+            </ul>
+            <div class="price-section my-4">
+              <h4>Special Workshop Price</h4>
+              <h2 class="discounted-price text-primary mb-0">₹99 <span class="price-strikethrough fs-4"></span></h2>
+              <p class="text-muted mb-0">Limited time offer!</p>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <a href="https://rzp.io/rzp/l2V9byR" class="btn btn-primary">Pay & Register Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Software Development with AI Modal -->
+    <div class="modal fade" id="softwareDevAIModal" tabindex="-1" aria-labelledby="softwareDevAIModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="softwareDevAIModalLabel">5-Day Workshop on Software Development with AI</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Step into the future of software engineering. This 5-day hands-on workshop is designed to equip developers with the skills to integrate Artificial Intelligence into their applications, creating smarter, more efficient, and more powerful software.</p>
+            <h6>What You'll Learn:</h6>
+            <ul>
+              <li>Understanding the landscape of AI in modern software development.</li>
+              <li>Integrating Large Language Models (LLMs) via APIs.</li>
+              <li>Building AI-powered features like chatbots, recommendation engines, and automated code generation tools.</li>
+              <li>Practical use cases and live coding sessions.</li>
+              <li>Deploying and scaling AI-integrated applications.</li>
+            </ul>
+             <div class="price-section my-4">
+              <h4>Special Workshop Price</h4>
+              <h2 class="discounted-price text-primary mb-0">₹3000 </h2>
+              <p class="text-muted mb-0">Early bird pricing!</p>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <a href="https://rzp.io/rzp/pWF3qBG" class="btn btn-primary">Pay & Register Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modals End -->
+
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -1141,16 +1294,21 @@
     <!-- Custom Javascript -->
     <script>
         $(document).ready(function(){
-            // --- JAVASCRIPT FOR MOBILE NESTED DROPDOWNS ---
-            $('.navbar-nav .submenu-container > .dropdown-item').on('click', function(e) {
-                if ($(window).width() < 992) {
-                    e.stopPropagation();
-                    var $submenu = $(this).next('.dropdown-menu');
-                    $('.submenu-container .dropdown-menu').not($submenu).slideUp();
-                    $('.submenu-container .dropdown-item').not(this).removeClass('submenu-open');
-                    $submenu.slideToggle();
-                    $(this).toggleClass('submenu-open');
-                }
+            // --- [UPDATED] JAVASCRIPT FOR CLICK-BASED NESTED DROPDOWNS ---
+            $('.dropdown-menu .submenu-container > .dropdown-item').on('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                var $submenu = $(this).next('.dropdown-menu');
+                var $parentDropdown = $(this).closest('.dropdown-menu');
+
+                // Close other open submenus within the same parent dropdown
+                $parentDropdown.find('.submenu-container .dropdown-menu').not($submenu).slideUp('fast');
+                $parentDropdown.find('.submenu-container > .dropdown-item').not(this).removeClass('submenu-open');
+                
+                // Toggle the clicked one
+                $submenu.slideToggle('fast');
+                $(this).toggleClass('submenu-open');
             });
 
             // --- Logic for the "Join Now" sliding form ---
@@ -1170,18 +1328,11 @@
 
             // --- Form submission logic ---
             $('#join-now-slider form').on('submit', function(e) {
-                e.preventDefault(); 
-                var form = $(this);
-                // Your AJAX submission logic can be placed here
-                // For demonstration, we'll just show an alert.
-                alert('Inquiry submitted for processing!');
-                slider.removeClass('show');
-                overlay.fadeOut();
-                form[0].reset(); 
+                // This is a placeholder. For a real form, you would handle submission here,
+                // perhaps via AJAX, before resetting and closing the slider.
             });
 
             // --- Initialize Carousels ---
-            // Header Carousel
             $(".header-carousel").owlCarousel({
                 autoplay: true,
                 smartSpeed: 1500,
@@ -1195,7 +1346,6 @@
                 ]
             });
 
-            // Leadership & Testimonial Carousels
             $(".leadership-carousel, .testimonial-carousel").owlCarousel({
                 autoplay: true,
                 smartSpeed: 1000,
