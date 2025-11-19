@@ -1,274 +1,563 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <title>eLEARNING - eLearning HTML Template</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+  <head>
+    <meta charset="utf-8" />
+    <title>eLEARNING - Page Title</title>
+    <!-- I will update this for each page -->
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="img/favicon.ico" rel="icon" />
 
     <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
 
     <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+      rel="stylesheet"
+    />
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Stylesheet -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
-
+    <!-- ============== CONSOLIDATED AND THEMED CSS STARTS HERE ============== -->
     <style>
-      /* Example CSS you might find (look for similar rules targeting .dropdown-menu, .submenu-container, .dropdown-item, :hover) */
+      /*** General ***/
+      :root {
+        --primary: #c3b091; /* CHANGED TO BEIGE THEME COLOR */
+        --light: #f0fbfc;
+        --dark: #181d38;
+      }
 
-/* General Dropdown Styling (if not already in bootstrap.min.css) */
-.navbar .dropdown-toggle::after {
-    border: none;
-    content: "\f107"; /* Font Awesome caret down */
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    vertical-align: middle;
-    margin-left: 8px;
-}
+      body {
+        font-family: "Heebo", sans-serif;
+        background-color: #ffffff;
+      }
 
-.navbar .nav-item.dropdown .dropdown-menu {
-    margin-top: 0;
-    border: 0;
-    border-radius: 0;
-    background: #FFFFFF; /* Or your preferred background */
-}
+      /*** Spinner ***/
+      #spinner {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.5s ease-out, visibility 0s linear 0.5s;
+        z-index: 99999;
+      }
+      #spinner.show {
+        transition: opacity 0.5s ease-out, visibility 0s linear 0s;
+        visibility: visible;
+        opacity: 1;
+      }
 
-/* Specific for multi-level dropdowns */
-.submenu-container {
-    position: relative;
-}
+      /*** Typography & Buttons ***/
+      h1,
+      h2,
+      .display-1,
+      .display-2,
+      .display-3,
+      .display-4,
+      .display-5,
+      .display-6 {
+        font-family: "Nunito", sans-serif;
+        font-weight: 800;
+      }
+      .btn {
+        font-family: "Nunito", sans-serif;
+        font-weight: 600;
+        transition: 0.5s;
+      }
+      .btn.btn-primary,
+      .btn.btn-secondary {
+        color: #ffffff;
+      }
+      .btn-square {
+        width: 38px;
+        height: 38px;
+      }
+      .btn-sm-square {
+        width: 32px;
+        height: 32px;
+      }
+      .btn-lg-square {
+        width: 48px;
+        height: 48px;
+      }
+      .btn-square,
+      .btn-sm-square,
+      .btn-lg-square {
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: normal;
+        border-radius: 50px;
+      }
 
-.submenu-container .dropdown-menu {
-    position: absolute; /* Position next to parent */
-    top: 0;
-    left: 100%; /* Align to the right of the parent */
-    margin-top: -1px; /* Adjust as needed */
-    display: none; /* Hidden by default */
-    min-width: 200px; /* Or whatever width you need */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional shadow */
-}
+      /*** Navbar ***/
+      .navbar-light .navbar-nav .nav-link {
+        font-family: "Nunito", sans-serif;
+        position: relative;
+        margin-right: 25px;
+        padding: 35px 0;
+        color: var(--dark);
+        font-size: 18px;
+        font-weight: 600;
+        outline: none;
+        transition: 0.5s;
+      }
+      .sticky-top {
+        transition: 0.5s;
+      }
+      .sticky-top.navbar-light .navbar-nav .nav-link {
+        padding: 20px 0;
+      }
+      .navbar-light .navbar-nav .nav-link:hover,
+      .navbar-light .navbar-nav .nav-link.active {
+        color: var(--primary);
+      }
+      .navbar-brand img {
+        max-height: 60px;
+      }
+      .navbar-light .navbar-toggler {
+        border-color: transparent;
+      }
 
-.submenu-container:hover > .dropdown-menu {
-    display: block; /* Show on hover */
-}
+      /* Dropdown General Styling */
+      .navbar .dropdown-toggle::after {
+        border: none;
+        content: "\f107"; /* Font Awesome caret down */
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        vertical-align: middle;
+        margin-left: 8px;
+      }
 
-/* Adjusting the main dropdown items that have submenus */
-.submenu-container > .dropdown-item {
-    padding-right: 30px; /* Make space for the caret */
-}
+      /* ============== MULTI-LEVEL DROPDOWN STYLES ============== */
 
-.submenu-container > .dropdown-item .fa-caret-right {
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-}
+      /* DESKTOP STYLES (screen width > 991px) */
+      @media (min-width: 992px) {
+        .submenu-container {
+          position: relative;
+        }
+        .submenu-container .dropdown-menu {
+          position: absolute;
+          top: -5px;
+          left: 100%;
+          display: none;
+          margin-top: 0;
+          min-width: 220px;
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        }
+        .submenu-container:hover > .dropdown-menu {
+          display: block;
+        }
+        .submenu-container > .dropdown-item {
+          padding-right: 30px;
+        }
+        .submenu-container > .dropdown-item .fa-caret-right {
+          display: none;
+        }
+        .submenu-container > .dropdown-item::after {
+          content: "\f054"; /* Font Awesome caret right */
+          font-family: "Font Awesome 5 Free";
+          font-weight: 900;
+          position: absolute;
+          right: 15px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
 
-/* If you have a fade-down animation, look for @keyframes and transition properties */
-.dropdown-menu.fade-down {
-    animation: fadeDown 0.3s ease-in-out forwards;
-}
+      /* MOBILE STYLES (screen width <= 991px) */
+      @media (max-width: 991.98px) {
+        .navbar .navbar-nav .nav-link {
+          margin-right: 0;
+          padding: 10px 0;
+        }
+        .navbar .dropdown-menu {
+          margin-top: 0;
+          box-shadow: none;
+          border: none;
+        }
+        .submenu-container .dropdown-menu {
+          position: static;
+          display: none;
+          width: 100%;
+          padding-left: 20px;
+          border: none;
+          box-shadow: none;
+        }
+        .submenu-container .dropdown-menu.show {
+          display: block;
+        }
+      }
 
-@keyframes fadeDown {
-    0% { opacity: 0; transform: translateY(-10px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
+      /*** Page Header ***/
+      .page-header {
+        background: linear-gradient(
+            rgba(24, 29, 56, 0.7),
+            rgba(24, 29, 56, 0.7)
+          ),
+          url(https://via.placeholder.com/1920x800) center center no-repeat;
+        background-size: cover;
+      }
+      .breadcrumb-item + .breadcrumb-item::before {
+        color: #dddddd;
+      }
 
-/* Responsive adjustments for smaller screens */
-@media (max-width: 991.98px) {
-    .navbar .dropdown-menu {
-        position: static; /* Stack vertically */
-        display: block; /* Always visible when parent is open */
-        width: 100%;
-        margin-left: 0;
+      /*** Footer & Misc ***/
+      .footer .btn.btn-social {
+        margin-right: 5px;
+        width: 35px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--light);
+        border: 1px solid #ffffff;
+        border-radius: 35px;
+        transition: 0.3s;
+      }
+      .footer .btn.btn-social:hover {
+        color: var(--primary);
+        border-color: var(--light);
+      }
+      .footer .btn.btn-link {
+        display: block;
+        margin-bottom: 5px;
+        padding: 0;
+        text-align: left;
+        color: #ffffff;
+        font-size: 15px;
+        font-weight: normal;
+        text-transform: capitalize;
+        transition: 0.3s;
+      }
+      .footer .btn.btn-link::before {
+        position: relative;
+        content: "\f105";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        margin-right: 10px;
+      }
+      .footer .btn.btn-link:hover {
+        letter-spacing: 1px;
         box-shadow: none;
-    }
-    .submenu-container .dropdown-menu {
-        left: 0;
-        position: static; /* Important for mobile */
-        width: 100%;
-        margin-top: 0;
-        padding-left: 20px; /* Indent sub-sub-menus */
-    }
-    .submenu-container:hover > .dropdown-menu {
-        display: none; /* Override desktop hover for mobile */
-    }
-    /* You'll need JavaScript to toggle submenus on click for mobile */
-}
-    </style>
-</head>
+      }
+      .copyright {
+        padding: 25px 0;
+        font-size: 15px;
+        border-top: 1px solid rgba(256, 256, 256, 0.1);
+      }
+      .copyright a {
+        color: var(--light);
+      }
+      .copyright a:hover {
+        color: var(--primary);
+      }
 
-<body>
+      .back-to-top {
+        position: fixed;
+        display: none;
+        right: 45px;
+        bottom: 45px;
+        z-index: 99;
+      }
+
+      .whatsapp-float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 110px;
+        right: 38px;
+        background-color: #25d366;
+        color: #fff;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 2px 2px 3px #999;
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+    <!-- ============== CONSOLIDATED CSS ENDS HERE ============== -->
+  </head>
+
+  <body>
     <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
+    <div
+      id="spinner"
+      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+    >
+      <div
+        class="spinner-border text-primary"
+        style="width: 3rem; height: 3rem"
+        role="status"
+      >
+        <span class="visually-hidden">Loading...</span>
+      </div>
     </div>
     <!-- Spinner End -->
 
-
     <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <img src="img/logo.png" alt="LifeGenBio Logo" style="height: 55px; width: auto;">
-        </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link active">Home</a>
-                <a href="about.html" class="nav-item nav-link">About Us</a>
-                
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
-                    <div class="dropdown-menu fade-down m-0">
-                        <div class="submenu-container">
-                            <div class="dropdown-item d-flex justify-content-between align-items-center">
-                                <span>Technology & Development</span>
-                                <i class="fa fa-caret-right"></i>
-                            </div>
-                            <div class="dropdown-menu">
-                                <a href="ui-ux-design.html" class="dropdown-item">UI/UX Design</a>
-                                <a href="web-designing.html" class="dropdown-item">Web Designing</a>
-                                <a href="software-development.html" class="dropdown-item">Software Development</a>
-                                <a href="ai-integration.html" class="dropdown-item">AI Integration & Chatbots</a>
-                                <a href="sap-solutions.html" class="dropdown-item">SAP Solutions</a>
-                                <a href="application-support.html" class="dropdown-item">Application Support</a>
-                            </div>
-                        </div>
-                        <div class="submenu-container">
-                            <div class="dropdown-item d-flex justify-content-between align-items-center">
-                                <span>Strategy & Growth</span>
-                                <i class="fa fa-caret-right"></i>
-                            </div>
-                            <div class="dropdown-menu">
-                                <a href="digital-marketing.html" class="dropdown-item">Digital Marketing</a>
-                                <a href="data-analysis.html" class="dropdown-item">Data Analysis</a>
-                                <a href="digital-transformation.html" class="dropdown-item">Digital Transformation</a>
-                            </div>
-                        </div>
-                        <div class="submenu-container">
-                            <div class="dropdown-item d-flex justify-content-between align-items-center">
-                                <span>Consulting & Outsourcing</span>
-                                <i class="fa fa-caret-right"></i>
-                            </div>
-                            <div class="dropdown-menu">
-                                <a href="customer-service-bpo.html" class="dropdown-item">Customer Service (BPO)</a>
-                                <a href="kpo-services.html" class="dropdown-item">Knowledge Process Outsourcing (KPO)</a>
-                                <a href="research-consultancy.html" class="dropdown-item">Research Consultancy</a>
-                                <a href="corporate-training.html" class="dropdown-item">Corporate Training & Workshops</a>
-                                <a href="patent-services.html" class="dropdown-item">Patent Services</a>
-                            </div>
-                        </div>
-                    </div>
+    <nav
+      class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0"
+    >
+      <a
+        href="index.html"
+        class="navbar-brand d-flex align-items-center px-4 px-lg-5"
+      >
+        <img
+          src="img/logo.png"
+          alt="LifeGenBio Logo"
+          style="height: 55px; width: auto"
+        />
+      </a>
+      <button
+        type="button"
+        class="navbar-toggler me-4"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarCollapse"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto p-4 p-lg-0">
+          <!-- I will add the 'active' class to the correct link for each page -->
+          <a href="index.html" class="nav-item nav-link">Home</a>
+          <a href="about.html" class="nav-item nav-link">About Us</a>
+
+          <div class="nav-item dropdown">
+            <a
+              href="#"
+              class="nav-link dropdown-toggle"
+              data-bs-toggle="dropdown"
+              >Services</a
+            >
+            <div class="dropdown-menu m-0">
+              <div class="submenu-container">
+                <div
+                  class="dropdown-item d-flex justify-content-between align-items-center"
+                >
+                  <span>Technology & Development</span>
+                  <i class="fa fa-caret-right d-lg-none"></i>
                 </div>
-                <a href="lifegenbiocare.html" class="nav-item nav-link">LifeGenBio Care</a>
-                
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Learn</a>
-                    <div class="dropdown-menu fade-down m-0">
-                        <a href="ourteam.html" class="dropdown-item">Our Team</a>
-                        <a href="ourtrainers.html" class="dropdown-item">Our Trainers</a>
-                        <hr class="dropdown-divider">
-                        <div class="submenu-container">
-                            <div class="dropdown-item d-flex justify-content-between align-items-center">
-                                <span>AI Courses</span>
-                                <i class="fa fa-caret-right"></i>
-                            </div>
-                            <div class="dropdown-menu">
-                                <a href="course-software-dev-ai.html" class="dropdown-item">Software Development with AI</a>
-                                <a href="course-ai.html" class="dropdown-item">Artificial Intelligence</a>
-                                <a href="course-ai-automation.html" class="dropdown-item">AI Automation</a>
-                                <a href="course-ai-agents.html" class="dropdown-item">AI Agents</a>
-                            </div>
-                        </div>
-                        <div class="submenu-container">
-                            <div class="dropdown-item d-flex justify-content-between align-items-center">
-                                <span>Life Science Courses</span>
-                                <i class="fa fa-caret-right"></i>
-                            </div>
-                            <div class="dropdown-menu">
-                                <a href="course-md-simulation.html" class="dropdown-item">MD Simulation and Drug Design</a>
-                                <a href="course-genomics.html" class="dropdown-item">Genomics, transcriptomics, & proteomics</a>
-                                <a href="course-metagenomics.html" class="dropdown-item">Metagenomics</a>
-                                <a href="course-epigenetics.html" class="dropdown-item">Epigenetics</a>
-                            </div>
-                        </div>
-                        
-                    </div>
+                <div class="dropdown-menu">
+                  <a href="ui-ux-design.html" class="dropdown-item"
+                    >UI/UX Design</a
+                  >
+                  <a href="web-designing.html" class="dropdown-item"
+                    >Web Designing</a
+                  >
+                  <a href="software-development.html" class="dropdown-item"
+                    >Software Development</a
+                  >
+                  <a href="ai-integration.html" class="dropdown-item"
+                    >AI Integration & Chatbots</a
+                  >
+                  <a href="sap-solutions.html" class="dropdown-item"
+                    >SAP Solutions</a
+                  >
+                  <a href="application-support.html" class="dropdown-item"
+                    >Application Support</a
+                  >
                 </div>
-                <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+              </div>
+              <div class="submenu-container">
+                <div
+                  class="dropdown-item d-flex justify-content-between align-items-center"
+                >
+                  <span>Strategy & Growth</span>
+                  <i class="fa fa-caret-right d-lg-none"></i>
+                </div>
+                <div class="dropdown-menu">
+                  <a href="digital-marketing.html" class="dropdown-item"
+                    >Digital Marketing</a
+                  >
+                  <a href="data-analysis.html" class="dropdown-item"
+                    >Data Analysis</a
+                  >
+                  <a href="digital-transformation.html" class="dropdown-item"
+                    >Digital Transformation</a
+                  >
+                </div>
+              </div>
+              <div class="submenu-container">
+                <div
+                  class="dropdown-item d-flex justify-content-between align-items-center"
+                >
+                  <span>Consulting & Outsourcing</span>
+                  <i class="fa fa-caret-right d-lg-none"></i>
+                </div>
+                <div class="dropdown-menu">
+                  <a href="customer-service-bpo.html" class="dropdown-item"
+                    >Customer Service (BPO)</a
+                  >
+                  <a href="kpo-services.html" class="dropdown-item"
+                    >Knowledge Process Outsourcing (KPO)</a
+                  >
+                  <a href="research-consultancy.html" class="dropdown-item"
+                    >Research Consultancy</a
+                  >
+                  <a href="corporate-training.html" class="dropdown-item"
+                    >Corporate Training & Workshops</a
+                  >
+                  <a href="patent-services.html" class="dropdown-item"
+                    >Patent Services</a
+                  >
+                </div>
+              </div>
             </div>
-            <a href="#" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block join-now-btn">Inquire Now<i class="fa fa-arrow-right ms-3"></i></a>
+          </div>
+          <a href="lifegenbiocare.html" class="nav-item nav-link"
+            >LifeGenBio Care</a
+          >
+
+          <div class="nav-item dropdown">
+            <a
+              href="#"
+              class="nav-link dropdown-toggle"
+              data-bs-toggle="dropdown"
+              >Learn</a
+            >
+            <div class="dropdown-menu m-0">
+              <a href="ourteam.html" class="dropdown-item">Our Team</a>
+              <a href="ourtrainers.html" class="dropdown-item">Our Trainers</a>
+              <hr class="dropdown-divider" />
+              <div class="submenu-container">
+                <div
+                  class="dropdown-item d-flex justify-content-between align-items-center"
+                >
+                  <span>AI Courses</span>
+                  <i class="fa fa-caret-right d-lg-none"></i>
+                </div>
+                <div class="dropdown-menu">
+                  <a href="course-software-dev-ai.html" class="dropdown-item"
+                    >Software Development with AI</a
+                  >
+                  <a href="course-ai.html" class="dropdown-item"
+                    >Artificial Intelligence</a
+                  >
+                  <a href="course-ai-automation.html" class="dropdown-item"
+                    >AI Automation</a
+                  >
+                  <a href="course-ai-agents.html" class="dropdown-item"
+                    >AI Agents</a
+                  >
+                </div>
+              </div>
+              <div class="submenu-container">
+                <div
+                  class="dropdown-item d-flex justify-content-between align-items-center"
+                >
+                  <span>Life Science Courses</span>
+                  <i class="fa fa-caret-right d-lg-none"></i>
+                </div>
+                <div class="dropdown-menu">
+                  <a href="course-md-simulation.html" class="dropdown-item"
+                    >MD Simulation and Drug Design</a
+                  >
+                  <a href="course-genomics.html" class="dropdown-item"
+                    >Genomics, transcriptomics, & proteomics</a
+                  >
+                  <a href="course-metagenomics.html" class="dropdown-item"
+                    >Metagenomics</a
+                  >
+                  <a href="course-epigenetics.html" class="dropdown-item"
+                    >Epigenetics</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="contact.html" class="nav-item nav-link">Contact Us</a>
         </div>
+        <a href="#" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block"
+          >Inquire Now<i class="fa fa-arrow-right ms-3"></i
+        ></a>
+      </div>
     </nav>
     <!-- Navbar End -->
 
+    <!-- #################################################################### -->
+    <!-- ############   PAGE-SPECIFIC CONTENT WILL GO HERE   ################ -->
+    <!-- #################################################################### -->
 
-    <!-- Header Start -->
+    <!-- Example: Page Header Start -->
     <div class="container-fluid bg-primary py-5 mb-5 page-header">
-        <div class="container py-5">
-            <div class="row justify-content-center">
-                <div class="col-lg-10 text-center">
-                    <h1 class="display-3 text-white animated slideInDown">Not Found</h1>
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb justify-content-center">
-                            <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
-                            <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
-                            <li class="breadcrumb-item text-white active" aria-current="page">404</li>
-                        </ol>
-                    </nav>
-                </div>
-            </div>
+      <div class="container py-5">
+        <div class="row justify-content-center">
+          <div class="col-lg-10 text-center">
+            <h1 class="display-3 text-white animated slideInDown">
+              Page Title
+            </h1>
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb justify-content-center">
+                <li class="breadcrumb-item">
+                  <a class="text-white" href="#">Home</a>
+                </li>
+                <li
+                  class="breadcrumb-item text-white active"
+                  aria-current="page"
+                >
+                  Page
+                </li>
+              </ol>
+            </nav>
+          </div>
         </div>
+      </div>
     </div>
-    <!-- Header End -->
+    <!-- Page Header End -->
 
-
-    <!-- 404 Start -->
-    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container text-center">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <i class="bi bi-exclamation-triangle display-1 text-primary"></i>
-                    <h1 class="display-1">404</h1>
-                    <h1 class="mb-4">Page Not Found</h1>
-                    <p class="mb-4">We’re sorry, the page you have looked for does not exist in our website! Maybe go to our home page or try to use a search?</p>
-                    <a class="btn btn-primary rounded-pill py-3 px-5" href="">Go Back To Home</a>
-                </div>
-            </div>
-        </div>
+    <!-- Example: Main Content Section Start -->
+    <div class="container-xxl py-5">
+      <div class="container">
+        <!-- The unique content of the page will be placed here -->
+        <p>Ready for the next page's content!</p>
+      </div>
     </div>
-    <!-- 404 End -->
-        
-<!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/447867243876" class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
+    <!-- Main Content Section End -->
+
+    <!-- #################################################################### -->
+    <!-- #######################   END OF PAGE CONTENT   #################### -->
+    <!-- #################################################################### -->
+
+    <!-- Floating WhatsApp Button -->
+    <a
+      href="https://wa.me/447867243876"
+      class="whatsapp-float"
+      target="_blank"
+      title="Chat with us on WhatsApp"
+    >
+      <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"
-      ><i class="bi bi-arrow-up"></i
-    ></a>
     <!-- Footer Start -->
     <div
       class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn"
@@ -276,49 +565,72 @@
     >
       <div class="container py-5">
         <div class="row g-5">
-            <div class="col-lg-4 col-md-6">
-                <h4 class="text-white mb-4">LifeGenBio</h4>
-                <p>Empowering the next generation of innovators at the intersection of technology and life sciences.</p>
-                <div class="d-flex pt-2">
-                    <a class="btn btn-outline-light btn-social" href="https://www.youtube.com/@lifegenbiollp3301" target="_blank"><i class="fab fa-youtube"></i></a>
-                    <a class="btn btn-outline-light btn-social" href="" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                    <a class="btn btn-outline-light btn-social" href="" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-light btn-social" href="" target="_blank"><i class="fab fa-instagram"></i></a>
-                </div>
+          <div class="col-lg-4 col-md-6">
+            <h4 class="text-white mb-4">LifeGenBio</h4>
+            <p>
+              Empowering the next generation of innovators at the intersection
+              of technology and life sciences.
+            </p>
+            <div class="d-flex pt-2">
+              <a
+                class="btn btn-outline-light btn-social"
+                href="https://www.youtube.com/@lifegenbiollp3301"
+                target="_blank"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a
+                class="btn btn-outline-light btn-social"
+                href=""
+                target="_blank"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a
+                class="btn btn-outline-light btn-social"
+                href=""
+                target="_blank"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                class="btn btn-outline-light btn-social"
+                href=""
+                target="_blank"
+                ><i class="fab fa-instagram"></i
+              ></a>
             </div>
-            <div class="col-lg-2 col-md-6">
-                <h4 class="text-white mb-3">Quick Links</h4>
-                <a class="btn btn-link" href="about.html">About Us</a>
-                <a class="btn btn-link" href="contact.html">Contact Us</a>
-                <a class="btn btn-link" href="index.html">Workshops</a>
-                <a class="btn btn-link" href="">Our Blog</a>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <h4 class="text-white mb-3">Get in Touch</h4>
-                <p class="mb-2">
-                <i class="fa fa-phone-alt me-3"></i>+91-9065671711
-                </p>
-                <p class="mb-2">
-                <i class="fab fa-whatsapp me-3"></i>+44-7867243876
-                </p>
-                <p class="mb-2">
-                <i class="fa fa-envelope me-3"></i>info@lifegenbio.com
-                </p>
-            </div>
-             <div class="col-lg-3 col-md-6">
-                <h4 class="text-white mb-3">Our Offices</h4>
-                <p><i class="fa fa-map-marker-alt me-3"></i>India</p>
-                <p><i class="fa fa-map-marker-alt me-3"></i>Saudi Arabia</p>
-                <p><i class="fa fa-map-marker-alt me-3"></i>USA</p>
-            </div>
+          </div>
+          <div class="col-lg-2 col-md-6">
+            <h4 class="text-white mb-3">Quick Links</h4>
+            <a class="btn btn-link" href="about.html">About Us</a>
+            <a class="btn btn-link" href="contact.html">Contact Us</a>
+            <a class="btn btn-link" href="index.html">Workshops</a>
+            <a class="btn btn-link" href="">Our Blog</a>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h4 class="text-white mb-3">Get in Touch</h4>
+            <p class="mb-2">
+              <i class="fa fa-phone-alt me-3"></i>+91-9065671711
+            </p>
+            <p class="mb-2">
+              <i class="fab fa-whatsapp me-3"></i>+44-7867243876
+            </p>
+            <p class="mb-2">
+              <i class="fa fa-envelope me-3"></i>info@lifegenbio.com
+            </p>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h4 class="text-white mb-3">Our Offices</h4>
+            <p><i class="fa fa-map-marker-alt me-3"></i>India</p>
+            <p><i class="fa fa-map-marker-alt me-3"></i>Saudi Arabia</p>
+            <p><i class="fa fa-map-marker-alt me-3"></i>USA</p>
+          </div>
         </div>
       </div>
       <div class="container">
         <div class="copyright">
           <div class="row">
             <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-              &copy; <a class="border-bottom" href="#">LifeGenBio</a>, All
-              Right Reserved.
+              &copy; <a class="border-bottom" href="#">LifeGenBio</a>, All Right
+              Reserved.
             </div>
             <div class="col-md-6 text-center text-md-end">
               <div class="footer-menu">
@@ -330,74 +642,84 @@
         </div>
       </div>
     </div>
-<!-- Footer End -->
-
+    <!-- Footer End -->
 
     <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"
+      ><i class="bi bi-arrow-up"></i
+    ></a>
 
     <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <!-- ============== CONSOLIDATED JAVASCRIPT STARTS HERE ============== -->
     <script>
-      /* Example JavaScript you might find */
-$(document).ready(function() {
-    // This is for Bootstrap's default dropdowns to stay open on hover (desktop)
-    // If you're using Bootstrap 5, you might need a different approach or this might not be present.
-    function toggleNavbarMethod() {
-        if ($(window).width() > 992) {
-            $('.navbar .dropdown').on('mouseover', function () {
-                $('.dropdown-toggle', this).trigger('click');
-            }).on('mouseout', function () {
-                $('.dropdown-toggle', this).trigger('click').blur();
-            });
-        } else {
-            $('.navbar .dropdown').off('mouseover').off('mouseout');
-        }
-    }
-    toggleNavbarMethod();
-    $(window).resize(toggleNavbarMethod);
+      (function ($) {
+        "use strict";
 
+        // Spinner
+        var spinner = function () {
+          setTimeout(function () {
+            if ($("#spinner").length > 0) {
+              $("#spinner").removeClass("show");
+            }
+          }, 1);
+        };
+        spinner();
 
-    // Custom JS for multi-level dropdowns (important!)
-    $('.submenu-container > .dropdown-item').on('click', function(e) {
-        e.preventDefault(); // Prevent default link behavior if it's just a toggle
-        // Toggle the visibility of the next sibling .dropdown-menu
-        $(this).next('.dropdown-menu').toggleClass('show'); 
-        // Or, more robustly for older Bootstrap versions:
-        // $(this).next('.dropdown-menu').slideToggle(200);
-        
-        // Optional: Close other submenus at the same level
-        $(this).parent().siblings().find('.dropdown-menu').removeClass('show');
-        // $(this).parent().siblings().find('.dropdown-menu').slideUp(200);
+        // Initiate the WOWjs
+        new WOW().init();
 
-        // This is crucial for responsive navigation when the main menu is collapsed
-        if ($(window).width() < 992) {
-            // This prevents the main dropdown from closing if it has a submenu
-            e.stopPropagation(); 
-        }
-    });
+        // Sticky Navbar
+        $(window).scroll(function () {
+          if ($(this).scrollTop() > 300) {
+            $(".sticky-top").css("top", "0px");
+          } else {
+            $(".sticky-top").css("top", "-100px");
+          }
+        });
 
-    // To prevent the main dropdown from closing when clicking on a submenu item that is not a link
-    $('.submenu-container .dropdown-menu').on('click', function(e){
-        e.stopPropagation();
-    });
+        // Back to top button
+        $(window).scroll(function () {
+          if ($(this).scrollTop() > 300) {
+            $(".back-to-top").fadeIn("slow");
+          } else {
+            $(".back-to-top").fadeOut("slow");
+          }
+        });
+        $(".back-to-top").click(function () {
+          $("html, body").animate({ scrollTop: 0 }, 1500, "easeInOutExpo");
+          return false;
+        });
 
-    // Close all submenus when a main dropdown is closed
-    $('.navbar .dropdown').on('hidden.bs.dropdown', function () {
-        $(this).find('.submenu-container .dropdown-menu').removeClass('show');
-        // $(this).find('.submenu-container .dropdown-menu').slideUp(200);
-    });
-});
+        // --- NEW MULTI-LEVEL DROPDOWN SCRIPT FOR MOBILE --- //
+        $(".submenu-container > .dropdown-item").on("click", function (e) {
+          if ($(window).width() < 992) {
+            e.preventDefault();
+            e.stopPropagation();
+            var submenu = $(this).next(".dropdown-menu");
+            $(this)
+              .parent(".submenu-container")
+              .siblings()
+              .find(".dropdown-menu")
+              .slideUp(200);
+            submenu.slideToggle(200);
+          }
+        });
+
+        // Close all submenus when a main dropdown is closed on mobile
+        $(".navbar .dropdown").on("hidden.bs.dropdown", function () {
+          if ($(window).width() < 992) {
+            $(this).find(".submenu-container .dropdown-menu").slideUp(200);
+          }
+        });
+      })(jQuery);
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
-</body>
-
+    <!-- ============== CONSOLIDATED JAVASCRIPT ENDS HERE ============== -->
+  </body>
 </html>

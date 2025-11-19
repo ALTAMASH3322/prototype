@@ -4,8 +4,14 @@
     <meta charset="utf-8" />
     <title>Knowledge Process Outsourcing (KPO) Services - LifeGenBio</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta content="KPO, Knowledge Process Outsourcing, Research and Analysis, Data Analytics, Financial Modeling, Market Research, IP Research" name="keywords" />
-    <meta content="LifeGenBio's KPO services provide access to specialized, high-level expertise in research, data analytics, and financial modeling to give your business a strategic edge." name="description" />
+    <meta
+      content="KPO, Knowledge Process Outsourcing, Research and Analysis, Data Analytics, Financial Modeling, Market Research, IP Research"
+      name="keywords"
+    />
+    <meta
+      content="LifeGenBio's KPO services provide access to specialized, high-level expertise in research, data analytics, and financial modeling to give your business a strategic edge."
+      name="description"
+    />
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon" />
@@ -13,107 +19,216 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
 
     <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet" />
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+      rel="stylesheet"
+    />
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Bootstrap Stylesheet -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet" />
+    <!-- ============== CONSOLIDATED AND THEMED CSS STARTS HERE ============== -->
     <style>
-      /* Example CSS you might find (look for similar rules targeting .dropdown-menu, .submenu-container, .dropdown-item, :hover) */
+      /*** General ***/
+      :root {
+        --primary: #c3b091; /* BEIGE THEME COLOR */
+        --light: #f0fbfc;
+        --dark: #181d38;
+      }
+      body {
+        font-family: "Heebo", sans-serif;
+        background-color: #ffffff;
+      }
 
-/* General Dropdown Styling (if not already in bootstrap.min.css) */
-.navbar .dropdown-toggle::after {
-    border: none;
-    content: "\f107"; /* Font Awesome caret down */
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    vertical-align: middle;
-    margin-left: 8px;
-}
+      /*** Spinner ***/
+      #spinner {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.5s ease-out, visibility 0s linear 0.5s;
+        z-index: 99999;
+      }
+      #spinner.show {
+        transition: opacity 0.5s ease-out, visibility 0s linear 0s;
+        visibility: visible;
+        opacity: 1;
+      }
 
-.navbar .nav-item.dropdown .dropdown-menu {
-    margin-top: 0;
-    border: 0;
-    border-radius: 0;
-    background: #FFFFFF; /* Or your preferred background */
-}
+      /*** Typography & Buttons ***/
+      h1,
+      h2,
+      .display-1,
+      .display-2,
+      .display-3,
+      .display-4,
+      .display-5,
+      .display-6,
+      .section-title {
+        font-family: "Nunito", sans-serif;
+        font-weight: 800;
+      }
+      .btn {
+        font-family: "Nunito", sans-serif;
+        font-weight: 600;
+        transition: 0.5s;
+      }
+      .btn.btn-primary,
+      .btn.btn-secondary {
+        color: #ffffff;
+      }
+      .btn-square {
+        width: 38px;
+        height: 38px;
+      }
+      .btn-sm-square {
+        width: 32px;
+        height: 32px;
+      }
+      .btn-lg-square {
+        width: 48px;
+        height: 48px;
+      }
+      .btn-square,
+      .btn-sm-square,
+      .btn-lg-square {
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: normal;
+        border-radius: 50px;
+      }
 
-/* Specific for multi-level dropdowns */
-.submenu-container {
-    position: relative;
-}
+      /*** Navbar ***/
+      .navbar-light .navbar-nav .nav-link {
+        font-family: "Nunito", sans-serif;
+        position: relative;
+        margin-right: 25px;
+        padding: 35px 0;
+        color: var(--dark);
+        font-size: 18px;
+        font-weight: 600;
+        outline: none;
+        transition: 0.5s;
+      }
+      .sticky-top {
+        transition: 0.5s;
+      }
+      .sticky-top.navbar-light .navbar-nav .nav-link {
+        padding: 20px 0;
+      }
+      .navbar-light .navbar-nav .nav-link:hover,
+      .navbar-light .navbar-nav .nav-link.active {
+        color: var(--primary);
+      }
+      .navbar-brand img {
+        max-height: 60px;
+      }
+      .navbar-light .navbar-toggler {
+        border-color: transparent;
+      }
 
-.submenu-container .dropdown-menu {
-    position: absolute; /* Position next to parent */
-    top: 0;
-    left: 100%; /* Align to the right of the parent */
-    margin-top: -1px; /* Adjust as needed */
-    display: none; /* Hidden by default */
-    min-width: 200px; /* Or whatever width you need */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional shadow */
-}
+      .navbar .dropdown-toggle::after {
+        border: none;
+        content: "\f107";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        vertical-align: middle;
+        margin-left: 8px;
+      }
 
-.submenu-container:hover > .dropdown-menu {
-    display: block; /* Show on hover */
-}
+      /* MULTI-LEVEL DROPDOWN STYLES */
+      @media (min-width: 992px) {
+        .submenu-container {
+          position: relative;
+        }
+        .submenu-container .dropdown-menu {
+          position: absolute;
+          top: -5px;
+          left: 100%;
+          display: none;
+          margin-top: 0;
+          min-width: 220px;
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        }
+        .submenu-container:hover > .dropdown-menu {
+          display: block;
+        }
+        .submenu-container > .dropdown-item {
+          padding-right: 30px;
+        }
+        .submenu-container > .dropdown-item .fa-caret-right {
+          display: none;
+        }
+        .submenu-container > .dropdown-item::after {
+          content: "\f054";
+          font-family: "Font Awesome 5 Free";
+          font-weight: 900;
+          position: absolute;
+          right: 15px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+      @media (max-width: 991.98px) {
+        .navbar .navbar-nav .nav-link {
+          margin-right: 0;
+          padding: 10px 0;
+        }
+        .navbar .dropdown-menu {
+          margin-top: 0;
+          box-shadow: none;
+          border: none;
+        }
+        .submenu-container .dropdown-menu {
+          position: static;
+          display: none;
+          width: 100%;
+          padding-left: 20px;
+          border: none;
+          box-shadow: none;
+        }
+        .submenu-container .dropdown-menu.show {
+          display: block;
+        }
+      }
 
-/* Adjusting the main dropdown items that have submenus */
-.submenu-container > .dropdown-item {
-    padding-right: 30px; /* Make space for the caret */
-}
-
-.submenu-container > .dropdown-item .fa-caret-right {
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-/* If you have a fade-down animation, look for @keyframes and transition properties */
-.dropdown-menu.fade-down {
-    animation: fadeDown 0.3s ease-in-out forwards;
-}
-
-@keyframes fadeDown {
-    0% { opacity: 0; transform: translateY(-10px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
-
-/* Responsive adjustments for smaller screens */
-@media (max-width: 991.98px) {
-    .navbar .dropdown-menu {
-        position: static; /* Stack vertically */
-        display: block; /* Always visible when parent is open */
-        width: 100%;
-        margin-left: 0;
-        box-shadow: none;
-    }
-    .submenu-container .dropdown-menu {
-        left: 0;
-        position: static; /* Important for mobile */
-        width: 100%;
-        margin-top: 0;
-        padding-left: 20px; /* Indent sub-sub-menus */
-    }
-    .submenu-container:hover > .dropdown-menu {
-        display: none; /* Override desktop hover for mobile */
-    }
-    /* You'll need JavaScript to toggle submenus on click for mobile */
-}
+      /*** Page Header & Sections ***/
       .page-header {
-        background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url(https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2070&auto=format&fit=crop) center center no-repeat;
         background-size: cover;
       }
+      .breadcrumb-item + .breadcrumb-item::before {
+        color: #dddddd;
+      }
+      .section-title {
+        position: relative;
+        display: inline-block;
+        text-transform: uppercase;
+      }
+
+      /* CUSTOM STYLES FOR THIS PAGE */
       .service-feature {
         background-color: #f8f9fa;
         padding: 30px;
@@ -129,240 +244,636 @@
         color: var(--primary);
         margin-bottom: 20px;
       }
+
+      /*** SLIDER FORM ***/
+      #form-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: 1040;
+        display: none;
+      }
+      #join-now-slider {
+        position: fixed;
+        top: 0;
+        left: -35%;
+        width: 30%;
+        height: 100vh;
+        background-color: white;
+        z-index: 1050;
+        padding: 40px 30px;
+        box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+        transition: left 0.4s ease-in-out;
+        overflow-y: auto;
+      }
+      #join-now-slider.show {
+        left: 0;
+      }
+      #close-slider {
+        position: absolute;
+        top: 15px;
+        right: 25px;
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #333;
+        cursor: pointer;
+      }
+      @media (max-width: 992px) {
+        #join-now-slider {
+          width: 60%;
+          left: -65%;
+        }
+      }
+      @media (max-width: 768px) {
+        #join-now-slider {
+          width: 85%;
+          left: -90%;
+        }
+      }
+
+      /*** Footer & Misc ***/
+      .footer .btn.btn-social {
+        margin-right: 5px;
+        width: 35px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--light);
+        border: 1px solid #ffffff;
+        border-radius: 35px;
+        transition: 0.3s;
+      }
+      .footer .btn.btn-social:hover {
+        color: var(--primary);
+        border-color: var(--light);
+      }
+      .footer .btn.btn-link {
+        display: block;
+        margin-bottom: 5px;
+        padding: 0;
+        text-align: left;
+        color: #ffffff;
+        font-size: 15px;
+        font-weight: normal;
+        text-transform: capitalize;
+        transition: 0.3s;
+      }
+      .footer .btn.btn-link::before {
+        position: relative;
+        content: "\f105";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        margin-right: 10px;
+      }
+      .footer .btn.btn-link:hover {
+        letter-spacing: 1px;
+        box-shadow: none;
+      }
+      .copyright {
+        padding: 25px 0;
+        font-size: 15px;
+        border-top: 1px solid rgba(256, 256, 256, 0.1);
+      }
+      .copyright a {
+        color: var(--light);
+      }
+      .copyright a:hover {
+        color: var(--primary);
+      }
+      .back-to-top {
+        position: fixed;
+        display: none;
+        right: 45px;
+        bottom: 45px;
+        z-index: 99;
+      }
+      .whatsapp-float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 110px;
+        right: 38px;
+        background-color: #25d366;
+        color: #fff;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 2px 2px 3px #999;
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
     </style>
+    <!-- ============== CONSOLIDATED CSS ENDS HERE ============== -->
   </head>
 
   <body>
-    <!-- Spinner -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
+    <!-- Spinner Start -->
+    <div
+      id="spinner"
+      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+    >
+      <div
+        class="spinner-border text-primary"
+        style="width: 3rem; height: 3rem"
+        role="status"
+      >
+        <span class="visually-hidden">Loading...</span>
+      </div>
     </div>
+    <!-- Spinner End -->
 
-    <!-- #################### START: SAME NAVBAR AS INDEX.HTML #################### -->
-   <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <img src="img/logo.png" alt="LifeGenBio Logo" style="height: 55px; width: auto;">
-        </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link active">Home</a>
-                <a href="about.html" class="nav-item nav-link">About Us</a>
-                
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
-                    <div class="dropdown-menu fade-down m-0">
-                        <div class="submenu-container">
-                            <div class="dropdown-item d-flex justify-content-between align-items-center">
-                                <span>Technology & Development</span>
-                                <i class="fa fa-caret-right"></i>
-                            </div>
-                            <div class="dropdown-menu">
-                                <a href="ui-ux-design.html" class="dropdown-item">UI/UX Design</a>
-                                <a href="web-designing.html" class="dropdown-item">Web Designing</a>
-                                <a href="software-development.html" class="dropdown-item">Software Development</a>
-                                <a href="ai-integration.html" class="dropdown-item">AI Integration & Chatbots</a>
-                                <a href="sap-solutions.html" class="dropdown-item">SAP Solutions</a>
-                                <a href="application-support.html" class="dropdown-item">Application Support</a>
-                            </div>
-                        </div>
-                        <div class="submenu-container">
-                            <div class="dropdown-item d-flex justify-content-between align-items-center">
-                                <span>Strategy & Growth</span>
-                                <i class="fa fa-caret-right"></i>
-                            </div>
-                            <div class="dropdown-menu">
-                                <a href="digital-marketing.html" class="dropdown-item">Digital Marketing</a>
-                                <a href="data-analysis.html" class="dropdown-item">Data Analysis</a>
-                                <a href="digital-transformation.html" class="dropdown-item">Digital Transformation</a>
-                            </div>
-                        </div>
-                        <div class="submenu-container">
-                            <div class="dropdown-item d-flex justify-content-between align-items-center">
-                                <span>Consulting & Outsourcing</span>
-                                <i class="fa fa-caret-right"></i>
-                            </div>
-                            <div class="dropdown-menu">
-                                <a href="customer-service-bpo.html" class="dropdown-item">Customer Service (BPO)</a>
-                                <a href="kpo-services.html" class="dropdown-item">Knowledge Process Outsourcing (KPO)</a>
-                                <a href="research-consultancy.html" class="dropdown-item">Research Consultancy</a>
-                                <a href="corporate-training.html" class="dropdown-item">Corporate Training & Workshops</a>
-                                <a href="patent-services.html" class="dropdown-item">Patent Services</a>
-                            </div>
-                        </div>
-                    </div>
+    <!-- Navbar Start -->
+    <nav
+      class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0"
+    >
+      <a
+        href="index.html"
+        class="navbar-brand d-flex align-items-center px-4 px-lg-5"
+      >
+        <img
+          src="img/logo.png"
+          alt="LifeGenBio Logo"
+          style="height: 55px; width: auto"
+        />
+      </a>
+      <button
+        type="button"
+        class="navbar-toggler me-4"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarCollapse"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto p-4 p-lg-0">
+          <a href="index.html" class="nav-item nav-link">Home</a>
+          <a href="about.html" class="nav-item nav-link">About Us</a>
+
+          <div class="nav-item dropdown">
+            <a
+              href="#"
+              class="nav-link dropdown-toggle"
+              data-bs-toggle="dropdown"
+              >Services</a
+            >
+            <div class="dropdown-menu m-0">
+              <div class="submenu-container">
+                <div
+                  class="dropdown-item d-flex justify-content-between align-items-center"
+                >
+                  <span>Technology & Development</span
+                  ><i class="fa fa-caret-right d-lg-none"></i>
                 </div>
-                <a href="lifegenbiocare.html" class="nav-item nav-link">LifeGenBio Care</a>
-                
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Learn</a>
-                    <div class="dropdown-menu fade-down m-0">
-                        <a href="ourteam.html" class="dropdown-item">Our Team</a>
-                        <a href="ourtrainers.html" class="dropdown-item">Our Trainers</a>
-                        <hr class="dropdown-divider">
-                        <div class="submenu-container">
-                            <div class="dropdown-item d-flex justify-content-between align-items-center">
-                                <span>AI Courses</span>
-                                <i class="fa fa-caret-right"></i>
-                            </div>
-                            <div class="dropdown-menu">
-                                <a href="course-software-dev-ai.html" class="dropdown-item">Software Development with AI</a>
-                                <a href="course-ai.html" class="dropdown-item">Artificial Intelligence</a>
-                                <a href="course-ai-automation.html" class="dropdown-item">AI Automation</a>
-                                <a href="course-ai-agents.html" class="dropdown-item">AI Agents</a>
-                            </div>
-                        </div>
-                        <div class="submenu-container">
-                            <div class="dropdown-item d-flex justify-content-between align-items-center">
-                                <span>Life Science Courses</span>
-                                <i class="fa fa-caret-right"></i>
-                            </div>
-                            <div class="dropdown-menu">
-                                <a href="course-md-simulation.html" class="dropdown-item">MD Simulation and Drug Design</a>
-                                <a href="course-genomics.html" class="dropdown-item">Genomics, transcriptomics, & proteomics</a>
-                                <a href="course-metagenomics.html" class="dropdown-item">Metagenomics</a>
-                                <a href="course-epigenetics.html" class="dropdown-item">Epigenetics</a>
-                            </div>
-                        </div>
-                        
-                    </div>
+                <div class="dropdown-menu">
+                  <a href="ui-ux-design.html" class="dropdown-item"
+                    >UI/UX Design</a
+                  >
+                  <a href="web-designing.html" class="dropdown-item"
+                    >Web Designing</a
+                  >
+                  <a href="software-development.html" class="dropdown-item"
+                    >Software Development</a
+                  >
+                  <a href="ai-integration.html" class="dropdown-item"
+                    >AI Integration & Chatbots</a
+                  >
+                  <a href="sap-solutions.html" class="dropdown-item"
+                    >SAP Solutions</a
+                  >
+                  <a href="application-support.html" class="dropdown-item"
+                    >Application Support</a
+                  >
                 </div>
-                <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+              </div>
+              <div class="submenu-container">
+                <div
+                  class="dropdown-item d-flex justify-content-between align-items-center"
+                >
+                  <span>Strategy & Growth</span
+                  ><i class="fa fa-caret-right d-lg-none"></i>
+                </div>
+                <div class="dropdown-menu">
+                  <a href="digital-marketing.html" class="dropdown-item"
+                    >Digital Marketing</a
+                  >
+                  <a href="data-analysis.html" class="dropdown-item"
+                    >Data Analysis</a
+                  >
+                  <a href="digital-transformation.html" class="dropdown-item"
+                    >Digital Transformation</a
+                  >
+                </div>
+              </div>
+              <div class="submenu-container">
+                <div
+                  class="dropdown-item d-flex justify-content-between align-items-center"
+                >
+                  <span>Consulting & Outsourcing</span
+                  ><i class="fa fa-caret-right d-lg-none"></i>
+                </div>
+                <div class="dropdown-menu">
+                  <a href="customer-service-bpo.html" class="dropdown-item"
+                    >Customer Service (BPO)</a
+                  >
+                  <a href="kpo-services.html" class="dropdown-item"
+                    >Knowledge Process Outsourcing (KPO)</a
+                  >
+                  <a href="research-consultancy.html" class="dropdown-item"
+                    >Research Consultancy</a
+                  >
+                  <a href="corporate-training.html" class="dropdown-item"
+                    >Corporate Training & Workshops</a
+                  >
+                  <a href="patent-services.html" class="dropdown-item"
+                    >Patent Services</a
+                  >
+                </div>
+              </div>
             </div>
-            <a href="#" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block join-now-btn">Inquire Now<i class="fa fa-arrow-right ms-3"></i></a>
+          </div>
+          <a href="lifegenbiocare.html" class="nav-item nav-link"
+            >LifeGenBio Care</a
+          >
+
+          <div class="nav-item dropdown">
+            <a
+              href="#"
+              class="nav-link dropdown-toggle"
+              data-bs-toggle="dropdown"
+              >Learn</a
+            >
+            <div class="dropdown-menu m-0">
+              <a href="ourteam.html" class="dropdown-item">Our Team</a>
+              <a href="ourtrainers.html" class="dropdown-item">Our Trainers</a>
+              <hr class="dropdown-divider" />
+              <div class="submenu-container">
+                <div
+                  class="dropdown-item d-flex justify-content-between align-items-center"
+                >
+                  <span>AI Courses</span
+                  ><i class="fa fa-caret-right d-lg-none"></i>
+                </div>
+                <div class="dropdown-menu">
+                  <a href="course-software-dev-ai.html" class="dropdown-item"
+                    >Software Development with AI</a
+                  >
+                  <a href="course-ai.html" class="dropdown-item"
+                    >Artificial Intelligence</a
+                  >
+                  <a href="course-ai-automation.html" class="dropdown-item"
+                    >AI Automation</a
+                  >
+                  <a href="course-ai-agents.html" class="dropdown-item"
+                    >AI Agents</a
+                  >
+                </div>
+              </div>
+              <div class="submenu-container">
+                <div
+                  class="dropdown-item d-flex justify-content-between align-items-center"
+                >
+                  <span>Life Science Courses</span
+                  ><i class="fa fa-caret-right d-lg-none"></i>
+                </div>
+                <div class="dropdown-menu">
+                  <a href="course-md-simulation.html" class="dropdown-item"
+                    >MD Simulation and Drug Design</a
+                  >
+                  <a href="course-genomics.html" class="dropdown-item"
+                    >Genomics, transcriptomics, & proteomics</a
+                  >
+                  <a href="course-metagenomics.html" class="dropdown-item"
+                    >Metagenomics</a
+                  >
+                  <a href="course-epigenetics.html" class="dropdown-item"
+                    >Epigenetics</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="contact.html" class="nav-item nav-link">Contact Us</a>
         </div>
+        <a
+          href="#"
+          class="btn btn-primary py-4 px-lg-5 d-none d-lg-block join-now-btn"
+          >Inquire Now<i class="fa fa-arrow-right ms-3"></i
+        ></a>
+      </div>
     </nav>
-    <!-- #################### END: SAME NAVBAR AS INDEX.HTML #################### -->
+    <!-- Navbar End -->
+
+    <!-- Join Now Slider Form Start -->
+    <div id="form-overlay"></div>
+    <div id="join-now-slider">
+      <span id="close-slider">&times;</span>
+      <h3 class="mb-4 text-primary">Service Inquiry</h3>
+      <p>
+        Fill in your details and one of our specialists will get in touch with
+        you shortly regarding our services.
+      </p>
+      <form
+        id="slider-form"
+        action="https://n8n.srv1047155.hstgr.cloud/webhook/ab66048a-3b78-4a76-a718-49d95be6ffef"
+        method="POST"
+      >
+        <div class="mb-3">
+          <label for="sliderName" class="form-label">Full Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="sliderName"
+            name="name"
+            placeholder="Enter your name"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="sliderEmail" class="form-label">Email Address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="sliderEmail"
+            name="email"
+            placeholder="name@example.com"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="sliderPhone" class="form-label">Phone Number</label>
+          <input
+            type="tel"
+            class="form-control"
+            id="sliderPhone"
+            name="phone"
+            placeholder="+91-1234567890"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <label for="sliderCourse" class="form-label"
+            >Service of Interest</label
+          >
+          <select class="form-select" id="sliderCourse" name="course">
+            <option>Select a Service</option>
+            <option value="KPO Services" selected>KPO Services</option>
+            <option value="BPO Services">BPO Services</option>
+            <option value="Data Analysis">Data Analysis</option>
+            <option value="Software Development">Software Development</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary w-100 py-3">
+          Submit Inquiry
+        </button>
+      </form>
+    </div>
+    <!-- Join Now Slider Form End -->
+
+    <!-- #################################################################### -->
+    <!-- ############      KPO SERVICES PAGE CONTENT STARTS HERE     ############ -->
+    <!-- #################################################################### -->
 
     <!-- Page Header Start -->
-    <div class="container-fluid bg-primary py-5 mb-5 page-header">
-        <div class="container py-5">
-            <div class="row justify-content-center">
-                <div class="col-lg-10 text-center">
-                    <h1 class="display-3 text-white animated slideInDown">Knowledge Process Outsourcing (KPO)</h1>
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb justify-content-center">
-                            <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
-                            <li class="breadcrumb-item"><a class="text-white" href="#">Services</a></li>
-                            <li class="breadcrumb-item text-white active" aria-current="page">Knowledge Process Outsourcing (KPO)</li>
-                        </ol>
-                    </nav>
-                </div>
-            </div>
+    <div
+      class="container-fluid bg-primary py-5 mb-5 page-header"
+      style="
+        background: linear-gradient(
+            rgba(24, 29, 56, 0.7),
+            rgba(24, 29, 56, 0.7)
+          ),
+          url(https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2070&auto=format&fit=crop)
+            center center no-repeat;
+        background-size: cover;
+      "
+    >
+      <div class="container py-5">
+        <div class="row justify-content-center">
+          <div class="col-lg-10 text-center">
+            <h1 class="display-3 text-white animated slideInDown">
+              Knowledge Process Outsourcing (KPO)
+            </h1>
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb justify-content-center">
+                <li class="breadcrumb-item">
+                  <a class="text-white" href="index.html">Home</a>
+                </li>
+                <li class="breadcrumb-item">
+                  <a class="text-white" href="#">Services</a>
+                </li>
+                <li
+                  class="breadcrumb-item text-white active"
+                  aria-current="page"
+                >
+                  Knowledge Process Outsourcing (KPO)
+                </li>
+              </ol>
+            </nav>
+          </div>
         </div>
+      </div>
     </div>
     <!-- Page Header End -->
 
     <!-- Service Details Start -->
     <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">Our Service</h6>
-                <h1 class="mb-5">Leveraging Expertise for a Strategic Advantage</h1>
-                <p class="mb-5 mx-auto" style="max-width: 800px;">Beyond standard processes, true competitive advantage comes from specialized knowledge and deep analytical capabilities. LifeGenBio's Knowledge Process Outsourcing (KPO) services provide you with access to a team of highly skilled professionals and subject matter experts. We handle complex, judgment-based tasks that require advanced research and analytical skills, delivering insights that directly inform your core business strategy.</p>
-            </div>
-
-            <div class="row g-4 justify-content-center">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-feature text-center">
-                        <div class="icon"><i class="fas fa-search"></i></div>
-                        <h5>Market & Business Research</h5>
-                        <p class="text-muted">We conduct in-depth market research, competitive landscape analysis, and industry trend reports to provide a 360-degree view of your operating environment.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="service-feature text-center">
-                        <div class="icon"><i class="fas fa-calculator"></i></div>
-                        <h5>Financial & Investment Research</h5>
-                        <p class="text-muted">Our financial analysts provide services like equity research, financial modeling and valuation, and credit analysis to support your investment and strategic finance decisions.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-feature text-center">
-                        <div class="icon"><i class="fas fa-brain"></i></div>
-                        <h5>Advanced Data Analytics</h5>
-                        <p class="text-muted">Going beyond BI, our KPO team builds complex statistical models, performs predictive analysis, and applies machine learning to solve your most challenging data problems.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
-                    <div class="service-feature text-center">
-                        <div class="icon"><i class="fas fa-balance-scale"></i></div>
-                        <h5>Legal Process Outsourcing (LPO)</h5>
-                        <p class="text-muted">We support your legal teams with services such as legal research, document review, contract management, and compliance support, enhancing efficiency and reducing costs.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-feature text-center">
-                        <div class="icon"><i class="fas fa-lightbulb"></i></div>
-                        <h5>Intellectual Property (IP) Research</h5>
-                        <p class="text-muted">Tapping into our scientific roots, we offer patent landscape analysis, prior art searches, and infringement analysis to support your R&D and intellectual property strategy.</p>
-                    </div>
-                </div>
-                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-                    <div class="service-feature text-center">
-                        <div class="icon"><i class="fas fa-pen-nib"></i></div>
-                        <h5>Specialized Content Creation</h5>
-                        <p class="text-muted">Our subject matter experts create high-value content, including technical whitepapers, scientific articles, and industry reports that establish you as a thought leader.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CTA Section -->
-            <div class="row justify-content-center mt-5 pt-5 border-top">
-                <div class="col-lg-8 text-center wow fadeInUp" data-wow-delay="0.1s">
-                    <h2 class="mb-4">Access Expertise On Demand</h2>
-                    <p class="lead mb-4">Gain a competitive advantage by outsourcing high-end processes to a team of dedicated experts. Let's discuss how our KPO services can provide the strategic insights your business needs to thrive.</p>
-                    <a href="contact.html" class="btn btn-primary btn-lg py-3 px-5">Consult Our Experts</a>
-                </div>
-            </div>
+      <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+          <h6 class="section-title bg-white text-center text-primary px-3">
+            Our Service
+          </h6>
+          <h1 class="mb-5">Leveraging Expertise for a Strategic Advantage</h1>
+          <p class="mb-5 mx-auto" style="max-width: 800px">
+            Beyond standard processes, true competitive advantage comes from
+            specialized knowledge and deep analytical capabilities. LifeGenBio's
+            Knowledge Process Outsourcing (KPO) services provide you with access
+            to a team of highly skilled professionals and subject matter
+            experts. We handle complex, judgment-based tasks that require
+            advanced research and analytical skills, delivering insights that
+            directly inform your core business strategy.
+          </p>
         </div>
+
+        <div class="row g-4 justify-content-center">
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="service-feature text-center">
+              <div class="icon"><i class="fas fa-search"></i></div>
+              <h5>Market & Business Research</h5>
+              <p class="text-muted">
+                We conduct in-depth market research, competitive landscape
+                analysis, and industry trend reports to provide a 360-degree
+                view of your operating environment.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="service-feature text-center">
+              <div class="icon"><i class="fas fa-calculator"></i></div>
+              <h5>Financial & Investment Research</h5>
+              <p class="text-muted">
+                Our financial analysts provide services like equity research,
+                financial modeling and valuation, and credit analysis to support
+                your investment and strategic finance decisions.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="service-feature text-center">
+              <div class="icon"><i class="fas fa-brain"></i></div>
+              <h5>Advanced Data Analytics</h5>
+              <p class="text-muted">
+                Going beyond BI, our KPO team builds complex statistical models,
+                performs predictive analysis, and applies machine learning to
+                solve your most challenging data problems.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+            <div class="service-feature text-center">
+              <div class="icon"><i class="fas fa-balance-scale"></i></div>
+              <h5>Legal Process Outsourcing (LPO)</h5>
+              <p class="text-muted">
+                We support your legal teams with services such as legal
+                research, document review, contract management, and compliance
+                support, enhancing efficiency and reducing costs.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="service-feature text-center">
+              <div class="icon"><i class="fas fa-lightbulb"></i></div>
+              <h5>Intellectual Property (IP) Research</h5>
+              <p class="text-muted">
+                Tapping into our scientific roots, we offer patent landscape
+                analysis, prior art searches, and infringement analysis to
+                support your R&D and intellectual property strategy.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+            <div class="service-feature text-center">
+              <div class="icon"><i class="fas fa-pen-nib"></i></div>
+              <h5>Specialized Content Creation</h5>
+              <p class="text-muted">
+                Our subject matter experts create high-value content, including
+                technical whitepapers, scientific articles, and industry reports
+                that establish you as a thought leader.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="row justify-content-center mt-5 pt-5 border-top">
+          <div class="col-lg-8 text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h2 class="mb-4">Access Expertise On Demand</h2>
+            <p class="lead mb-4">
+              Gain a competitive advantage by outsourcing high-end processes to
+              a team of dedicated experts. Let's discuss how our KPO services
+              can provide the strategic insights your business needs to thrive.
+            </p>
+            <a href="contact.html" class="btn btn-primary btn-lg py-3 px-5"
+              >Consult Our Experts</a
+            >
+          </div>
+        </div>
+      </div>
     </div>
     <!-- Service Details End -->
 
-    <!-- #################### START: SAME FOOTER AS INDEX.HTML #################### -->
-    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+    <!-- #################################################################### -->
+    <!-- #######################   END OF PAGE CONTENT   #################### -->
+    <!-- #################################################################### -->
+
+    <!-- Floating WhatsApp Button -->
+    <a
+      href="https://wa.me/447867243876"
+      class="whatsapp-float"
+      target="_blank"
+      title="Chat with us on WhatsApp"
+    >
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer Start -->
+    <div
+      class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn"
+      data-wow-delay="0.1s"
+    >
       <div class="container py-5">
         <div class="row g-5">
-            <div class="col-lg-4 col-md-6">
-                <h4 class="text-white mb-4">LifeGenBio</h4>
-                <p>Empowering innovators and businesses at the intersection of technology and life sciences.</p>
-                <div class="d-flex pt-2">
-                    <a class="btn btn-outline-light btn-social" href="https://www.youtube.com/@lifegenbiollp3301" target="_blank"><i class="fab fa-youtube"></i></a>
-                    <a class="btn btn-outline-light btn-social" href="" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                    <a class="btn btn-outline-light btn-social" href="" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-light btn-social" href="" target="_blank"><i class="fab fa-instagram"></i></a>
-                </div>
+          <div class="col-lg-4 col-md-6">
+            <h4 class="text-white mb-4">LifeGenBio</h4>
+            <p>
+              Empowering innovators and businesses at the intersection of
+              technology and life sciences.
+            </p>
+            <div class="d-flex pt-2">
+              <a
+                class="btn btn-outline-light btn-social"
+                href="https://www.youtube.com/@lifegenbiollp3301"
+                target="_blank"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a
+                class="btn btn-outline-light btn-social"
+                href=""
+                target="_blank"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a
+                class="btn btn-outline-light btn-social"
+                href=""
+                target="_blank"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                class="btn btn-outline-light btn-social"
+                href=""
+                target="_blank"
+                ><i class="fab fa-instagram"></i
+              ></a>
             </div>
-            <div class="col-lg-2 col-md-6">
-                <h4 class="text-white mb-3">Quick Links</h4>
-                <a class="btn btn-link" href="about.html">About Us</a>
-                <a class="btn btn-link" href="contact.html">Contact Us</a>
-                <a class="btn btn-link" href="workshops.html">Workshops</a>
-                <a class="btn btn-link" href="">Our Blog</a>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <h4 class="text-white mb-3">Get in Touch</h4>
-                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91-9065671711</p>
-                <p class="mb-2"><i class="fab fa-whatsapp me-3"></i>+44-7867243876</p>
-                <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@lifegenbio.com</p>
-            </div>
-             <div class="col-lg-3 col-md-6">
-                <h4 class="text-white mb-3">Our Offices</h4>
-                <p><i class="fa fa-map-marker-alt me-3"></i>India</p>
-                <p><i class="fa fa-map-marker-alt me-3"></i>Saudi Arabia</p>
-                <p><i class="fa fa-map-marker-alt me-3"></i>USA</p>
-            </div>
+          </div>
+          <div class="col-lg-2 col-md-6">
+            <h4 class="text-white mb-3">Quick Links</h4>
+            <a class="btn btn-link" href="about.html">About Us</a>
+            <a class="btn btn-link" href="contact.html">Contact Us</a>
+            <a class="btn btn-link" href="workshops.html">Workshops</a>
+            <a class="btn btn-link" href="">Our Blog</a>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h4 class="text-white mb-3">Get in Touch</h4>
+            <p class="mb-2">
+              <i class="fa fa-phone-alt me-3"></i>+91-9065671711
+            </p>
+            <p class="mb-2">
+              <i class="fab fa-whatsapp me-3"></i>+44-7867243876
+            </p>
+            <p class="mb-2">
+              <i class="fa fa-envelope me-3"></i>info@lifegenbio.com
+            </p>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h4 class="text-white mb-3">Our Offices</h4>
+            <p><i class="fa fa-map-marker-alt me-3"></i>India</p>
+            <p><i class="fa fa-map-marker-alt me-3"></i>Saudi Arabia</p>
+            <p><i class="fa fa-map-marker-alt me-3"></i>USA</p>
+          </div>
         </div>
       </div>
       <div class="container">
         <div class="copyright">
           <div class="row">
             <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-              &copy; <a class="border-bottom" href="#">LifeGenBio</a>, All Right Reserved.
+              &copy; <a class="border-bottom" href="#">LifeGenBio</a>, All Right
+              Reserved.
             </div>
             <div class="col-md-6 text-center text-md-end">
               <div class="footer-menu">
@@ -374,34 +885,153 @@
         </div>
       </div>
     </div>
-    <!-- #################### END: SAME FOOTER AS INDEX.HTML #################### -->
+    <!-- Footer End -->
+
+    <!-- Success Modal Start -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-primary">
+              <i class="fa fa-check-circle me-2"></i> Inquiry Submitted!
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            Thank you for your interest! Your inquiry has been sent. One of our
+            specialists will be in touch shortly.
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Success Modal End -->
 
     <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"
+      ><i class="bi bi-arrow-up"></i
+    ></a>
 
     <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
-    
-    <!-- Custom JS for nested dropdowns -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <!-- ============== CONSOLIDATED JAVASCRIPT STARTS HERE ============== -->
     <script>
-        $(document).ready(function(){
-            $('.navbar-nav .submenu-container > .dropdown-item').on('click', function(e) {
-                if ($(window).width() < 992) {
-                    e.stopPropagation();
-                    var $submenu = $(this).next('.dropdown-menu');
-                    $('.submenu-container .dropdown-menu').not($submenu).slideUp();
-                    $('.submenu-container .dropdown-item').not(this).removeClass('submenu-open');
-                    $submenu.slideToggle();
-                    $(this).toggleClass('submenu-open');
-                }
-            });
+      (function ($) {
+        "use strict";
+
+        // Spinner
+        var spinner = function () {
+          setTimeout(function () {
+            if ($("#spinner").length > 0) {
+              $("#spinner").removeClass("show");
+            }
+          }, 1);
+        };
+        spinner();
+
+        // Initiate WOWjs
+        new WOW().init();
+
+        // Sticky Navbar
+        $(window).scroll(function () {
+          if ($(this).scrollTop() > 300) {
+            $(".sticky-top").css("top", "0px");
+          } else {
+            $(".sticky-top").css("top", "-100px");
+          }
         });
+
+        // Back to top button
+        $(window).scroll(function () {
+          if ($(this).scrollTop() > 300) {
+            $(".back-to-top").fadeIn("slow");
+          } else {
+            $(".back-to-top").fadeOut("slow");
+          }
+        });
+        $(".back-to-top").click(function () {
+          $("html, body").animate({ scrollTop: 0 }, 1500, "easeInOutExpo");
+          return false;
+        });
+
+        // Multi-Level Dropdown Script for Mobile
+        $(".submenu-container > .dropdown-item").on("click", function (e) {
+          if ($(window).width() < 992) {
+            e.preventDefault();
+            e.stopPropagation();
+            var submenu = $(this).next(".dropdown-menu");
+            $(this)
+              .parent(".submenu-container")
+              .siblings()
+              .find(".dropdown-menu")
+              .slideUp(200);
+            submenu.slideToggle(200);
+          }
+        });
+        $(".navbar .dropdown").on("hidden.bs.dropdown", function () {
+          if ($(window).width() < 992) {
+            $(this).find(".submenu-container .dropdown-menu").slideUp(200);
+          }
+        });
+
+        // Logic for the "Join Now" sliding form
+        const slider = $("#join-now-slider");
+        const overlay = $("#form-overlay");
+
+        $(".join-now-btn").on("click", function (e) {
+          e.preventDefault();
+          overlay.fadeIn();
+          slider.addClass("show");
+        });
+
+        $("#close-slider, #form-overlay").on("click", function () {
+          slider.removeClass("show");
+          overlay.fadeOut();
+        });
+
+        // Logic to handle form submission with AJAX and show a popup
+        $("#slider-form").on("submit", function (e) {
+          e.preventDefault();
+          var form = $(this);
+          $.ajax({
+            url: form.attr("action"),
+            method: form.attr("method"),
+            data: form.serialize(),
+            success: function () {
+              slider.removeClass("show");
+              overlay.fadeOut();
+              var successModal = new bootstrap.Modal(
+                document.getElementById("successModal")
+              );
+              successModal.show();
+              form[0].reset();
+            },
+            error: function () {
+              alert("Something went wrong. Please try again.");
+            },
+          });
+        });
+      })(jQuery);
     </script>
+    <!-- ============== CONSOLIDATED JAVASCRIPT ENDS HERE ============== -->
   </body>
 </html>

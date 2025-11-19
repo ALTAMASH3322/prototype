@@ -1,572 +1,1018 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>Courses - LifeGenBio</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="LifeGenBio Courses, AI Courses, Bioinformatics Courses, Data Science, EdTech" name="keywords">
-    <meta content="Explore a wide range of courses in AI, Bioinformatics, and Data Science at LifeGenBio. Find the perfect program to advance your skills and career." name="description">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta
+      content="LifeGenBio Courses, AI Courses, Bioinformatics Courses, Data Science, EdTech"
+      name="keywords"
+    />
+    <meta
+      content="Explore a wide range of courses in AI, Bioinformatics, and Data Science at LifeGenBio. Find the perfect program to advance your skills and career."
+      name="description"
+    />
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="img/favicon.ico" rel="icon" />
 
     <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
 
     <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+      rel="stylesheet"
+    />
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Stylesheet -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
-
-    <!-- Custom Styles for Slider Form and Uniform Cards -->
+    <!-- ============== CONSOLIDATED AND THEMED CSS STARTS HERE ============== -->
     <style>
+      /*** General ***/
+      :root {
+        --primary: #c3b091; /* BEIGE THEME COLOR */
+        --light: #f0fbfc;
+        --dark: #181d38;
+      }
+      body {
+        font-family: "Heebo", sans-serif;
+        background-color: #ffffff;
+      }
 
-        /* Example CSS you might find (look for similar rules targeting .dropdown-menu, .submenu-container, .dropdown-item, :hover) */
+      /*** Spinner ***/
+      #spinner {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.5s ease-out, visibility 0s linear 0.5s;
+        z-index: 99999;
+      }
+      #spinner.show {
+        transition: opacity 0.5s ease-out, visibility 0s linear 0s;
+        visibility: visible;
+        opacity: 1;
+      }
 
-/* General Dropdown Styling (if not already in bootstrap.min.css) */
-.navbar .dropdown-toggle::after {
-    border: none;
-    content: "\f107"; /* Font Awesome caret down */
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    vertical-align: middle;
-    margin-left: 8px;
-}
+      /*** Typography & Buttons ***/
+      h1,
+      h2,
+      .display-1,
+      .display-2,
+      .display-3,
+      .display-4,
+      .display-5,
+      .display-6,
+      .section-title {
+        font-family: "Nunito", sans-serif;
+        font-weight: 800;
+      }
+      .btn {
+        font-family: "Nunito", sans-serif;
+        font-weight: 600;
+        transition: 0.5s;
+      }
+      .btn.btn-primary,
+      .btn.btn-secondary {
+        color: #ffffff;
+      }
+      .btn-square {
+        width: 38px;
+        height: 38px;
+      }
+      .btn-sm-square {
+        width: 32px;
+        height: 32px;
+      }
+      .btn-lg-square {
+        width: 48px;
+        height: 48px;
+      }
+      .btn-square,
+      .btn-sm-square,
+      .btn-lg-square {
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: normal;
+        border-radius: 50px;
+      }
 
-.navbar .nav-item.dropdown .dropdown-menu {
-    margin-top: 0;
-    border: 0;
-    border-radius: 0;
-    background: #FFFFFF; /* Or your preferred background */
-}
+      /*** Navbar ***/
+      .navbar-light .navbar-nav .nav-link {
+        font-family: "Nunito", sans-serif;
+        position: relative;
+        margin-right: 25px;
+        padding: 35px 0;
+        color: var(--dark);
+        font-size: 18px;
+        font-weight: 600;
+        outline: none;
+        transition: 0.5s;
+      }
+      .sticky-top {
+        transition: 0.5s;
+      }
+      .sticky-top.navbar-light .navbar-nav .nav-link {
+        padding: 20px 0;
+      }
+      .navbar-light .navbar-nav .nav-link:hover,
+      .navbar-light .navbar-nav .nav-link.active {
+        color: var(--primary);
+      }
+      .navbar-brand img {
+        max-height: 60px;
+      }
+      .navbar-light .navbar-toggler {
+        border-color: transparent;
+      }
 
-/* Specific for multi-level dropdowns */
-.submenu-container {
-    position: relative;
-}
+      .navbar .dropdown-toggle::after {
+        border: none;
+        content: "\f107";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        vertical-align: middle;
+        margin-left: 8px;
+      }
 
-.submenu-container .dropdown-menu {
-    position: absolute; /* Position next to parent */
-    top: 0;
-    left: 100%; /* Align to the right of the parent */
-    margin-top: -1px; /* Adjust as needed */
-    display: none; /* Hidden by default */
-    min-width: 200px; /* Or whatever width you need */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional shadow */
-}
+      /* MULTI-LEVEL DROPDOWN STYLES */
+      @media (min-width: 992px) {
+        .submenu-container {
+          position: relative;
+        }
+        .submenu-container .dropdown-menu {
+          position: absolute;
+          top: -5px;
+          left: 100%;
+          display: none;
+          margin-top: 0;
+          min-width: 220px;
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        }
+        .submenu-container:hover > .dropdown-menu {
+          display: block;
+        }
+        .submenu-container > .dropdown-item {
+          padding-right: 30px;
+        }
+        .submenu-container > .dropdown-item .fa-caret-right {
+          display: none;
+        }
+        .submenu-container > .dropdown-item::after {
+          content: "\f054";
+          font-family: "Font Awesome 5 Free";
+          font-weight: 900;
+          position: absolute;
+          right: 15px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+      @media (max-width: 991.98px) {
+        .navbar .navbar-nav .nav-link {
+          margin-right: 0;
+          padding: 10px 0;
+        }
+        .navbar .dropdown-menu {
+          margin-top: 0;
+          box-shadow: none;
+          border: none;
+        }
+        .submenu-container .dropdown-menu {
+          position: static;
+          display: none;
+          width: 100%;
+          padding-left: 20px;
+          border: none;
+          box-shadow: none;
+        }
+        .submenu-container .dropdown-menu.show {
+          display: block;
+        }
+      }
 
-.submenu-container:hover > .dropdown-menu {
-    display: block; /* Show on hover */
-}
+      /*** Page Header & Sections ***/
+      .page-header {
+        background: linear-gradient(
+            rgba(24, 29, 56, 0.7),
+            rgba(24, 29, 56, 0.7)
+          ),
+          url(img/carousel-1.jpg) center center no-repeat;
+        background-size: cover;
+      }
+      .breadcrumb-item + .breadcrumb-item::before {
+        color: #dddddd;
+      }
+      .section-title {
+        position: relative;
+        display: inline-block;
+        text-transform: uppercase;
+      }
+      .course-item {
+        box-shadow: 0 0 45px rgba(0, 0, 0, 0.08);
+        border-radius: 8px;
+        transition: 0.5s;
+      }
 
-/* Adjusting the main dropdown items that have submenus */
-.submenu-container > .dropdown-item {
-    padding-right: 30px; /* Make space for the caret */
-}
-
-.submenu-container > .dropdown-item .fa-caret-right {
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-/* If you have a fade-down animation, look for @keyframes and transition properties */
-.dropdown-menu.fade-down {
-    animation: fadeDown 0.3s ease-in-out forwards;
-}
-
-@keyframes fadeDown {
-    0% { opacity: 0; transform: translateY(-10px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
-
-/* Responsive adjustments for smaller screens */
-@media (max-width: 991.98px) {
-    .navbar .dropdown-menu {
-        position: static; /* Stack vertically */
-        display: block; /* Always visible when parent is open */
+      /* Custom styles for course cards */
+      .course-item .overflow-hidden {
+        height: 250px;
+      }
+      .course-item img {
+        height: 100%;
         width: 100%;
-        margin-left: 0;
-        box-shadow: none;
-    }
-    .submenu-container .dropdown-menu {
+        object-fit: cover;
+      }
+
+      /* Testimonial Carousel */
+      .testimonial-carousel .owl-item .testimonial-item {
+        margin: 0 12px;
+      }
+      .testimonial-carousel .owl-dots {
+        margin-top: 24px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+      }
+      .testimonial-carousel .owl-dot {
+        position: relative;
+        display: inline-block;
+        margin: 0 5px;
+        width: 15px;
+        height: 15px;
+        border: 1px solid #cccccc;
+        border-radius: 15px;
+        transition: 0.5s;
+      }
+      .testimonial-carousel .owl-dot.active {
+        background: var(--primary);
+        border-color: var(--primary);
+      }
+
+      /*** SLIDER FORM ***/
+      #form-overlay {
+        position: fixed;
+        top: 0;
         left: 0;
-        position: static; /* Important for mobile */
         width: 100%;
-        margin-top: 0;
-        padding-left: 20px; /* Indent sub-sub-menus */
-    }
-    .submenu-container:hover > .dropdown-menu {
-        display: none; /* Override desktop hover for mobile */
-    }
-    /* You'll need JavaScript to toggle submenus on click for mobile */
-}
-        /* Join Now Slider Form */
-        #form-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            z-index: 1040;
-            display: none;
-        }
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: 1040;
+        display: none;
+      }
+      #join-now-slider {
+        position: fixed;
+        top: 0;
+        left: -35%;
+        width: 30%;
+        height: 100vh;
+        background-color: white;
+        z-index: 1050;
+        padding: 40px 30px;
+        box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+        transition: left 0.4s ease-in-out;
+        overflow-y: auto;
+      }
+      #join-now-slider.show {
+        left: 0;
+      }
+      #close-slider {
+        position: absolute;
+        top: 15px;
+        right: 25px;
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #333;
+        cursor: pointer;
+      }
+      @media (max-width: 992px) {
         #join-now-slider {
-            position: fixed;
-            top: 0;
-            left: -35%; /* Start off-screen */
-            width: 30%; /* Cover 30% of the page */
-            height: 100vh;
-            background-color: white;
-            z-index: 1050;
-            padding: 40px 30px;
-            box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
-            transition: left 0.4s ease-in-out;
-            overflow-y: auto;
+          width: 60%;
+          left: -65%;
         }
-        #join-now-slider.show {
-            left: 0; /* Slide in */
+      }
+      @media (max-width: 768px) {
+        #join-now-slider {
+          width: 85%;
+          left: -90%;
         }
-        #close-slider {
-            position: absolute;
-            top: 15px;
-            right: 25px;
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #333;
-            cursor: pointer;
-        }
-        @media (max-width: 992px) {
-            #join-now-slider {
-                width: 60%;
-                left: -65%;
-            }
-        }
-        @media (max-width: 768px) {
-            #join-now-slider {
-                width: 85%;
-                left: -90%;
-            }
-        }
+      }
 
-        /* For Course Cards */
-        .course-item .overflow-hidden {
-            height: 250px; 
-        }
-        .course-item img {
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-        }
-
-                /* --- FLOATING WHATSAPP WIDGET CSS START --- */
-        .whatsapp-float {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 115px; /* Positioned to be just above the 'Back to Top' button */
-            right: 45px;
-            background-color: #25d366;
-            color: #FFF;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-            z-index: 100;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: transform 0.3s ease;
-        }
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            color: white; /* Ensures the icon color stays white on hover */
-        }
-        /* --- FLOATING WHATSAPP WIDGET CSS END --- */
+      /*** Footer & Misc ***/
+      .footer .btn.btn-social {
+        margin-right: 5px;
+        width: 35px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--light);
+        border: 1px solid #ffffff;
+        border-radius: 35px;
+        transition: 0.3s;
+      }
+      .footer .btn.btn-social:hover {
+        color: var(--primary);
+        border-color: var(--light);
+      }
+      .footer .btn.btn-link {
+        display: block;
+        margin-bottom: 5px;
+        padding: 0;
+        text-align: left;
+        color: #ffffff;
+        font-size: 15px;
+        font-weight: normal;
+        text-transform: capitalize;
+        transition: 0.3s;
+      }
+      .footer .btn.btn-link::before {
+        position: relative;
+        content: "\f105";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        margin-right: 10px;
+      }
+      .footer .btn.btn-link:hover {
+        letter-spacing: 1px;
+        box-shadow: none;
+      }
+      .copyright {
+        padding: 25px 0;
+        font-size: 15px;
+        border-top: 1px solid rgba(256, 256, 256, 0.1);
+      }
+      .copyright a {
+        color: var(--light);
+      }
+      .copyright a:hover {
+        color: var(--primary);
+      }
+      .back-to-top {
+        position: fixed;
+        display: none;
+        right: 45px;
+        bottom: 45px;
+        z-index: 99;
+      }
+      .whatsapp-float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 110px;
+        right: 38px;
+        background-color: #25d366;
+        color: #fff;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 2px 2px 3px #999;
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
     </style>
-</head>
+    <!-- ============== CONSOLIDATED CSS ENDS HERE ============== -->
+  </head>
 
-<body>
+  <body>
     <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
+    <div
+      id="spinner"
+      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items:center justify-content-center"
+    >
+      <div
+        class="spinner-border text-primary"
+        style="width: 3rem; height: 3rem"
+        role="status"
+      >
+        <span class="visually-hidden">Loading...</span>
+      </div>
     </div>
     <!-- Spinner End -->
 
-
     <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <img src="img/logo.png" alt="LifeGenBio Logo" style="height: 55px; width: auto;">
-        </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link active">Home</a>
-                <a href="about.html" class="nav-item nav-link">About Us</a>
-                
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
-                    <div class="dropdown-menu fade-down m-0">
-                        <div class="submenu-container">
-                            <div class="dropdown-item d-flex justify-content-between align-items-center">
-                                <span>Technology & Development</span>
-                                <i class="fa fa-caret-right"></i>
-                            </div>
-                            <div class="dropdown-menu">
-                                <a href="ui-ux-design.html" class="dropdown-item">UI/UX Design</a>
-                                <a href="web-designing.html" class="dropdown-item">Web Designing</a>
-                                <a href="software-development.html" class="dropdown-item">Software Development</a>
-                                <a href="ai-integration.html" class="dropdown-item">AI Integration & Chatbots</a>
-                                <a href="sap-solutions.html" class="dropdown-item">SAP Solutions</a>
-                                <a href="application-support.html" class="dropdown-item">Application Support</a>
-                            </div>
-                        </div>
-                        <div class="submenu-container">
-                            <div class="dropdown-item d-flex justify-content-between align-items-center">
-                                <span>Strategy & Growth</span>
-                                <i class="fa fa-caret-right"></i>
-                            </div>
-                            <div class="dropdown-menu">
-                                <a href="digital-marketing.html" class="dropdown-item">Digital Marketing</a>
-                                <a href="data-analysis.html" class="dropdown-item">Data Analysis</a>
-                                <a href="digital-transformation.html" class="dropdown-item">Digital Transformation</a>
-                            </div>
-                        </div>
-                        <div class="submenu-container">
-                            <div class="dropdown-item d-flex justify-content-between align-items-center">
-                                <span>Consulting & Outsourcing</span>
-                                <i class="fa fa-caret-right"></i>
-                            </div>
-                            <div class="dropdown-menu">
-                                <a href="customer-service-bpo.html" class="dropdown-item">Customer Service (BPO)</a>
-                                <a href="kpo-services.html" class="dropdown-item">Knowledge Process Outsourcing (KPO)</a>
-                                <a href="research-consultancy.html" class="dropdown-item">Research Consultancy</a>
-                                <a href="corporate-training.html" class="dropdown-item">Corporate Training & Workshops</a>
-                                <a href="patent-services.html" class="dropdown-item">Patent Services</a>
-                            </div>
-                        </div>
-                    </div>
+    <nav
+      class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0"
+    >
+      <a
+        href="index.html"
+        class="navbar-brand d-flex align-items-center px-4 px-lg-5"
+      >
+        <img
+          src="img/logo.png"
+          alt="LifeGenBio Logo"
+          style="height: 55px; width: auto"
+        />
+      </a>
+      <button
+        type="button"
+        class="navbar-toggler me-4"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarCollapse"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto p-4 p-lg-0">
+          <a href="index.html" class="nav-item nav-link">Home</a>
+          <a href="about.html" class="nav-item nav-link">About Us</a>
+
+          <div class="nav-item dropdown">
+            <a
+              href="#"
+              class="nav-link dropdown-toggle"
+              data-bs-toggle="dropdown"
+              >Services</a
+            >
+            <div class="dropdown-menu m-0">
+              <div class="submenu-container">
+                <div
+                  class="dropdown-item d-flex justify-content-between align-items-center"
+                >
+                  <span>Technology & Development</span
+                  ><i class="fa fa-caret-right d-lg-none"></i>
                 </div>
-                <a href="lifegenbiocare.html" class="nav-item nav-link">LifeGenBio Care</a>
-                
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Learn</a>
-                    <div class="dropdown-menu fade-down m-0">
-                        <a href="ourteam.html" class="dropdown-item">Our Team</a>
-                        <a href="ourtrainers.html" class="dropdown-item">Our Trainers</a>
-                        <hr class="dropdown-divider">
-                        <div class="submenu-container">
-                            <div class="dropdown-item d-flex justify-content-between align-items-center">
-                                <span>AI Courses</span>
-                                <i class="fa fa-caret-right"></i>
-                            </div>
-                            <div class="dropdown-menu">
-                                <a href="course-software-dev-ai.html" class="dropdown-item">Software Development with AI</a>
-                                <a href="course-ai.html" class="dropdown-item">Artificial Intelligence</a>
-                                <a href="course-ai-automation.html" class="dropdown-item">AI Automation</a>
-                                <a href="course-ai-agents.html" class="dropdown-item">AI Agents</a>
-                            </div>
-                        </div>
-                        <div class="submenu-container">
-                            <div class="dropdown-item d-flex justify-content-between align-items-center">
-                                <span>Life Science Courses</span>
-                                <i class="fa fa-caret-right"></i>
-                            </div>
-                            <div class="dropdown-menu">
-                                <a href="course-md-simulation.html" class="dropdown-item">MD Simulation and Drug Design</a>
-                                <a href="course-genomics.html" class="dropdown-item">Genomics, transcriptomics, & proteomics</a>
-                                <a href="course-metagenomics.html" class="dropdown-item">Metagenomics</a>
-                                <a href="course-epigenetics.html" class="dropdown-item">Epigenetics</a>
-                            </div>
-                        </div>
-                        
-                    </div>
+                <div class="dropdown-menu">
+                  <a href="ui-ux-design.html" class="dropdown-item"
+                    >UI/UX Design</a
+                  >
+                  <a href="web-designing.html" class="dropdown-item"
+                    >Web Designing</a
+                  >
+                  <a href="software-development.html" class="dropdown-item"
+                    >Software Development</a
+                  >
+                  <a href="ai-integration.html" class="dropdown-item"
+                    >AI Integration & Chatbots</a
+                  >
+                  <a href="sap-solutions.html" class="dropdown-item"
+                    >SAP Solutions</a
+                  >
+                  <a href="application-support.html" class="dropdown-item"
+                    >Application Support</a
+                  >
                 </div>
-                <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+              </div>
+              <div class="submenu-container">
+                <div
+                  class="dropdown-item d-flex justify-content-between align-items-center"
+                >
+                  <span>Strategy & Growth</span
+                  ><i class="fa fa-caret-right d-lg-none"></i>
+                </div>
+                <div class="dropdown-menu">
+                  <a href="digital-marketing.html" class="dropdown-item"
+                    >Digital Marketing</a
+                  >
+                  <a href="data-analysis.html" class="dropdown-item"
+                    >Data Analysis</a
+                  >
+                  <a href="digital-transformation.html" class="dropdown-item"
+                    >Digital Transformation</a
+                  >
+                </div>
+              </div>
+              <div class="submenu-container">
+                <div
+                  class="dropdown-item d-flex justify-content-between align-items-center"
+                >
+                  <span>Consulting & Outsourcing</span
+                  ><i class="fa fa-caret-right d-lg-none"></i>
+                </div>
+                <div class="dropdown-menu">
+                  <a href="customer-service-bpo.html" class="dropdown-item"
+                    >Customer Service (BPO)</a
+                  >
+                  <a href="kpo-services.html" class="dropdown-item"
+                    >Knowledge Process Outsourcing (KPO)</a
+                  >
+                  <a href="research-consultancy.html" class="dropdown-item"
+                    >Research Consultancy</a
+                  >
+                  <a href="corporate-training.html" class="dropdown-item"
+                    >Corporate Training & Workshops</a
+                  >
+                  <a href="patent-services.html" class="dropdown-item"
+                    >Patent Services</a
+                  >
+                </div>
+              </div>
             </div>
-            <a href="#" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block join-now-btn">Inquire Now<i class="fa fa-arrow-right ms-3"></i></a>
+          </div>
+          <a href="lifegenbiocare.html" class="nav-item nav-link"
+            >LifeGenBio Care</a
+          >
+
+          <div class="nav-item dropdown">
+            <a
+              href="#"
+              class="nav-link dropdown-toggle"
+              data-bs-toggle="dropdown"
+              >Learn</a
+            >
+            <div class="dropdown-menu m-0">
+              <a href="ourteam.html" class="dropdown-item">Our Team</a>
+              <a href="ourtrainers.html" class="dropdown-item">Our Trainers</a>
+              <hr class="dropdown-divider" />
+              <div class="submenu-container">
+                <div
+                  class="dropdown-item d-flex justify-content-between align-items-center"
+                >
+                  <span>AI Courses</span
+                  ><i class="fa fa-caret-right d-lg-none"></i>
+                </div>
+                <div class="dropdown-menu">
+                  <a href="course-software-dev-ai.html" class="dropdown-item"
+                    >Software Development with AI</a
+                  >
+                  <a href="course-ai.html" class="dropdown-item"
+                    >Artificial Intelligence</a
+                  >
+                  <a href="course-ai-automation.html" class="dropdown-item"
+                    >AI Automation</a
+                  >
+                  <a href="course-ai-agents.html" class="dropdown-item"
+                    >AI Agents</a
+                  >
+                </div>
+              </div>
+              <div class="submenu-container">
+                <div
+                  class="dropdown-item d-flex justify-content-between align-items-center"
+                >
+                  <span>Life Science Courses</span
+                  ><i class="fa fa-caret-right d-lg-none"></i>
+                </div>
+                <div class="dropdown-menu">
+                  <a href="course-md-simulation.html" class="dropdown-item"
+                    >MD Simulation and Drug Design</a
+                  >
+                  <a href="course-genomics.html" class="dropdown-item"
+                    >Genomics, transcriptomics, & proteomics</a
+                  >
+                  <a href="course-metagenomics.html" class="dropdown-item"
+                    >Metagenomics</a
+                  >
+                  <a href="course-epigenetics.html" class="dropdown-item"
+                    >Epigenetics</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="contact.html" class="nav-item nav-link">Contact Us</a>
         </div>
+        <a
+          href="#"
+          class="btn btn-primary py-4 px-lg-5 d-none d-lg-block join-now-btn"
+          >Inquire Now<i class="fa fa-arrow-right ms-3"></i
+        ></a>
+      </div>
     </nav>
     <!-- Navbar End -->
 
     <!-- Join Now Slider Form Start -->
     <div id="form-overlay"></div>
     <div id="join-now-slider">
-        <span id="close-slider">&times;</span>
-        <h3 class="mb-4 text-primary">Join LifeGenBio Today!</h3>
-        <p>Fill in your details and one of our academic counselors will get in touch with you shortly.</p>
-        <form action="https://n8n.srv1047155.hstgr.cloud/webhook/ab66048a-3b78-4a76-a718-49d95be6ffef" method="POST">
-            <div class="mb-3">
-                <label for="sliderName" class="form-label">Full Name</label>
-                <input type="text" class="form-control" id="sliderName" name="name" placeholder="Enter your name" required>
-            </div>
-            <div class="mb-3">
-                <label for="sliderEmail" class="form-label">Email Address</label>
-                <input type="email" class="form-control" id="sliderEmail" name="email" placeholder="name@example.com" required>
-            </div>
-            <div class="mb-3">
-                <label for="sliderPhone" class="form-label">Phone Number</label>
-                <input type="tel" class="form-control" id="sliderPhone" name="phone" placeholder="+91-1234567890" required>
-            </div>
-            <div class="mb-4">
-                <label for="sliderCourse" class="form-label">Course of Interest</label>
-                <select class="form-select" id="sliderCourse" name="course">
-                    <option selected>Select a course</option>
-                    <option value="Generative AI">Generative AI</option>
-                    <option value="AI-Powered Automation">AI-Powered Automation</option>
-                    <option value="Bioinformatics & Data Science">Bioinformatics & Data Science</option>
-                    <option value="Other">Other</option>
-                </select>
-            </div>
-            <button type="submit" class="btn btn-primary w-100 py-3">Submit Inquiry</button>
-        </form>
+      <span id="close-slider">&times;</span>
+      <h3 class="mb-4 text-primary">Join LifeGenBio Today!</h3>
+      <p>
+        Fill in your details and one of our academic counselors will get in
+        touch with you shortly.
+      </p>
+      <form
+        id="slider-form"
+        action="https://n8n.srv1047155.hstgr.cloud/webhook/ab66048a-3b78-4a76-a718-49d95be6ffef"
+        method="POST"
+      >
+        <div class="mb-3">
+          <label for="sliderName" class="form-label">Full Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="sliderName"
+            name="name"
+            placeholder="Enter your name"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="sliderEmail" class="form-label">Email Address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="sliderEmail"
+            name="email"
+            placeholder="name@example.com"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="sliderPhone" class="form-label">Phone Number</label>
+          <input
+            type="tel"
+            class="form-control"
+            id="sliderPhone"
+            name="phone"
+            placeholder="+91-1234567890"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <label for="sliderCourse" class="form-label"
+            >Course of Interest</label
+          >
+          <select class="form-select" id="sliderCourse" name="course">
+            <option selected>Select a course</option>
+            <option value="Generative AI">Generative AI</option>
+            <option value="AI-Powered Automation">AI-Powered Automation</option>
+            <option value="Bioinformatics & Data Science">
+              Bioinformatics & Data Science
+            </option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary w-100 py-3">
+          Submit Inquiry
+        </button>
+      </form>
     </div>
     <!-- Join Now Slider Form End -->
 
+    <!-- #################################################################### -->
+    <!-- ############           COURSES PAGE CONTENT STARTS HERE         ############ -->
+    <!-- #################################################################### -->
 
     <!-- Header Start -->
     <div class="container-fluid bg-primary py-5 mb-5 page-header">
-        <div class="container py-5">
-            <div class="row justify-content-center">
-                <div class="col-lg-10 text-center">
-                    <h1 class="display-3 text-white animated slideInDown">Our Courses</h1>
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb justify-content-center">
-                            <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
-                            <li class="breadcrumb-item text-white active" aria-current="page">Courses</li>
-                        </ol>
-                    </nav>
-                </div>
-            </div>
+      <div class="container py-5">
+        <div class="row justify-content-center">
+          <div class="col-lg-10 text-center">
+            <h1 class="display-3 text-white animated slideInDown">
+              Our Courses
+            </h1>
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb justify-content-center">
+                <li class="breadcrumb-item">
+                  <a class="text-white" href="index.html">Home</a>
+                </li>
+                <li
+                  class="breadcrumb-item text-white active"
+                  aria-current="page"
+                >
+                  Courses
+                </li>
+              </ol>
+            </nav>
+          </div>
         </div>
+      </div>
     </div>
     <!-- Header End -->
 
-
     <!-- Categories Start -->
     <div class="container-xxl py-5 category">
-        <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">Categories</h6>
-                <h1 class="mb-5">Courses Categories</h1>
-            </div>
-            <div class="row g-3">
-                <div class="col-lg-7 col-md-6">
-                    <div class="row g-3">
-                        <div class="col-lg-12 col-md-12 wow zoomIn" data-wow-delay="0.1s">
-                            <a class="position-relative d-block overflow-hidden" href="">
-                                <img class="img-fluid" src="img/cat-1.jpg" alt="">
-                                <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
-                                    <h5 class="m-0">Web Design</h5>
-                                    <small class="text-primary">49 Courses</small>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s">
-                            <a class="position-relative d-block overflow-hidden" href="">
-                                <img class="img-fluid" src="img/cat-2.jpg" alt="">
-                                <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
-                                    <h5 class="m-0">Graphic Design</h5>
-                                    <small class="text-primary">49 Courses</small>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.5s">
-                            <a class="position-relative d-block overflow-hidden" href="">
-                                <img class="img-fluid" src="img/cat-3.jpg" alt="">
-                                <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
-                                    <h5 class="m-0">Video Editing</h5>
-                                    <small class="text-primary">49 Courses</small>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5 col-md-6 wow zoomIn" data-wow-delay="0.7s" style="min-height: 350px;">
-                    <a class="position-relative d-block h-100 overflow-hidden" href="">
-                        <img class="img-fluid position-absolute w-100 h-100" src="img/cat-4.jpg" alt="" style="object-fit: cover;">
-                        <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin:  1px;">
-                            <h5 class="m-0">Online Marketing</h5>
-                            <small class="text-primary">49 Courses</small>
-                        </div>
-                    </a>
-                </div>
-            </div>
+      <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+          <h6 class="section-title bg-white text-center text-primary px-3">
+            Categories
+          </h6>
+          <h1 class="mb-5">Courses Categories</h1>
         </div>
+        <div class="row g-3">
+          <div class="col-lg-7 col-md-6">
+            <div class="row g-3">
+              <div class="col-lg-12 col-md-12 wow zoomIn" data-wow-delay="0.1s">
+                <a class="position-relative d-block overflow-hidden" href="">
+                  <img class="img-fluid" src="img/cat-1.jpg" alt="" />
+                  <div
+                    class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3"
+                    style="margin: 1px"
+                  >
+                    <h5 class="m-0">Web Design</h5>
+                    <small class="text-primary">49 Courses</small>
+                  </div>
+                </a>
+              </div>
+              <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s">
+                <a class="position-relative d-block overflow-hidden" href="">
+                  <img class="img-fluid" src="img/cat-2.jpg" alt="" />
+                  <div
+                    class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3"
+                    style="margin: 1px"
+                  >
+                    <h5 class="m-0">Graphic Design</h5>
+                    <small class="text-primary">49 Courses</small>
+                  </div>
+                </a>
+              </div>
+              <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.5s">
+                <a class="position-relative d-block overflow-hidden" href="">
+                  <img class="img-fluid" src="img/cat-3.jpg" alt="" />
+                  <div
+                    class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3"
+                    style="margin: 1px"
+                  >
+                    <h5 class="m-0">Video Editing</h5>
+                    <small class="text-primary">49 Courses</small>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-5 col-md-6 wow zoomIn"
+            data-wow-delay="0.7s"
+            style="min-height: 350px"
+          >
+            <a class="position-relative d-block h-100 overflow-hidden" href="">
+              <img
+                class="img-fluid position-absolute w-100 h-100"
+                src="img/cat-4.jpg"
+                alt=""
+                style="object-fit: cover"
+              />
+              <div
+                class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3"
+                style="margin: 1px"
+              >
+                <h5 class="m-0">Online Marketing</h5>
+                <small class="text-primary">49 Courses</small>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- Categories End -->
 
-
     <!-- Courses Start -->
     <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">Courses</h6>
-                <h1 class="mb-5">Popular Courses</h1>
-            </div>
-            <div class="row g-4 justify-content-center">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="course-item bg-light">
-                        <div class="position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/course-1.jpg" alt="">
-                            <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-                                <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3 join-now-btn" style="border-radius: 30px;">Join Now</a>
-                            </div>
-                        </div>
-                        <div class="text-center p-4 pb-0">
-                            <h3 class="mb-0">$149.00</h3>
-                            <div class="mb-3">
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small>(123)</small>
-                            </div>
-                            <h5 class="mb-4">Web Design & Development Course for Beginners</h5>
-                        </div>
-                        <div class="d-flex border-top">
-                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-user-tie text-primary me-2"></i>John Doe</small>
-                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-clock text-primary me-2"></i>1.49 Hrs</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>30 Students</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="course-item bg-light">
-                        <div class="position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/course-2.jpg" alt="">
-                            <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-                                <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3 join-now-btn" style="border-radius: 30px;">Join Now</a>
-                            </div>
-                        </div>
-                        <div class="text-center p-4 pb-0">
-                            <h3 class="mb-0">$149.00</h3>
-                            <div class="mb-3">
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small>(123)</small>
-                            </div>
-                            <h5 class="mb-4">Web Design & Development Course for Beginners</h5>
-                        </div>
-                        <div class="d-flex border-top">
-                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-user-tie text-primary me-2"></i>John Doe</small>
-                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-clock text-primary me-2"></i>1.49 Hrs</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>30 Students</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="course-item bg-light">
-                        <div class="position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/course-3.jpg" alt="">
-                            <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-                                <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3 join-now-btn" style="border-radius: 30px;">Join Now</a>
-                            </div>
-                        </div>
-                        <div class="text-center p-4 pb-0">
-                            <h3 class="mb-0">$149.00</h3>
-                            <div class="mb-3">
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small>(123)</small>
-                            </div>
-                            <h5 class="mb-4">Web Design & Development Course for Beginners</h5>
-                        </div>
-                        <div class="d-flex border-top">
-                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-user-tie text-primary me-2"></i>John Doe</small>
-                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-clock text-primary me-2"></i>1.49 Hrs</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>30 Students</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+          <h6 class="section-title bg-white text-center text-primary px-3">
+            Courses
+          </h6>
+          <h1 class="mb-5">Popular Courses</h1>
         </div>
+        <div class="row g-4 justify-content-center">
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="course-item bg-light">
+              <div class="position-relative overflow-hidden">
+                <img class="img-fluid" src="img/course-1.jpg" alt="" />
+                <div
+                  class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4"
+                >
+                  <a
+                    href="#"
+                    class="flex-shrink-0 btn btn-sm btn-primary px-3 join-now-btn"
+                    style="border-radius: 30px"
+                    >Join Now</a
+                  >
+                </div>
+              </div>
+              <div class="text-center p-4 pb-0">
+                <h3 class="mb-0">$149.00</h3>
+                <div class="mb-3">
+                  <small class="fa fa-star text-primary"></small>
+                  <small class="fa fa-star text-primary"></small>
+                  <small class="fa fa-star text-primary"></small>
+                  <small class="fa fa-star text-primary"></small>
+                  <small class="fa fa-star text-primary"></small>
+                  <small>(123)</small>
+                </div>
+                <h5 class="mb-4">
+                  Web Design & Development Course for Beginners
+                </h5>
+              </div>
+              <div class="d-flex border-top">
+                <small class="flex-fill text-center border-end py-2"
+                  ><i class="fa fa-user-tie text-primary me-2"></i>John
+                  Doe</small
+                >
+                <small class="flex-fill text-center border-end py-2"
+                  ><i class="fa fa-clock text-primary me-2"></i>1.49 Hrs</small
+                >
+                <small class="flex-fill text-center py-2"
+                  ><i class="fa fa-user text-primary me-2"></i>30
+                  Students</small
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="course-item bg-light">
+              <div class="position-relative overflow-hidden">
+                <img class="img-fluid" src="img/course-2.jpg" alt="" />
+                <div
+                  class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4"
+                >
+                  <a
+                    href="#"
+                    class="flex-shrink-0 btn btn-sm btn-primary px-3 join-now-btn"
+                    style="border-radius: 30px"
+                    >Join Now</a
+                  >
+                </div>
+              </div>
+              <div class="text-center p-4 pb-0">
+                <h3 class="mb-0">$149.00</h3>
+                <div class="mb-3">
+                  <small class="fa fa-star text-primary"></small>
+                  <small class="fa fa-star text-primary"></small>
+                  <small class="fa fa-star text-primary"></small>
+                  <small class="fa fa-star text-primary"></small>
+                  <small class="fa fa-star text-primary"></small>
+                  <small>(123)</small>
+                </div>
+                <h5 class="mb-4">
+                  Web Design & Development Course for Beginners
+                </h5>
+              </div>
+              <div class="d-flex border-top">
+                <small class="flex-fill text-center border-end py-2"
+                  ><i class="fa fa-user-tie text-primary me-2"></i>John
+                  Doe</small
+                >
+                <small class="flex-fill text-center border-end py-2"
+                  ><i class="fa fa-clock text-primary me-2"></i>1.49 Hrs</small
+                >
+                <small class="flex-fill text-center py-2"
+                  ><i class="fa fa-user text-primary me-2"></i>30
+                  Students</small
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="course-item bg-light">
+              <div class="position-relative overflow-hidden">
+                <img class="img-fluid" src="img/course-3.jpg" alt="" />
+                <div
+                  class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4"
+                >
+                  <a
+                    href="#"
+                    class="flex-shrink-0 btn btn-sm btn-primary px-3 join-now-btn"
+                    style="border-radius: 30px"
+                    >Join Now</a
+                  >
+                </div>
+              </div>
+              <div class="text-center p-4 pb-0">
+                <h3 class="mb-0">$149.00</h3>
+                <div class="mb-3">
+                  <small class="fa fa-star text-primary"></small>
+                  <small class="fa fa-star text-primary"></small>
+                  <small class="fa fa-star text-primary"></small>
+                  <small class="fa fa-star text-primary"></small>
+                  <small class="fa fa-star text-primary"></small>
+                  <small>(123)</small>
+                </div>
+                <h5 class="mb-4">
+                  Web Design & Development Course for Beginners
+                </h5>
+              </div>
+              <div class="d-flex border-top">
+                <small class="flex-fill text-center border-end py-2"
+                  ><i class="fa fa-user-tie text-primary me-2"></i>John
+                  Doe</small
+                >
+                <small class="flex-fill text-center border-end py-2"
+                  ><i class="fa fa-clock text-primary me-2"></i>1.49 Hrs</small
+                >
+                <small class="flex-fill text-center py-2"
+                  ><i class="fa fa-user text-primary me-2"></i>30
+                  Students</small
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- Courses End -->
 
-
     <!-- Testimonial Start -->
     <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container">
-            <div class="text-center">
-                <h6 class="section-title bg-white text-center text-primary px-3">Testimonial</h6>
-                <h1 class="mb-5">Our Students Say!</h1>
-            </div>
-            <div class="owl-carousel testimonial-carousel position-relative">
-                <div class="testimonial-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-1.jpg" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Priya Sharma</h5>
-                    <p>Software Engineer at Google</p>
-                    <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">"The AI course at LifeGenBio was a game-changer for my career. The hands-on projects gave me the confidence to tackle real-world problems. I landed my dream job just two months after completion!"</p>
-                    </div>
-                </div>
-                <div class="testimonial-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-2.jpg" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">David Chen</h5>
-                    <p>Data Scientist at Microsoft</p>
-                    <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">"I was amazed by the depth of the Bioinformatics curriculum. The instructors are true experts and were incredibly supportive. This platform is perfect for anyone serious about a career in biotech."</p>
-                    </div>
-                </div>
-                <div class="testimonial-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-3.jpg" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Ananya Gupta</h5>
-                    <p>Automation Specialist at Amazon</p>
-                    <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">"I enrolled in the automation course to upskill, and it exceeded all my expectations. The content is practical, relevant, and immediately applicable. Highly recommended!"</p>
-                    </div>
-                </div>
-                <div class="testimonial-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-4.jpg" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Michael Johnson</h5>
-                    <p>Research Associate at Pfizer</p>
-                    <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">"The blend of life sciences and data analytics is unique and powerful. LifeGenBio provides the perfect platform to gain a competitive edge in the research and development field."</p>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="text-center">
+          <h6 class="section-title bg-white text-center text-primary px-3">
+            Testimonial
+          </h6>
+          <h1 class="mb-5">Our Students Say!</h1>
         </div>
+        <div class="owl-carousel testimonial-carousel position-relative">
+          <div class="testimonial-item text-center">
+            <img
+              class="border rounded-circle p-2 mx-auto mb-3"
+              src="img/testimonial-1.jpg"
+              style="width: 80px; height: 80px"
+            />
+            <h5 class="mb-0">Priya Sharma</h5>
+            <p>Software Engineer at Google</p>
+            <div class="testimonial-text bg-light text-center p-4">
+              <p class="mb-0">
+                "The AI course at LifeGenBio was a game-changer for my career.
+                The hands-on projects gave me the confidence to tackle
+                real-world problems. I landed my dream job just two months after
+                completion!"
+              </p>
+            </div>
+          </div>
+          <div class="testimonial-item text-center">
+            <img
+              class="border rounded-circle p-2 mx-auto mb-3"
+              src="img/testimonial-2.jpg"
+              style="width: 80px; height: 80px"
+            />
+            <h5 class="mb-0">David Chen</h5>
+            <p>Data Scientist at Microsoft</p>
+            <div class="testimonial-text bg-light text-center p-4">
+              <p class="mb-0">
+                "I was amazed by the depth of the Bioinformatics curriculum. The
+                instructors are true experts and were incredibly supportive.
+                This platform is perfect for anyone serious about a career in
+                biotech."
+              </p>
+            </div>
+          </div>
+          <div class="testimonial-item text-center">
+            <img
+              class="border rounded-circle p-2 mx-auto mb-3"
+              src="img/testimonial-3.jpg"
+              style="width: 80px; height: 80px"
+            />
+            <h5 class="mb-0">Ananya Gupta</h5>
+            <p>Automation Specialist at Amazon</p>
+            <div class="testimonial-text bg-light text-center p-4">
+              <p class="mb-0">
+                "I enrolled in the automation course to upskill, and it exceeded
+                all my expectations. The content is practical, relevant, and
+                immediately applicable. Highly recommended!"
+              </p>
+            </div>
+          </div>
+          <div class="testimonial-item text-center">
+            <img
+              class="border rounded-circle p-2 mx-auto mb-3"
+              src="img/testimonial-4.jpg"
+              style="width: 80px; height: 80px"
+            />
+            <h5 class="mb-0">Michael Johnson</h5>
+            <p>Research Associate at Pfizer</p>
+            <div class="testimonial-text bg-light text-center p-4">
+              <p class="mb-0">
+                "The blend of life sciences and data analytics is unique and
+                powerful. LifeGenBio provides the perfect platform to gain a
+                competitive edge in the research and development field."
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- Testimonial End -->
 
+    <!-- #################################################################### -->
+    <!-- #######################   END OF PAGE CONTENT   #################### -->
+    <!-- #################################################################### -->
 
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/447867243876" class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
+    <a
+      href="https://wa.me/447867243876"
+      class="whatsapp-float"
+      target="_blank"
+      title="Chat with us on WhatsApp"
+    >
+      <i class="fab fa-whatsapp"></i>
     </a>
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"
-      ><i class="bi bi-arrow-up"></i
-    ></a>
-        
 
     <!-- Footer Start -->
     <div
@@ -575,49 +1021,72 @@
     >
       <div class="container py-5">
         <div class="row g-5">
-            <div class="col-lg-4 col-md-6">
-                <h4 class="text-white mb-4">LifeGenBio</h4>
-                <p>Empowering the next generation of innovators at the intersection of technology and life sciences.</p>
-                <div class="d-flex pt-2">
-                    <a class="btn btn-outline-light btn-social" href="https://www.youtube.com/@lifegenbiollp3301" target="_blank"><i class="fab fa-youtube"></i></a>
-                    <a class="btn btn-outline-light btn-social" href="" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                    <a class="btn btn-outline-light btn-social" href="" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-light btn-social" href="" target="_blank"><i class="fab fa-instagram"></i></a>
-                </div>
+          <div class="col-lg-4 col-md-6">
+            <h4 class="text-white mb-4">LifeGenBio</h4>
+            <p>
+              Empowering the next generation of innovators at the intersection
+              of technology and life sciences.
+            </p>
+            <div class="d-flex pt-2">
+              <a
+                class="btn btn-outline-light btn-social"
+                href="https://www.youtube.com/@lifegenbiollp3301"
+                target="_blank"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a
+                class="btn btn-outline-light btn-social"
+                href=""
+                target="_blank"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a
+                class="btn btn-outline-light btn-social"
+                href=""
+                target="_blank"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                class="btn btn-outline-light btn-social"
+                href=""
+                target="_blank"
+                ><i class="fab fa-instagram"></i
+              ></a>
             </div>
-            <div class="col-lg-2 col-md-6">
-                <h4 class="text-white mb-3">Quick Links</h4>
-                <a class="btn btn-link" href="about.html">About Us</a>
-                <a class="btn btn-link" href="contact.html">Contact Us</a>
-                <a class="btn btn-link" href="index.html">Workshops</a>
-                <a class="btn btn-link" href="">Our Blog</a>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <h4 class="text-white mb-3">Get in Touch</h4>
-                <p class="mb-2">
-                <i class="fa fa-phone-alt me-3"></i>+91-9065671711
-                </p>
-                <p class="mb-2">
-                <i class="fab fa-whatsapp me-3"></i>+44-7867243876
-                </p>
-                <p class="mb-2">
-                <i class="fa fa-envelope me-3"></i>info@lifegenbio.com
-                </p>
-            </div>
-             <div class="col-lg-3 col-md-6">
-                <h4 class="text-white mb-3">Our Offices</h4>
-                <p><i class="fa fa-map-marker-alt me-3"></i>India</p>
-                <p><i class="fa fa-map-marker-alt me-3"></i>Saudi Arabia</p>
-                <p><i class="fa fa-map-marker-alt me-3"></i>USA</p>
-            </div>
+          </div>
+          <div class="col-lg-2 col-md-6">
+            <h4 class="text-white mb-3">Quick Links</h4>
+            <a class="btn btn-link" href="about.html">About Us</a>
+            <a class="btn btn-link" href="contact.html">Contact Us</a>
+            <a class="btn btn-link" href="index.html">Workshops</a>
+            <a class="btn btn-link" href="">Our Blog</a>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h4 class="text-white mb-3">Get in Touch</h4>
+            <p class="mb-2">
+              <i class="fa fa-phone-alt me-3"></i>+91-9065671711
+            </p>
+            <p class="mb-2">
+              <i class="fab fa-whatsapp me-3"></i>+44-7867243876
+            </p>
+            <p class="mb-2">
+              <i class="fa fa-envelope me-3"></i>info@lifegenbio.com
+            </p>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h4 class="text-white mb-3">Our Offices</h4>
+            <p><i class="fa fa-map-marker-alt me-3"></i>India</p>
+            <p><i class="fa fa-map-marker-alt me-3"></i>Saudi Arabia</p>
+            <p><i class="fa fa-map-marker-alt me-3"></i>USA</p>
+          </div>
         </div>
       </div>
       <div class="container">
         <div class="copyright">
           <div class="row">
             <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-              &copy; <a class="border-bottom" href="#">LifeGenBio</a>, All
-              Right Reserved.
+              &copy; <a class="border-bottom" href="#">LifeGenBio</a>, All Right
+              Reserved.
             </div>
             <div class="col-md-6 text-center text-md-end">
               <div class="footer-menu">
@@ -629,107 +1098,172 @@
         </div>
       </div>
     </div>
-<!-- Footer End -->
+    <!-- Footer End -->
 
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-
-    <!-- NEW FEATURE: Success Modal Start -->
-    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title text-primary" id="successModalLabel"><i class="fa fa-check-circle me-2"></i> Inquiry Submitted!</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    Thank you for reaching out! Your form has been submitted successfully. One of our academic counselors will get in touch with you shortly.
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
+    <!-- Success Modal Start -->
+    <div
+      class="modal fade"
+      id="successModal"
+      tabindex="-1"
+      aria-labelledby="successModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-primary" id="successModalLabel">
+              <i class="fa fa-check-circle me-2"></i> Inquiry Submitted!
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            Thank you for reaching out! Your form has been submitted
+            successfully. One of our academic counselors will get in touch with
+            you shortly.
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
         </div>
+      </div>
     </div>
     <!-- Success Modal End -->
 
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"
+      ><i class="bi bi-arrow-up"></i
+    ></a>
 
     <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
-
-    <!-- UPDATED SCRIPT: Custom Javascript with Popup Logic -->
+    <!-- ============== CONSOLIDATED JAVASCRIPT STARTS HERE ============== -->
     <script>
-        $(document).ready(function(){
-            // --- Logic for the "Join Now" sliding form ---
-            const slider = $('#join-now-slider');
-            const overlay = $('#form-overlay');
-            
-            // Open the slider
-            $('.join-now-btn').on('click', function(e) {
-                e.preventDefault();
-                overlay.fadeIn();
-                slider.addClass('show');
-            });
+      (function ($) {
+        "use strict";
 
-            // Close the slider
-            $('#close-slider, #form-overlay').on('click', function() {
-                slider.removeClass('show');
-                overlay.fadeOut();
-            });
+        // Spinner
+        var spinner = function () {
+          setTimeout(function () {
+            if ($("#spinner").length > 0) {
+              $("#spinner").removeClass("show");
+            }
+          }, 1);
+        };
+        spinner();
 
-            // --- Logic to handle form submission with AJAX and show a popup ---
-            $('#join-now-slider form').on('submit', function(e) {
-                e.preventDefault();
-                var form = $(this);
+        // Initiate WOWjs
+        new WOW().init();
 
-                $.ajax({
-                    url: form.attr('action'),
-                    method: form.attr('method'),
-                    data: form.serialize(),
-                    success: function(response) {
-                        slider.removeClass('show');
-                        overlay.fadeOut();
-                        $('#successModal').modal('show');
-                        form[0].reset(); 
-                    },
-                    error: function() {
-                        alert('Something went wrong. Please try again.');
-                    }
-                });
-            });
-
-            // Owl Carousel initialization is already in main.js, but we ensure it runs for this page too.
-            $(".testimonial-carousel").owlCarousel({
-                autoplay: true,
-                smartSpeed: 1000,
-                center: true,
-                margin: 24,
-                dots: true,
-                loop: true,
-                nav : false,
-                responsive: {
-                    0:{
-                        items:1
-                    },
-                    768:{
-                        items:2
-                    },
-                    992:{
-                        items:3
-                    }
-                }
-            });
+        // Sticky Navbar
+        $(window).scroll(function () {
+          if ($(this).scrollTop() > 300) {
+            $(".sticky-top").css("top", "0px");
+          } else {
+            $(".sticky-top").css("top", "-100px");
+          }
         });
-    </script>
-</body>
 
+        // Back to top button
+        $(window).scroll(function () {
+          if ($(this).scrollTop() > 300) {
+            $(".back-to-top").fadeIn("slow");
+          } else {
+            $(".back-to-top").fadeOut("slow");
+          }
+        });
+        $(".back-to-top").click(function () {
+          $("html, body").animate({ scrollTop: 0 }, 1500, "easeInOutExpo");
+          return false;
+        });
+
+        // Multi-Level Dropdown Script for Mobile
+        $(".submenu-container > .dropdown-item").on("click", function (e) {
+          if ($(window).width() < 992) {
+            e.preventDefault();
+            e.stopPropagation();
+            var submenu = $(this).next(".dropdown-menu");
+            $(this)
+              .parent(".submenu-container")
+              .siblings()
+              .find(".dropdown-menu")
+              .slideUp(200);
+            submenu.slideToggle(200);
+          }
+        });
+        $(".navbar .dropdown").on("hidden.bs.dropdown", function () {
+          if ($(window).width() < 992) {
+            $(this).find(".submenu-container .dropdown-menu").slideUp(200);
+          }
+        });
+
+        // Logic for the "Join Now" sliding form
+        const slider = $("#join-now-slider");
+        const overlay = $("#form-overlay");
+
+        $(".join-now-btn").on("click", function (e) {
+          e.preventDefault();
+          overlay.fadeIn();
+          slider.addClass("show");
+        });
+
+        $("#close-slider, #form-overlay").on("click", function () {
+          slider.removeClass("show");
+          overlay.fadeOut();
+        });
+
+        // Logic to handle form submission with AJAX and show a popup
+        $("#slider-form").on("submit", function (e) {
+          e.preventDefault();
+          var form = $(this);
+          $.ajax({
+            url: form.attr("action"),
+            method: form.attr("method"),
+            data: form.serialize(),
+            success: function () {
+              slider.removeClass("show");
+              overlay.fadeOut();
+              var successModal = new bootstrap.Modal(
+                document.getElementById("successModal")
+              );
+              successModal.show();
+              form[0].reset();
+            },
+            error: function () {
+              alert("Something went wrong. Please try again.");
+            },
+          });
+        });
+
+        // Owl Carousel initialization
+        $(".testimonial-carousel").owlCarousel({
+          autoplay: true,
+          smartSpeed: 1000,
+          center: true,
+          margin: 24,
+          dots: true,
+          loop: true,
+          nav: false,
+          responsive: { 0: { items: 1 }, 768: { items: 2 }, 992: { items: 3 } },
+        });
+      })(jQuery);
+    </script>
+    <!-- ============== CONSOLIDATED JAVASCRIPT ENDS HERE ============== -->
+  </body>
 </html>
